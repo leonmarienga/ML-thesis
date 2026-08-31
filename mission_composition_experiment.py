@@ -1,15 +1,15 @@
 from __future__ import annotations
 
 import json
-import math
 import time
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import requests
+from pandas.api.types import is_numeric_dtype
 from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import ExtraTreesRegressor, RandomForestRegressor, HistGradientBoostingRegressor, StackingRegressor
+from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.impute import SimpleImputer
 from sklearn.metrics import mean_absolute_error, mean_squared_error, median_absolute_error, r2_score
 from sklearn.model_selection import StratifiedKFold
@@ -117,7 +117,6 @@ def composition_features(raw: pd.DataFrame, disaster_numbers: list[int]) -> pd.D
         ct = pd.crosstab(m["disasterNumber"], m[field])
         totals = ct.sum(axis=1).replace(0, np.nan)
 
-        # Retain categories seen in at least 3 disasters to avoid an enormous sparse feature space.
         keep = ct.columns[(ct > 0).sum(axis=0) >= 3]
         ct = ct[keep]
         share = ct.div(totals, axis=0).fillna(0)
@@ -156,7 +155,9 @@ def composition_features(raw: pd.DataFrame, disaster_numbers: list[int]) -> pd.D
 
 
 def make_preprocessor(X: pd.DataFrame):
-    cat = [c for c in X.columns if X[c].dtype == "object"]
+    # Pandas 3 uses StringDtype for text columns, so dtype == 'object' is not sufficient.
+    # Everything non-numeric is treated categorically; numeric/bool columns stay numeric.
+    cat = [c for c in X.columns if not is_numeric_dtype(X[c])]
     num = [c for c in X.columns if c not in cat]
     return ColumnTransformer([
         ("num", Pipeline([("imp", SimpleImputer(strategy="median")), ("sc", StandardScaler())]), num),
@@ -184,7 +185,6 @@ def main() -> None:
 
     data = master[["disasterNumber", "target"] + SAFE_BASE_FEATURES].merge(feats, on="disasterNumber", how="left").fillna(0)
 
-    # Main evaluation region requested in the thesis development work.
     mask = (data["target"] > 50_000_000) & (data["target"] <= 500_000_000)
     d = data.loc[mask].reset_index(drop=True)
     y = d["target"].to_numpy(float)
@@ -227,16 +227,13 @@ def main() -> None:
 
         for name in model_names:
             all_predictions[name].append(pred[name])
-            row = {"seed": seed, "model": name, **metrics(y, pred[name])}
-            run_rows.append(row)
+            run_rows.append({"seed": seed, "model": name, **metrics(y, pred[name])})
 
-    # Repeated-OOF average per model.
     avg_preds = {}
     for name in model_names:
         avg_preds[name] = np.mean(all_predictions[name], axis=0)
         run_rows.append({"seed": "avg", "model": name, **metrics(y, avg_preds[name])})
 
-    # Blend search uses only OOF predictions; report as development screening, not untouched validation.
     names = list(avg_preds)
     blend_candidates = []
     for i in range(len(names)):
@@ -255,7 +252,6 @@ def main() -> None:
     outpred["pred_best_blend"] = best_blend["prediction"]
     outpred.to_csv(OUT / "repeated_oof_predictions.csv", index=False)
 
-    # Diagnose whether $200M–$500M remains the bottleneck.
     rows = []
     p = best_blend["prediction"]
     for label, lo, hi in [("50-100M", 50e6, 100e6), ("100-200M", 100e6, 200e6), ("200-300M", 200e6, 300e6), ("300-500M", 300e6, 500e6), ("200-500M", 200e6, 500e6), ("50-500M", 50e6, 500e6)]:
