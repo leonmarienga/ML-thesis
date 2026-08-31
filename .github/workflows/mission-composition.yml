@@ -21,17 +21,17 @@ jobs:
           pip install pandas numpy requests openpyxl scikit-learn xgboost lightgbm catboost
       - name: Run mission composition experiment
         run: python mission_composition_experiment.py
-      - name: Run fast split regime experiment
-        run: python split_regime_fast_experiment.py
+      - name: Run fine split regime experiment
+        run: python fine_split_regime_experiment.py
       - name: Upload mission results
         uses: actions/upload-artifact@v4
         with:
           name: mission-composition-results
           path: mission_composition_results/
           retention-days: 30
-      - name: Upload fast split regime results
+      - name: Upload fine split regime results
         uses: actions/upload-artifact@v4
         with:
-          name: split-regime-fast-results
-          path: split_regime_fast_results/
+          name: fine-split-regime-results
+          path: fine_split_regime_results/
           retention-days: 30
