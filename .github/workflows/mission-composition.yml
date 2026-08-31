@@ -23,6 +23,8 @@ jobs:
         run: python mission_composition_experiment.py
       - name: Run fine split regime experiment
         run: python fine_split_regime_experiment.py
+      - name: Run nested high-value mixture-of-experts experiment
+        run: python nested_high_value_moe_experiment.py
       - name: Upload mission results
         uses: actions/upload-artifact@v4
         with:
@@ -34,4 +36,10 @@ jobs:
         with:
           name: fine-split-regime-results
           path: fine_split_regime_results/
+          retention-days: 30
+      - name: Upload nested high-value mixture results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nested-high-value-moe-results
+          path: nested_high_value_moe_results/
           retention-days: 30
