@@ -9,7 +9,7 @@ on:
 jobs:
   run-experiment:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,11 +19,19 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pandas numpy requests openpyxl scikit-learn xgboost lightgbm catboost
-      - name: Run experiment
+      - name: Run mission composition experiment
         run: python mission_composition_experiment.py
-      - name: Upload results
+      - name: Run split regime experiment
+        run: python split_regime_experiment.py
+      - name: Upload mission results
         uses: actions/upload-artifact@v4
         with:
           name: mission-composition-results
           path: mission_composition_results/
+          retention-days: 30
+      - name: Upload split regime results
+        uses: actions/upload-artifact@v4
+        with:
+          name: split-regime-results
+          path: split_regime_results/
           retention-days: 30
