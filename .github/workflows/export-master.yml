@@ -1,0 +1,19 @@
+name: Export master dataset
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload master dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: master-openfema-dataset
+          path: master_openfema_40plus.xlsx
+          retention-days: 7
