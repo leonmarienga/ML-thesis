@@ -20,8 +20,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas numpy requests openpyxl scikit-learn xgboost lightgbm catboost
 
-      # Pin the raw MissionAssignments pull used by all specialist comparisons.
-      # Once populated, this fixed key restores the same snapshot on future runs.
       - name: Restore frozen MissionAssignments snapshot
         uses: actions/cache@v4
         with:
@@ -36,6 +34,8 @@ jobs:
         run: python nested_high_value_moe_experiment.py
       - name: Run frozen boundary-weighted specialist benchmark
         run: python boundary_weighted_specialist_experiment.py
+      - name: Run strict temporal hierarchical specialist benchmark
+        run: python temporal_event_hierarchical_specialist_experiment.py
 
       - name: Upload mission results
         uses: actions/upload-artifact@v4
@@ -60,4 +60,10 @@ jobs:
         with:
           name: boundary-weighted-specialist-results
           path: boundary_weighted_specialist_results/
+          retention-days: 30
+      - name: Upload temporal hierarchical specialist benchmark
+        uses: actions/upload-artifact@v4
+        with:
+          name: temporal-event-hierarchical-specialist-results
+          path: temporal_event_hierarchical_specialist_results/
           retention-days: 30
