@@ -25,6 +25,8 @@ jobs:
         run: python fine_split_regime_experiment.py
       - name: Run nested high-value mixture-of-experts experiment
         run: python nested_high_value_moe_experiment.py
+      - name: Run geographic-scale specialist experiment
+        run: python geographic_scale_specialist_experiment.py
       - name: Upload mission results
         uses: actions/upload-artifact@v4
         with:
@@ -42,4 +44,10 @@ jobs:
         with:
           name: nested-high-value-moe-results
           path: nested_high_value_moe_results/
+          retention-days: 30
+      - name: Upload geographic-scale specialist results
+        uses: actions/upload-artifact@v4
+        with:
+          name: geographic-scale-specialist-results
+          path: geographic_scale_specialist_results/
           retention-days: 30
