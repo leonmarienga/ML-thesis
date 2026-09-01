@@ -38,6 +38,8 @@ jobs:
         run: python temporal_event_hierarchical_specialist_experiment.py
       - name: Run strict temporal hierarchical specialist v2 benchmark
         run: python temporal_event_hierarchical_specialist_v2_experiment.py
+      - name: Run strict target-free router benchmark
+        run: python target_free_router_experiment.py
 
       - name: Upload mission results
         uses: actions/upload-artifact@v4
@@ -74,4 +76,10 @@ jobs:
         with:
           name: temporal-event-hierarchical-specialist-v2-results
           path: temporal_event_hierarchical_specialist_v2_results/
+          retention-days: 30
+      - name: Upload target-free router benchmark
+        uses: actions/upload-artifact@v4
+        with:
+          name: target-free-router-results
+          path: target_free_router_results/
           retention-days: 30
