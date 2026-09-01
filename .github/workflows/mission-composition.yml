@@ -19,14 +19,24 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pandas numpy requests openpyxl scikit-learn xgboost lightgbm catboost
+
+      # Pin the raw MissionAssignments pull used by all specialist comparisons.
+      # Once populated, this fixed key restores the same snapshot on future runs.
+      - name: Restore frozen MissionAssignments snapshot
+        uses: actions/cache@v4
+        with:
+          path: mission_composition_results/MissionAssignments_v2.jsonl
+          key: mission-assignments-openfema-snapshot-20260901-v1
+
       - name: Run mission composition experiment
         run: python mission_composition_experiment.py
       - name: Run fine split regime experiment
         run: python fine_split_regime_experiment.py
       - name: Run nested high-value mixture-of-experts experiment
         run: python nested_high_value_moe_experiment.py
-      - name: Run geographic-scale specialist experiment
-        run: python geographic_scale_specialist_experiment.py
+      - name: Run frozen boundary-weighted specialist benchmark
+        run: python boundary_weighted_specialist_experiment.py
+
       - name: Upload mission results
         uses: actions/upload-artifact@v4
         with:
@@ -45,9 +55,9 @@ jobs:
           name: nested-high-value-moe-results
           path: nested_high_value_moe_results/
           retention-days: 30
-      - name: Upload geographic-scale specialist results
+      - name: Upload boundary-weighted specialist benchmark
         uses: actions/upload-artifact@v4
         with:
-          name: geographic-scale-specialist-results
-          path: geographic_scale_specialist_results/
+          name: boundary-weighted-specialist-results
+          path: boundary_weighted_specialist_results/
           retention-days: 30
