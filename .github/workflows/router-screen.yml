@@ -1,0 +1,32 @@
+name: Router separability screen
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'global_router_pairwise_fullfeature_screen.py'
+      - '.github/workflows/router-screen.yml'
+  workflow_dispatch:
+
+jobs:
+  router-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn catboost
+      - name: Run full-feature pairwise screen
+        run: python global_router_pairwise_fullfeature_screen.py
+      - name: Upload pairwise screen
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-router-pairwise-fullfeature-results
+          path: global_router_pairwise_fullfeature_results/
+          retention-days: 30
