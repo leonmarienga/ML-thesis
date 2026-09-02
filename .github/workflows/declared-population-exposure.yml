@@ -6,6 +6,7 @@ on:
       - experiment/mission-composition-20260829
     paths:
       - 'declared_population_exposure_router_experiment.py'
+      - 'declared_population_exposure_router_experiment_v2.py'
       - '.github/workflows/declared-population-exposure.yml'
   workflow_dispatch:
 
@@ -28,7 +29,7 @@ jobs:
           path: mission_composition_results/MissionAssignments_v2.jsonl
           key: mission-assignments-openfema-snapshot-20260901-v1
       - name: Run declared population exposure router experiment
-        run: python declared_population_exposure_router_experiment.py
+        run: python declared_population_exposure_router_experiment_v2.py
       - name: Upload declared population exposure results
         uses: actions/upload-artifact@v4
         with:
