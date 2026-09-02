@@ -6,6 +6,7 @@ on:
       - experiment/mission-composition-20260829
     paths:
       - 'global_router_pairwise_fullfeature_screen.py'
+      - 'ihp_nonfinancial_router_experiment.py'
       - '.github/workflows/router-screen.yml'
   workflow_dispatch:
 
@@ -21,12 +22,20 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas numpy openpyxl scikit-learn catboost
+          pip install pandas numpy requests openpyxl scikit-learn catboost
       - name: Run full-feature pairwise screen
         run: python global_router_pairwise_fullfeature_screen.py
+      - name: Run nonfinancial IHP impact screen
+        run: python ihp_nonfinancial_router_experiment.py
       - name: Upload pairwise screen
         uses: actions/upload-artifact@v4
         with:
           name: global-router-pairwise-fullfeature-results
           path: global_router_pairwise_fullfeature_results/
+          retention-days: 30
+      - name: Upload IHP impact screen
+        uses: actions/upload-artifact@v4
+        with:
+          name: ihp-nonfinancial-router-results
+          path: ihp_nonfinancial_router_results/
           retention-days: 30
