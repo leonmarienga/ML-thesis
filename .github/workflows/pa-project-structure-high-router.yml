@@ -6,6 +6,7 @@ on:
       - experiment/mission-composition-20260829
     paths:
       - 'pa_project_structure_high_router_experiment.py'
+      - 'pa_project_structure_high_router_experiment_v2.py'
       - '.github/workflows/pa-project-structure-high-router.yml'
   workflow_dispatch:
 
@@ -23,7 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas numpy requests openpyxl scikit-learn
       - name: Run nonfinancial PA project-structure screen
-        run: python pa_project_structure_high_router_experiment.py
+        run: python pa_project_structure_high_router_experiment_v2.py
       - name: Upload PA project-structure results
         uses: actions/upload-artifact@v4
         with:
