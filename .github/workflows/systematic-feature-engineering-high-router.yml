@@ -6,6 +6,7 @@ on:
       - experiment/mission-composition-20260829
     paths:
       - 'systematic_feature_engineering_high_router.py'
+      - 'systematic_feature_engineering_high_router_fixed.py'
       - '.github/workflows/systematic-feature-engineering-high-router.yml'
   workflow_dispatch:
 
@@ -23,7 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas numpy openpyxl scikit-learn catboost
       - name: Run systematic feature engineering high router screen
-        run: python systematic_feature_engineering_high_router.py
+        run: python systematic_feature_engineering_high_router_fixed.py
       - name: Upload systematic feature engineering results
         uses: actions/upload-artifact@v4
         with:
