@@ -388,10 +388,16 @@ def select_gate_b(outer_train,normal_col):
 
 
 def compose(a,b,ta,tb):
-    # Ordinal chain: top boundary gets first claim; otherwise lower-high boundary.
-    out=np.full(len(a),3,int)
-    out[np.asarray(a)>=ta]=4
-    out[np.asarray(b)>=tb]=5
+    # Hierarchical chain matching the established router:
+    # Gate A first decides whether a case remains in 50M-200M (band 3)
+    # or advances to the high side. Gate B is only allowed to act on
+    # cases that Gate A advanced, separating 200M-500M from 500M+.
+    aa=np.asarray(a,float)
+    bb=np.asarray(b,float)
+    highside=aa>=ta
+    out=np.full(len(aa),3,int)
+    out[highside]=4
+    out[highside & (bb>=tb)]=5
     return out
 
 
