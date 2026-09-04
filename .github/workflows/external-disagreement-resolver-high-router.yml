@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas numpy openpyxl scikit-learn catboost requests scipy
+          pip install pandas numpy openpyxl scikit-learn catboost requests scipy xgboost
       - name: Restore frozen MissionAssignments snapshot
         uses: actions/cache@v4
         with:
