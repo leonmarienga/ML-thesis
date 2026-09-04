@@ -127,6 +127,36 @@ def fetch_cdc():
     c['state']=c.state.astype(str).str.upper().str.strip()
     return c
 
+def cdc_same_date_percentiles(cdc, decl, target_state):
+    """Compare a state with all states using only CDC observations available by the same date."""
+    eligible=cdc[cdc.end_date<=decl].copy()
+    if eligible.empty:
+        return None
+    snap=eligible.sort_values(['state','end_date']).groupby('state',as_index=False).tail(1).copy()
+    snap['population']=snap.state.map(POP)
+    snap=snap[num(snap.population).fillna(0)>0].copy()
+    if snap.empty or target_state not in set(snap.state):
+        return None
+    pop=num(snap.population)
+    snap['case_rate']=num(snap.tot_cases).fillna(0)/pop*1e5
+    snap['new_case_rate']=num(snap.new_cases).fillna(0).clip(lower=0)/pop*1e5
+    snap['death_rate']=num(snap.tot_deaths).fillna(0)/pop*1e5
+    snap['new_death_rate']=num(snap.new_deaths).fillna(0).clip(lower=0)/pop*1e5
+    snap['severity_raw']=np.log1p(snap.case_rate)+1.5*np.log1p(snap.death_rate)+.75*np.log1p(snap.new_case_rate)+.75*np.log1p(snap.new_death_rate)
+    for col in ['case_rate','new_case_rate','death_rate','new_death_rate','severity_raw']:
+        snap[col+'_pct']=snap[col].rank(pct=True,method='average')
+    z=snap[snap.state==target_state].iloc[-1]
+    return {
+        'severity_pct':float(z.severity_raw_pct),
+        'fatality_pct':float(z.death_rate_pct),
+        'acute_pct':float((z.new_case_rate_pct+z.new_death_rate_pct)/2.0),
+        'case_pct':float(z.case_rate_pct),
+        'new_case_pct':float(z.new_case_rate_pct),
+        'death_pct':float(z.death_rate_pct),
+        'new_death_pct':float(z.new_death_rate_pct),
+        'n_states':int(len(snap)),
+    }
+
 def noaa_types(incident):
     s=str(incident).upper().strip()
     if s in NOAA_EVENT_MAP:
@@ -155,23 +185,18 @@ def build_external_features(d):
         magnitude=0.
         raw_sev=0.
         if inc.upper().strip()=='BIOLOGICAL' and not cdc.empty and pd.notna(decl):
-            cc=cdc[(cdc.state==st)&(cdc.end_date<=decl)].sort_values('end_date')
-            if len(cc):
-                z=cc.iloc[-1]
-                source='CDC'
+            norm=cdc_same_date_percentiles(cdc,decl,st)
+            if norm is not None:
+                source='CDC_DATE_NORM'
                 coverage=1
                 rec=1.
-                cases=float(z.tot_cases)
-                newcases=max(float(z.new_cases),0)
-                deaths=float(z.tot_deaths)
-                newdeaths=max(float(z.new_deaths),0)
-                cases_rate=cases/pop*1e5 if pop else 0.
-                newcase_rate=newcases/pop*1e5 if pop else 0.
-                death_rate=deaths/pop*1e5 if pop else 0.
-                newdeath_rate=newdeaths/pop*1e5 if pop else 0.
-                fatal=death_rate
-                acute=newcase_rate+5*newdeath_rate
-                raw_sev=np.log1p(cases_rate)+1.5*np.log1p(death_rate)+.75*np.log1p(newcase_rate)+.75*np.log1p(newdeath_rate)
+                # Dimensionless same-date national percentiles. These remove the
+                # strong calendar-time trend while using no information after
+                # the declaration date.
+                raw_sev=norm['severity_pct']
+                fatal=norm['fatality_pct']
+                acute=norm['acute_pct']
+                magnitude=norm['case_pct']
         else:
             types=noaa_types(inc)
             if types and pd.notna(decl) and pd.notna(begin) and len(noaa):
