@@ -52,12 +52,38 @@ def as_num(s):
 
 
 def fetch_nri_counties() -> pd.DataFrame:
+    # Discover the live layer schema first so the audit survives FEMA/ArcGIS
+    # field-version differences instead of silently substituting columns.
+    layer_url = NRI_URL.rsplit("/query", 1)[0]
+    meta = requests.get(
+        layer_url,
+        params={"f": "json"},
+        timeout=180,
+        headers={"User-Agent": "ML-thesis-research/1.0"},
+    )
+    meta.raise_for_status()
+    mp = meta.json()
+    available = {str(x.get("name")) for x in mp.get("fields", [])}
+    selected = [c for c in NRI_FIELDS if c in available]
+    required = {"STATEABBRV", "POPULATION", "RISK_SCORE", "EAL_SCORE", "SOVI_SCORE", "RESL_SCORE"}
+    missing_required = sorted(required - set(selected))
+    if missing_required:
+        raise RuntimeError(
+            f"NRI live layer is missing required fields: {missing_required}; "
+            f"available sample={sorted(available)[:40]}"
+        )
+    (OUT / "nri_live_schema.json").write_text(json.dumps({
+        "selected_fields": selected,
+        "missing_optional_fields": sorted(set(NRI_FIELDS) - set(selected)),
+        "available_field_count": len(available),
+    }, indent=2))
+
     rows = []
     offset = 0
     while True:
         params = {
             "where": "1=1",
-            "outFields": ",".join(NRI_FIELDS),
+            "outFields": ",".join(selected),
             "returnGeometry": "false",
             "f": "json",
             "resultOffset": offset,
@@ -76,6 +102,9 @@ def fetch_nri_counties() -> pd.DataFrame:
     if not rows:
         raise RuntimeError("NRI ArcGIS endpoint returned no county rows.")
     d = pd.DataFrame(rows)
+    for c in NRI_FIELDS:
+        if c not in d.columns:
+            d[c] = np.nan
     d.to_csv(OUT / "nri_current_counties_raw_selected_fields.csv", index=False)
     return d
 
