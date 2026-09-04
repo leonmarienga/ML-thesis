@@ -1,0 +1,37 @@
+name: External disagreement resolver high router
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'external_disagreement_resolver_high_router.py'
+      - '.github/workflows/external-disagreement-resolver-high-router.yml'
+  workflow_dispatch:
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn catboost requests scipy
+      - name: Restore frozen MissionAssignments snapshot
+        uses: actions/cache@v4
+        with:
+          path: mission_composition_results/MissionAssignments_v2.jsonl
+          key: mission-assignments-openfema-snapshot-20260901-v1
+      - name: Run nested disagreement resolver
+        run: python external_disagreement_resolver_high_router.py
+      - name: Upload disagreement resolver results
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-disagreement-resolver-high-router-results
+          path: external_disagreement_resolver_high_router_results/
+          retention-days: 30
