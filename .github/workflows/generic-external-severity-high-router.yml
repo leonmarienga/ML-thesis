@@ -1,0 +1,32 @@
+name: Generic external severity high router
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'generic_external_severity_high_router_experiment.py'
+      - '.github/workflows/generic-external-severity-high-router.yml'
+  workflow_dispatch:
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn catboost requests scipy
+      - name: Run target-independent generic external severity router
+        run: python generic_external_severity_high_router_experiment.py
+      - name: Upload generic external severity results
+        uses: actions/upload-artifact@v4
+        with:
+          name: generic-external-severity-high-router-results
+          path: generic_external_severity_high_router_results/
+          retention-days: 30
