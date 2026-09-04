@@ -74,12 +74,12 @@ def load_master():
         d[c+'_event_pct_rank']=g[c].rank(pct=True,method='average').fillna(.5)
         total=g[c].transform('sum').replace(0,np.nan)
         d[c+'_relative_event_avg']=(d[c]/total*d.eventSize).replace([np.inf,-np.inf],np.nan).fillna(0)
-    dd=pd.to_datetime(d['declarationDate'],errors='coerce') if 'declarationDate' in d.columns else pd.Series(pd.NaT,index=d.index,dtype='datetime64[ns]')
-    begin=pd.to_datetime(d.incidentBeginDate,errors='coerce')
+    dd=pd.to_datetime(d['declarationDate'],errors='coerce',utc=True).dt.tz_convert(None) if 'declarationDate' in d.columns else pd.Series(pd.NaT,index=d.index,dtype='datetime64[ns]')
+    begin=pd.to_datetime(d.incidentBeginDate,errors='coerce',utc=True).dt.tz_convert(None)
     delay=pd.to_timedelta(num(d.declarationDelayDays).fillna(0),unit='D')
     d['effectiveDeclarationDate']=dd.fillna(begin+delay)
     d['incidentBeginDateParsed']=begin
-    d['incidentEndDateParsed']=pd.to_datetime(d.incidentEndDate,errors='coerce')
+    d['incidentEndDateParsed']=pd.to_datetime(d.incidentEndDate,errors='coerce',utc=True).dt.tz_convert(None)
     return d
 
 def latest_noaa_files(years):
@@ -107,8 +107,8 @@ def fetch_noaa(years):
     n=pd.concat(frames,ignore_index=True)
     n['STATE']=n.STATE.astype(str).str.upper().str.strip()
     n['EVENT_TYPE']=n.EVENT_TYPE.astype(str).str.upper().str.strip()
-    n['BEGIN_DT']=pd.to_datetime(n.BEGIN_DATE_TIME,errors='coerce')
-    n['END_DT']=pd.to_datetime(n.END_DATE_TIME,errors='coerce')
+    n['BEGIN_DT']=pd.to_datetime(n.BEGIN_DATE_TIME,errors='coerce',utc=True).dt.tz_convert(None)
+    n['END_DT']=pd.to_datetime(n.END_DATE_TIME,errors='coerce',utc=True).dt.tz_convert(None)
     for c in ['INJURIES_DIRECT','INJURIES_INDIRECT','DEATHS_DIRECT','DEATHS_INDIRECT','MAGNITUDE']:
         n[c]=num(n[c]).fillna(0)
     return n
@@ -121,7 +121,7 @@ def fetch_cdc():
     if c.empty:
         return c
     for x in ['date_updated','start_date','end_date']:
-        c[x]=pd.to_datetime(c[x],errors='coerce')
+        c[x]=pd.to_datetime(c[x],errors='coerce',utc=True).dt.tz_convert(None)
     for x in ['tot_cases','new_cases','tot_deaths','new_deaths']:
         c[x]=num(c[x]).fillna(0)
     c['state']=c.state.astype(str).str.upper().str.strip()
