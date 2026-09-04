@@ -16,35 +16,98 @@ CDC_URL = 'https://data.cdc.gov/resource/pwn4-m3yp.json'
 POP = {'AL':4779736,'AK':710231,'AZ':6392017,'AR':2915918,'CA':37253956,'CO':5029196,'CT':3574097,'DE':897934,'DC':601723,'FL':18801310,'GA':9687653,'HI':1360301,'ID':1567582,'IL':12830632,'IN':6483802,'IA':3046355,'KS':2853118,'KY':4339367,'LA':4533372,'ME':1328361,'MD':5773552,'MA':6547629,'MI':9883640,'MN':5303925,'MS':2967297,'MO':5988927,'MT':989415,'NE':1826341,'NV':2700551,'NH':1316470,'NJ':8791894,'NM':2059179,'NY':19378102,'NC':9535483,'ND':672591,'OH':11536504,'OK':3751351,'OR':3831074,'PA':12702379,'RI':1052567,'SC':4625364,'SD':814180,'TN':6346105,'TX':25145561,'UT':2763885,'VT':625741,'VA':8001024,'WA':6724540,'WV':1852994,'WI':5686986,'WY':563626,'PR':3725789,'AS':55519,'GU':159358,'MP':53883,'VI':106405}
 
 def fetch_cdc():
-    rows=[]; offset=0; limit=50000
-    while True:
-        params={'$limit':limit,'$offset':offset,'$order':'submission_date asc'}
-        r=requests.get(CDC_URL,params=params,timeout=120,headers={'User-Agent':'ML-thesis-research/1.0'})
-        r.raise_for_status(); batch=r.json()
-        if not batch: break
-        rows.extend(batch)
-        if len(batch)<limit: break
-        offset += limit
-    d=pd.DataFrame(rows)
-    if d.empty:
-        raise RuntimeError('CDC API returned no rows')
-    date_col = next((c for c in ['submission_date','date_updated','week_ending_date'] if c in d.columns), None)
+    headers={'User-Agent':'ML-thesis-research/1.0'}
+    errors=[]
+    d=None
+
+    # 1) Legacy CDC Socrata resource. Archived datasets can reject ORDER BY,
+    # so page without ordering and sort locally after download.
+    try:
+        rows=[]; offset=0; limit=50000
+        while True:
+            params={'$limit':limit,'$offset':offset}
+            r=requests.get('https://data.cdc.gov/resource/pwn4-m3yp.json',params=params,timeout=120,headers=headers)
+            if r.status_code >= 400:
+                raise RuntimeError(f'CDC resource HTTP {r.status_code}: {r.text[:500]}')
+            batch=r.json()
+            if not batch: break
+            rows.extend(batch)
+            if len(batch)<limit: break
+            offset += limit
+        if rows:
+            d=pd.DataFrame(rows)
+    except Exception as e:
+        errors.append(f'cdc_resource={type(e).__name__}:{e}')
+
+    # 2) HealthData.gov archived mirror, using the identifier surfaced by
+    # the current catalog page.
+    if d is None or d.empty:
+        try:
+            rows=[]; offset=0; limit=50000
+            while True:
+                params={'$limit':limit,'$offset':offset}
+                r=requests.get('https://healthdata.gov/resource/hiqp-x67x.json',params=params,timeout=120,headers=headers)
+                if r.status_code >= 400:
+                    raise RuntimeError(f'HealthData resource HTTP {r.status_code}: {r.text[:500]}')
+                batch=r.json()
+                if not batch: break
+                rows.extend(batch)
+                if len(batch)<limit: break
+                offset += limit
+            if rows:
+                d=pd.DataFrame(rows)
+        except Exception as e:
+            errors.append(f'healthdata_resource={type(e).__name__}:{e}')
+
+    # 3) Final fallback: full archived CSV download.
+    if d is None or d.empty:
+        try:
+            url='https://healthdata.gov/api/views/hiqp-x67x/rows.csv?accessType=DOWNLOAD'
+            r=requests.get(url,timeout=180,headers=headers)
+            if r.status_code >= 400:
+                raise RuntimeError(f'HealthData CSV HTTP {r.status_code}: {r.text[:500]}')
+            from io import StringIO
+            d=pd.read_csv(StringIO(r.text),low_memory=False)
+            # Normalize Socrata display headers to machine-style names.
+            d.columns=[str(c).strip().lower().replace(' ','_') for c in d.columns]
+        except Exception as e:
+            errors.append(f'healthdata_csv={type(e).__name__}:{e}')
+
+    if d is None or d.empty:
+        raise RuntimeError('All CDC/HealthData archive fetch routes failed: '+' | '.join(errors))
+
+    # Normalize column names while preserving underscores.
+    d.columns=[str(c).strip().lower().replace(' ','_') for c in d.columns]
+    date_col = next((c for c in [
+        'submission_date','date_updated','week_ending_date','end_date','start_date','date'
+    ] if c in d.columns), None)
     if date_col is None:
         raise RuntimeError(f'No CDC date column found. Columns={d.columns.tolist()}')
-    state_col = next((c for c in ['state','jurisdiction'] if c in d.columns), None)
+    state_col = next((c for c in ['state','jurisdiction','state_abbr'] if c in d.columns), None)
     if state_col is None:
         raise RuntimeError(f'No CDC state column found. Columns={d.columns.tolist()}')
+
     d['date']=pd.to_datetime(d[date_col],errors='coerce').dt.tz_localize(None)
     d['state_abbr']=d[state_col].astype(str).str.strip()
     aliases={
-        'tot_cases':['tot_cases','total_cases'], 'new_case':['new_case','new_cases'],
-        'tot_death':['tot_death','total_deaths'], 'new_death':['new_death','new_deaths']
+        'tot_cases':['tot_cases','total_cases','cumulative_cases'],
+        'new_case':['new_case','new_cases','weekly_cases'],
+        'tot_death':['tot_death','tot_deaths','total_deaths','cumulative_deaths'],
+        'new_death':['new_death','new_deaths','weekly_deaths']
     }
     for out,opts in aliases.items():
-        src=next((c for c in opts if c in d.columns),None)
-        d[out]=pd.to_numeric(d[src],errors='coerce') if src else np.nan
-    d=d.dropna(subset=['date','state_abbr']).copy()
+        src_col=next((c for c in opts if c in d.columns),None)
+        d[out]=pd.to_numeric(d[src_col],errors='coerce') if src_col else np.nan
+
+    d=d.dropna(subset=['date','state_abbr']).copy().sort_values(['state_abbr','date'])
     d.to_csv(OUT/'cdc_raw_selected.csv',index=False)
+    (OUT/'fetch_route_notes.json').write_text(json.dumps({
+        'errors_before_success':errors,
+        'columns':d.columns.tolist(),
+        'row_count':int(len(d)),
+        'date_column_used':date_col,
+        'state_column_used':state_col
+    },indent=2))
     return d
 
 def band6(x):
@@ -130,7 +193,7 @@ def main():
     focus.to_csv(OUT/'focus_2020_cases.csv',index=False)
     focus_cols=['disasterNumber','state','declarationDate','target','band6','cumCasesPer100k','cumDeathsPer100k','newCases14dPer100k','newDeaths14dPer100k','cumCasesPer100k_pct_rank','cumDeathsPer100k_pct_rank']
     summary={
-        'cdc_dataset':'Weekly United States COVID-19 Cases and Deaths by State - ARCHIVED (pwn4-m3yp)',
+        'cdc_dataset':'Archived CDC/HealthData.gov state-level COVID cases/deaths dataset (CDC pwn4-m3yp / HealthData mirror hiqp-x67x)',
         'prospective_rule':'Only CDC observations on or before each FEMA declaration date are used.',
         'biological_count':int(len(ranked)),
         'biological_high_over_50m_count':int(len(high)),
