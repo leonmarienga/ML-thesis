@@ -37,7 +37,11 @@ def fetch_hhs():
     headers={'User-Agent':'ML-thesis-research/1.0'}
     rows=[]; offset=0; limit=50000
     while True:
-        params={'$limit':limit,'$offset':offset}
+        params={
+            '$limit':limit,
+            '$offset':offset,
+            '$where':"date >= '2020-01-01T00:00:00.000' and date <= '2021-12-31T23:59:59.999'",
+        }
         r=requests.get(HHS_URL,params=params,timeout=180,headers=headers)
         if r.status_code >= 400:
             raise RuntimeError(f'HHS resource HTTP {r.status_code}: {r.text[:500]}')
