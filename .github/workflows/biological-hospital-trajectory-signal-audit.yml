@@ -1,0 +1,32 @@
+name: Biological hospital trajectory signal audit
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'biological_hospital_trajectory_signal_audit.py'
+      - '.github/workflows/biological-hospital-trajectory-signal-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn requests scipy
+      - name: Run Biological hospital trajectory signal audit
+        run: python biological_hospital_trajectory_signal_audit.py
+      - name: Upload Biological hospital trajectory results
+        uses: actions/upload-artifact@v4
+        with:
+          name: biological-hospital-trajectory-signal-audit-results
+          path: biological_hospital_trajectory_signal_audit_results/
+          retention-days: 30
