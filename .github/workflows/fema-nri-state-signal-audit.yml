@@ -1,0 +1,32 @@
+name: FEMA NRI state signal audit
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'fema_nri_state_signal_audit.py'
+      - '.github/workflows/fema-nri-state-signal-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn catboost requests scipy
+      - name: Run FEMA NRI state signal audit
+        run: python fema_nri_state_signal_audit.py
+      - name: Upload FEMA NRI state signal audit results
+        uses: actions/upload-artifact@v4
+        with:
+          name: fema-nri-state-signal-audit-results
+          path: fema_nri_state_signal_audit_results/
+          retention-days: 30
