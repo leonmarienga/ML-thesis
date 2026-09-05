@@ -1,0 +1,32 @@
+name: Non-Biological high router diagnostic
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'non_biological_high_router_diagnostic.py'
+      - '.github/workflows/non-biological-high-router-diagnostic.yml'
+  workflow_dispatch:
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn catboost requests scipy
+      - name: Run non-Biological high-router diagnostic
+        run: python non_biological_high_router_diagnostic.py
+      - name: Upload diagnostic results
+        uses: actions/upload-artifact@v4
+        with:
+          name: non-biological-high-router-diagnostic-results
+          path: non_biological_high_router_diagnostic_results/
+          retention-days: 30
