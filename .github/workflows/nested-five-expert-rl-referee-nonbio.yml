@@ -1,0 +1,32 @@
+name: Non-Biological five-expert RL referee
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'nested_five_expert_rl_referee_nonbio.py'
+      - '.github/workflows/nested-five-expert-rl-referee-nonbio.yml'
+  workflow_dispatch:
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn requests catboost
+      - name: Run non-Biological five-expert RL referee
+        run: python nested_five_expert_rl_referee_nonbio.py
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nested-five-expert-rl-referee-nonbio-results
+          path: nested_five_expert_rl_referee_nonbio_results/
+          retention-days: 30
