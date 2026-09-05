@@ -18,9 +18,9 @@ OUT.mkdir(exist_ok=True)
 BANDS=[3,4,5]
 
 # Lighter fixed expert configs for deep nesting; no outer-result tuning.
-md.BIN_CFG["iterations"]=85
-md.MULTI_CFG["iterations"]=110
-op.CFG["iterations"]=100
+md.BIN_CFG["iterations"]=180
+md.MULTI_CFG["iterations"]=220
+op.CFG["iterations"]=150
 
 ACTIONS=[
     "trust_bottom","trust_top","trust_sifter","trust_ovr","trust_pairwise",
