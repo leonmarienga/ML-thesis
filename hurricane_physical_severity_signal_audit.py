@@ -98,7 +98,9 @@ def parse_hurdat():
 def match_storm(row,storms):
     title=str(row.get("declarationTitle",""))
     nm=norm_name(title)
-    dt=pd.to_datetime(row.get("declarationDate"),errors="coerce")
+    dt=pd.to_datetime(row.get("declarationDate"),errors="coerce",utc=True)
+    if pd.notna(dt):
+        dt=dt.tz_convert(None)
     yr=int(dt.year) if pd.notna(dt) else int(row.get("fyDeclared",0))
     cand=storms[(storms.year>=yr-1)&(storms.year<=yr+1)].copy()
     if cand.empty:return None
