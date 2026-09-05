@@ -139,7 +139,7 @@ def parse_hurdat_points():
 
 def exact_named_match(row, storms):
     title = str(row.get("declarationTitle","")).upper()
-    dt = pd.to_datetime(row.get("declarationDate"), errors="coerce")
+    dt = pd.to_datetime(row.get("effectiveDeclarationDate"), errors="coerce")
     if pd.isna(dt):
         return None
     yr = int(dt.year)
