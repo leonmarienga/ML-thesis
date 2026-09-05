@@ -1,0 +1,32 @@
+name: Fast non-Biological baseline router
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'non_biological_baseline_router.py'
+      - '.github/workflows/non-biological-baseline-router.yml'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn catboost requests scipy
+      - name: Run fast non-Biological baseline check
+        run: python non_biological_baseline_router.py
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: non-biological-baseline-router-results
+          path: non_biological_baseline_router_results/
+          retention-days: 30
