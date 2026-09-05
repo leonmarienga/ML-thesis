@@ -41,9 +41,12 @@ LOW_NUM = [
 LOW_CAT = ["incidentType","state","expectedResourceLevel","disasterCategory","durationClass"]
 
 LOW_CONFIGS = [
-    dict(n_estimators=400,max_depth=d,min_samples_leaf=leaf,max_features=mf,
+    dict(n_estimators=150,max_depth=d,min_samples_leaf=leaf,max_features=mf,
          class_weight="balanced",random_state=42,n_jobs=-1)
-    for d in [3,4,5,None] for leaf in [1,2] for mf in [0.7,1.0]
+    for d,leaf,mf in [
+        (3,1,0.75),(4,1,0.80),(5,1,0.85),
+        (4,2,0.80),(5,2,0.85),(None,2,0.80)
+    ]
 ]
 
 TOP_WEIGHTS = ["uniform","distance"]
