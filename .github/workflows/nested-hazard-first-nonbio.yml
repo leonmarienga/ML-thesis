@@ -1,0 +1,32 @@
+name: Nested hazard-first nonbio router
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'nested_hazard_first_nonbio.py'
+      - '.github/workflows/nested-hazard-first-nonbio.yml'
+  workflow_dispatch:
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn requests catboost
+      - name: Run nested hazard-first router
+        run: python nested_hazard_first_nonbio.py
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nested-hazard-first-nonbio-results
+          path: nested_hazard_first_nonbio_results/
+          retention-days: 30
