@@ -22,23 +22,28 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pandas numpy openpyxl scikit-learn requests catboost
-      - name: Prepare archived feature inputs
-        env:
-          GH_TOKEN: \${{ github.token }}
-        run: |
-          mkdir -p recovered_gate_inputs/exposure recovered_gate_inputs/mission
-          curl -L -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/leonmarienga/ML-thesis/actions/artifacts/9853377265/zip \
-            -o exposure.zip
-          unzip -o exposure.zip -d recovered_gate_inputs/exposure
-          curl -L -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/leonmarienga/ML-thesis/actions/artifacts/9856161191/zip \
-            -o mission.zip
-          unzip -o mission.zip -d recovered_gate_inputs/mission
+
+      - name: Download archived exposure artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: declared-population-exposure-router-results
+          path: recovered_gate_inputs/exposure
+          github-token: ${{ github.token }}
+          repository: leonmarienga/ML-thesis
+          run-id: 33647372275
+
+      - name: Download archived mission feature artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: mission-composition-results
+          path: recovered_gate_inputs/mission
+          github-token: ${{ github.token }}
+          repository: leonmarienga/ML-thesis
+          run-id: 33653305090
+
       - name: Run constrained nested recovery
         run: python recover_documented_high_gates.py
+
       - name: Upload recovered gate results
         uses: actions/upload-artifact@v4
         with:
