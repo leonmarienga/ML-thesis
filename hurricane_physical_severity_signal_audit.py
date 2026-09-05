@@ -54,6 +54,8 @@ def parse_hurdat():
     storms=[]
     for url in HURDAT_URLS:
         r=requests.get(url,timeout=180,headers={"User-Agent":"ML-thesis-research/1.0"})
+        if r.status_code == 404:
+            continue
         r.raise_for_status()
         lines=[x.strip() for x in r.text.splitlines() if x.strip()]
         i=0
