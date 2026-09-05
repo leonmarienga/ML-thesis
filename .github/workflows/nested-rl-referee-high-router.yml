@@ -1,0 +1,32 @@
+name: Nested RL referee high router
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'nested_rl_referee_high_router.py'
+      - '.github/workflows/nested-rl-referee-high-router.yml'
+  workflow_dispatch:
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn requests catboost
+      - name: Run nested RL referee
+        run: python nested_rl_referee_high_router.py
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nested-rl-referee-high-router-results
+          path: nested_rl_referee_high_router_results/
+          retention-days: 30
