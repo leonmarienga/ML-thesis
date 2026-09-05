@@ -1,0 +1,32 @@
+name: Hurricane physical severity signal audit
+
+on:
+  push:
+    branches:
+      - experiment/mission-composition-20260829
+    paths:
+      - 'hurricane_physical_severity_signal_audit.py'
+      - '.github/workflows/hurricane-physical-severity-signal-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy openpyxl scikit-learn requests catboost
+      - name: Run hurricane physical severity audit
+        run: python hurricane_physical_severity_signal_audit.py
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: hurricane-physical-severity-signal-audit-results
+          path: hurricane_physical_severity_signal_audit_results/
+          retention-days: 30
