@@ -146,7 +146,7 @@ def exact_named_match(row, storms):
     cand = storms[(storms.year >= yr-1) & (storms.year <= yr+1)].copy()
     if cand.empty:
         return None
-    exact = cand[cand.storm_name.map(lambda s: re.search(rf"\b{re.escape(str(s))}\b", title) is not None)]
+    exact = cand[cand.storm_name.map(lambda s: str(s).upper().strip() in title)]
     if exact.empty:
         return None
     exact = exact.assign(dd=(pd.to_datetime(exact.end)-dt).abs().dt.days)
