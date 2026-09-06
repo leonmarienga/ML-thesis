@@ -353,7 +353,8 @@ def main():
         "key_cases":key.replace({np.nan:None}).to_dict(orient="records"),
         "source":{
             "article":"ORNL EAGLE-I / Figshare 24237376",
-            "year":YEAR,\n            "annual_file_id":EAGLE_FILE_ID,
+            "year":YEAR,
+            "annual_file_id":EAGLE_FILE_ID,
             "mcc_file_id":42547708
         },
         "matching":{
