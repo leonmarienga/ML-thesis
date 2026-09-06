@@ -4,9 +4,9 @@ Target-blind 2017 EAGLE-I outage diagnostic.
 
 Purpose
 -------
-Test whether directly observed electricity outage scale provides the missing
-infrastructure-severity signal for FEMA 4671 (Hurricane Fiona) without
-hand-entering Fiona-specific facts.
+Validate whether directly observed electricity outage scale separates the 2017
+catastrophic Mission Assignment outcomes (especially Maria PR) from Harvey,
+Irma, and other lower-funded disasters without using funding during matching.
 
 All FEMA disasters beginning in calendar 2017 are enriched BEFORE funding is
 inspected. Matching uses only state + incident time window.
@@ -324,7 +324,7 @@ def main():
     timeline.to_csv(OUT/"eaglei_timelines_all_2022_fema.csv",index=False)
     view.to_csv(OUT/"eaglei_2017_fema_diagnostic.csv",index=False)
 
-    key = view[view["disasterNumber"].isin([4671,4673,4652,4663,4670,4672])].copy()
+    key = view[view["disasterNumber"].isin([4332,4335,4337,4339,4340,4344])].copy()
     key.to_csv(OUT/"key_2022_cases.csv",index=False)
 
     summary = {
