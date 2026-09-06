@@ -320,12 +320,12 @@ def main():
         right=False
     ).astype(str)
 
-    features.to_csv(OUT/"eaglei_features_all_2022_fema.csv",index=False)
-    timeline.to_csv(OUT/"eaglei_timelines_all_2022_fema.csv",index=False)
+    features.to_csv(OUT/"eaglei_features_all_2024_fema.csv",index=False)
+    timeline.to_csv(OUT/"eaglei_timelines_all_2024_fema.csv",index=False)
     view.to_csv(OUT/"eaglei_2024_fema_diagnostic.csv",index=False)
 
     key = view[view["disasterNumber"].isin([4827,4830])].copy()
-    key.to_csv(OUT/"key_2022_cases.csv",index=False)
+    key.to_csv(OUT/"key_2024_cases.csv",index=False)
 
     summary = {
         "candidate_rows_enriched_before_target_inspection":int(len(candidates)),
