@@ -1,0 +1,34 @@
+name: External severity ablation
+
+on:
+  push:
+    branches:
+      - external-severity-ablation
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: external-severity-ablation
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow
+
+      - name: Run external severity ablation
+        run: python analysis/external_severity_ablation.py
+
+      - name: Upload audit artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-severity-ablation
+          path: audit_outputs/external_severity/
