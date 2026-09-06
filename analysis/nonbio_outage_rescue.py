@@ -339,6 +339,11 @@ def main():
             ).iloc[0]
             z, med, mad, nref = modified_z(value, ref)
 
+            coverage_val = pd.to_numeric(
+                pd.Series([r.get("eaglei_coverage")]), errors="coerce"
+            ).iloc[0]
+            coverage_int = int(coverage_val) if pd.notna(coverage_val) else 0
+
             rescue = (
                 r["incidentType"] == "Hurricane"
                 and baseline != "500M+"
@@ -356,11 +361,6 @@ def main():
                 and np.isfinite(z)
                 and z > 3.5
             )
-
-            coverage_val = pd.to_numeric(
-                pd.Series([r.get("eaglei_coverage")]), errors="coerce"
-            ).iloc[0]
-            coverage_int = int(coverage_val) if pd.notna(coverage_val) else 0
 
             all_rows.append({
                 "disasterNumber": dn,
