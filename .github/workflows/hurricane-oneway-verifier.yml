@@ -1,0 +1,33 @@
+name: Hurricane one-way verifier
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/hurricane_oneway_verifier.py"
+      - ".github/workflows/hurricane-oneway-verifier.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow
+      - name: Run hurricane verifier
+        run: python analysis/hurricane_oneway_verifier.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hurricane-oneway-verifier
+          path: audit_outputs/hurricane_oneway_verifier/
