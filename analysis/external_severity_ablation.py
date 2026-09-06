@@ -67,6 +67,7 @@ SESSION.headers.update({"User-Agent": "thesis-external-severity-audit/1.0"})
 
 NOAA_INDEX = "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/"
 NHC_HURDAT_DIR = "https://www.nhc.noaa.gov/data/hurdat/"
+FEMA_DECL_URL = "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries"
 CALFIRE_PERIMETER_QUERY = (
     "https://services1.arcgis.com/jUJYIo9tSA7EHvfZ/arcgis/rest/services/"
     "California_Historic_Fire_Perimeters/FeatureServer/0/query"
@@ -198,6 +199,31 @@ def haversine_km(lat1, lon1, lat2, lon2) -> float:
     return 2*r*math.asin(math.sqrt(a))
 
 
+
+def load_fema_declaration_titles(master: pd.DataFrame) -> Dict[int, str]:
+    """Fetch official FEMA declaration titles for tropical-cyclone rows only."""
+    cache = CACHE / "fema_tropical_declaration_titles.json"
+    if cache.exists():
+        raw = json.loads(cache.read_text(encoding="utf-8"))
+        return {int(k): str(v) for k, v in raw.items()}
+
+    ids = sorted(
+        master.loc[master["incidentType"].isin(TROPICAL_TYPES), "disasterNumber"]
+        .dropna().astype(int).unique().tolist()
+    )
+    out: Dict[int, str] = {}
+    for i, dn in enumerate(ids, 1):
+        params = {"$filter": f"disasterNumber eq {dn}", "$top": 1}
+        js = get(FEMA_DECL_URL, params=params).json()
+        rows = js.get("DisasterDeclarationsSummaries", [])
+        title = str(rows[0].get("declarationTitle", "")) if rows else ""
+        out[int(dn)] = title
+        if i % 25 == 0:
+            print(f"FEMA declaration titles {i}/{len(ids)}")
+    cache.write_text(json.dumps(out, indent=2), encoding="utf-8")
+    return out
+
+
 # -------------------------- NHC HURDAT2 --------------------------
 
 def discover_hurdat_urls() -> List[str]:
@@ -273,7 +299,7 @@ def load_hurdat() -> Dict[str, dict]:
     return storms
 
 
-def cyclone_features_for_row(row: pd.Series, storms: Dict[str, dict]) -> Tuple[dict, dict]:
+def cyclone_features_for_row(row: pd.Series, storms: Dict[str, dict], declaration_title: str = "") -> Tuple[dict, dict]:
     if row["incidentType"] not in TROPICAL_TYPES or row["state"] not in STATE_CENTROIDS:
         return {}, {}
     begin = pd.to_datetime(row["incidentBeginDate"], errors="coerce", utc=True)
@@ -300,13 +326,24 @@ def cyclone_features_for_row(row: pd.Series, storms: Dict[str, dict]) -> Tuple[d
         if min_d > max_match_d:
             continue
         overlap_hours = max(0.0, (overlap_end - overlap_start).total_seconds()/3600)
-        score = overlap_hours - min_d/20.0
-        candidates.append((score, min_d, s, d))
+        temporal_gap_days = float((tr["date"] - begin).abs().dt.total_seconds().min() / 86400.0)
+        title_upper = (declaration_title or "").upper()
+        name_match = bool(s["name"] and re.search(rf"\b{re.escape(s['name'])}\b", title_upper))
+        # Name identity dominates. If a title has no usable storm name, prefer
+        # storms closest to the FEMA incident-begin date, then geography.
+        score = (10000.0 if name_match else 0.0) + overlap_hours - min_d/20.0 - temporal_gap_days*100.0
+        candidates.append((score, min_d, s, d, name_match, temporal_gap_days))
     if not candidates:
         return {}, {"nhc_match": "none"}
 
+    # If the official FEMA title identifies one of the candidate storm names,
+    # reject differently named candidates entirely.
+    if declaration_title:
+        named = [x for x in candidates if x[4]]
+        if named:
+            candidates = named
     candidates.sort(key=lambda x: x[0], reverse=True)
-    score, min_d, s, d = candidates[0]
+    score, min_d, s, d, name_match, temporal_gap_days = candidates[0]
     tr = s["track"].copy()
     closest_i = int(np.nanargmin(d))
     closest = tr.iloc[closest_i]
@@ -332,6 +369,9 @@ def cyclone_features_for_row(row: pd.Series, storms: Dict[str, dict]) -> Tuple[d
         "nhc_storm_id": s["id"],
         "nhc_storm_name": s["name"],
         "nhc_match_score": score,
+        "nhc_name_match": bool(name_match),
+        "nhc_temporal_gap_days": float(temporal_gap_days),
+        "fema_declaration_title": declaration_title,
         "nhc_min_distance_km": min_d,
     }
     return feat, audit
@@ -417,7 +457,10 @@ def noaa_features_for_row(row: pd.Series, noaa: pd.DataFrame, storm_name: Option
         ).str.upper()
         named = narrative.str.contains(re.escape(storm_name.upper()), regex=True, na=False)
         core = c["EVENT_TYPE"].isin({"Hurricane (Typhoon)", "Tropical Storm", "Storm Surge/Tide"})
-        c = c[named | core].copy()
+        # Prefer explicit storm-name evidence whenever the Storm Events
+        # narratives provide it. Only fall back to generic core tropical rows
+        # when no named rows exist for that FEMA state/window.
+        c = c[named].copy() if named.any() else c[core].copy()
 
     if c.empty:
         return {}, {"noaa_match": "none", "noaa_event_count": 0}
@@ -565,6 +608,9 @@ def calfire_features_for_row(row: pd.Series, per: pd.DataFrame, dins: pd.DataFra
 # -------------------------- Enrichment --------------------------
 
 def build_external(master: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    print("Loading official FEMA declaration titles...")
+    declaration_titles = load_fema_declaration_titles(master)
+
     print("Loading HURDAT2...")
     storms = load_hurdat()
     print(f"HURDAT2 storms: {len(storms):,}")
@@ -589,7 +635,8 @@ def build_external(master: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
     features = []
     audits = []
     for i, row in master.iterrows():
-        nhc_f, nhc_a = cyclone_features_for_row(row, storms)
+        declaration_title = declaration_titles.get(int(row["disasterNumber"]), "")
+        nhc_f, nhc_a = cyclone_features_for_row(row, storms, declaration_title)
         storm_name = nhc_a.get("nhc_storm_name")
 
         state_name = STATE_NAMES.get(row["state"])
