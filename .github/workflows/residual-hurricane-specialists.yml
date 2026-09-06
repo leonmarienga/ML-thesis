@@ -1,0 +1,33 @@
+name: Residual hurricane specialists
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/residual_hurricane_specialists.py"
+      - ".github/workflows/residual-hurricane-specialists.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow
+      - name: Run residual hurricane specialists
+        run: python analysis/residual_hurricane_specialists.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: residual-hurricane-specialists
+          path: audit_outputs/residual_hurricane_specialists/
