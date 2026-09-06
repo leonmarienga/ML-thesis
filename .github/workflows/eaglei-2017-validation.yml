@@ -1,0 +1,37 @@
+name: EAGLE-I 2017 validation
+
+on:
+  push:
+    branches:
+      - external-severity-ablation
+    paths:
+      - "analysis/eaglei_2017_diagnostic.py"
+      - ".github/workflows/eaglei-2017-validation.yml"
+  workflow_dispatch:
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: external-severity-ablation
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy requests openpyxl
+
+      - name: Run 2017 EAGLE-I validation
+        run: python analysis/eaglei_2017_diagnostic.py
+
+      - name: Upload validation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eaglei-2017-validation
+          path: audit_outputs/eaglei_2017/
