@@ -1,0 +1,30 @@
+name: Biological specialist audit
+
+on:
+  push:
+    branches:
+      - biological-specialist-audit
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: biological-specialist-audit
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow
+      - name: Run biological specialist audit
+        run: python analysis/biological_specialist_audit.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: biological-specialist-audit
+          path: audit_outputs/biological_specialist/
