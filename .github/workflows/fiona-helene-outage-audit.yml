@@ -1,0 +1,33 @@
+name: Fiona Helene outage audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/fiona_helene_outage_audit.py"
+      - ".github/workflows/fiona-helene-outage-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy requests openpyxl duckdb
+      - name: Run Fiona vs Helene outage audit
+        run: python analysis/fiona_helene_outage_audit.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fiona-helene-outage-audit
+          path: audit_outputs/fiona_helene_outages/
