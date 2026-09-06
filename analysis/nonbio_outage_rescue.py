@@ -343,8 +343,7 @@ def main():
                 r["incidentType"] == "Hurricane"
                 and baseline != "500M+"
                 and int(r["initial_usace_esf3_dfa_count"]) >= 1
-                and pd.notna(r.get("eaglei_coverage"))
-                and int(r.get("eaglei_coverage", 0)) == 1
+                and coverage_int == 1
                 and np.isfinite(z)
                 and z > 3.5
             )
@@ -353,11 +352,15 @@ def main():
                 r["incidentType"] == "Hurricane"
                 and lower_outage != "500M+"
                 and int(r["initial_usace_esf3_dfa_count"]) >= 1
-                and pd.notna(r.get("eaglei_coverage"))
-                and int(r.get("eaglei_coverage", 0)) == 1
+                and coverage_int == 1
                 and np.isfinite(z)
                 and z > 3.5
             )
+
+            coverage_val = pd.to_numeric(
+                pd.Series([r.get("eaglei_coverage")]), errors="coerce"
+            ).iloc[0]
+            coverage_int = int(coverage_val) if pd.notna(coverage_val) else 0
 
             all_rows.append({
                 "disasterNumber": dn,
@@ -367,7 +370,7 @@ def main():
                 "totalObligatedFunding": float(r["totalObligatedFunding"]),
                 "actual_band": r["actual_band"],
                 "mechanism_count": int(r["initial_usace_esf3_dfa_count"]),
-                "eaglei_coverage": int(r.get("eaglei_coverage", 0) or 0),
+                "eaglei_coverage": coverage_int,
                 "customer_hours_per_customer": (
                     float(value) if np.isfinite(value) else np.nan
                 ),
@@ -406,7 +409,8 @@ def main():
     anomaly_rows = []
     hfull = hurricane_ref.copy()
     for _, r in hfull.iterrows():
-        if int(r.get("eaglei_coverage", 0) or 0) != 1:
+        cov = pd.to_numeric(pd.Series([r.get("eaglei_coverage")]), errors="coerce").iloc[0]
+        if pd.isna(cov) or int(cov) != 1:
             continue
         fy = int(r["fyDeclared"])
         ref = hfull[
