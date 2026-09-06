@@ -1,0 +1,33 @@
+name: Nested mega mission override
+
+on:
+  push:
+    branches:
+      - external-severity-ablation
+    paths:
+      - "analysis/nested_mega_override.py"
+      - ".github/workflows/nested-mega-override.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: external-severity-ablation
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow
+      - name: Run nested override
+        run: python analysis/nested_mega_override.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nested-mega-override
+          path: audit_outputs/nested_mega_override/
