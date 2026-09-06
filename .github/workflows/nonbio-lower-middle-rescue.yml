@@ -1,0 +1,33 @@
+name: Nonbio lower-middle outage rescue
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_lower_middle_rescue.py"
+      - ".github/workflows/nonbio-lower-middle-rescue.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow duckdb
+      - name: Run lower-middle rescue audit
+        run: python analysis/nonbio_lower_middle_rescue.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-lower-middle-rescue
+          path: audit_outputs/nonbio_lower_middle_rescue/
