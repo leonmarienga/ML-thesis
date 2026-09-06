@@ -368,7 +368,7 @@ def main():
     }
     (OUT/f"eaglei_{YEAR}_summary.json").write_text(json.dumps(summary,indent=2,default=str),encoding="utf-8")
 
-    print(f"\\nHIGH-VALUE CASES {YEAR}")
+    print(f"\nHIGH-VALUE CASES {YEAR}")
     show_cols=[
         "disasterNumber","state","incidentType","totalObligatedFunding",
         "eaglei_peak_customers_out","eaglei_state_customers","eaglei_peak_outage_fraction",
