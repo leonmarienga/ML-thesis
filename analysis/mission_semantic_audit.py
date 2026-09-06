@@ -342,7 +342,8 @@ def normalize_model_frame(X: pd.DataFrame) -> pd.DataFrame:
 
 
 def prep_pipeline(X: pd.DataFrame, model):
-    cats = [c for c in X.columns if X[c].dtype == "object"]
+    # pandas 2.x may use StringDtype instead of object for text columns.
+    cats = [c for c in X.columns if not pd.api.types.is_numeric_dtype(X[c].dtype)]
     nums = [c for c in X.columns if c not in cats]
     pre = ColumnTransformer(
         [
