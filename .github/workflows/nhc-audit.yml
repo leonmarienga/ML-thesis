@@ -1,0 +1,29 @@
+name: NHC hurricane enrichment audit
+
+on:
+  push:
+    branches:
+      - nhc-enrichment-audit
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run target-blind NHC audit
+        run: python scripts/nhc_match_audit.py
+      - name: Show summary
+        if: always()
+        run: |
+          if [ -f nhc_audit/summary.json ]; then cat nhc_audit/summary.json; fi
+      - name: Upload audit outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nhc-hurricane-match-audit
+          path: nhc_audit/
+          if-no-files-found: error
