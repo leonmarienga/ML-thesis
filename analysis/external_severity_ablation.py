@@ -577,12 +577,36 @@ def build_external(master: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
     per, dins = load_calfire()
     print(f"CAL FIRE perimeters: {len(per):,}; DINS structures: {len(dins):,}")
 
+    # Index NOAA once by state + year. This preserves the exact matching rules
+    # but avoids scanning the complete 2010-2024 table for every FEMA row.
+    noaa = noaa.copy()
+    noaa["_event_year"] = noaa["begin_dt"].dt.year
+    noaa_groups = {
+        (str(state).upper(), int(year)): g.copy()
+        for (state, year), g in noaa.dropna(subset=["_event_year"]).groupby(["STATE", "_event_year"])
+    }
+
     features = []
     audits = []
     for i, row in master.iterrows():
         nhc_f, nhc_a = cyclone_features_for_row(row, storms)
         storm_name = nhc_a.get("nhc_storm_name")
-        noaa_f, noaa_a = noaa_features_for_row(row, noaa, storm_name)
+
+        state_name = STATE_NAMES.get(row["state"])
+        begin_dt = pd.to_datetime(row["incidentBeginDate"], errors="coerce", utc=True)
+        end_dt = pd.to_datetime(row["incidentEndDate"], errors="coerce", utc=True)
+        years = set()
+        if pd.notna(begin_dt):
+            years.add(int(begin_dt.year))
+        if pd.notna(end_dt):
+            years.add(int(end_dt.year))
+        local_parts = [
+            noaa_groups[(state_name, y)]
+            for y in years
+            if state_name is not None and (state_name, y) in noaa_groups
+        ]
+        local_noaa = pd.concat(local_parts, ignore_index=True) if local_parts else noaa.iloc[0:0]
+        noaa_f, noaa_a = noaa_features_for_row(row, local_noaa, storm_name)
         fire_f, fire_a = calfire_features_for_row(row, per, dins)
         rec = {"disasterNumber": int(row["disasterNumber"])}
         rec.update(nhc_f); rec.update(noaa_f); rec.update(fire_f)
