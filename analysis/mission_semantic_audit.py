@@ -332,8 +332,17 @@ def target_reconstruction(master: pd.DataFrame, ma: pd.DataFrame, latest: pd.Dat
     return z
 
 
+def normalize_model_frame(X: pd.DataFrame) -> pd.DataFrame:
+    """Make pandas booleans sklearn-1.8-safe without changing their information."""
+    X = X.copy()
+    for c in X.columns:
+        if pd.api.types.is_bool_dtype(X[c].dtype):
+            X[c] = X[c].astype("int8")
+    return X
+
+
 def prep_pipeline(X: pd.DataFrame, model):
-    cats = [c for c in X.columns if X[c].dtype == "object" or str(X[c].dtype).startswith("bool")]
+    cats = [c for c in X.columns if X[c].dtype == "object"]
     nums = [c for c in X.columns if c not in cats]
     pre = ColumnTransformer(
         [
@@ -358,8 +367,8 @@ def loo_classification(df: pd.DataFrame, features: List[str], target: pd.Series,
 
     for i in range(len(df)):
         train = np.arange(len(df)) != i
-        Xtr = df.iloc[train][features].copy()
-        Xte = df.iloc[[i]][features].copy()
+        Xtr = normalize_model_frame(df.iloc[train][features])
+        Xte = normalize_model_frame(df.iloc[[i]][features])
         ytr = y[train]
 
         if model_kind == "logistic":
@@ -400,8 +409,8 @@ def loo_regression(df: pd.DataFrame, features: List[str]) -> Dict:
     pred_log = np.zeros(len(df))
     for i in range(len(df)):
         train = np.arange(len(df)) != i
-        Xtr = df.iloc[train][features].copy()
-        Xte = df.iloc[[i]][features].copy()
+        Xtr = normalize_model_frame(df.iloc[train][features])
+        Xte = normalize_model_frame(df.iloc[[i]][features])
         model = RandomForestRegressor(
             n_estimators=600,
             random_state=142 + i,
