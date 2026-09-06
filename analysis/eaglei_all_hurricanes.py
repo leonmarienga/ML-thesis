@@ -26,6 +26,11 @@ OUT.mkdir(parents=True,exist_ok=True)
 
 ARTICLE="https://api.figshare.com/v2/articles/24237376"
 MCC_FALLBACK="https://ndownloader.figshare.com/files/42547708"
+EAGLEI_FILE_IDS={
+    2014:42547717, 2015:42547822, 2016:42547825, 2017:42547828,
+    2018:42547879, 2019:42547885, 2020:42547894, 2021:42547891,
+    2022:42547897, 2023:44574907, 2024:53581661,
+}
 
 STATE_NAMES={
 "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado",
@@ -56,17 +61,10 @@ METRIC_COLS=[
 ]
 
 def figshare_files():
+    # Immutable annual file IDs verified against the public Figshare record.
     js=requests.get(ARTICLE,timeout=120).json()
-    out={}
-    mcc=None
-    for f in js.get("files",[]):
-        name=f.get("name","")
-        m=re.fullmatch(r"eaglei_outages_(20\\d{2})\\.csv",name)
-        if m:
-            out[int(m.group(1))]=f.get("download_url") or f"https://ndownloader.figshare.com/files/{f['id']}"
-        if name=="MCC.csv":
-            mcc=f.get("download_url") or f"https://ndownloader.figshare.com/files/{f['id']}"
-    return out,mcc or MCC_FALLBACK,js
+    out={y:f"https://ndownloader.figshare.com/files/{fid}" for y,fid in EAGLEI_FILE_IDS.items()}
+    return out,MCC_FALLBACK,js
 
 def load_mcc(url):
     p=OUT/"MCC.csv"
