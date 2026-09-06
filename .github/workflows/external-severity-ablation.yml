@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - external-severity-ablation
+    paths:
+      - "analysis/external_severity_ablation.py"
+      - ".github/workflows/external-severity-ablation.yml"
   workflow_dispatch:
 
 jobs:
