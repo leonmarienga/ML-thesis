@@ -80,11 +80,25 @@ def load_mcc(url):
 
 def scan_year(url, states, start, end):
     con=duckdb.connect()
+    # Annual EAGLE-I releases have minor schema drift. Most use
+    # customers_out; the 2023 release exposes the outage value as sum.
+    schema=con.execute(
+        "DESCRIBE SELECT * FROM read_csv_auto(?,header=true,all_varchar=true,sample_size=200000)",
+        [url],
+    ).fetchall()
+    cols={row[0] for row in schema}
+    if "customers_out" in cols:
+        value_col="customers_out"
+    elif "sum" in cols:
+        value_col="sum"
+    else:
+        raise RuntimeError(f"No outage-value column found. Columns={sorted(cols)}")
+
     placeholders=",".join(["?"]*len(states))
     q=f"""
     SELECT CAST(run_start_time AS VARCHAR) run_start_time,
            CAST(state AS VARCHAR) state,
-           SUM(TRY_CAST(customers_out AS DOUBLE)) state_out
+           SUM(TRY_CAST({value_col} AS DOUBLE)) state_out
     FROM read_csv_auto(?,header=true,all_varchar=true,sample_size=200000)
     WHERE state IN ({placeholders})
       AND TRY_CAST(run_start_time AS TIMESTAMP) >= ?
