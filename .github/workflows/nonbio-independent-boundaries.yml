@@ -1,0 +1,27 @@
+name: Nonbio independent boundary audit
+on:
+  push:
+    branches: [nonbiological-fire-verifier]
+    paths:
+      - "analysis/nonbio_independent_boundaries.py"
+      - ".github/workflows/nonbio-independent-boundaries.yml"
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow duckdb
+      - run: python analysis/nonbio_independent_boundaries.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-independent-boundaries
+          path: audit_outputs/nonbio_independent_boundaries/
