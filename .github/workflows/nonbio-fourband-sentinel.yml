@@ -1,0 +1,33 @@
+name: Nonbio four-band sentinel audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_fourband_sentinel.py"
+      - ".github/workflows/nonbio-fourband-sentinel.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow duckdb
+      - name: Run four-band sentinel audit
+        run: python analysis/nonbio_fourband_sentinel.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-fourband-sentinel
+          path: audit_outputs/nonbio_fourband_sentinel/
