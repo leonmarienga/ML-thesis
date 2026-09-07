@@ -164,7 +164,7 @@ def main():
 
     variants={}
     for feats_name,feats in [("current19",current),("semantics",semfeat)]:
-        for kind in ["ridge","rf","extra","gbr","hist"]:
+        for kind in ["ridge","rf","extra","gbr"]:
             variants[f"{feats_name}_{kind}"]=(feats,kind)
     rows={k:[] for k in variants}
     oracle={k:[] for k in variants}
