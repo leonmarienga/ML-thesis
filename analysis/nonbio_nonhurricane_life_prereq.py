@@ -573,7 +573,11 @@ def main():
 
     summary = {
         "mission_nonfinancial_sha256": ma_hash,
-        "response_features": response_features,\n        "prerequisite_features": [\n            "sem_priority_life_sustaining_count",\n            "sem_priority_life_sustaining_share",\n        ],
+        "response_features": response_features,
+        "prerequisite_features": [
+            "sem_priority_life_sustaining_count",
+            "sem_priority_life_sustaining_share",
+        ],
         "results": results,
         "development_note": (
             "The life-sustaining prerequisite was motivated by a prior exploratory "
