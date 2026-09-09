@@ -555,7 +555,7 @@ def main():
 
     base_fn = {
         x["disasterNumber"]
-        for x in results["accepted_802"]["high_false_negatives"]
+        for x in results["accepted_807"]["high_false_negatives"]
     }
     for variant in variants[1:]:
         vfn = {
