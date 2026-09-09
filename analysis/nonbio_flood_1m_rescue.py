@@ -37,7 +37,7 @@ from mission_semantic_audit import (
 )
 from nonbio_all_ranges import funding_band, valid_cols
 from nonbio_low_thresholds import (
-    inner_binary_oof, choose_threshold, fit_binary,
+    inner_binary_oof, choose_threshold as choose_binary_threshold, fit_binary,
     positive_proba, low_metrics,
 )
 from nonbio_cross_1m_rescue import (
@@ -77,7 +77,7 @@ def fit_outer_base(train, semfeat, outer_fy):
         train, semfeat, stage=1, kind="rf",
         seedbase=110000 + outer_fy * 10,
     )
-    s1_th, _ = choose_threshold(s1_oof, "macro_f1")
+    s1_th, _ = choose_binary_threshold(s1_oof, "macro_f1")
 
     y1 = (low_train["target_clean"] >= 100_000).astype(int)
     s1 = fit_binary(
@@ -223,7 +223,7 @@ def score_variant(inner, threshold):
     }
 
 
-def choose_threshold(inner, guard=None):
+def choose_rescue_threshold(inner, guard=None):
     probs = pd.to_numeric(
         inner["flood_prob"], errors="coerce"
     ).dropna().to_numpy(float)
@@ -318,7 +318,7 @@ def main():
         for name, guard in variants.items():
             if name == "base":
                 continue
-            selected[name] = choose_threshold(inner, guard)
+            selected[name] = choose_rescue_threshold(inner, guard)
 
         s1, s1_th, reg = fit_outer_base(
             train, semfeat, int(outer_fy)
