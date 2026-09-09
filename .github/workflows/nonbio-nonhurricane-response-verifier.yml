@@ -1,0 +1,32 @@
+name: Nonbio non-Hurricane response verifier audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_nonhurricane_response_verifier.py"
+      - ".github/workflows/nonbio-nonhurricane-response-verifier.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl pyarrow duckdb
+      - name: Run pooled non-Hurricane response verifier
+        run: python analysis/nonbio_nonhurricane_response_verifier.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-nonhurricane-response-verifier
+          path: audit_outputs/nonbio_nonhurricane_response_verifier/
