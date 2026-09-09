@@ -1,0 +1,32 @@
+name: Nonbio cross 1M rescue audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_cross_1m_rescue.py"
+      - ".github/workflows/nonbio-cross-1m-rescue.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl
+      - name: Run cross-$1M rescue audit
+        run: python analysis/nonbio_cross_1m_rescue.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-cross-1m-rescue
+          path: audit_outputs/nonbio_cross_1m_rescue/
