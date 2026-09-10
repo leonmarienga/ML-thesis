@@ -1,0 +1,44 @@
+name: Nonbio 815 residual boundary audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_815_residual_boundary_audit.py"
+      - ".github/workflows/nonbio-815-residual-boundary-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 815 artifact
+        run: |
+          mkdir -p audit_inputs/residual815/accepted
+          gh run download 34445940427 \
+            -n nonbio-hurricane-rf-prediction-integration \
+            -D audit_inputs/residual815/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run accepted 815 residual boundary audit
+        run: python analysis/nonbio_815_residual_boundary_audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-815-residual-boundary-audit
+          path: audit_outputs/nonbio_815_residual_boundary_audit/
