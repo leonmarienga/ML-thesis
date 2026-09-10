@@ -1,0 +1,42 @@
+name: Nonbio 815 rare-hazard operational-floor audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_815_rare_hazard_floor.py"
+      - ".github/workflows/nonbio-815-rare-hazard-floor.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 815 artifact
+        run: |
+          mkdir -p audit_inputs/post815_rare_floor/accepted
+          gh run download 34445940427 \
+            -n nonbio-hurricane-rf-prediction-integration \
+            -D audit_inputs/post815_rare_floor/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-815 rare-hazard floor audit
+        run: python analysis/nonbio_815_rare_hazard_floor.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-815-rare-hazard-floor
+          path: audit_outputs/nonbio_815_rare_hazard_floor/
