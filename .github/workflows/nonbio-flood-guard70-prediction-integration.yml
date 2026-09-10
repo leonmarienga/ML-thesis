@@ -1,0 +1,48 @@
+name: Nonbio Flood guard70 prediction integration
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_flood_guard70_prediction_integration.py"
+      - ".github/workflows/nonbio-flood-guard70-prediction-integration.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 812 artifact
+        run: |
+          mkdir -p audit_inputs/flood_guard70_integration/accepted
+          gh run download 34339229661 \
+            -n nonbio-nonhurricane-life-prereq \
+            -D audit_inputs/flood_guard70_integration/accepted
+      - name: Download strict Flood guard70 artifact
+        run: |
+          mkdir -p audit_inputs/flood_guard70_integration/flood
+          gh run download 34360664410 \
+            -n nonbio-flood-1m-rescue \
+            -D audit_inputs/flood_guard70_integration/flood
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas
+      - name: Run deterministic prediction integration
+        run: python analysis/nonbio_flood_guard70_prediction_integration.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-flood-guard70-prediction-integration
+          path: audit_outputs/flood_guard70_prediction_integration/
