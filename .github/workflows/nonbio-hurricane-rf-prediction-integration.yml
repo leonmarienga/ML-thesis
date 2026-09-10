@@ -1,0 +1,48 @@
+name: Nonbio Hurricane RF prediction integration
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_hurricane_rf_prediction_integration.py"
+      - ".github/workflows/nonbio-hurricane-rf-prediction-integration.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 814 artifact
+        run: |
+          mkdir -p audit_inputs/hurricane_rf_integration/accepted
+          gh run download 34442966733 \
+            -n nonbio-storm-rf-prediction-integration \
+            -D audit_inputs/hurricane_rf_integration/accepted
+      - name: Download Hurricane RF artifact
+        run: |
+          mkdir -p audit_inputs/hurricane_rf_integration/hurricane
+          gh run download 34443201744 \
+            -n nonbio-hurricane-1m-rescue \
+            -D audit_inputs/hurricane_rf_integration/hurricane
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas
+      - name: Run deterministic Hurricane integration
+        run: python analysis/nonbio_hurricane_rf_prediction_integration.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-hurricane-rf-prediction-integration
+          path: audit_outputs/hurricane_rf_prediction_integration/
