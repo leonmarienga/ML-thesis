@@ -1,0 +1,48 @@
+name: Nonbio Severe Storm RF prediction integration
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_storm_rf_prediction_integration.py"
+      - ".github/workflows/nonbio-storm-rf-prediction-integration.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 813 artifact
+        run: |
+          mkdir -p audit_inputs/storm_rf_integration/accepted
+          gh run download 34437863627 \
+            -n nonbio-flood-guard70-prediction-integration \
+            -D audit_inputs/storm_rf_integration/accepted
+      - name: Download Severe Storm RF artifact
+        run: |
+          mkdir -p audit_inputs/storm_rf_integration/storm
+          gh run download 34438034102 \
+            -n nonbio-severe-storm-1m-rescue \
+            -D audit_inputs/storm_rf_integration/storm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas
+      - name: Run deterministic Severe Storm integration
+        run: python analysis/nonbio_storm_rf_prediction_integration.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-storm-rf-prediction-integration
+          path: audit_outputs/storm_rf_prediction_integration/
