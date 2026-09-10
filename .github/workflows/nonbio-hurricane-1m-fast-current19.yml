@@ -1,0 +1,40 @@
+name: Nonbio Hurricane 1M fast current19 cross-check
+
+on:
+  push:
+    branches: [nonbiological-fire-verifier]
+    paths:
+      - 'analysis/nonbio_hurricane_1m_fast_current19.py'
+      - '.github/workflows/nonbio-hurricane-1m-fast-current19.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 814 artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p audit_inputs/hurricane_fast/accepted
+          gh run download 34442966733 \
+            -n nonbio-storm-rf-prediction-integration \
+            -D audit_inputs/hurricane_fast/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install pandas numpy scikit-learn openpyxl
+      - name: Run fast Hurricane current19 cross-check
+        run: python analysis/nonbio_hurricane_1m_fast_current19.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-hurricane-1m-fast-current19
+          path: audit_outputs/nonbio_hurricane_1m_fast_current19/
