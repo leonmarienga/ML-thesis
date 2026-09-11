@@ -34,6 +34,18 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Patch reporting-only root_actual_high field
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("analysis/nonbio_815_rare_hazard_floor.py")
+          s = p.read_text(encoding="utf-8")
+          old = '''    if len(model) != 912:\n        raise AssertionError(f"Expected 912 merged rows, got {len(model)}")\n\n    candidate_pred = {'''
+          new = '''    if len(model) != 912:\n        raise AssertionError(f"Expected 912 merged rows, got {len(model)}")\n    model["root_actual_high"] = (model["target_clean"] >= HIGH_CUTOFF).astype(int)\n\n    candidate_pred = {'''
+          if old not in s:
+              raise SystemExit("expected patch anchor not found")
+          p.write_text(s.replace(old, new, 1), encoding="utf-8")
+          PY
       - name: Run post-815 rare-hazard floor audit
         run: python analysis/nonbio_815_rare_hazard_floor.py
       - uses: actions/upload-artifact@v4
