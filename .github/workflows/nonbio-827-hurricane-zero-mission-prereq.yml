@@ -1,0 +1,42 @@
+name: Nonbio 827 Hurricane zero-mission prerequisite
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_827_hurricane_zero_mission_prereq.py"
+      - ".github/workflows/nonbio-827-hurricane-zero-mission-prereq.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 827 artifact
+        run: |
+          mkdir -p audit_inputs/post827_hurricane_zero_mission/accepted
+          gh run download 34700638786 \
+            -n nonbio-826-fire-duration-floor \
+            -D audit_inputs/post827_hurricane_zero_mission/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-827 Hurricane zero-mission prerequisite audit
+        run: python analysis/nonbio_827_hurricane_zero_mission_prereq.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-827-hurricane-zero-mission-prereq
+          path: audit_outputs/nonbio_827_hurricane_zero_mission_prereq/
