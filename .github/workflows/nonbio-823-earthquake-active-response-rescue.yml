@@ -1,0 +1,42 @@
+name: Nonbio 823 Earthquake active-response rescue audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_823_earthquake_active_response_rescue.py"
+      - ".github/workflows/nonbio-823-earthquake-active-response-rescue.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 823 artifact
+        run: |
+          mkdir -p audit_inputs/post823_earthquake_active/accepted
+          gh run download 34694033220 \
+            -n nonbio-822-hurricane-two-path-mechanism \
+            -D audit_inputs/post823_earthquake_active/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-823 Earthquake active-response rescue audit
+        run: python analysis/nonbio_823_earthquake_active_response_rescue.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-823-earthquake-active-response-rescue
+          path: audit_outputs/nonbio_823_earthquake_active_response_rescue/
