@@ -1,0 +1,42 @@
+name: Nonbio 822 Hurricane two-path mechanism audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_822_hurricane_two_path_mechanism.py"
+      - ".github/workflows/nonbio-822-hurricane-two-path-mechanism.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 822 artifact
+        run: |
+          mkdir -p audit_inputs/post822_hurr_twopath/accepted
+          gh run download 34693860891 \
+            -n nonbio-820-hurricane-duration-floor \
+            -D audit_inputs/post822_hurr_twopath/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-822 Hurricane two-path mechanism audit
+        run: python analysis/nonbio_822_hurricane_two_path_mechanism.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-822-hurricane-two-path-mechanism
+          path: audit_outputs/nonbio_822_hurricane_two_path_mechanism/
