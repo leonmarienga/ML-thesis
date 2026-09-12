@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 ACCEPTED=ROOT/'audit_inputs'/'post830_pa_breadth'/'accepted'/'candidate_predictions.csv'
 OUT=ROOT/'audit_outputs'/'nonbio_830_pa_project_breadth_diagnostic'
 OUT.mkdir(parents=True,exist_ok=True)
-API='https://www.fema.gov/api/open/v1/PublicAssistanceFundedProjectsDetails'
+API='https://www.fema.gov/api/open/v2/PublicAssistanceFundedProjectsDetails'
 HIGH={'50-200M','200-500M','500M+'}
 
 
