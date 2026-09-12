@@ -1,0 +1,42 @@
+name: Nonbio 826 Fire duration floor
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_826_fire_duration_floor.py"
+      - ".github/workflows/nonbio-826-fire-duration-floor.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 826 artifact
+        run: |
+          mkdir -p audit_inputs/post826_fire_duration/accepted
+          gh run download 34700062464 \
+            -n nonbio-825-severe-ice-operational-dominance \
+            -D audit_inputs/post826_fire_duration/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-826 Fire duration floor audit
+        run: python analysis/nonbio_826_fire_duration_floor.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-826-fire-duration-floor
+          path: audit_outputs/nonbio_826_fire_duration_floor/
