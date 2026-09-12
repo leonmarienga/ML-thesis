@@ -1,0 +1,42 @@
+name: Nonbio 820 Hurricane duration-floor audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_820_hurricane_duration_floor.py"
+      - ".github/workflows/nonbio-820-hurricane-duration-floor.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 820 artifact
+        run: |
+          mkdir -p audit_inputs/post820_hurr_duration/accepted
+          gh run download 34693576468 \
+            -n nonbio-819-hurricane-esf12-prereq \
+            -D audit_inputs/post820_hurr_duration/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-820 Hurricane duration-floor audit
+        run: python analysis/nonbio_820_hurricane_duration_floor.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-820-hurricane-duration-floor
+          path: audit_outputs/nonbio_820_hurricane_duration_floor/
