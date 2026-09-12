@@ -1,0 +1,42 @@
+name: Nonbio 817 Fire two-key boundary audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_817_fire_two_key_boundary.py"
+      - ".github/workflows/nonbio-817-fire-two-key-boundary.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 817 artifact
+        run: |
+          mkdir -p audit_inputs/post817_fire_two_key/accepted
+          gh run download 34557910941 \
+            -n nonbio-815-rare-hazard-floor \
+            -D audit_inputs/post817_fire_two_key/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-817 Fire two-key boundary audit
+        run: python analysis/nonbio_817_fire_two_key_boundary.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-817-fire-two-key-boundary
+          path: audit_outputs/nonbio_817_fire_two_key_boundary/
