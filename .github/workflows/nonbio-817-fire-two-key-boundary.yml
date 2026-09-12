@@ -34,6 +34,21 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Patch reporting-only baseline bookkeeping
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("analysis/nonbio_817_fire_two_key_boundary.py")
+          s = p.read_text(encoding="utf-8")
+          old1 = '''    out["candidate_root_pred_high"] = out["disasterNumber"].map(candidate_root).astype(int)\n    out["candidate_pred"] = out["disasterNumber"].map(candidate_pred).astype(str)\n'''
+          new1 = '''    out["baseline_root_pred_high"] = out[BASE_ROOT_COL].astype(int)\n    out["baseline_pred"] = out[BASE_PRED_COL].astype(str)\n    out["candidate_root_pred_high"] = out["disasterNumber"].map(candidate_root).astype(int)\n    out["candidate_pred"] = out["disasterNumber"].map(candidate_pred).astype(str)\n'''
+          old2 = '    base_root = out[BASE_ROOT_COL].to_numpy(int)\n'
+          new2 = '    base_root = out["baseline_root_pred_high"].to_numpy(int)\n'
+          if old1 not in s or old2 not in s:
+              raise SystemExit("expected bookkeeping patch anchor not found")
+          s = s.replace(old1, new1, 1).replace(old2, new2, 1)
+          p.write_text(s, encoding="utf-8")
+          PY
       - name: Run post-817 Fire two-key boundary audit
         run: python analysis/nonbio_817_fire_two_key_boundary.py
       - uses: actions/upload-artifact@v4
