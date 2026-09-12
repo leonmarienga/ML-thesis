@@ -1,0 +1,42 @@
+name: Nonbio 819 Hurricane ESF-12 prerequisite audit
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_819_hurricane_esf12_prereq.py"
+      - ".github/workflows/nonbio-819-hurricane-esf12-prereq.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 819 artifact
+        run: |
+          mkdir -p audit_inputs/post819_hurr_esf12/accepted
+          gh run download 34693333308 \
+            -n nonbio-817-fire-two-key-boundary \
+            -D audit_inputs/post819_hurr_esf12/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-819 Hurricane ESF-12 prerequisite audit
+        run: python analysis/nonbio_819_hurricane_esf12_prereq.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-819-hurricane-esf12-prereq
+          path: audit_outputs/nonbio_819_hurricane_esf12_prereq/
