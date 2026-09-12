@@ -1,0 +1,42 @@
+name: Nonbio 825 Severe Ice operational dominance
+
+on:
+  push:
+    branches:
+      - nonbiological-fire-verifier
+    paths:
+      - "analysis/nonbio_825_severe_ice_operational_dominance.py"
+      - ".github/workflows/nonbio-825-severe-ice-operational-dominance.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 825 artifact
+        run: |
+          mkdir -p audit_inputs/post825_severe_ice/accepted
+          gh run download 34698232923 \
+            -n nonbio-824-flood-agency-esf-rescue \
+            -D audit_inputs/post825_severe_ice/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy scipy scikit-learn requests openpyxl duckdb
+      - name: Run post-825 Severe Ice operational dominance audit
+        run: python analysis/nonbio_825_severe_ice_operational_dominance.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-825-severe-ice-operational-dominance
+          path: audit_outputs/nonbio_825_severe_ice_operational_dominance/
