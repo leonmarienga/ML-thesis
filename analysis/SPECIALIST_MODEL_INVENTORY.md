@@ -37,10 +37,22 @@ Role in the historical architecture:
 - produces a dollar estimate inside the $100K-$50M support window
 - the predicted amount is used around the $1M boundary to separate `$100K-$1M` from `$1M-$50M`
 
+Strict direct amount audit (run 34762965578, n=190):
+- overall `$100K-$50M`: R2=0.3532, MAE=$1.347M, RMSE=$3.850M, median AE=$0.396M, log-MAE=0.6732, 58.95% within factor 2, 80.53% within factor 3.
+- `$100K-$1M`: R2=-2.2951, MAE=$274.6K, RMSE=$449.2K, log-MAE=0.6243.
+- `$1M-$50M`: R2=0.1584, MAE=$2.759M, RMSE=$5.838M, log-MAE=0.7376.
+
+Matched strict-LFYO band-median baselines calculated from the same held-out predictions:
+- overall band-median baseline: R2=0.1661, MAE=$1.598M, RMSE=$4.372M, log-MAE=0.6566.
+- `$100K-$1M` band-median: MAE=$203.1K, RMSE=$266.0K, log-MAE=0.5986. The preserved ExtraTrees amount model is worse here on the main error metrics, so **do not freeze it as the final `$100K-$1M` amount specialist**.
+- `$1M-$50M` band-median: R2=-0.0912, MAE=$3.436M, RMSE=$6.648M, median AE=$1.855M, log-MAE=0.7329. The preserved ExtraTrees model improves MAE by about 19.7%, RMSE by about 12.2%, and median AE by about 21.0%, although log-MAE is essentially unchanged/slightly worse.
+
 Important distinction:
 - the later `$1M-$50M` internal sub-band experiments (`analysis/nonbio_mid_subbands.py`) are **routing classifiers**, not amount regressors.
 
-Integration status: **preserved amount model available.**
+Integration decision:
+- `$100K-$1M`: use a simple strict training-band baseline unless a better preserved specialist is recovered/built; do not use the shared ExtraTrees regressor as the frozen amount model.
+- `$1M-$50M`: the preserved ExtraTrees log-dollar regressor adds useful dollar-error reduction and remains a viable specialist candidate.
 
 ### $50M-$200M
 
@@ -139,8 +151,8 @@ The final non-Biological stack should be:
 with strict outer fiscal-year exclusion for every supervised amount fit.
 
 Before final scoring:
-1. freeze and validate the preserved `$100K-$50M` amount regressor as an amount predictor, not only as a $1M boundary tool;
-2. decide whether `$50M-$200M` should use a broad specialist or build/freeze a target-free `$50M-$100M` vs `$100M-$200M` internal router;
+1. treat `$100K-$1M` separately from `$1M-$50M`; the shared ExtraTrees amount model is not good enough for the lower band, while it is still useful for `$1M-$50M`;
+2. build/freeze a target-free `$50M-$100M` vs `$100M-$200M` internal router and test the preserved amount specialists without oracle selection;
 3. use the preserved target-free `$200M-$500M` stack unchanged;
 4. recover or faithfully rebuild the original `$500M+` Hybrid Expert and validate it under the same outer protocol;
-5. then rerun a single end-to-end router + specialists evaluation.
+5. then rerun a single end-to-end router + specialists evaluation with common baselines and metrics.
