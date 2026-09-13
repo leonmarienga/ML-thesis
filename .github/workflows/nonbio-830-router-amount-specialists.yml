@@ -1,0 +1,61 @@
+name: Nonbio 830 router amount specialists
+
+on:
+  push:
+    branches: [nonbiological-fire-verifier]
+    paths:
+      - 'analysis/nonbio_830_router_amount_specialists.py'
+      - '.github/workflows/nonbio-830-router-amount-specialists.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+
+      - name: Download accepted 830 router artifact
+        run: |
+          mkdir -p audit_inputs/post830_amount_specialists/accepted
+          gh run download 34701792537 \
+            -n nonbio-829-hurricane-amendment-floor \
+            -D audit_inputs/post830_amount_specialists/accepted
+
+      - name: Restore preserved high-value specialist implementation
+        run: |
+          curl -L --fail \
+            https://raw.githubusercontent.com/leonmarienga/ML-thesis/experiment/mission-composition-20260829/temporal_event_hierarchical_specialist_v2_experiment.py \
+            -o analysis/legacy_tempv2.py
+          curl -L --fail \
+            https://raw.githubusercontent.com/leonmarienga/ML-thesis/experiment/mission-composition-20260829/frozen_declaration_scale_features.csv \
+            -o frozen_declaration_scale_features.csv
+
+      - name: Restore frozen mission-composition features
+        run: |
+          gh run download 33973053911 \
+            -n mission-composition-results \
+            -D mission_composition_results
+          test -f mission_composition_results/mission_composition_features.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pandas openpyxl numpy scikit-learn lightgbm catboost
+
+      - name: Run frozen router plus amount specialists
+        run: python analysis/nonbio_830_router_amount_specialists.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-830-router-amount-specialists
+          path: audit_outputs/nonbio_830_router_amount_specialists/
