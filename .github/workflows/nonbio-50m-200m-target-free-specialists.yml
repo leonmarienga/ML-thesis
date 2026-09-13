@@ -1,0 +1,55 @@
+name: Nonbio 50M-200M target-free specialists
+
+on:
+  push:
+    branches: [nonbiological-fire-verifier]
+    paths:
+      - 'analysis/nonbio_50m_200m_target_free_specialists.py'
+      - '.github/workflows/nonbio-50m-200m-target-free-specialists.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+
+      - name: Restore preserved specialist implementation
+        run: |
+          curl -L --fail \
+            https://raw.githubusercontent.com/leonmarienga/ML-thesis/experiment/mission-composition-20260829/temporal_event_hierarchical_specialist_v2_experiment.py \
+            -o analysis/legacy_tempv2.py
+          curl -L --fail \
+            https://raw.githubusercontent.com/leonmarienga/ML-thesis/experiment/mission-composition-20260829/frozen_declaration_scale_features.csv \
+            -o frozen_declaration_scale_features.csv
+
+      - name: Restore frozen mission-composition features
+        run: |
+          gh run download 33973053911 \
+            -n mission-composition-results \
+            -D mission_composition_results
+          test -f mission_composition_results/mission_composition_features.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pandas openpyxl numpy scikit-learn lightgbm catboost
+
+      - name: Run target-free 50M-200M audit
+        run: python analysis/nonbio_50m_200m_target_free_specialists.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-50m-200m-target-free-specialists
+          path: audit_outputs/nonbio_50m_200m_target_free_specialists/
+          retention-days: 90
