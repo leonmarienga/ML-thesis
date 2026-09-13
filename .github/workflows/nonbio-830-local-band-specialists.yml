@@ -1,0 +1,40 @@
+name: Nonbio 830 local band specialists
+
+on:
+  push:
+    branches: [ nonbiological-fire-verifier ]
+    paths:
+      - 'analysis/nonbio_830_local_band_specialists.py'
+      - '.github/workflows/nonbio-830-local-band-specialists.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - name: Download accepted 830 artifact
+        run: |
+          mkdir -p audit_inputs/post830_local_specialists/accepted
+          gh run download 34701792537 \
+            -n nonbio-829-hurricane-amendment-floor \
+            -D audit_inputs/post830_local_specialists/accepted
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install pandas openpyxl scikit-learn numpy
+      - name: Run local band specialists
+        run: python analysis/nonbio_830_local_band_specialists.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-830-local-band-specialists
+          path: audit_outputs/nonbio_830_local_band_specialists/
