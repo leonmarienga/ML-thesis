@@ -120,31 +120,44 @@ def main():
     if master["disasterNumber"].duplicated().any():
         master = master.sort_values("disasterNumber").drop_duplicates("disasterNumber", keep="first")
 
-    need = ["disasterNumber"] + FEATURES
-    missing = [c for c in need if c not in master.columns]
+    # The accepted artifact already contains several identity/context columns (including
+    # state, incidentType and fyDeclared). Add only feature columns that are missing so
+    # pandas does not suffix duplicate names and silently break the LFYO key.
+    master_feature_cols = [c for c in FEATURES if c not in accepted.columns]
+    missing = [c for c in master_feature_cols if c not in master.columns]
     if missing:
         raise KeyError(f"Missing master columns: {missing}")
 
-    df = accepted.merge(master[need], on="disasterNumber", how="left", validate="one_to_one")
+    if master_feature_cols:
+        df = accepted.merge(
+            master[["disasterNumber"] + master_feature_cols],
+            on="disasterNumber",
+            how="left",
+            validate="one_to_one",
+        )
+    else:
+        df = accepted.copy()
+
+    missing_after = [c for c in FEATURES if c not in df.columns]
+    if missing_after:
+        raise KeyError(f"Features unavailable after merge: {missing_after}")
+
     df["router_pred"] = df[pred_col].astype(str)
     df["actual_band"] = df["actual_band"].astype(str)
     df["fyDeclared"] = pd.to_numeric(df["fyDeclared"], errors="raise").astype(int)
 
-    # Ensure all feature rows joined.
     if df[FEATURES].isna().all(axis=1).any():
         raise AssertionError("Some accepted rows failed master-feature join")
 
     years = sorted(df["fyDeclared"].unique().tolist())
     outer_predictions = []
     fold_rows = []
-    ml_only_predictions = []
 
     for outer_fy in years:
         print(f"OUTER FY {outer_fy}", flush=True)
         tr = df[df.fyDeclared != outer_fy].copy()
         te = df[df.fyDeclared == outer_fy].copy()
 
-        # Inner LFYO specialist probabilities on outer-training only.
         inner_parts = []
         for inner_fy in sorted(tr.fyDeclared.unique().tolist()):
             tr2 = tr[tr.fyDeclared != inner_fy].copy()
@@ -153,9 +166,10 @@ def main():
                 continue
             p = specialist_probabilities(tr2, va)
             part = va[["disasterNumber", "actual_band", "router_pred", "fyDeclared"]].copy()
-            for j, b in enumerate(BANDS):
+            for j, _ in enumerate(BANDS):
                 part[f"p_{j}"] = p[:, j]
             inner_parts.append(part)
+
         inner = pd.concat(inner_parts, ignore_index=True)
         Pinner = inner[[f"p_{j}" for j in range(len(BANDS))]].to_numpy(float)
 
@@ -165,7 +179,6 @@ def main():
             m = metrics(inner.actual_band.astype(str).values, ip)
             changes = int((ip != inner.router_pred.astype(str).values).sum())
             candidates.append((m["correct"], m["macro_recall"], -changes, bonus, m, changes))
-        # maximize accuracy, then macro recall, then prefer fewer changes; if still tied prefer larger router bonus.
         candidates.sort(key=lambda z: (z[0], z[1], z[2], z[3]), reverse=True)
         _, _, _, selected_bonus, inner_metric, inner_changes = candidates[0]
 
@@ -173,14 +186,16 @@ def main():
         pred = combine(te.router_pred.astype(str).values, pte, selected_bonus)
         ml_only = combine(te.router_pred.astype(str).values, pte, 0.0)
 
-        out = te[["disasterNumber", "state", "incidentType", "fyDeclared", "target_clean", "actual_band", "router_pred"]].copy() if "target_clean" in te.columns else te[["disasterNumber", "state", "incidentType", "fyDeclared", "actual_band", "router_pred"]].copy()
+        out_cols = ["disasterNumber", "state", "incidentType", "fyDeclared", "actual_band", "router_pred"]
+        if "target_clean" in te.columns:
+            out_cols.insert(4, "target_clean")
+        out = te[out_cols].copy()
         out["specialist_stack_pred"] = pred
         out["specialist_ml_only_pred"] = ml_only
         out["selected_router_bonus"] = selected_bonus
         for j, b in enumerate(BANDS):
             out[f"specialist_p_{b}"] = pte[:, j]
         outer_predictions.append(out)
-        ml_only_predictions.extend(ml_only.tolist())
 
         fold_rows.append({
             "outer_fy": outer_fy,
@@ -210,9 +225,12 @@ def main():
     changed = pred_df[stack != router].copy()
     changed["router_correct"] = changed.router_pred == changed.actual_band
     changed["stack_correct"] = changed.specialist_stack_pred == changed.actual_band
-    changed["change_effect"] = np.where(~changed.router_correct & changed.stack_correct, "fixed", np.where(changed.router_correct & ~changed.stack_correct, "broken", "sideways"))
+    changed["change_effect"] = np.where(
+        ~changed.router_correct & changed.stack_correct,
+        "fixed",
+        np.where(changed.router_correct & ~changed.stack_correct, "broken", "sideways"),
+    )
 
-    # Root safety diagnostics.
     actual_high = np.isin(y, HIGH)
     router_high = np.isin(router, HIGH)
     stack_high = np.isin(stack, HIGH)
