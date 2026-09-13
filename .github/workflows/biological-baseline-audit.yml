@@ -1,0 +1,26 @@
+name: Biological baseline audit
+on:
+  push:
+    branches: [nonbiological-fire-verifier]
+    paths:
+      - 'analysis/biological_baseline_audit.py'
+      - '.github/workflows/biological-baseline-audit.yml'
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nonbiological-fire-verifier
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install pandas openpyxl
+      - name: Run Biological baseline audit
+        run: python analysis/biological_baseline_audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: biological-baseline-audit
+          path: audit_outputs/biological_baseline_audit/
