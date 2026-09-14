@@ -63,15 +63,19 @@ Internal amount specialists:
 - `$50M-$100M`: 50/50 blend of weighted ExtraTrees raw-target and LightGBM log-target models trained on broader $20M-$200M support.
 - `$100M-$200M`: 75/25 blend of weighted ExtraTrees raw-target and Ridge raw-target models trained on broader $50M-$300M support.
 
-Development results from preserved artifact `fine-split-regime-results`:
-- `$50M-$100M`: n=20, R2=-0.3575, MAE=$10.92M, RMSE=$14.09M.
-- `$100M-$200M`: n=19, R2=-0.5239, MAE=$28.59M, RMSE=$33.73M.
+Old development results from `fine-split-regime-results` were oracle-routed and therefore not deployable.
 
-Validation caveat:
-- true internal band selected the specialist in this development experiment.
-- therefore the fine split is **oracle-routed** and is not directly deployable behind the broad `$50M-$200M` router without a target-free internal sub-router.
+Strict target-free audit run `34764085040` on the 13 non-Biological `$50M-$200M` cases:
+- internal sub-router accuracy: 61.54%; balanced accuracy 61.25%; AUC 0.60.
+- broad-band LFYO median: R2=-0.3573, MAE=$35.47M, RMSE=$48.02M.
+- routed sub-band LFYO medians: R2=-0.3715, MAE=$36.06M, RMSE=$48.27M.
+- target-free routed preserved specialists: R2=-0.7118, MAE=$42.00M, RMSE=$53.92M.
+- oracle sub-band LFYO medians: R2=0.7272, MAE=$17.07M, RMSE=$21.53M.
+- oracle preserved specialists: R2=0.4414, MAE=$23.15M, RMSE=$30.80M.
 
-Integration status: **amount specialists preserved, but internal 50/100M routing is not yet deployable.**
+The deployable specialist stack increased MAE by 18.42% versus the broad median and 16.47% versus routed sub-band medians. Even with perfect internal routing, simple sub-band medians beat the preserved ML specialists.
+
+Integration decision: **reject the current `$50M-$100M` / `$100M-$200M` ML specialist stack. Use a training-derived `$50M-$200M` baseline unless a materially better direct amount model is found.**
 
 ### $200M-$500M
 
@@ -111,13 +115,24 @@ Integration status: **best-preserved deployable specialist stack; ready to sit b
 ### $500M+
 
 Historical project state:
-- prior development work referred to a billion-dollar / `$500M+` Hybrid Expert and reported development performance around R2 ~0.90.
+- prior development work referred to a billion-dollar / `$500M+` Hybrid Expert and reported development performance around R2 ~0.90, but the exact original implementation could not be recovered.
 
-Recovery result:
-- the exact original Hybrid Expert implementation and exact validation artifact were **not found** in the preserved Git branch/history searched here.
-- the newer `analysis/nonbio_830_router_amount_specialists.py` contains an explicitly reconstructed high-quantile LightGBM + historical-analogue hybrid, but this must **not** be represented as the original Hybrid Expert.
+Strict non-Biological extreme audit run `34765630016` evaluated five `$500M+` cases with whole held-fiscal-year exclusion and nested training-only component selection.
 
-Integration status: **original specialist must be recovered or faithfully rebuilt and revalidated before final end-to-end claims.**
+Simple baselines:
+- extreme median: R2=-0.7088, MAE=$1.547B, RMSE=$1.733B, log-MAE=0.7784.
+- extreme geometric mean: R2=-0.5339, MAE=$1.387B, RMSE=$1.642B, log-MAE=0.6935.
+- extreme mean: R2=-0.5625, MAE=$1.510B, RMSE=$1.657B, log-MAE=0.7335.
+
+Model results:
+- nested selected direct LightGBM: R2=0.0400, MAE=$1.226B, RMSE=$1.299B, log-MAE=0.6614.
+- nested selected historical analogue: **R2=0.5790, MAE=$675.8M, RMSE=$860.1M, log-MAE=0.2752, log-R2=0.7396**.
+- nested selected hybrid: R2=0.4997, MAE=$801.5M, RMSE=$937.6M, log-MAE=0.3554.
+- legacy reconstructed hybrid: R2=0.2566, MAE=$902.9M, RMSE=$1.143B, log-MAE=0.4158.
+
+The nested analogue reduced MAE by about 51.3% versus the best simple baseline (geometric mean), 44.9% versus the nested direct ML model, 15.7% versus the nested hybrid, and 25.2% versus the earlier reconstructed hybrid. It placed all five cases within factor 2 and factor 3, and all five within 50% relative error.
+
+Integration decision: **use the nested-selected historical analogue as the current defensible `$500M+` specialist. Do not call it the original unrecovered Billion-dollar Hybrid Expert.** The five-case sample is extremely small, so these metrics remain high-variance development-validation estimates.
 
 ## Routing-only specialist work that must not be confused with amount ML
 
@@ -146,13 +161,16 @@ This run demonstrates that the router->specialist architecture is promising, but
 
 The final non-Biological stack should be:
 
-`disaster -> frozen 830/912 broad router -> preserved internal sub-router where needed -> preserved amount specialist -> dollar estimate`
+`disaster -> frozen 830/912 broad router -> accepted band amount rule/specialist -> dollar estimate`
 
 with strict outer fiscal-year exclusion for every supervised amount fit.
 
-Before final scoring:
-1. treat `$100K-$1M` separately from `$1M-$50M`; the shared ExtraTrees amount model is not good enough for the lower band, while it is still useful for `$1M-$50M`;
-2. build/freeze a target-free `$50M-$100M` vs `$100M-$200M` internal router and test the preserved amount specialists without oracle selection;
-3. use the preserved target-free `$200M-$500M` stack unchanged;
-4. recover or faithfully rebuild the original `$500M+` Hybrid Expert and validate it under the same outer protocol;
-5. then rerun a single end-to-end router + specialists evaluation with common baselines and metrics.
+Current accepted amount choices:
+1. `$0-$100K`: unresolved exact-dollar specialist; use a simple training-derived baseline until improved.
+2. `$100K-$1M`: simple training-band baseline; shared ExtraTrees rejected for final amount prediction.
+3. `$1M-$50M`: preserved ExtraTrees log-dollar specialist remains useful.
+4. `$50M-$200M`: reject split ML specialists; use a training-derived broad-band baseline unless a better direct model is found.
+5. `$200M-$500M`: use the preserved target-free specialist stack unchanged.
+6. `$500M+`: use the nested-selected historical analogue from run `34765630016`.
+
+Next step: rerun one end-to-end frozen 830 router -> accepted amount choices evaluation with common baselines and metrics.
