@@ -1,0 +1,30 @@
+name: Nonbio 50M-200M research-only refit
+on:
+  push:
+    branches: [experiment/50-200m-nested-hybrid-20261011]
+    paths:
+      - 'analysis/nonbio_50_200m_full_training_refit.py'
+      - '.github/workflows/nonbio-50-200m-full-training-refit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/50-200m-nested-hybrid-20261011
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas numpy scipy scikit-learn openpyxl joblib
+      - name: Refit and verify model artifact
+        run: python analysis/nonbio_50_200m_full_training_refit.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nonbio-50-200m-research-only-refit
+          path: audit_outputs/nonbio_50_200m_full_training_refit/
+          retention-days: 90
