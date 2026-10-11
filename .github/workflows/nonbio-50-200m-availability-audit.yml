@@ -1,0 +1,37 @@
+name: Nonbio 50M-200M feature availability audit
+on:
+  push:
+    branches: [experiment/50-200m-nested-hybrid-20261011]
+    paths:
+      - 'analysis/nonbio_50_200m_availability_audit.py'
+      - '.github/workflows/nonbio-50-200m-availability-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/50-200m-nested-hybrid-20261011
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch unchanged frozen router
+        run: |
+          mkdir -p audit_inputs/50_200m_ml_specialist/accepted
+          gh run download 34701792537 -n nonbio-829-hurricane-amendment-floor -D audit_inputs/50_200m_ml_specialist/accepted
+      - run: pip install pandas numpy scipy scikit-learn openpyxl
+      - name: Evaluate feature availability and forward-year robustness
+        run: python analysis/nonbio_50_200m_availability_audit.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nonbio-50-200m-availability-audit
+          path: audit_outputs/nonbio_50_200m_availability_audit/
+          retention-days: 90
