@@ -1,0 +1,41 @@
+name: Nonbio 912 immutable $50M-$200M overlay
+on:
+  push:
+    branches: [experiment/50-200m-nested-hybrid-20261011]
+    paths:
+      - 'analysis/nonbio_final_50_200m_immutable_overlay.py'
+      - '.github/workflows/nonbio-final-50-200m-immutable-overlay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/50-200m-nested-hybrid-20261011
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas numpy scikit-learn
+      - name: Download frozen historical experiment artifacts
+        run: |
+          mkdir -p audit_inputs/nonbio_final_50_200_overlay/{baseline,low0,low1,mid}
+          gh run download 34796746603 -n nonbio-final-830-accepted-amount-stack -D audit_inputs/nonbio_final_50_200_overlay/baseline
+          gh run download 38153347912 -n nonbio-0-100k-dedicated-ml-specialist -D audit_inputs/nonbio_final_50_200_overlay/low0
+          gh run download 38152554081 -n nonbio-100k-1m-dedicated-ml-specialist -D audit_inputs/nonbio_final_50_200_overlay/low1
+          gh run download 38162966192 -n nonbio-50-200m-routed-acceptance-audit -D audit_inputs/nonbio_final_50_200_overlay/mid
+          find audit_inputs/nonbio_final_50_200_overlay -name '*.csv'
+      - name: Run exact held-year 912-row immutable overlay
+        run: python analysis/nonbio_final_50_200m_immutable_overlay.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nonbio-912-immutable-50-200m-overlay
+          path: audit_outputs/nonbio_final_50_200m_overlay/
+          retention-days: 90
