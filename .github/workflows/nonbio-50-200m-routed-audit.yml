@@ -1,0 +1,37 @@
+name: Nonbio 50M-200M routed hybrid acceptance audit
+on:
+  push:
+    branches: [experiment/50-200m-nested-hybrid-20261011]
+    paths:
+      - 'analysis/nonbio_50_200m_routed_audit.py'
+      - '.github/workflows/nonbio-50-200m-routed-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/50-200m-nested-hybrid-20261011
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download immutable frozen router output
+        run: |
+          mkdir -p audit_inputs/50_200m_ml_specialist/accepted
+          gh run download 34701792537 -n nonbio-829-hurricane-amendment-floor -D audit_inputs/50_200m_ml_specialist/accepted
+      - run: pip install pandas numpy scipy scikit-learn openpyxl
+      - name: Audit routed individual amounts
+        run: python analysis/nonbio_50_200m_routed_audit.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nonbio-50-200m-routed-acceptance-audit
+          path: audit_outputs/nonbio_50_200m_routed_audit/
+          retention-days: 90
