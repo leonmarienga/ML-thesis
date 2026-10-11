@@ -89,7 +89,9 @@ def run():
         train=d[d.fyDeclared<fy]
         te=d[(d.fyDeclared==fy)&(d.target_m>=LO)&(d.target_m<HI)]
         prior_band=train[(train.target_m>=LO)&(train.target_m<HI)]
-        if prior_band.empty:continue
+        if prior_band.empty or len(train[(train.target_m>=10)&(train.target_m<500)])<=K:
+            print(f"Skipping forward FY {fy}: insufficient prior training support",flush=True)
+            continue
         med=float(prior_band.target_m.median())
         for setting,cols in SETS.items():
             masked=te.copy();masked["target_m"]=np.nan
@@ -100,9 +102,12 @@ def run():
                                 "features":setting,"actual_m":float(rec.target_m),
                                 "median_m":med,"hybrid_m":float(z),"prior_band_n":int(len(prior_band))})
     frames={"direct":pd.DataFrame(direct),"routed":pd.DataFrame(assigned),"forward":pd.DataFrame(forward)}
+    if frames["forward"].empty:
+        print("No forward-year cases have adequate prior-year support.",flush=True)
     metrics={}
     for name,frame in frames.items():
         metrics[name]={}
+        if frame.empty:continue
         for setting,g in frame.groupby("features"):
             metrics[name][setting]={"baseline":metric(g.actual_m,g.median_m),
                                    "individualized":metric(g.actual_m,g.hybrid_m)}
@@ -116,7 +121,7 @@ def run():
             "feature_sets":SETS,
             "warning":"Outer LFYO includes later fiscal years in training; forward test excludes future data but covers fewer cases.",
             "metrics":metrics,
-            "forward_scored_unique_disasters":int(frames["forward"].disasterNumber.nunique())}
+            "forward_scored_unique_disasters":int(frames["forward"].disasterNumber.nunique()) if not frames["forward"].empty else 0}
     OUT.mkdir(parents=True,exist_ok=True)
     for name,frame in frames.items():frame.to_csv(OUT/f"{name}_predictions.csv",index=False)
     (OUT/"summary.json").write_text(json.dumps(OUTPUT,indent=2),encoding="utf-8")
