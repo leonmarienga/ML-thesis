@@ -1,0 +1,50 @@
+name: Nonbio 50M-200M individualized specialist
+
+on:
+  push:
+    branches: [experiment/50-200m-ml-specialist-20261011]
+    paths:
+      - 'analysis/nonbio_50_200m_dedicated_ml_specialist.py'
+      - '.github/workflows/nonbio-50-200m-dedicated-ml-specialist.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/50-200m-ml-specialist-20261011
+
+      - name: Download frozen 830 router artifact
+        run: |
+          mkdir -p audit_inputs/50_200m_ml_specialist/accepted
+          gh run download 34701792537 \
+            -n nonbio-829-hurricane-amendment-floor \
+            -D audit_inputs/50_200m_ml_specialist/accepted
+          test -f audit_inputs/50_200m_ml_specialist/accepted/candidate_predictions.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy scipy requests openpyxl scikit-learn duckdb lightgbm catboost
+
+      - name: Run 50M-200M individualized specialist audit
+        run: python analysis/nonbio_50_200m_dedicated_ml_specialist.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-50-200m-dedicated-ml-specialist
+          path: audit_outputs/nonbio_50_200m_dedicated_ml_specialist/
+          retention-days: 90
