@@ -57,7 +57,7 @@ def inject(base, specialist, band, column, label, multiplier=1.0):
     assert len(joined)==len(candidates)
     assert (pd.to_numeric(joined.fyDeclared)==pd.to_numeric(joined.fyDeclared_specialist)).all(),f"{label} FY mismatch"
     assert np.allclose(numbers(joined.target),numbers(joined["actual" if "actual" in joined.columns else "actual_m"])*(1.0 if "actual" in joined.columns else 1e6),rtol=0,atol=0.05),f"{label} actual funding mismatch"
-    vals=pd.Series(numbers(specialist[column])*multiplier,index=specialist.disasterNumber).reindex(base.disasterNumber)
+    vals=pd.Series(numbers(specialist[column])*multiplier,index=specialist.disasterNumber).reindex(base.disasterNumber).reset_index(drop=True)
     assert np.isfinite(vals[base.router_pred==band]).all(),f"{label} missing amount"
     lo,hi={"0-100K":(0,1e5),"100K-1M":(1e5,1e6),"50-200M":(50e6,200e6)}[band]
     zz=vals[base.router_pred==band]
