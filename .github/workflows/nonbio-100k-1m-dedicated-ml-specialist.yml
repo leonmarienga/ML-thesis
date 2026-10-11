@@ -1,0 +1,58 @@
+name: Nonbio 100K-1M dedicated ML specialist
+
+on:
+  push:
+    branches: [experiment/100k-1m-ml-specialist-20261011]
+    paths:
+      - 'analysis/nonbio_100k_1m_dedicated_ml_specialist.py'
+      - '.github/workflows/nonbio-100k-1m-dedicated-ml-specialist.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/100k-1m-ml-specialist-20261011
+
+      - name: Download frozen 830 router artifact
+        run: |
+          mkdir -p audit_inputs/100k_1m_ml_specialist/accepted
+          gh run download 34701792537             -n nonbio-829-hurricane-amendment-floor             -D audit_inputs/100k_1m_ml_specialist/accepted
+          test -f audit_inputs/100k_1m_ml_specialist/accepted/candidate_predictions.csv
+
+      - name: Restore preserved high-value support files
+        run: |
+          curl -L --fail             https://raw.githubusercontent.com/leonmarienga/ML-thesis/experiment/mission-composition-20260829/temporal_event_hierarchical_specialist_v2_experiment.py             -o analysis/legacy_tempv2.py
+          curl -L --fail             https://raw.githubusercontent.com/leonmarienga/ML-thesis/experiment/mission-composition-20260829/frozen_declaration_scale_features.csv             -o frozen_declaration_scale_features.csv
+
+      - name: Restore frozen mission-composition features
+        run: |
+          gh run download 33973053911             -n mission-composition-results             -D mission_composition_results
+          test -f mission_composition_results/mission_composition_features.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy requests openpyxl scikit-learn duckdb lightgbm catboost
+
+      - name: Run dedicated 100K-1M specialist audit
+        run: python analysis/nonbio_100k_1m_dedicated_ml_specialist.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-100k-1m-dedicated-ml-specialist
+          path: audit_outputs/nonbio_100k_1m_dedicated_ml_specialist/
+          retention-days: 90
