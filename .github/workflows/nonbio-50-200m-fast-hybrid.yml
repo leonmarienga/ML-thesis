@@ -1,0 +1,30 @@
+name: Nonbio 50M-200M fast hybrid audit
+on:
+  push:
+    branches: [experiment/50-200m-nested-hybrid-20261011]
+    paths:
+      - 'analysis/nonbio_50_200m_fast_hybrid.py'
+      - '.github/workflows/nonbio-50-200m-fast-hybrid.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/50-200m-nested-hybrid-20261011
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas numpy scipy scikit-learn openpyxl
+      - name: Run fast nested LFYO experiment
+        run: python analysis/nonbio_50_200m_fast_hybrid.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nonbio-50-200m-fast-hybrid-results
+          path: audit_outputs/nonbio_50_200m_fast_hybrid/
+          retention-days: 90
