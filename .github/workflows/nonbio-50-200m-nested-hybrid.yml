@@ -1,0 +1,42 @@
+name: Nonbio 50M-200M nested hybrid research
+on:
+  push:
+    branches: [experiment/50-200m-nested-hybrid-20261011]
+    paths:
+      - 'analysis/nonbio_50_200m_nested_hybrid.py'
+      - '.github/workflows/nonbio-50-200m-nested-hybrid.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/50-200m-nested-hybrid-20261011
+      - name: Download exact frozen router outputs
+        run: |
+          mkdir -p audit_inputs/50_200m_ml_specialist/accepted
+          gh run download 34701792537 -n nonbio-829-hurricane-amendment-floor -D audit_inputs/50_200m_ml_specialist/accepted
+          test -f audit_inputs/50_200m_ml_specialist/accepted/candidate_predictions.csv
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install runtime
+        run: |
+          python -m pip install -U pip
+          pip install pandas numpy scipy requests openpyxl scikit-learn duckdb lightgbm catboost
+      - name: Run nested $50M-$200M hybrid specialist
+        run: python analysis/nonbio_50_200m_nested_hybrid.py
+      - name: Upload research-only artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonbio-50-200m-nested-hybrid-results
+          path: audit_outputs/nonbio_50_200m_nested_hybrid/
+          retention-days: 90
