@@ -1,0 +1,36 @@
+name: Forward-year county exposure diagnostic
+on:
+  push:
+    branches: [experiment/forward-asof-severity-20261101]
+    paths: ['analysis/nonbio_county_exposure_forward_year.py','.github/workflows/forward-year-exposure-diagnostic.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/forward-asof-severity-20261101
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas numpy scipy scikit-learn openpyxl requests
+      - name: Download archived feature and router files
+        run: |
+          mkdir -p audit_inputs/county_exposure_hazard/{external,frozen}
+          gh run download 34017327286 -n external-severity-ablation -D audit_inputs/county_exposure_hazard/external
+          gh run download 34701792537 -n nonbio-829-hurricane-amendment-floor -D audit_inputs/county_exposure_hazard/frozen
+      - name: Run earlier-year-training-only evaluation
+        run: python analysis/nonbio_county_exposure_forward_year.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forward-year-retrospective-exposure-evaluation
+          path: audit_outputs/county_exposure_hazard/
+          retention-days: 90
