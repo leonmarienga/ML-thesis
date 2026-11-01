@@ -1,0 +1,19 @@
+name: Probe legacy NHC archived storm HTML
+on:
+  push:
+    branches: [experiment/nhc-asof-advisories-20261101]
+    paths: ['analysis/_probe_old_nhc_html.py','.github/workflows/probe-old-nhc-html.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/nhc-asof-advisories-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests beautifulsoup4
+      - run: python analysis/_probe_old_nhc_html.py
