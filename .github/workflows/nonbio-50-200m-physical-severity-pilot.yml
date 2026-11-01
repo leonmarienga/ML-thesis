@@ -1,0 +1,38 @@
+name: Frozen 50M-200M physical severity pilot
+on:
+  push:
+    branches: [experiment/physical-severity-pilot-20261101]
+    paths:
+      - 'analysis/nonbio_50_200m_physical_severity_pilot.py'
+      - '.github/workflows/nonbio-50-200m-physical-severity-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/physical-severity-pilot-20261101
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas numpy scipy scikit-learn openpyxl
+      - name: Download immutable 971-row external severity archive and frozen router
+        run: |
+          mkdir -p audit_inputs/severity_physical_pilot/{external,frozen}
+          gh run download 34017327286 -n external-severity-ablation -D audit_inputs/severity_physical_pilot/external
+          gh run download 34701792537 -n nonbio-829-hurricane-amendment-floor -D audit_inputs/severity_physical_pilot/frozen
+      - name: Run frozen analogue severity ablation
+        run: python analysis/nonbio_50_200m_physical_severity_pilot.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: physical-severity-pilot-13-direct-and-routed
+          path: audit_outputs/severity_physical_pilot/
+          retention-days: 90
