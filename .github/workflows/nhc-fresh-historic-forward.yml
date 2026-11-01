@@ -1,0 +1,34 @@
+name: NHC fresh-vs-historic forward year ablation
+on:
+  push:
+    branches: [experiment/nhc-fresh-vs-historic-ablation-20261101]
+    paths: ['analysis/nhc_fresh_historic_forward_ablation.py','.github/workflows/nhc-fresh-historic-forward.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/nhc-fresh-vs-historic-ablation-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy scipy scikit-learn openpyxl
+      - name: Download all-tropical NHC advisory and frozen-router artifacts
+        run: |
+          mkdir -p audit_inputs/nhc_feature_ablation/{tropical,frozen}
+          gh run download 41334493058 -n tropical-incident-year-matched-advisories -D audit_inputs/nhc_feature_ablation/tropical
+          gh run download 34701792537 -n nonbio-829-hurricane-amendment-floor -D audit_inputs/nhc_feature_ablation/frozen
+      - name: Run strict earlier-year-only 50-200M specialist comparison
+        run: python analysis/nhc_fresh_historic_forward_ablation.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nhc-fresh-historic-forward-ablation
+          path: audit_outputs/nhc_fresh_vs_historic/
+          retention-days: 90
