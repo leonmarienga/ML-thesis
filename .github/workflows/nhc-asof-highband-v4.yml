@@ -1,0 +1,24 @@
+name: NHC highband as-of v4 legacy parser
+on:
+  push:
+    branches: [experiment/nhc-asof-advisories-20261101]
+    paths: ['analysis/nhc_asof_highband_v4.py','.github/workflows/nhc-asof-highband-v4.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/nhc-asof-advisories-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy openpyxl requests beautifulsoup4
+      - run: python analysis/nhc_asof_highband_v4.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nhc-asof-highband-v4-results
+          path: audit_outputs/nhc_asof_highband/
