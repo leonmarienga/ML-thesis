@@ -1,0 +1,25 @@
+name: FEMA Mission t0-t72 Action Timestamp Audit
+on:
+  push:
+    branches: [experiment/mission-asof-snapshots-20261101]
+    paths: ['analysis/build_fema_mission_asof_snapshots.py','.github/workflows/fema-mission-asof-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/mission-asof-snapshots-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy openpyxl requests
+      - run: python analysis/build_fema_mission_asof_snapshots.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mission-action-asof-t0-t72-971
+          path: audit_outputs/mission_asof_971/
+          retention-days: 90
