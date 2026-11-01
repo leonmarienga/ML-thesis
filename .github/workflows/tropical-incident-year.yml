@@ -1,0 +1,25 @@
+name: Tropical incident-year archive matching
+on:
+  push:
+    branches: [experiment/tropical-storm-year-wp-20261101]
+    paths: ['analysis/nhc_all_tropical_incident_year.py','.github/workflows/tropical-incident-year.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/tropical-storm-year-wp-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy openpyxl requests beautifulsoup4
+      - run: python analysis/nhc_all_tropical_incident_year.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tropical-incident-year-matched-advisories
+          path: audit_outputs/nhc_asof_incident_year/
+          retention-days: 90
