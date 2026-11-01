@@ -64,13 +64,13 @@ def archive_public(storm_url):
     # Adjacent HTML comment is a local archive timestamp in legacy years.
     # The label supplies a daylight/standard timezone; never infer UTC.
     pattern=re.compile(
-        r'<!--\\s*(20\\d{6})\\s+(\\d{4})\\s*-->\\s*<a\\s+href="([^"]*\\.public(?:_a)?\\.[^"]+\\.shtml\\??)"[^>]*>(.*?)</a>',
+        r'<!--\s*(20\d{6})\s+(\d{4})\s*-->\s*<a\s+href="([^"]*\.public(?:_a)?\.[^"]+\.shtml\??)"[^>]*>(.*?)</a>',
         re.I|re.S)
     offsets={"UTC":0,"GMT":0,"AST":4,"ADT":3,"EST":5,"EDT":4,"CST":6,"CDT":5,"MST":7,"MDT":6,"PST":8,"PDT":7,"HST":10,"CHST":-10}
     hits=[]
     for day,clock,href,label_html in pattern.findall(html):
         label=BeautifulSoup(label_html,"html.parser").get_text(" ",strip=True).upper()
-        zone=re.search(r"\\b(UTC|GMT|AST|ADT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|HST|CHST)\\b",label)
+        zone=re.search(r"\b(UTC|GMT|AST|ADT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|HST|CHST)\b",label)
         if not zone:continue
         naive=pd.to_datetime(day+clock,format="%Y%m%d%H%M",errors="coerce",utc=True)
         if pd.isna(naive):continue
