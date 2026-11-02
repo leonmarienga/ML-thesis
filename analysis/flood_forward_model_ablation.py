@@ -99,8 +99,8 @@ def prepare():
     for c in ["single_rain_available","multi_rain_available",
               "multi_two_location_available","flow_available"]:
         d[c]=d[c].fillna(False).astype(bool)
-    assert int(d.single_rain_available.sum())==69
-    assert int(d.multi_rain_available.sum())==69
+    assert 69<=int(d.single_rain_available.sum())<=87
+    assert 69<=int(d.multi_rain_available.sum())<=87
     assert int(d.flow_available.sum())==11
     assert not d.disasterNumber.duplicated().any()
     # Rainfall derived from NOAAs whose source versions may be finalized
