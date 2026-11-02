@@ -116,7 +116,7 @@ def main():
             output["feature_status"]="site_metadata_missing"
             rows.append(output);continue
         output.update({"site_name":info.get("station_nm"),
-          "site_county_fips":str(info.get("county_cd","")).zfill(5),
+          "site_county_fips":str(info.get("state_cd","")).zfill(2)+str(info.get("county_cd","")).zfill(3),
           "latitude":info.get("dec_lat_va"),"longitude":info.get("dec_long_va"),
           "hydrologic_unit_code":info.get("huc_cd"),
           "drainage_area_sq_miles":info.get("drain_area_va"),
