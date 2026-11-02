@@ -1,0 +1,31 @@
+name: Phase27 flood catalog schema and polygon positive control
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/flood27_catalog_schema_positive_control.py','.github/workflows/flood27-catalog-positive-control.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests beautifulsoup4 pyshp shapely pyproj openpyxl
+      - run: |
+          mkdir -p audit_inputs/flood27_catalog
+          gh run download 41410421735 -n daymet-all-87-flood-rainfall -D audit_inputs/flood27_catalog
+      - run: python analysis/flood27_catalog_schema_positive_control.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase27-catalog-and-polygon-control
+          path: audit_outputs/flood27_catalog/
+          retention-days: 90
