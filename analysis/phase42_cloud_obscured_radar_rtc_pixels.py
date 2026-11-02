@@ -78,8 +78,8 @@ def select_acquisitions(case,scenes):
         if pre.empty or valid_post.empty:continue
         first_post=valid_post.iloc[0]
         last_pre=pre.iloc[-1]
-        score=((first_post.dt-start).total_seconds()/86400,
-               (start-last_pre.dt).total_seconds()/86400,
+        score=((first_post['dt']-start).total_seconds()/86400,
+               (start-last_pre['dt']).total_seconds()/86400,
                str(orbit))
         choices.append((score,orbit,pre,valid_post,g))
     if not choices:return None,None
@@ -218,9 +218,9 @@ for disaster in COHORT:
             print("PIXEL",disaster,str(r.datetime)[:10],band,row["pixel_read"],flush=True)
     before=chosen[chosen.dt<start].iloc[-1]
     after=chosen[chosen.dt>=start].iloc[0]
-    record["selected_pre_date"]=str(before.dt)
-    record["selected_post_date"]=str(after.dt)
-    record["days_from_event_start_to_post"]=float((after.dt-start).total_seconds()/86400)
+    record["selected_pre_date"]=str(before['dt'])
+    record["selected_post_date"]=str(after['dt'])
+    record["days_from_event_start_to_post"]=float((after['dt']-start).total_seconds()/86400)
     # Critically: post can occur near incident close, not necessarily maximum flooding.
     if not all((str(x.item_id),band) in arrays for x in (before,after) for band in ("vv","vh")):
         record.update({"status":"paired_band_read_incomplete","radar_pair_evaluable":False})
@@ -240,7 +240,7 @@ for disaster in COHORT:
         control_shift=float(np.median(ctrl)) if len(ctrl) else np.nan
         median_ctrl.append(control_shift)
         comparison_rows.append({"disasterNumber":disaster,"orbit":str(orbit),
-           "pre_date":str(before.dt),"post_date":str(after.dt),"polarization":band,
+           "pre_date":str(before['dt']),"post_date":str(after['dt']),"polarization":band,
            "paired_valid_fraction":float(v.mean()),
            "control_valid_cells":int(len(ctrl)),
            "control_median_change_db":control_shift,
