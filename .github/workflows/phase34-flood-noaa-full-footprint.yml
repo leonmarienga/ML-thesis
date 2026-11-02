@@ -1,0 +1,36 @@
+name: Phase34 full NOAA FEMA flood candidate-footprint impact comparison
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase34-flood-noaa-full-footprint.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/noaa-storm-impact-20261102
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install analysis packages
+        run: pip install pandas numpy requests openpyxl scikit-learn tabulate
+      - name: Recover original 92-flood model inputs and official NOAA anchor audit
+        run: |
+          mkdir -p audit_inputs/phase34/phase25 audit_inputs/phase34/phase33
+          gh run download 41417102317 -n flood25-duration-adaptive-exposure -D audit_inputs/phase34/phase25
+          gh run download 41441307213 -n phase33-noaa-impact-audit -D audit_inputs/phase34/phase33
+      - name: Acquire full NOAA and FEMA data and evaluate retrospective ablation
+        run: python analysis/phase34_full_noaa_county_date_impact.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase34-flood-full-noaa-county-date-impact
+          path: audit_outputs/phase34_noaa_footprint/
