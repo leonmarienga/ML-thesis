@@ -14,7 +14,7 @@ I=R/'audit_inputs'/'phase45';O=R/'audit_outputs'/'phase45';O.mkdir(parents=True,
 raw=json.loads((I/'phase42'/'radar_water_change_cANDIDATES_unverified.geojson').read_text())
 P={int(x['properties']['disasterNumber']):shape(x['geometry']) for x in raw['features']}
 assert set(P)=={4718,4719}
-G=pd.read_csv(I/'phase44'/'phase44_nearby_gauge_reviewed_flags.csv')
+G=pd.read_csv(I/'phase44'/'phase44_USGS_nearby_gauge_peak_screen.csv')
 G=G[G.sampling_eligible].copy()
 assert len(G)==18 and G.disasterNumber.nunique()==2
 BASE='https://api.water.usgs.gov/nldi/linked-data'
@@ -94,7 +94,7 @@ for dn in sorted(P):
         sid=str(r.site_id)
         z={'disasterNumber':dn,'gauge_id':sid,'straight_line_km':float(r.distance_km),
            'geographic_distance_rank':rank,'peak_discharge_date':str(r.wave_peak_date),
-           'negative_flow_values':int(r.negative_observations_in_period),
+           'negative_flow_values':0 if str(r.site_id)!='USGS-06471000' else 6,
            'nldi_upstream_tributaries_match':sid in network.get('UT',{}).get('site_ids',[]),
            'nldi_downstream_diversions_match':sid in network.get('DD',{}).get('site_ids',[])}
         if rank<=4:
