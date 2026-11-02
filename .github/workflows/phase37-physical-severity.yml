@@ -30,3 +30,5 @@ jobs:
         with:
           name: phase37-flood-physical-severity
           path: audit_outputs/phase37/
+
+# Run with corrected report literal
