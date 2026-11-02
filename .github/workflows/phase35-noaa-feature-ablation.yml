@@ -29,3 +29,5 @@ jobs:
         with:
           name: phase35-noaa-feature-isolation
           path: audit_outputs/phase35/
+
+# Re-run after exact feature-order replication fix
