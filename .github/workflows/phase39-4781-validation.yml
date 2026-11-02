@@ -1,0 +1,31 @@
+name: Phase39 FEMA 4781 repeat optical and hydrography
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase39-4781-validation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy rasterio shapely pyproj requests
+      - run: |
+          mkdir -p audit_inputs/phase39/{phase30,phase38}
+          gh run download 41430052004 -n phase30-public-sentinel2-real-cog -D audit_inputs/phase39/phase30
+          gh run download 41486587449 -n phase38-sentinel-fema-county-audit -D audit_inputs/phase39/phase38
+      - run: python analysis/phase39_4781_time_series_and_USGS_hydro.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase39-4781-repeat-imagery-hydrography
+          path: audit_outputs/phase39/
