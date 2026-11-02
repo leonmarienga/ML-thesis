@@ -1,0 +1,31 @@
+name: Phase43 repeated radar candidate time series
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase43-radar-timeseries.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy rasterio shapely pyproj planetary-computer tabulate
+      - run: |
+          mkdir -p audit_inputs/phase43/{phase40,phase42}
+          gh run download 41490509146 -n phase40-radar-and-static-water-feasibility -D audit_inputs/phase43/phase40
+          gh run download 41493948900 -n phase42-optical-failure-radar-pixels -D audit_inputs/phase43/phase42
+      - run: python analysis/phase43_two_radar_candidates_timeseries.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase43-radar-repeat-4718-4719
+          path: audit_outputs/phase43/
