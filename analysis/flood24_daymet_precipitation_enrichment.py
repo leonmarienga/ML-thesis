@@ -171,8 +171,8 @@ def evaluate_case(info,geo):
     return rec
 
 def main():
-    f=pd.read_csv(INPUT/"flood_stratified_24_normalized_discharge.csv")
-    candidate=pd.read_csv(INPUT/"top2_station_upstream_basin_screen.csv",
+    f=pd.read_csv(INPUT/"flow"/"flood_stratified_24_normalized_discharge.csv")
+    candidate=pd.read_csv(INPUT/"basin"/"top2_station_upstream_basin_screen.csv",
          dtype={"candidate_station_id":str})
     assert len(f)==MAX_CASES and f.disasterNumber.nunique()==MAX_CASES
     c=candidate[candidate.upstream_match==True].sort_values(
