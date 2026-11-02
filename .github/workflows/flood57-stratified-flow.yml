@@ -1,0 +1,31 @@
+name: Flood 57 stratified seasonal discharge sample
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/flood57_stratified_flow_normalization.py','.github/workflows/flood57-stratified-flow.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests openpyxl
+      - run: |
+          mkdir -p audit_inputs/flood57_flow
+          gh run download 41404741366 -n flood-nldi-upstream-basin-audit -D audit_inputs/flood57_flow
+      - run: python analysis/flood57_stratified_flow_normalization.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flood57-stratified-seasonal-anomalies
+          path: audit_outputs/flood57_flow/
+          retention-days: 90
