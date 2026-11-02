@@ -1,0 +1,30 @@
+name: Phase29 OPERA DSWx WTR raster access check
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/phase29_opera_real_wtr_raster_gate.py','.github/workflows/phase29-opera-raster-gate.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas numpy requests rasterio pyproj
+      - run: |
+          mkdir -p audit_inputs/dswx29
+          gh run download 41421221883 -n phase28-opera-cmr-feasibility -D audit_inputs/dswx29
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: python analysis/phase29_opera_real_wtr_raster_gate.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase29-dswx-real-raster-gate
+          path: audit_outputs/dswx29/
