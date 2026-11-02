@@ -1,0 +1,32 @@
+name: Phase38 flood satellite geometries and county QA
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase38-satellite-county.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy scipy rasterio pyproj shapely geopandas requests tabulate
+      - run: |
+          mkdir -p audit_inputs/phase38/{phase26,phase31,phase34}
+          gh run download 41418259711 -n flood26-footprint-catalog-audit -D audit_inputs/phase38/phase26
+          gh run download 41431485155 -n phase31-sentinel2-observability -D audit_inputs/phase38/phase31
+          gh run download 41443217086 -n phase34-flood-full-noaa-county-date-impact -D audit_inputs/phase38/phase34
+      - run: python analysis/phase38_sentinel_county_geometry_gate.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase38-sentinel-fema-county-audit
+          path: audit_outputs/phase38/
