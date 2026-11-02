@@ -126,7 +126,7 @@ def run():
     pd.DataFrame(folds).to_csv(OUT/"chronological_fold_provenance.csv",index=False)
     # Fixed raw prior Phase35 must reproduce exactly before interpreting
     old=pd.read_csv(IN/"phase35"/"phase35_predictions_59x5.csv")
-    for oldname,newname in [("fema_only","fema_only"),("fema_geo_counts","fema_geo_event_counts")]:
+    for oldname,newname in [("fema_only","fema_only"),("fema_geo_event_counts","fema_geo_event_counts")]:
         a=old[old.arm==oldname].sort_values("disasterNumber")
         b=p[p.arm==newname].sort_values("disasterNumber")
         assert np.array_equal(a.disasterNumber.to_numpy(),b.disasterNumber.to_numpy())
