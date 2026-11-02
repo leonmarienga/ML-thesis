@@ -1,0 +1,34 @@
+name: Reconstruct exact accepted Track A 912 predictions
+on:
+  push:
+    branches: [experiment/accepted-track-a-conformal-cqr-20261101]
+    paths: ['analysis/reconstruct_accepted_912_exact.py','.github/workflows/reconstruct-accepted-track-a.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/accepted-track-a-conformal-cqr-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy scikit-learn
+      - run: |
+          mkdir -p audit_inputs/nonbio_final_50_200_overlay/{baseline,low0,low1,mid}
+          gh run download 34796746603 -n nonbio-final-830-accepted-amount-stack -D audit_inputs/nonbio_final_50_200_overlay/baseline
+          gh run download 38153347912 -n nonbio-0-100k-dedicated-ml-specialist -D audit_inputs/nonbio_final_50_200_overlay/low0
+          gh run download 38152554081 -n nonbio-100k-1m-dedicated-ml-specialist -D audit_inputs/nonbio_final_50_200_overlay/low1
+          gh run download 38162966192 -n nonbio-50-200m-routed-acceptance-audit -D audit_inputs/nonbio_final_50_200_overlay/mid
+      - run: python analysis/reconstruct_accepted_912_exact.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exact-accepted-912-predictions
+          path: audit_outputs/nonbio_final_50_200m_overlay/
+          retention-days: 90
