@@ -1,0 +1,33 @@
+name: Daymet 92-flood multi-location rainfall
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/flood92_multilocation_daymet.py','.github/workflows/flood92-multilocation-daymet.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests openpyxl
+      - run: |
+          mkdir -p audit_inputs/daymet_multilocation/{noaa,county,single}
+          gh run download 34017327286 -n external-severity-ablation -D audit_inputs/daymet_multilocation/noaa
+          gh run download 41326254945 -n county-exposure-hazard-pilot -D audit_inputs/daymet_multilocation/county
+          gh run download 41410421735 -n daymet-all-87-flood-rainfall -D audit_inputs/daymet_multilocation/single
+      - run: python analysis/flood92_multilocation_daymet.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flood92-multilocation-daymet
+          path: audit_outputs/daymet_multilocation/
+          retention-days: 90
