@@ -1,0 +1,30 @@
+name: USGS pre-event seasonal flow normalization
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/usgs_flood_pre_event_normalization.py','.github/workflows/usgs-flood-seasonal-normalization.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests
+      - run: |
+          mkdir -p audit_inputs/flood_gauge_normalization
+          gh run download 41401467244 -n usgs-flood-gauge-feasibility -D audit_inputs/flood_gauge_normalization
+      - run: python analysis/usgs_flood_pre_event_normalization.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: usgs-pre-event-seasonal-flow-audit
+          path: audit_outputs/flood_gauge_normalization/
