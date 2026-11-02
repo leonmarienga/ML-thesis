@@ -28,8 +28,8 @@ def main():
  test=d[d.fyDeclared.between(2020,2024)]
  assert len(train)==536 and len(cal)==68 and len(test)==308
  arm="t72_missions_nhc72"
- xcal,xte=early.transform(train,cal,arm)
- xtrain,_=early.transform(train,train,arm)
+ xtrain,xcal=early.transform(train,cal,arm)
+ _,xte=early.transform(train,test,arm)
  # The original train-derived column layout must be identical.
  assert list(xcal.columns)==list(xtrain.columns)==list(xte.columns)
  yt=np.log1p(train.target.to_numpy(float))
