@@ -1,0 +1,31 @@
+name: Phase41 real radar RTC pixel-level evidence
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase41-radar-4781-pixels.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy rasterio shapely pyproj planetary-computer tabulate
+      - run: |
+          mkdir -p audit_inputs/phase41/{phase38,phase40}
+          gh run download 41486587449 -n phase38-sentinel-fema-county-audit -D audit_inputs/phase41/phase38
+          gh run download 41490509146 -n phase40-radar-and-static-water-feasibility -D audit_inputs/phase41/phase40
+      - run: python analysis/phase41_rtc_4781_pixel_evidence.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase41-real-radar-4781-pixel-evidence
+          path: audit_outputs/phase41/
