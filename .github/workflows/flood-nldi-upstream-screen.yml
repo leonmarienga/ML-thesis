@@ -1,0 +1,31 @@
+name: NLDI upstream flood basin screening
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/flood_nldi_upstream_basin_screen.py','.github/workflows/flood-nldi-upstream-screen.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests shapely
+      - run: |
+          mkdir -p audit_inputs/nldi_flood
+          gh run download 41403926817 -n flood-87-geospatial-gauge-screen -D audit_inputs/nldi_flood
+      - run: python analysis/flood_nldi_upstream_basin_screen.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flood-nldi-upstream-basin-audit
+          path: audit_outputs/nldi_flood/
+          retention-days: 90
