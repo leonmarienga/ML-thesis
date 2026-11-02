@@ -20,9 +20,9 @@ jobs:
         with: {python-version: '3.12'}
       - run: pip install pandas numpy requests
       - run: |
-          mkdir -p audit_inputs/daymet_flood24
-          gh run download 41406256247 -n flood57-stratified-seasonal-anomalies -D audit_inputs/daymet_flood24
-          gh run download 41404741366 -n flood-nldi-upstream-basin-audit -D audit_inputs/daymet_flood24
+          mkdir -p audit_inputs/daymet_flood24/{flow,basin}
+          gh run download 41406256247 -n flood57-stratified-seasonal-anomalies -D audit_inputs/daymet_flood24/flow
+          gh run download 41404741366 -n flood-nldi-upstream-basin-audit -D audit_inputs/daymet_flood24/basin
       - run: python analysis/flood24_daymet_precipitation_enrichment.py
       - uses: actions/upload-artifact@v4
         if: always()
