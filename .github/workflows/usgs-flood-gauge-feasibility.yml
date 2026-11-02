@@ -1,0 +1,30 @@
+name: USGS physical flood gauge feasibility
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/usgs_flood_county_gauge_feasibility.py','.github/workflows/usgs-flood-gauge-feasibility.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests openpyxl
+      - run: |
+          mkdir -p audit_inputs/flood_physical
+          gh run download 41326254945 -n county-exposure-hazard-pilot -D audit_inputs/flood_physical
+      - run: python analysis/usgs_flood_county_gauge_feasibility.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: usgs-flood-gauge-feasibility
+          path: audit_outputs/flood_physical_feasibility/
