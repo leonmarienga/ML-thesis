@@ -97,7 +97,7 @@ def season_distance(anchor,series):
     doy=np.array([pd.Timestamp(year=2000,month=t.month,day=t.day).dayofyear for t in series])
     return np.minimum(np.abs(doy-a),366-np.abs(doy-a))
 
-def evaluate_case(info,geo):
+def evaluate_case(info,geo,min_event_days=3):
     start=pd.to_datetime(info.incidentBeginDate,utc=True,errors="coerce")
     end=pd.to_datetime(info.incidentEndDate,utc=True,errors="coerce")
     dn=int(info.disasterNumber)
@@ -141,7 +141,7 @@ def evaluate_case(info,geo):
       "antecedent_7day_obs_count":len(before),
       "reference_years_available":int(hist.year.nunique()),
       "reference_daily_n":len(hist)})
-    if len(event)<3 or len(event)/max(expected,1)<.80:
+    if len(event)<min_event_days or len(event)/max(expected,1)<.80:
         rec["rainfall_status"]="insufficient_event_daily_coverage"
         return rec
     rec.update({
