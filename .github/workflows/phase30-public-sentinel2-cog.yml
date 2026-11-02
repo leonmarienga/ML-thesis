@@ -1,0 +1,31 @@
+name: Phase30 public Sentinel-2 real COG validation
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/phase30_public_sentinel2_cog_water_change.py','.github/workflows/phase30-public-sentinel2-cog.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests rasterio pyproj
+      - run: |
+          mkdir -p audit_inputs/sentinel30
+          gh run download 41421221883 -n phase28-opera-cmr-feasibility -D audit_inputs/sentinel30
+      - run: python analysis/phase30_public_sentinel2_cog_water_change.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase30-public-sentinel2-real-cog
+          path: audit_outputs/sentinel30/
+          retention-days: 90
