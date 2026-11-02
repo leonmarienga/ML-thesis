@@ -282,6 +282,8 @@ def run():
        "This is an explicitly exploratory feature-family audit, NOT independent validation or an accepted model upgrade.\n\n"
        "## 59-case fiscal-year forward-test metrics\n\n"+M.to_markdown(index=False)
        +"\n\n## Exploratory paired comparisons\n\n"+paired.to_markdown(index=False)
-       +"\n\n## Physical source coverage and declaration-time limits\n\n"+pd.DataFrame([availability]).to_markdown(index=False)\n       +"\n\n## Direct paired comparisons vs report density\n\n"+pd.DataFrame(special).to_markdown(index=False)\n       +"\n\n## Scope\nDaymet is actual gridded precipitation at sampled NOAA coordinates, but not a validated flood footprint. USGS has only 11 usable flow cases. No declaration-time certified source versions. Repeatedly inspected 2021–2024 test results are exploratory and never independent confirmation. Frozen Track A remains untouched.\n")
+       +"\n\n## Physical source coverage and declaration-time limits\n\n"+pd.DataFrame([availability]).to_markdown(index=False)
+       +"\n\n## Direct paired comparisons vs report density\n\n"+pd.DataFrame(special).to_markdown(index=False)
+       +"\n\n## Scope\nDaymet is actual gridded precipitation at sampled NOAA coordinates, but not a validated flood footprint. USGS has only 11 usable flow cases. No declaration-time certified source versions. Repeatedly inspected 2021–2024 test results are exploratory and never independent confirmation. Frozen Track A remains untouched.\n")
     print("PHASE36_SUMMARY",json.dumps({k:v for k,v in findings.items() if k!="restrictions"},indent=2),flush=True)
 if __name__=="__main__":run()
