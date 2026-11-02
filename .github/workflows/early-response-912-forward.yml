@@ -1,0 +1,33 @@
+name: Early Response 912 T0 T72 Chronological Validation
+on:
+  push:
+    branches: [experiment/early-response-912-t0-t72-20261101]
+    paths: ['analysis/early_response_912_t0_t72_forward.py','.github/workflows/early-response-912-forward.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/early-response-912-t0-t72-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy scikit-learn openpyxl
+      - name: Retrieve existing frozen research outputs
+        run: |
+          mkdir -p audit_inputs/early_response_912/{missions,nhc}
+          gh run download 41340860069 -n mission-action-asof-t0-t72-971 -D audit_inputs/early_response_912/missions
+          gh run download 41334493058 -n tropical-incident-year-matched-advisories -D audit_inputs/early_response_912/nhc
+      - run: python analysis/early_response_912_t0_t72_forward.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: early-response-912-t0-t72-validation
+          path: audit_outputs/early_response_912_t0_t72/
+          retention-days: 90
