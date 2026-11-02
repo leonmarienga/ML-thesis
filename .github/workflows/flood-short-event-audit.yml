@@ -1,0 +1,30 @@
+name: Short flood rain eligibility audit
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/flood_short_event_eligibility_audit.py','.github/workflows/flood-short-event-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy
+      - run: |
+          mkdir -p audit_inputs/flood_short_event
+          gh run download 41410421735 -n daymet-all-87-flood-rainfall -D audit_inputs/flood_short_event
+      - run: python analysis/flood_short_event_eligibility_audit.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: short-flood-rain-eligibility-audit
+          path: audit_outputs/flood_short_event/
