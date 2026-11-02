@@ -1,0 +1,33 @@
+name: Fixed interval decision usefulness audit
+on:
+  push:
+    branches: [experiment/accepted-track-a-conformal-cqr-20261101]
+    paths: ['analysis/uncertainty_decision_usefulness_audit.py','.github/workflows/uncertainty-decision-usefulness.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/accepted-track-a-conformal-cqr-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install numpy pandas
+      - run: |
+          mkdir -p audit_inputs/uncertainty_decision_audit/{hierarchical,cqr,accepted}
+          gh run download 41396350227 -n hierarchical-one-sided-conformal -D audit_inputs/uncertainty_decision_audit/hierarchical
+          gh run download 41397857911 -n cqr-track-b-fixed-split-results -D audit_inputs/uncertainty_decision_audit/cqr
+          gh run download 41397678781 -n exact-accepted-912-predictions -D audit_inputs/uncertainty_decision_audit/accepted
+      - run: python analysis/uncertainty_decision_usefulness_audit.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: uncertainty-decision-usefulness-audit
+          path: audit_outputs/uncertainty_decision_audit/
+          retention-days: 90
