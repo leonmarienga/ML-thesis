@@ -1,0 +1,30 @@
+name: Phase47 JRC observed water monthly 2023 independent comparison
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase47-JRC-monthly-water.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy rasterio shapely pyproj tabulate
+      - run: |
+          mkdir -p audit_inputs/phase47/phase42
+          gh run download 41493948900 -n phase42-optical-failure-radar-pixels -D audit_inputs/phase47/phase42
+      - run: python analysis/phase47_JRC_2023_monthly_independent_water.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase47-jrc-2023-monthly-optical-water
+          path: audit_outputs/phase47/
