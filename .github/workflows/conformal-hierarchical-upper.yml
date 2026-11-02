@@ -1,0 +1,31 @@
+name: Hierarchical and one-sided split conformal
+on:
+  push:
+    branches: [experiment/conformal-frozen-split-20261101]
+    paths: ['analysis/conformal_hierarchical_upper_2019.py','.github/workflows/conformal-hierarchical-upper.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/conformal-frozen-split-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy scikit-learn openpyxl
+      - run: |
+          mkdir -p audit_inputs/early_response_912/{missions,nhc}
+          gh run download 41340860069 -n mission-action-asof-t0-t72-971 -D audit_inputs/early_response_912/missions
+          gh run download 41334493058 -n tropical-incident-year-matched-advisories -D audit_inputs/early_response_912/nhc
+      - run: python analysis/conformal_hierarchical_upper_2019.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hierarchical-one-sided-conformal
+          path: audit_outputs/conformal_hierarchical_upper/
