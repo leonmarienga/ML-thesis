@@ -1,0 +1,31 @@
+name: Phase45 USGS NLDI gauge network attribution
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase45-nldi-network.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests shapely tabulate
+      - run: |
+          mkdir -p audit_inputs/phase45/{phase42,phase44}
+          gh run download 41493948900 -n phase42-optical-failure-radar-pixels -D audit_inputs/phase45/phase42
+          gh run download 41502013270 -n phase44-independent-hydrologic-evidence -D audit_inputs/phase45/phase44
+      - run: python analysis/phase45_nldi_network_gauge_attribution.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase45-NLDI-network-attribution
+          path: audit_outputs/phase45/
