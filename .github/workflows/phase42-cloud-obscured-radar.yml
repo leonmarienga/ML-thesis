@@ -1,0 +1,30 @@
+name: Phase42 SAR dual-polarization flood candidate screen
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase42-cloud-obscured-radar.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy rasterio shapely pyproj scipy planetary-computer tabulate
+      - run: |
+          mkdir -p audit_inputs/phase42/phase40
+          gh run download 41490509146 -n phase40-radar-and-static-water-feasibility -D audit_inputs/phase42/phase40
+      - run: python analysis/phase42_cloud_obscured_radar_rtc_pixels.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase42-optical-failure-radar-pixels
+          path: audit_outputs/phase42/
