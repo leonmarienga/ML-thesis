@@ -45,7 +45,7 @@ arms={
  "fema_geography_only":feat["fema_only"]+G,
  "fema_geo_event_counts":feat["fema_only"]+G+E,
  "fema_damage_only":feat["fema_only"]+L+["noaa_reported_damage_available"],
- "fema_geo_counts_and_damage":feat["fema_only"]+L+E.slice(0,2)+G.slice(0,2)+G.slice(2)+E.slice(2),
+ "fema_geo_counts_and_damage":feat["fema_only"]+L+E[:2]+G[:2]+G[2:]+E[2:],
 }
 rows=[]
 for fy in base.YEARS:
