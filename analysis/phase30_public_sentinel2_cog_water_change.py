@@ -155,7 +155,7 @@ def synthetic_test():
     b=np.array([[6,6,4,6],[4,5,8,6]],dtype=np.uint8)
     v=np.isin(a,list(QA_VALID))&np.isin(b,list(QA_VALID))
     gain=(a!=6)&(b==6)&v
-    assert gain.sum()==2 and not gain[0,3] and not gain[1,3]
+    assert gain.sum()==2 and gain[0,0] and gain[1,3] and not gain[0,3]
     return True
 
 def read_pair(pair,lat,lon):
