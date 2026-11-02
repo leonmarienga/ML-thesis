@@ -28,3 +28,5 @@ jobs:
         with:
           name: phase42-optical-failure-radar-pixels
           path: audit_outputs/phase42/
+
+# rerun after pandas datetime fix
