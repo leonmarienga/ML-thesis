@@ -1,0 +1,31 @@
+name: Phase40b JRC permanent-water exact candidate-pixel check
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase40b-jrc-candidate-pixel.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install numpy rasterio shapely pyproj
+      - run: |
+          mkdir -p audit_inputs/phase40b/{phase38,phase40}
+          gh run download 41486587449 -n phase38-sentinel-fema-county-audit -D audit_inputs/phase40b/phase38
+          gh run download 41490509146 -n phase40-radar-and-static-water-feasibility -D audit_inputs/phase40b/phase40
+      - run: python analysis/phase40b_jrc_historical_water_patch.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase40b-jrc-water-reference-4781
+          path: audit_outputs/phase40b/
