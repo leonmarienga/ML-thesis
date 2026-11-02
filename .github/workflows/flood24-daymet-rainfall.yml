@@ -1,0 +1,32 @@
+name: NASA Daymet rainfall 24 flood pilot
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/flood24_daymet_precipitation_enrichment.py','.github/workflows/flood24-daymet-rainfall.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests
+      - run: |
+          mkdir -p audit_inputs/daymet_flood24
+          gh run download 41406256247 -n flood57-stratified-seasonal-anomalies -D audit_inputs/daymet_flood24
+          gh run download 41404741366 -n flood-nldi-upstream-basin-audit -D audit_inputs/daymet_flood24
+      - run: python analysis/flood24_daymet_precipitation_enrichment.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daymet-flood24-precipitation
+          path: audit_outputs/daymet_flood24/
+          retention-days: 90
