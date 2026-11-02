@@ -1,0 +1,31 @@
+name: Event-specific flood footprint source catalog
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/flood26_observed_footprint_catalog_audit.py','.github/workflows/flood26-observed-footprint-catalog.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests beautifulsoup4 openpyxl
+      - run: |
+          mkdir -p audit_inputs/flood_footprint_catalog
+          gh run download 41410421735 -n daymet-all-87-flood-rainfall -D audit_inputs/flood_footprint_catalog
+      - run: python analysis/flood26_observed_footprint_catalog_audit.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flood26-footprint-catalog-audit
+          path: audit_outputs/flood_footprint_catalog/
+          retention-days: 90
