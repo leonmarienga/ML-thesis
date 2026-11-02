@@ -1,0 +1,31 @@
+name: Phase44 independent USGS hydrologic audit
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase44-usgs-hydrology.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy shapely requests tabulate
+      - run: |
+          mkdir -p audit_inputs/phase44/{phase42,phase43}
+          gh run download 41493948900 -n phase42-optical-failure-radar-pixels -D audit_inputs/phase44/phase42
+          gh run download 41498539358 -n phase43-radar-repeat-4718-4719 -D audit_inputs/phase44/phase43
+      - run: python analysis/phase44_usgs_daily_event_hydrology.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase44-independent-hydrologic-evidence
+          path: audit_outputs/phase44/
