@@ -1,0 +1,31 @@
+name: CQR fixed Track B 2019 calibration
+on:
+  push:
+    branches: [experiment/accepted-track-a-conformal-cqr-20261101]
+    paths: ['analysis/cqr_track_b_fixed_split.py','.github/workflows/cqr-fixed-track-b.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/accepted-track-a-conformal-cqr-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy scikit-learn openpyxl
+      - run: |
+          mkdir -p audit_inputs/early_response_912/{missions,nhc}
+          gh run download 41340860069 -n mission-action-asof-t0-t72-971 -D audit_inputs/early_response_912/missions
+          gh run download 41334493058 -n tropical-incident-year-matched-advisories -D audit_inputs/early_response_912/nhc
+      - run: python analysis/cqr_track_b_fixed_split.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cqr-track-b-fixed-split-results
+          path: audit_outputs/cqr_track_b/
