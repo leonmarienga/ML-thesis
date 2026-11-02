@@ -12,7 +12,7 @@ spec=importlib.util.spec_from_file_location("original_immutable_overlay",module)
 m=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(m)
 m.main()
-summary=json.loads((ROOT/"audit_outputs"/"nonbio_final_50_200m_overlay"/"summary.json").read_text())
+summary=json.loads((ROOT/"audit_outputs"/"nonbio_final_50_200_overlay"/"summary.json").read_text())
 res=summary["overall"]["candidate_with_50_200M_hybrid"]
 assert abs(res["MAE_USD"]-5014819.011614494)<.01,res
 assert abs(res["R2"]-.8867765710842239)<1e-9,res
