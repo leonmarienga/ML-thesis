@@ -139,7 +139,7 @@ for dn in [4718,4719]:
   dates={}
   for _,r in c.iterrows():
     id=str(r.item_id)
-    t=pd.Timestamp(r.dt)
+    t=pd.Timestamp(r['dt'])
     date=str(t.date())
     dates[id]=date
     scene={"disasterNumber":dn,"item_id":id,"date":date,"relative_days_to_start":
