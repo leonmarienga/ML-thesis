@@ -60,7 +60,7 @@ def subset_candidates(cases,allmeta):
     for _,case in cases.sort_values("disasterNumber").iterrows():
         dn=int(case.disasterNumber)
         g=allmeta[allmeta.disasterNumber==dn].copy()
-        g["timestamp_dt"]=pd.to_datetime(g.timestamp,utc=True)
+        g["timestamp_dt"]=pd.to_datetime(g.timestamp,utc=True,format='mixed')
         g["meta_cloud"]=pd.to_numeric(g.cloud_cover,errors="coerce").fillna(100)
         g["phase"]=g.phase.astype(str)
         both_tiles=[]
