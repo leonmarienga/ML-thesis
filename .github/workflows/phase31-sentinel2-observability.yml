@@ -1,0 +1,31 @@
+name: Phase31 public Sentinel2 observability screen
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/phase31_sentinel2_observability_first_screen.py','.github/workflows/phase31-sentinel2-observability.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy rasterio pyproj
+      - run: |
+          mkdir -p audit_inputs/sentinel31/{phase28,phase30}
+          gh run download 41421221883 -n phase28-opera-cmr-feasibility -D audit_inputs/sentinel31/phase28
+          gh run download 41430052004 -n phase30-public-sentinel2-real-cog -D audit_inputs/sentinel31/phase30
+      - run: python analysis/phase31_sentinel2_observability_first_screen.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase31-sentinel2-observability
+          path: audit_outputs/sentinel31/
