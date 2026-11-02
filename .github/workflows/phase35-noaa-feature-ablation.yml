@@ -1,0 +1,31 @@
+name: Phase35 NOAA damage-vs-coverage feature isolation
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase35-noaa-feature-ablation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy openpyxl scikit-learn tabulate
+      - run: |
+          mkdir -p audit_inputs/phase35/phase25 audit_inputs/phase35/phase34
+          gh run download 41417102317 -n flood25-duration-adaptive-exposure -D audit_inputs/phase35/phase25
+          gh run download 41443217086 -n phase34-flood-full-noaa-county-date-impact -D audit_inputs/phase35/phase34
+      - run: python analysis/phase35_noaa_feature_group_ablation.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase35-noaa-feature-isolation
+          path: audit_outputs/phase35/
