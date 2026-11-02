@@ -197,7 +197,7 @@ def run():
       median_actual_funding=("target","median"),
       avg_abs_error_FEMA=("error_fema_only","mean"),
       avg_abs_error_raw_count=("error_fema_geo_event_counts","mean"),
-      avg_abs_error_prior_intensity=("error_fema_prior_reporting_only","mean")).reset_index()
+      avg_abs_error_prior_intensity=("error_fema_normalized_report_density","mean")).reset_index()
     sub.to_csv(OUT/"phase37_error_by_report_count_bin.csv",index=False)
     # Fiscal year and positive-only audit.
     yearstats=[]
@@ -285,5 +285,5 @@ def run():
        +"\n\n## Physical source coverage and declaration-time limits\n\n"+pd.DataFrame([availability]).to_markdown(index=False)
        +"\n\n## Direct paired comparisons vs report density\n\n"+pd.DataFrame(special).to_markdown(index=False)
        +"\n\n## Scope\nDaymet is actual gridded precipitation at sampled NOAA coordinates, but not a validated flood footprint. USGS has only 11 usable flow cases. No declaration-time certified source versions. Repeatedly inspected 2021–2024 test results are exploratory and never independent confirmation. Frozen Track A remains untouched.\n")
-    print("PHASE36_SUMMARY",json.dumps({k:v for k,v in findings.items() if k!="restrictions"},indent=2),flush=True)
+    print("PHASE37_SUMMARY",json.dumps({k:v for k,v in findings.items() if k!="restrictions"},indent=2),flush=True)
 if __name__=="__main__":run()
