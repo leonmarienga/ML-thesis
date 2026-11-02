@@ -1,0 +1,33 @@
+name: Flood chronological multi-location rainfall ablation
+on:
+  push:
+    branches: [experiment/flood-hurricane-physical-20261101]
+    paths: ['analysis/flood_forward_model_ablation.py','.github/workflows/flood-forward-model-ablation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/flood-hurricane-physical-20261101}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy scikit-learn openpyxl
+      - run: |
+          mkdir -p audit_inputs/flood_ablation/{single,multi,flow}
+          gh run download 41410421735 -n daymet-all-87-flood-rainfall -D audit_inputs/flood_ablation/single
+          gh run download 41411613949 -n flood92-multilocation-daymet -D audit_inputs/flood_ablation/multi
+          gh run download 41406256247 -n flood57-stratified-seasonal-anomalies -D audit_inputs/flood_ablation/flow
+      - run: python analysis/flood_forward_model_ablation.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flood-funding-feature-forward-ablation
+          path: audit_outputs/flood_forward_ablation/
+          retention-days: 90
