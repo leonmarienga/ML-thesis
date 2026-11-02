@@ -1,0 +1,30 @@
+name: Phase46 independent USGS event survey flood depth audit
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase46-USGS-highwater-marks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy shapely pyproj requests
+      - run: |
+          mkdir -p audit_inputs/phase46/phase42
+          gh run download 41493948900 -n phase42-optical-failure-radar-pixels -D audit_inputs/phase46/phase42
+      - run: python analysis/phase46_USGS_HWM_event_validation.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase46-USGS-event-high-water-mark-audit
+          path: audit_outputs/phase46/
