@@ -1,0 +1,31 @@
+name: Phase40 public radar acquisition coverage and permanent-water screening
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase40-sar-scene-availability.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas requests tabulate
+      - run: |
+          mkdir -p audit_inputs/phase40/{phase28,phase38}
+          gh run download 41421221883 -n phase28-opera-cmr-feasibility -D audit_inputs/phase40/phase28
+          gh run download 41486587449 -n phase38-sentinel-fema-county-audit -D audit_inputs/phase40/phase38
+      - run: python analysis/phase40_radar_and_static_water_availability.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase40-radar-and-static-water-feasibility
+          path: audit_outputs/phase40/
