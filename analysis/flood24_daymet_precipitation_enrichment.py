@@ -60,7 +60,12 @@ def download_daymet(lat,lon,years):
 def parse_daymet(txt):
     # Daymet CSV has metadata comment rows and a nonstandard unit-bearing
     # precipitation header, usually 'prcp (mm/day)'.
-    d=pd.read_csv(StringIO(txt),comment="#")
+    lines=txt.splitlines()
+    start=next((i for i,line in enumerate(lines)
+        if line.strip().lower().startswith("year,yday,")),None)
+    if start is None:
+        raise ValueError("Daymet year,yday column header not found")
+    d=pd.read_csv(StringIO("\n".join(lines[start:])))
     d.columns=[str(x).strip() for x in d.columns]
     y=next((x for x in d.columns if x.lower()=="year"),None)
     doy=next((x for x in d.columns if x.lower()=="yday"),None)
