@@ -1,0 +1,111 @@
+name: Phase33 NOAA official economic impact audit
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase33-noaa-economic-impact.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests
+      - run: |
+          mkdir -p inputs/flood25
+          gh run download 41417102317 -n flood25-duration-adaptive-exposure -D inputs/flood25
+      - name: Download NOAA Storm Events Details archives and join candidate anchors
+        run: |
+          cat > /tmp/noaa33.py <<'PY'
+          import re, json, hashlib, pathlib, requests, time
+          import pandas as pd
+          import numpy as np
+          O=pathlib.Path('audit_outputs/noaa33'); O.mkdir(parents=True,exist_ok=True)
+          C=pd.read_csv('inputs/flood25/all_248_point_duration_adaptive.csv')
+          C['noaa_event_id']=pd.to_numeric(C.noaa_event_id).astype('int64')
+          C['county_fips']=pd.to_numeric(C.county_fips).astype('int64')
+          C['year']=pd.to_datetime(C.window_start).dt.year
+          assert len(C)==248 and C.disasterNumber.nunique()==87
+          url='https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/'
+          s=requests.Session();s.headers['User-Agent']='academic-physical-disaster-impact-data/phase33'
+          def get(u,stream=False):
+              for i in range(4):
+                  try:
+                      r=s.get(u,timeout=(20,180),stream=stream);r.raise_for_status();return r
+                  except Exception:
+                      if i==3:raise
+                      time.sleep(3*(i+1))
+          index=get(url).text
+          cols=['EVENT_ID','EPISODE_ID','STATE','STATE_FIPS','CZ_TYPE','CZ_FIPS','CZ_NAME','EVENT_TYPE','BEGIN_DATE_TIME','END_DATE_TIME','DAMAGE_PROPERTY','DAMAGE_CROPS','DEATHS_DIRECT','INJURIES_DIRECT']
+          rows=[];manifest=[];ids=set(C.noaa_event_id)
+          for year in sorted(C.year.unique()):
+              names=sorted(set(re.findall(r'StormEvents_details-ftp_v1\.0_d'+str(year)+r'_c\d{8}\.csv\.gz',index)))
+              assert names,('No archive year',year)
+              fname=names[-1];p=O/fname
+              with get(url+fname,stream=True) as r,open(p,'wb') as w:
+                  for chunk in r.iter_content(262144):
+                      if chunk:w.write(chunk)
+              sha=hashlib.sha256(p.read_bytes()).hexdigest()
+              total=0;matched=0
+              for block in pd.read_csv(p,dtype=str,compression='gzip',usecols=lambda z:z in cols,chunksize=20000):
+                  total+=len(block)
+                  y=block[pd.to_numeric(block.EVENT_ID,errors='coerce').isin(ids)].copy()
+                  if len(y):
+                      y['source_file']=fname;y['source_sha256']=sha
+                      rows.append(y);matched+=len(y)
+              manifest.append({'year':int(year),'filename':fname,'sha256':sha,'archive_rows':total,'matched_rows':matched,'source_url':url+fname})
+              print(year,total,matched,flush=True);p.unlink()
+          D=pd.concat(rows,ignore_index=True)
+          D['EVENT_ID']=pd.to_numeric(D.EVENT_ID,errors='coerce').astype('Int64')
+          D['noaa_county_fips']=pd.to_numeric(D.STATE_FIPS,errors='coerce')*1000+pd.to_numeric(D.CZ_FIPS,errors='coerce')
+          def money(x):
+              if pd.isna(x):return np.nan
+              m=re.fullmatch(r'\s*(\d+(?:\.\d+)?)\s*([KMB]?)\s*',str(x).upper().replace(',','').replace('$',''))
+              return float(m.group(1))*{'':1,'K':1e3,'M':1e6,'B':1e9}[m.group(2)] if m else np.nan
+          D['property_usd']=D.DAMAGE_PROPERTY.map(money)
+          D['crop_usd']=D.DAMAGE_CROPS.map(money)
+          D['reported_usd']=D[['property_usd','crop_usd']].sum(axis=1,min_count=1)
+          D['begin']=pd.to_datetime(D.BEGIN_DATE_TIME,errors='coerce',format='mixed')
+          D['end']=pd.to_datetime(D.END_DATE_TIME,errors='coerce',format='mixed')
+          D.to_csv(O/'matched_official_noaa_details.csv',index=False)
+          A=C.merge(D,left_on='noaa_event_id',right_on='EVENT_ID',how='left',indicator=True)
+          A['id_match']=A._merge.eq('both')
+          A['county_match']=A.county_fips.eq(A.noaa_county_fips)
+          A['county_type']=A.CZ_TYPE.eq('C')
+          A['date_overlap']=(A.begin.dt.normalize()<=pd.to_datetime(A.window_end)+pd.Timedelta(days=1))&(A.end.dt.normalize()>=pd.to_datetime(A.window_start)-pd.Timedelta(days=1))
+          A['strict_match']=A.id_match&A.county_match&A.county_type&A.date_overlap
+          A['full_disaster_damage']=False
+          A['time_safe']=False
+          keep=['disasterNumber','fyDeclared','point_rank','noaa_event_id','county_fips','EVENT_ID','EPISODE_ID','CZ_TYPE','CZ_NAME','EVENT_TYPE','BEGIN_DATE_TIME','END_DATE_TIME','DAMAGE_PROPERTY','DAMAGE_CROPS','property_usd','crop_usd','reported_usd','DEATHS_DIRECT','INJURIES_DIRECT','source_file','source_sha256','id_match','county_match','county_type','date_overlap','strict_match','full_disaster_damage','time_safe']
+          A[keep].to_csv(O/'candidate_event_match_audit.csv',index=False)
+          output=[]
+          for disaster,group in C.groupby('disasterNumber'):
+              z=A[A.disasterNumber==disaster]
+              good=z[z.strict_match].drop_duplicates('EVENT_ID')
+              output.append({'disasterNumber':int(disaster),'fyDeclared':int(group.fyDeclared.iloc[0]),'n_anchor_points':len(group),'n_exact_id_matches':int(z.id_match.sum()),'n_strict_anchor_events':len(good),'sample_property_usd':good.property_usd.sum(min_count=1),'sample_crop_usd':good.crop_usd.sum(min_count=1),'sample_reported_usd':good.reported_usd.sum(min_count=1),'n_nonmissing_reports':int(good.reported_usd.notna().sum()),'full_FEMA_disaster_loss_certified':False,'early_response_safe':False})
+          P=pd.DataFrame(output);P.to_csv(O/'87_flood_partial_sampled_noaa_impacts.csv',index=False)
+          F=pd.read_csv('inputs/flood25/model_ablation/paired_forward_flood_funding_predictions.csv')
+          B=F[F.arm=='fema_only'][['disasterNumber','fyDeclared','target','pred_amount']]
+          M=B.merge(P,on=['disasterNumber','fyDeclared'],how='left',validate='one_to_one')
+          M.to_csv(O/'59_holdout_flood_sampled_impact_join.csv',index=False)
+          eligible=M.dropna(subset=['sample_reported_usd'])
+          correlation=eligible[['target','sample_reported_usd']].corr(method='spearman').iloc[0,1] if len(eligible)>4 else np.nan
+          summary={'official_NOAA_source_revisions':manifest,'flood_disasters':C.disasterNumber.nunique(),'candidate_points':len(C),'distinct_noaa_id_requests':len(ids),'distinct_noaa_id_found':D.EVENT_ID.nunique(),'exact_id_point_matches':int(A.id_match.sum()),'strict_county_date_point_matches':int(A.strict_match.sum()),'disasters_with_strict_anchor':int(P.n_strict_anchor_events.gt(0).sum()),'disasters_with_nonmissing_sampled_damage':int(P.n_nonmissing_reports.gt(0).sum()),'disasters_with_positive_sampled_damage':int(P.sample_reported_usd.gt(0).sum()),'holdout_n':len(B),'holdout_with_sampled_damage':len(eligible),'exploratory_spearman_funding_vs_sampled_damage':None if pd.isna(correlation) else float(correlation),'new_models_trained':False,'track_A_frozen':True,'complete_disaster_impact_validated':False,'T0_T72_usable':False}
+          (O/'summary.json').write_text(json.dumps(summary,indent=2,default=str))
+          pd.DataFrame(manifest).to_csv(O/'official_source_manifest.csv',index=False)
+          (O/'REPORT.md').write_text('# Phase 33 NOAA economic impact audit\n\nOfficial NOAA reported damages linked to preselected flood-location candidate events. **These are sampled reports, not complete disaster economic losses or verified as-of observations.** No funding model retraining occurred.\n\n'+json.dumps({k:v for k,v in summary.items() if k!='official_NOAA_source_revisions'},indent=2))
+          print(json.dumps({k:v for k,v in summary.items() if k!='official_NOAA_source_revisions'},indent=2),flush=True)
+          PY
+          python /tmp/noaa33.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase33-noaa-impact-audit
+          path: audit_outputs/noaa33/
