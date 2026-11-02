@@ -1,0 +1,32 @@
+name: Phase37 independently measured flood rainfall and streamflow ablation
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase37-physical-severity.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy openpyxl scikit-learn tabulate
+      - run: |
+          mkdir -p audit_inputs/phase37/{phase25,phase34,phase35}
+          gh run download 41417102317 -n flood25-duration-adaptive-exposure -D audit_inputs/phase37/phase25
+          gh run download 41443217086 -n phase34-flood-full-noaa-county-date-impact -D audit_inputs/phase37/phase34
+          gh run download 41445094273 -n phase35-noaa-feature-isolation -D audit_inputs/phase37/phase35
+      - run: python analysis/phase37_physical_rainflow_vs_reporting.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase37-flood-physical-severity
+          path: audit_outputs/phase37/
