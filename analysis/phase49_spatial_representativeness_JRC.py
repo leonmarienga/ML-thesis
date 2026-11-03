@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase48: Geographically predeclared FEMA-designated-county sample windows.
+"""Phase49: Outcome-blind spatial expansion of Phase48 FEMA county samples.
 
 37 2023-24-incident FEMA floods from FY2023/24; 36 with strict county designations. Three geographically separated fixed windows per chosen county when feasible.
 Deterministic county selection: smallest FIPS and farthest other centroid, max 2.
@@ -25,8 +25,8 @@ from rasterio.features import geometry_mask
 from pyproj import Transformer,Geod
 
 ROOT=Path(__file__).resolve().parents[1]
-IN=ROOT/"audit_inputs"/"phase48"
-OUT=ROOT/"audit_outputs"/"phase48";OUT.mkdir(parents=True,exist_ok=True)
+IN=ROOT/"audit_inputs"/"phase49"
+OUT=ROOT/"audit_outputs"/"phase49";OUT.mkdir(parents=True,exist_ok=True)
 SOURCE="https://data.source.coop/epoch/jrc-global-surface-water-monthly/v1_5"
 COUNTY_URL="https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_county_500k.zip"
 PILOT_IDS={4708,4709,4711,4717,4718,4719,4758,4781,4787,4789,4793,4797}
