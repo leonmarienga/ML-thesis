@@ -1,0 +1,32 @@
+name: Phase49 expanded spatial sampling and missingness audit
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase49-expanded-spatial-JRC.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests geopandas rasterio shapely pyproj tabulate
+      - run: |
+          mkdir -p audit_inputs/phase49/{phase34,phase48}
+          gh run download 41443217086 -n phase34-flood-full-noaa-county-date-impact -D audit_inputs/phase49/phase34
+          gh run download 41578898108 -n phase48-geographically-sampled-monthly-water -D audit_inputs/phase49/phase48
+      - run: python -m py_compile analysis/phase49_spatial_representativeness_JRC.py
+      - run: python analysis/phase49_spatial_representativeness_JRC.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase49-spatial-representativeness-audit
+          path: audit_outputs/phase49/
