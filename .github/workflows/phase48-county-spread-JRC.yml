@@ -1,0 +1,30 @@
+name: Phase48 county-spread Landsat water observations
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase48-county-spread-JRC.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 95
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy requests geopandas rasterio shapely pyproj tabulate
+      - run: |
+          mkdir -p audit_inputs/phase48/phase34
+          gh run download 41443217086 -n phase34-flood-full-noaa-county-date-impact -D audit_inputs/phase48/phase34
+      - run: python analysis/phase48_county_spread_JRC_water_audit.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase48-geographically-sampled-monthly-water
+          path: audit_outputs/phase48/
