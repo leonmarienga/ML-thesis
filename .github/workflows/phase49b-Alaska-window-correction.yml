@@ -1,0 +1,30 @@
+name: Phase49b Alaska high-latitude raster window correction
+on:
+  push:
+    branches: [experiment/noaa-storm-impact-20261102]
+    paths: ['.github/workflows/phase49b-Alaska-window-correction.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: experiment/noaa-storm-impact-20261102}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pandas numpy rasterio shapely pyproj
+      - run: |
+          mkdir -p audit_inputs/phase49b/phase49
+          gh run download 41581240598 -n phase49-spatial-representativeness-audit -D audit_inputs/phase49b/phase49
+      - run: python analysis/phase49b_alaska_high_latitude_window_fix.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase49b-alaska-raster-window-correction
+          path: audit_outputs/phase49b/
