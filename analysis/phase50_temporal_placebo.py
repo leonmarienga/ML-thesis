@@ -154,12 +154,18 @@ def source_url(lon,lat,ym):
     y,m=ym.split('-')
     return f'{SOURCE}/{y}/{y}_{m}/monthlyhistory_{tile}_v1_5_{y}_{m}.tif'
 
-def read_month(row,geom,ym,out):
+def read_month(row,geom,ym,out,cache_root=None,cache_metadata=None):
     url=source_url(row.anchor_lon,row.anchor_lat,ym)
     file=out/'pixels'/f'{row.sample_id}_{ym}.npz';file.parent.mkdir(exist_ok=True)
+    if not file.exists() and cache_root is not None:
+        alternate=cache_root/'pixels'/file.name
+        if alternate.exists():file=alternate
+    retrieval=datetime.now(timezone.utc).isoformat()
+    reused=file.exists()
     if file.exists():
         with np.load(file,allow_pickle=False) as z:
             matrix=z['matrix'];mask=z['mask'];tf=rasterio.Affine(*z['transform']);weights=z['weights']
+            retrieval=str(z['retrieval_utc']) if 'retrieval_utc' in z.files else (cache_metadata or {}).get((row.sample_id,ym),'unknown; archived cache')
     else:
         with rasterio.Env(GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',GDAL_HTTP_TIMEOUT='35',
                           GDAL_HTTP_MAX_RETRY='1',CPL_VSIL_CURL_ALLOWED_EXTENSIONS='.tif,.tiff',
@@ -179,13 +185,14 @@ def read_month(row,geom,ym,out):
                     x,y=tf*(0,iy);xx,yy=tf*(1,iy+1)
                     areas.append(abs(GEOD.geometry_area_perimeter(box(x,yy,xx,y))[0])/1e6)
                 weights=np.repeat(np.array(areas)[:,None],matrix.shape[1],axis=1)
-        np.savez_compressed(file,matrix=matrix,mask=mask,weights=weights,transform=np.array(tuple(tf)[:6]))
+        np.savez_compressed(file,matrix=matrix,mask=mask,weights=weights,transform=np.array(tuple(tf)[:6]),retrieval_utc=retrieval)
     values=matrix[mask]
     audit=dict(sample_id=row.sample_id,disasterNumber=int(row.disasterNumber),month=ym,
                source_url=url,status='read_ok',pixels=int(mask.sum()),
                observed_pixels=int((values>0).sum()),water_pixels=int((values==2).sum()),
                observed_fraction=float((values>0).mean()),cached_pixel_sha256=sha(file),
-               retrieval_date_utc=datetime.now(timezone.utc).isoformat(),source_edition='JRC_v1_5_2022_2024',
+               retrieval_date_utc=retrieval,cache_reused=reused,
+               audit_read_date_utc=datetime.now(timezone.utc).isoformat(),source_edition='JRC_v1_5_2022_2024',
                observation_period=ym,publication_date='unknown; retrospective',
                classification='VERIFIED DERIVED MEASUREMENT',
                license='JRC original terms apply; redistribution mirror license not independently established')
@@ -248,8 +255,20 @@ def summarize(rows,out):
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,default=ROOT/'work/phase50')
+    ap.add_argument('--offline-inputs',type=Path,help='saved research/phase50 directory; no network; missing arrays fail explicitly')
     ap.add_argument('--max-sites',type=int);args=ap.parse_args();out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
-    picked,geoms,provenance=reconstruct(out)
+    cache_root=args.offline_inputs.resolve() if args.offline_inputs else None
+    cache_metadata={}
+    for source_log in [ROOT/'research/phase50/source_reads.csv',out/'source_reads.csv']:
+        if source_log.exists():
+            for r in pd.read_csv(source_log).itertuples():
+                if hasattr(r,'retrieval_date_utc'):cache_metadata[(r.sample_id,r.month)]=r.retrieval_date_utc
+    if cache_root:
+        picked=pd.read_csv(cache_root/'frozen_67_site_roster.csv')
+        doc=json.loads((cache_root/'reconstructed_all187_windows.geojson').read_text())
+        geoms={f['properties']['sample_id']:shape(f['geometry']) for f in doc['features']}
+        provenance=json.loads((cache_root/'summary.json').read_text())['provenance']
+    else:picked,geoms,provenance=reconstruct(out)
     if args.max_sites:picked=picked.head(args.max_sites)
     observations=[];comparisons=[];exclusions=[];replication=[]
     for row in picked.itertuples(index=False):
@@ -260,7 +279,9 @@ def main():
         values={};reference=None
         for ym in sorted(months):
             try:
-                v,audit=read_month(row,geoms[row.sample_id],ym,out)
+                if cache_root and not (cache_root/'pixels'/f'{row.sample_id}_{ym}.npz').exists():
+                    raise FileNotFoundError('offline pixel array missing; network prohibited')
+                v,audit=read_month(row,geoms[row.sample_id],ym,out,cache_root,cache_metadata)
                 if reference is not None:
                     assert v['tf']==reference['tf'] and np.array_equal(v['mask'],reference['mask']),'unaligned_grid'
                 reference=v;values[ym]=v

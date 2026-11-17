@@ -1,0 +1,15 @@
+{
+  "layer": "MODIS_Combined_Flood_3-Day",
+  "sites": 6,
+  "dates": [
+    "2023-04-12",
+    "2023-04-26",
+    "2023-05-10"
+  ],
+  "renders_successful": 18,
+  "raw_product_arrays_obtained": 0,
+  "independent_ground_truth_labels": 0,
+  "result": "dated independent-sensor rendered maps successfully requested where available; no label validation",
+  "next_gate": "authorized raw MODIS historical-product and QA access, georegistration and explicit independent-label protocol",
+  "no_FPR_precision_recall_IoU_computed": true
+}

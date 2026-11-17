@@ -1,0 +1,15 @@
+{
+  "frozen_files_verified": 342,
+  "original_band_counts": {
+    "0-100K": 699,
+    "100K-1M": 108,
+    "1M-50M": 82,
+    "50-200M": 13,
+    "200-500M": 5,
+    "500M+": 5
+  },
+  "real_raster_reads_verified": 289,
+  "historical_log_matches": 65,
+  "allocation_rows_verified": 57600,
+  "unsupported_new_models_accepted": 0
+}

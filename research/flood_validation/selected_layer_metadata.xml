@@ -1,0 +1,27 @@
+<ns0:Layer xmlns:ns0="http://www.opengis.net/wms" xmlns:ns1="http://www.w3.org/1999/xlink" queryable="0" opaque="0" cascaded="0">
+        <ns0:Name>MODIS_Combined_Flood_3-Day</ns0:Name>
+        <ns0:Title>MODIS_Combined_Flood_3-Day</ns0:Title>
+        <ns0:CRS>EPSG:4326</ns0:CRS>
+        <ns0:CRS>EPSG:3857</ns0:CRS>
+        <ns0:EX_GeographicBoundingBox>
+            <ns0:westBoundLongitude>-180.000000</ns0:westBoundLongitude>
+            <ns0:eastBoundLongitude>180.000000</ns0:eastBoundLongitude>
+            <ns0:southBoundLatitude>-90.000000</ns0:southBoundLatitude>
+            <ns0:northBoundLatitude>90.000000</ns0:northBoundLatitude>
+        </ns0:EX_GeographicBoundingBox>
+        <ns0:BoundingBox CRS="EPSG:4326" minx="-90.000000" miny="-180.000000" maxx="90.000000" maxy="180.000000" />
+        <ns0:Dimension name="time" units="ISO8601" default="2026-11-17" nearestValue="0">2021-01-01/2021-01-04/P1D,2021-03-05/2021-03-07/P1D,2021-03-22/2021-12-20/P1D,2021-12-23/2023-07-20/P1D,2023-07-26/2026-11-17/P1D</ns0:Dimension>
+        <ns0:MetadataURL type="TC211">
+          <ns0:Format>text/xml</ns0:Format>
+          <ns0:OnlineResource ns1:type="simple" ns1:href="https://gibs.earthdata.nasa.gov/wms/epsg4326/best/?request=GetMetadata&amp;layer=MODIS_Combined_Flood_3-Day" />
+        </ns0:MetadataURL>
+        <ns0:Style>
+          <ns0:Name>default</ns0:Name>
+          <ns0:Title>default</ns0:Title>
+          <ns0:LegendURL width="270" height="135">
+             <ns0:Format>image/png</ns0:Format>
+             <ns0:OnlineResource ns1:type="simple" ns1:href="https://gibs.earthdata.nasa.gov/legends/MODIS_Flood_H.png" />
+          </ns0:LegendURL>
+        </ns0:Style>
+      </ns0:Layer>
+      
