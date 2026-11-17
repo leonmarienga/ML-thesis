@@ -1,0 +1,63 @@
+{
+  "fema_FY2023_24_flood_declarations": 41,
+  "incident_2023_24": 37,
+  "eligible_with_strict_county": 36,
+  "declared_exclusions": [
+    {
+      "disasterNumber": 4676,
+      "reason": "incident_before_2023",
+      "incident_start": "2022-07-25"
+    },
+    {
+      "disasterNumber": 4678,
+      "reason": "incident_before_2023",
+      "incident_start": "2022-07-12"
+    },
+    {
+      "disasterNumber": 4681,
+      "reason": "incident_before_2023",
+      "incident_start": "2022-10-01"
+    },
+    {
+      "disasterNumber": 4683,
+      "reason": "incident_before_2023",
+      "incident_start": "2022-12-27"
+    },
+    {
+      "disasterNumber": 4809,
+      "reason": "no_strict_county_designation",
+      "incident_start": "2024-06-20"
+    }
+  ],
+  "fixed_county_samples": 63,
+  "unique_counties_sampled": 58,
+  "pilot_disasters_included": 12,
+  "new_nonpilot_disasters_included": 24,
+  "real_monthly_raster_reads_attempted": 189,
+  "real_monthly_raster_reads_successful": 183,
+  "event_month_readable_sites": 61,
+  "event_month_sites_30pct_observed": 57,
+  "paired_event_baseline_sites": 61,
+  "paired_event_baseline_sites_both_observed_30pct": 54,
+  "cases_with_any_paired_event_baseline_site": 35,
+  "cases_with_any_new_water_cells": 20,
+  "observed_geographic_window_km2_before_cloud_censor": 1007.8440652783196,
+  "matched_pair_new_water_within_sample_windows_km2_NOT_DISASTER_EXTENT": 1.092584725086823,
+  "verified_disaster_specific_inundation_footprints": 0,
+  "population_or_building_exposure_estimates": 0,
+  "funding_models_fitted": 0,
+  "frozen_accepted_Track_A_unchanged": true,
+  "source_admin": "Official FEMA designation joined to US Census 2023 county polygons",
+  "source_satellite": "JRC Global Surface Water v1.5 monthly Landsat C2 via public source.coop",
+  "restrictions": [
+    "Sampling is deterministic and outcome-blind, but only up to two counties per disaster; not a statistically weighted disaster-wide extent estimate.",
+    "The sampled 4km squares may include tributaries or permanent lakes. Prior-year changes can reflect seasonality, management or drought unrelated to FEMA event.",
+    "The month in which the incident began is not an event-day flood map; short-lived flooding may be missed entirely.",
+    "A JRC class 0 pixel is UNOBSERVED and must not enter the dry denominator or paired water transition.",
+    "Spatial JRC pixels are approximately 25-30m; 4km windows are clipped using generalized 2023 county geometry.",
+    "A change from prior-year dry to event-month water is candidate seasonal surface-water difference, not a validated flood polygon.",
+    "Post-event monthly imagery and final county designations are retrospective, not available as T0/T+72 features.",
+    "This is an eligibility and coverage study; it does NOT produce a full disaster footprint, loss estimate, or an operational AI decision-support feature.",
+    "No FEMA funding targets accessed and accepted Track A not modified."
+  ]
+}

@@ -14,10 +14,13 @@ allocation audits. Unsupported model replacement would overstate the evidence.
   108 hurricanes and 59 Biological records. There are33 fires,27 tornadoes and 8
   earthquakes. There are no Drought records. One negative net-funding target is
   retained in the workbook; the original band function clamps it to zero.
-- Track A’s recovered original execution log reports830/912 routing,
-  MAE$5,014,819.011614494, RMSE$64,653,747.252143376 and R² 0.8867765710842239.
-  These are historical LFYO results, **not newly recomputed from per-row
-  predictions in this session**. The full prediction ZIP remains inaccessible.
+- The exact original 912-case prediction archive was recovered through the
+  GitHub connector and its ZIP checksum matches GitHub's digest. Recomputing
+  those fixed predictions gives 830/912 routing, MAE $5,014,819.011614494,
+  RMSE $64,653,747.252143376 and R² 0.8867765710842239. Balanced accuracy is
+  0.895451 and macro F1 is 0.878561. These remain historical LFYO results,
+  not a new independent or prospective evaluation. Complete per-case predictions,
+  confusion matrices, hazard/year/band errors and influence tables are saved.
 - All342 files tracked at the starting research commit retain their original
   SHA256 checksums. Main has not been modified or merged.
 - Phase 50 completed289 planned monthly raster reads successfully over 67 fixed
@@ -40,6 +43,11 @@ allocation audits. Unsupported model replacement would overstate the evidence.
   workbook was not changed. All65 sites with usable historical log observations
   now reproduce the logged observability and rounded gain; the two Alaska
   anchors have no comparable successful entry in that pre-correction log.
+- Original Phase48, Phase49 and Phase49b ZIPs were subsequently recovered and
+  byte-verified. All 187 reconstructed geometries match exactly; all 63 original
+  anchor coordinates agree; and all 67 Phase50 integer water-gain counts and
+  event observation fractions match the corrected original CSVs, including Alaska.
+  The Alaska-only merge verifies 187 sites, 374 comparisons and 561 monthly rows.
 - Eighteen NASA MODIS rendered maps were obtained for the exact six Minnesota
   windows on2023-04-12,2023-04-26 and 2023-05-10. Some added Houston County
   windows show the product’s flood color. Many inland views show insufficient
@@ -91,30 +99,23 @@ Track A predictions. No new interval claim is made here.
 
 ## What remains incomplete and why
 
-1. Exact frozen per-disaster prediction and trained-model binary recovery:
-   authenticated archive downloads redirect to blob hosts and returnHTTP403,
-   including the approved outside-sandbox check. Decoded logs recovered through
-   the GitHub connector provide partial evidence, not the missing archive bytes.
-2. Full original Phase49 CSV/GeoJSON recovery and exact integer-pixel comparator:
-   the same ZIP access blocker applies. Fixed site keys were reconstructed from
-   logs and committed geometry code; rounded-log agreement is a partial check.
-3. Complete validated multi-hazard physical/exposure dataset: physical sources
+1. Complete validated multi-hazard physical/exposure dataset: physical sources
    were retrieved in bounded pilots, but broad event linkage, perimeters,
    hydrological relevance, population/building vintage and uncertainty remain
    unverified. Thirty-three fire records do not justify claiming absent wildfire
    data; acquisition and matching remain incomplete, not scientifically impossible.
-4. Independent flood labels and raw MODIS historical product QA: rendered maps
+2. Independent flood labels and raw MODIS historical product QA: rendered maps
    are accessible, but survey truth and raw-product ingestion were not completed.
    Current NASA documentation advertises historical products; do not claim no
    archive exists merely because older documentation described rolling retention.
-5. A new untouched evaluation population and comparable finalized targets:
+3. A new untouched evaluation population and comparable finalized targets:
    no such targets were selected or inspected here. A prospective protocol is
    supplied; realized future outcomes cannot be generated within this session.
-6. New integration/ensemble selection, measurement-uncertainty propagation,
+4. New integration/ensemble selection, measurement-uncertainty propagation,
    real-need allocation validation and reliable rare-event intervals: these
    depend on the preceding data and validation gates. They were not executed
    and must not appear as successful results in a thesis.
-7. Comprehensive novelty review and full text verification of all literature:
+5. Comprehensive novelty review and full text verification of all literature:
    a bounded primary-source search was performed. Existing surface-water and
    conformal methods are not novel. No “first” or globally novel framework claim
    is established. A publisher search lead on disaster DSS remains incompletely
@@ -123,6 +124,11 @@ Track A predictions. No new interval claim is made here.
 These gaps mean the full requested thesis research objective remains incomplete.
 This report is a substantive, recoverable research checkpoint and a defensible
 conclusion about the available evidence, not a declaration that all objectives
-have been met. The next work should resolve artifact/raw-data access and certify
+have been met. Prediction and geospatial archive access is resolved through the
+connector despite persistent CLI403. Separate trained-model weights were not
+verified; original training procedures remain preserved. A descriptive fiscal-year
+block bootstrap of accepted-minus-original historical MAE gives -$116,541,
+with percentile interval [-$301,156, +$28,174]; it crosses zero and is not an
+independent validation claim. The next work should ingest raw flood QA and certify
 hazard linkage before introducing more models. See STATUS.md and TECHNICAL_GUIDE.md
 for exact commands and remaining gates.

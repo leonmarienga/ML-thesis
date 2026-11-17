@@ -1,0 +1,41 @@
+{
+  "archive_recovery": "RESOLVED through GitHub connector; CLI403 remains",
+  "geometry": {
+    "original_sites": 187,
+    "corrected_monthly_rows": 561,
+    "corrected_comparison_rows": 374,
+    "original_phase48_anchors_verified": 63,
+    "phase50_integer_gain_matches": 67,
+    "phase50_event_observability_matches": 67,
+    "max_geometry_hausdorff_degrees": 0.0
+  },
+  "predictions": {
+    "final": {
+      "n": 912,
+      "MAE_USD": 5014819.011614494,
+      "RMSE_USD": 64653747.252143376,
+      "MedAE_USD": 0.0,
+      "R2": 0.8867765710842239,
+      "log_MAE": 0.6951091508839052
+    },
+    "router_correct": 830,
+    "router_total": 912,
+    "router_accuracy": 0.9100877192982456,
+    "balanced_accuracy": 0.8954508207273482,
+    "macro_precision": 0.8672919106592576,
+    "macro_recall": 0.8954508207273482,
+    "macro_f1": 0.8785607328185371,
+    "validation": "fixed historical LFYO; not independent or prospective",
+    "trained_models": 0,
+    "bootstrap": {
+      "repetitions": 2000,
+      "seed": 20261117,
+      "clusters": "fiscal years, not independently verified physical events",
+      "metric": "accepted minus original MAE_USD",
+      "observed": -116540.52726211677,
+      "percentile95_lower": -301156.44293787266,
+      "percentile95_upper": 28174.455236070015,
+      "inference": "descriptive fixed historical predictions; repeated model development; no independent confirmation or prospective validity"
+    }
+  }
+}

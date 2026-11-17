@@ -114,3 +114,39 @@ Original342 source checksums verified. Historical metric evidence, new
 observations and synthetic outcomes are separated in FINAL_METRICS.csv.
 No new model improvement, prospective validation or complete-thesis status is
 claimed. The first research checkpoint was pushed and remote SHA verified.
+
+## Archive-recovery correction and exact frozen evaluation — executed
+
+The earlier artifact-access blocker is superseded: GitHub's connector
+download_workflow_artifact operation succeeds even though CLI redirects fail.
+Recovered original archives for runs 41397678781, 41578898108, 41581240598 and
+41581789674. Every ZIP SHA256 matches GitHub's recorded digest. Signed transient
+download references were used only in ignored work files, never committed.
+
+Question: do recovered original artifacts verify the reconstructed geography,
+pixels and reported frozen funding metrics? No new model fit or parameter
+selection. Inputs: original accepted 912 CSV and original Phase48/49/49b files.
+Protocol: replace only Alaska DR4730 rows, assert 187 sites, 374 pairs and 561
+monthly rows, compare all original polygons and primary anchors, then compare
+all 67 Phase50 integer gains and observation fractions. Recompute classification
+and monetary scores for all three immutable prediction columns on the same
+912 records, with hazard/year/band/zero/rare breakdowns.
+
+Results: all 187 geometries are exactly equal (maximum Hausdorff distance 0),
+all 63 original anchors match, all 67 integer gains and event observation
+fractions match, including Alaska. The accepted predictions exactly reproduce
+830/912, MAE 5014819.011614494, RMSE 64653747.252143376 and R² 0.8867765710842239.
+Balanced accuracy 0.8954508207; macro precision 0.8672919107; macro F1 0.8785607328.
+Full predictions, confusion matrix and metric/influence tables preserved.
+
+Descriptive fixed-prediction fiscal-year block bootstrap (seed 20261117,
+2,000 replicates) gives accepted-minus-original MAE -$116,540.53, percentile
+95% interval [-$301,156.44, +$28,174.46]. It crosses zero; fiscal-year clusters
+are not independently verified physical-event clusters. This is historical
+uncertainty, not a new untouched comparison, operational validity or evidence
+that the continuation improved the frozen model. Previous reports of archive
+unavailability describe the earlier failed route and are not the final status.
+
+Next justified action: raw flood-product QA and verified multi-hazard event
+linkage, followed by the prospectively frozen evaluation protocol. Do not rerun
+completed source/metric experiments merely because a new session begins.

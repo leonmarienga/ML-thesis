@@ -45,10 +45,14 @@ def main():
             'approve fairness priorities and budget scenario before any real allocation',
             'verify publication timing before claiming declaration-time predictions'],
         action='Research evidence report only; final decisions remain with accountable human officials')
-    if args.accepted_predictions:
-        x=accepted_predictions(args.accepted_predictions)
+    default_predictions=ROOT/'research/recovered_artifacts/accepted/all_912_immutable_overlay.csv'
+    chosen=args.accepted_predictions or (default_predictions if default_predictions.exists() else None)
+    if chosen:
+        x=accepted_predictions(chosen)
         report['historical_funding']['status']='exact frozen artifact verified; historical case outputs available'
         report['historical_funding']['verified_rows']=len(x)
+        report['historical_funding']['historical_case_4722']=x.loc[x.disasterNumber==4722,
+            ['disasterNumber','target','actual_band','router_pred','challenger_stack_prediction']].to_dict('records')
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(report,indent=2,allow_nan=False))
     print(args.out)

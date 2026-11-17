@@ -91,6 +91,17 @@ def registries():
             license='NASA public data; publisher terms and attribution apply',transformation='WMS 1.1.1 bbox for fixed county polygon; visual evidence only',
             known_limitations='not raw QA/class arrays or surveyed flood labels; gray insufficient data; no dry inference from transparency',
             status=x['status'],classification='MODELLED ESTIMATE (satellite flood-product rendered map)'))
+    if (R/'recovered_artifacts/ARCHIVE_MANIFEST.csv').exists():
+        for x in pd.read_csv(R/'recovered_artifacts/ARCHIVE_MANIFEST.csv').to_dict('records'):
+            rows.append(dict(dataset_id=x['name'],publisher='Original research GitHub Actions artifact',dataset_name=x['name'],
+                version=f"run {x['run_id']}, artifact {x['artifact_id']}",official_source_url=x['source_url'],actual_download_url=x['source_url'],
+                retrieval_date=x['retrieved_date'],observation_date='historical prediction / geospatial records',
+                publication_or_availability_date='original Actions artifact metadata',geographic_coverage='original study cohort',
+                variables_units='original archived files; see archived reports',original_record_identifiers='disasterNumber / sample_id',
+                sha256=x['sha256'],license='original research and upstream publisher terms apply',
+                transformation='unaltered ZIP, extracted originals, Alaska-only supplemental correction',
+                known_limitations='historical retrospective evidence; no new independent evaluation',status='recovered and byte-verified',
+                classification='VERIFIED ORIGINAL RESEARCH ARTIFACT',durable_raw_snapshot='research/recovered_artifacts/'+x['name']))
     pd.DataFrame(rows).to_csv(ROOT/'DATA_SOURCE_REGISTRY.csv',index=False)
     master=pd.read_excel(ROOT/'master_openfema_40plus.xlsx')
     target_derived={'totalObligatedFunding','avgObligationPerMission','medianObligationPerMission','maxObligationPerMission',
@@ -122,10 +133,10 @@ def registries():
     model_rows=[
         dict(model_id='TrackA_original_amount_stack',status='FROZEN historical version',code='analysis/nonbio_final_830_accepted_amount_stack.py',
              validation='leave-fiscal-year-out; future years can enter training; repeatedly inspected',run_id=34796746603,
-             artifact='nonbio-final-830-accepted-amount-stack; ZIP retrieval currently blocked',seed='original implementation; not refit'),
+             artifact='original version preserved as frozen_stack_prediction in recovered accepted CSV',seed='original implementation; not refit'),
         dict(model_id='TrackA_final_5014819',status='FROZEN user-accepted reconstruction',code='analysis/reconstruct_accepted_912_exact.py; immutable overlay',
-             validation='912 LFYO; historical log recovered, predictions not recovered this session',run_id=41397678781,
-             artifact='exact-accepted-912-predictions; ZIP retrieval currently blocked',seed='no refit; four original artifacts'),
+             validation='912 LFYO; exact original predictions recovered and recomputed',run_id=41397678781,
+             artifact='exact-accepted-912-predictions; recovered and byte-verified',seed='no refit; four original artifacts'),
         dict(model_id='TrackB_Phase36_NOAA_density',status='EXPLORATORY; not replacement',code='analysis/phase36_noaa_report_intensity.py',
              validation='59 FY2021-24 earlier-year tests, extensively examined',run_id=41447664858,artifact='historical Actions artifact',seed='original source'),
         dict(model_id='TrackB_Phase37_physical',status='NEGATIVE exploratory result vs density',code='analysis/phase37_physical_rainflow_vs_reporting.py',
@@ -138,6 +149,10 @@ def registries():
         row.update(continuation_code_checkpoint='5a1907e5f46b629b6c30bee148fd3412957bdacf',
                    source_baseline_commit='041afba8a10da9c2a962222e0a2644284a84fb7b',
                    new_training_performed=False,artifact_recovery='source/log/report retained; exact binary recovery incomplete')
+        if row['model_id'].startswith('TrackA') and (R/'recovered_artifacts/accepted/all_912_immutable_overlay.csv').exists():
+            row['artifact_recovery']='exact original per-case predictions byte-verified and recomputed; trained-model weights not separately recovered'
+            row['artifact']='research/recovered_artifacts/accepted/all_912_immutable_overlay.csv (all three immutable versions)'
+            row['validation']='912 fixed historical LFYO predictions recomputed; not prospective or independent'
     pd.DataFrame(model_rows).to_csv(ROOT/'MODEL_REGISTRY.csv',index=False)
     original=(R/'track_a_recovered_log_evidence.txt').read_text()
     report=json.loads(original.split('BEGIN_IMMUTABLE_OVERLAY_RESULTS\n')[1].split('\nEND_IMMUTABLE_OVERLAY_RESULTS')[0])
@@ -149,6 +164,16 @@ def registries():
                 validation='LFYO retrospective',source='research/track_a_recovered_log_evidence.txt',run_id=41397678781))
     metrics.append(dict(study='TrackA',variant='frozen_router',metric='accuracy',value=830/912,n=912,
         evidence='RECOVERED HISTORICAL LOG',validation='LFYO retrospective',source='research/track_a_recovered_log_evidence.txt',run_id=41397678781))
+    if (R/'frozen_prediction_audit/monetary_metrics.csv').exists():
+        for row in pd.read_csv(R/'frozen_prediction_audit/monetary_metrics.csv').to_dict('records'):
+            for m in ['MAE_USD','RMSE_USD','MedAE_USD','R2','log_MAE']:
+                metrics.append(dict(study='TrackA_recomputed',variant=row['variant'],scope=row['scope'],group=row['group'],
+                    metric=m,value=row[m],n=row['n'],evidence='RECOMPUTED FROM BYTE-VERIFIED ORIGINAL PREDICTIONS',
+                    validation='same fixed historical LFYO; not new validation',source='research/frozen_prediction_audit/monetary_metrics.csv',run_id=41397678781))
+        summary=json.loads((R/'frozen_prediction_audit/summary.json').read_text())
+        for m in ['router_accuracy','balanced_accuracy','macro_precision','macro_recall','macro_f1']:
+            metrics.append(dict(study='TrackA_recomputed',variant='frozen_router',metric=m,value=summary[m],n=912,
+                evidence='RECOMPUTED FROM ORIGINAL PREDICTIONS',validation='historical LFYO',source='research/frozen_prediction_audit/summary.json'))
     a=pd.read_csv(R/'phase50/aggregate_temporal_comparisons.csv')
     for row in a.to_dict('records'):
         if row['denominator']=='common_pixels' and row['threshold']==.3:
@@ -193,6 +218,15 @@ def figures():
     fig,ax=plt.subplots(figsize=(9,7));ax.barh(h.incidentType,h.records,color='#317e9d')
     ax.set_xlabel('Original disaster records');ax.set_title('Actual hazard support in the 971-row workbook')
     fig.tight_layout();fig.savefig(FIG/'hazard_support.png',dpi=150);plt.close(fig)
+    if (R/'frozen_prediction_audit/router_confusion_matrix.csv').exists():
+        cm=pd.read_csv(R/'frozen_prediction_audit/router_confusion_matrix.csv',index_col=0)
+        fig,ax=plt.subplots(figsize=(7,6));im=ax.imshow(np.log1p(cm.to_numpy()),cmap='Blues')
+        for i in range(len(cm)):
+            for j in range(len(cm)):ax.text(j,i,str(cm.iloc[i,j]),ha='center',va='center',color='white' if cm.iloc[i,j]>50 else 'black')
+        ax.set_xticks(range(6),cm.columns,rotation=35,ha='right');ax.set_yticks(range(6),cm.index)
+        ax.set_xlabel('Frozen router prediction');ax.set_ylabel('Actual band')
+        ax.set_title('Recovered original LFYO predictions: 830 / 912 correct\nColor uses log1p counts; labels show actual counts')
+        fig.tight_layout();fig.savefig(FIG/'frozen_router_confusion_matrix.png',dpi=160);plt.close(fig)
     a=pd.read_csv(R/'phase50/aggregate_temporal_comparisons.csv')
     fig,axes=plt.subplots(1,2,figsize=(11,4))
     for ax,scheme in zip(axes,['seasonal','interannual']):
@@ -238,12 +272,14 @@ def notebook():
        'These are accounting obligations, not independently observed needs. The original workbook is never rewritten.')
     code("master=pd.read_excel(ROOT/'master_openfema_40plus.xlsx')\nassert len(master)==971 and master.disasterNumber.is_unique\nassert (master.incidentType!='Biological').sum()==912\ndisplay(pd.read_csv(R/'source_audit/hazard_inventory.csv'))\nprint('Negative original targets:', (master.totalObligatedFunding<0).sum())\ndisplay(Image(filename=str(R/'figures/hazard_support.png')))")
     md('## 2. Historical benchmark evidence and validation boundary\n\nTrack A reports 830/912 routing, MAE $5,014,819.0116 '
-       'and R²0.88677657. Its original execution log was recovered. Per-row artifact ZIP retrieval is blocked; this notebook '
-       'does not pretend to recompute these aggregate values from recovered predictions. Leave-fiscal-year-out excludes the '
+       'and R²0.88677657. The exact per-row artifact ZIP was recovered through the GitHub connector and byte-verified; '
+       'the frozen metrics were then recomputed without training. Leave-fiscal-year-out excludes the '
        'held year but may use later years. It is not strict forward prediction. Existing CQR models are separate Track B models. '
        'The original specialist sources also contradict the handoff’s simplified statement that all three upper bands use medians: '
        'the accepted reconstruction includes a 50–200M hybrid and retained upper-band specialists.')
     code("metrics=pd.read_csv(ROOT/'FINAL_METRICS.csv')\ndisplay(metrics.query('study == \"TrackA\"')[['variant','metric','value','evidence']])\noriginal=json.loads((R/'frozen_source_checksums.json').read_text())\nassert all(hashlib.sha256((ROOT/x['path']).read_bytes()).hexdigest()==x['sha256'] for x in original)\nprint('Original source files unchanged:',len(original))")
+    code("from continuation_archive_recovery_audit import predictions, geometry_and_pixels\nrecomputed=predictions()\ndisplay(recomputed)\ndisplay(geometry_and_pixels())\ndisplay(pd.read_csv(R/'frozen_prediction_audit/router_confusion_matrix.csv'))")
+    code("display(Image(filename=str(R/'figures/frozen_router_confusion_matrix.png')))\ndisplay(pd.read_csv(R/'frozen_prediction_audit/monetary_metrics.csv').query('scope==\"overall\"'))")
     md('## 3. Phase50 question and mathematics\n\nFor fixed window $s$, let $C_s$ be the pixels with water/dry classifications '
        'at every date in both comparison arms. Class0 is unobserved. For pixel geodesic area $a_i$, '
        '$G_e=\\sum_{i\\in C_s}a_i1(x_{e,0}=1,x_{e,1}=2)$, and likewise $G_p$ for the placebo. '
@@ -254,8 +290,9 @@ def notebook():
        'has no comparison requiring that exclusion. Primary anchors and four added Minnesota sites are separate analyses.')
     code("from phase50_temporal_placebo import main as phase50_main\nfrom unittest import TestLoader, TextTestRunner\nimport test_phase50_temporal_placebo\nresult=TextTestRunner(verbosity=1).run(TestLoader().loadTestsFromModule(test_phase50_temporal_placebo))\nassert result.wasSuccessful()\nprint(json.loads((R/'phase50/summary.json').read_text())['provenance']['official_vs_master_date_discrepancies'])")
     md('## 4. Recompute from saved real pixels without network\n\nThe saved cropped arrays include unobserved cells and exact '
-       'window grids. Historical log checks are limited to reported observability and four-decimal area values, not original '
-       'CSV bytes. The single DR4816 date mismatch was resolved against current official FEMA metadata and historical log '
+       'window grids. Initial log-only checks were superseded after archive recovery: all187 original geometries match '
+       'exactly, all67 integer water gains and event observation fractions match the corrected original CSVs, and '
+       'the63 Phase48 anchor coordinates agree. The single DR4816 date mismatch was resolved against FEMA and original archive '
        'replay. Floating-point geodesic reconstruction tolerates1e-9km² after CSV coordinate round-trips; integer counts '
        'and historical match flags remain identical.')
     code("destination=ROOT/'work/notebook-phase50-reproduction'\nrun=subprocess.run([sys.executable,str(ROOT/'analysis/phase50_temporal_placebo.py'),'--offline-inputs',str(R/'phase50'),'--out',str(destination)],capture_output=True,text=True,timeout=120)\nassert run.returncode==0,run.stderr[-2000:]\nfor name in ['site_temporal_comparisons.csv','aggregate_temporal_comparisons.csv','case_temporal_comparisons.csv','historical_log_replication.csv']:\n    pd.testing.assert_frame_equal(pd.read_csv(R/'phase50'/name),pd.read_csv(destination/name),check_exact=False,rtol=1e-9,atol=1e-9)\nprint('Offline reproduction passed for all tables.')")
@@ -290,7 +327,7 @@ def notebook():
        'The synthetic generator and policy definitions are fixed; no tuning against the simulated outcomes is used.')
     code("run=subprocess.run([sys.executable,str(ROOT/'analysis/continuation_allocation_simulation.py')],capture_output=True,text=True,timeout=120)\nassert run.returncode==0,run.stderr\nprint(run.stdout)\nfor name in ['simulation_policy_summary.csv','simulation_episode_metrics.csv']:\n    pd.testing.assert_frame_equal(pd.read_csv(R/'allocation'/name),pd.read_csv(ROOT/'work/allocation'/name),check_exact=False,rtol=1e-9,atol=1e-9)\ndisplay(pd.read_csv(R/'allocation/simulation_policy_summary.csv').query('budget_ratio==.7'))\ndisplay(Image(filename=str(R/'figures/simulation_efficiency_fairness.png')))")
     md('## 9. Human decision-support demonstration and scientific conclusion\n\nThe demonstration identifies actual '
-       'source evidence, withheld/unavailable case predictions, insufficient interval evidence and independently synthetic '
+       'source evidence, verified historical case predictions, insufficient interval evidence and independently synthetic '
        'allocation examples. It abstains instead of fabricating a case funding estimate. Policy choices and final allocation '
        'remain with human decision-makers. Read the final conclusion for completed work, genuine blockers and exact next steps.')
     code("run=subprocess.run([sys.executable,str(ROOT/'analysis/research_decision_support_demo.py')],capture_output=True,text=True,timeout=60)\nassert run.returncode==0,run.stderr\ndemo=json.loads((ROOT/'work/decision_support_demo.json').read_text())\ndisplay(demo['historical_funding']);display(demo['uncertainty'])\ndisplay(Markdown((R/'FINAL_CONCLUSION.md').read_text()))")

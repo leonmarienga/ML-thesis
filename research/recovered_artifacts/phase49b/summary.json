@@ -1,0 +1,10 @@
+{
+  "disasterNumber": 4730,
+  "corrected_sites": 6,
+  "monthly_reads_successful": 18,
+  "event_paired_sites": 6,
+  "source_bug": "Original >260 raster-column guard unsuitable for 4km high-latitude Alaska windows; corrected to 500.",
+  "selection_is_identical_to_phase49": true,
+  "retraining_performed": false,
+  "track_A_changed": false
+}

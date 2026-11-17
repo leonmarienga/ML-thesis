@@ -58,12 +58,26 @@ Current dynamic API responses or HTML pages may differ; any checksum mismatch
 is reported as a failed exact reproduction. Original NOAA/HURDAT raw downloads
 and earthquake responses are retained under source_snapshots.
 
-## Replay exact accepted prediction reconstruction when archives become accessible
+## Verify recovered originals and exact accepted predictions
 
-The source implementation is unchanged. The previous run 41397678781 succeeded,
-and its aggregate log has been recovered. This environment receivedHTTP403 from
-redirected artifact storage, so the commands below are a recovery path, not a
-claim of present successful per-row recovery.
+The original accepted 912-case prediction archive and Phase48/49/49b archives
+were recovered using the GitHub connector's download_workflow_artifact operation.
+All four ZIPs match their GitHub SHA256 digests and are saved, with extracted
+originals and metadata, under research/recovered_artifacts. CLI downloads still
+return HTTP403; the connector resolves this access route without bypassing it.
+
+```bash
+work/venv/bin/python analysis/continuation_archive_recovery_audit.py
+```
+
+This verifies exact original archive bytes and geography, the Alaska-only merge,
+all 67 Phase50 integer gains, and the complete frozen 912-case classification
+and monetary metrics. It performs no training. The accepted original CSV is
+research/recovered_artifacts/accepted/all_912_immutable_overlay.csv.
+
+The earlier four-input composition can additionally be reconstructed from its
+preserved original source with the commands below when those dependency
+archives are available. They are not needed to recompute the recovered final CSV.
 
 ```bash
 mkdir -p audit_inputs/nonbio_final_50_200_overlay/{baseline,low0,low1,mid}
@@ -95,9 +109,10 @@ The former generates clearly labelled synthetic needs, vulnerability, releases,
 allocations and policy metrics. Seed20261117 and fixed policies reproduce the
 7,200 evaluations. No historical funding is used as need. The latter displays
 actual satellite evidence and a separately labelled synthetic allocation episode;
-it abstains from unsupported case funding/interval predictions. Optionally pass
-the recovered exact accepted CSV with --accepted-predictions; its schema and
-aggregate benchmark must verify before use.
+it verifies the recovered historical CSV and displays a historical case estimate,
+while abstaining from unsupported operational interval or real-need claims.
+Optionally pass a different exact accepted CSV with --accepted-predictions;
+its schema and aggregate benchmark must verify before use.
 
 ## Notebook, documentation and figures
 

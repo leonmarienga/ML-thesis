@@ -2,8 +2,8 @@
 """Bounded, resumable JRC same-edition temporal placebo audit.
 
 Reconstructs the fixed geographic design from original source code plus recovered
-Phase49 log keys. ZIP lineage remains unavailable; logged rounded pixel-area
-values are a partial reproducibility check, not an original-archive checksum.
+Phase49 log keys. Original ZIPs were subsequently recovered; the separate
+archive-recovery audit verifies exact geometry and integer gain counts.
 No funding targets are used. No observed surface-water pixel is a flood label.
 """
 from __future__ import annotations
@@ -139,11 +139,12 @@ def reconstruct(out):
     picked=frame[(frame.site_index==1)|(frame.disasterNumber==4722)].copy()
     assert len(picked)==67 and (picked.disasterNumber==4722).sum()==6
     picked.to_csv(out/'frozen_67_site_roster.csv',index=False)
+    archive_recovered=(ROOT/'research/recovered_artifacts/RECOVERY_AUDIT.json').exists()
     return picked,{f['properties']['sample_id']:shape(f['geometry']) for f in features},dict(
         census_url=CENSUS,census_sha256=sha(census),
         official_fema_metadata_sha256=sha(official_path),official_fema_query_urls=official_doc['query_urls'],
         official_vs_master_date_discrepancies=discrepancies,
-        original_archive_recovered=False,log_run=41581240598,log_job=125736337527,
+        original_archive_recovered=archive_recovered,log_run=41581240598,log_job=125736337527,
         log_sha256=sha(ROOT/'research/phase49_recovered_log_evidence.txt'),
         master_sha256=sha(ROOT/'master_openfema_40plus.xlsx'),
         lineage='reconstructed logged keys and committed geometry algorithm; not original CSV bytes')
@@ -326,7 +327,8 @@ def main():
         comparisons=len(comparisons),provenance=provenance,
         inference='exploratory seasonal water variation; placebo is not known flood-free; no FPR or flood extent',
         primary_metric='event-minus-placebo gain km2 per100 common observed km2 at >=30%, 63 anchors',
-        original_csv_reproduction='blocked by artifact ZIP403; rounded logs checked only',
+        original_csv_reproduction=('exact originals recovered; 187 geometries and 67 integer gains verified by archive audit'
+            if (ROOT/'research/recovered_artifacts/RECOVERY_AUDIT.json').exists() else 'original archive not available; log checks only'),
         scientific_stop='no funding prediction tuning; no certified inundation/exposure',
         aggregates=[r for r in totals if r['threshold']==.3 and r['denominator']=='common_pixels'])
     (out/'summary.json').write_text(json.dumps(summary,indent=2,allow_nan=False))

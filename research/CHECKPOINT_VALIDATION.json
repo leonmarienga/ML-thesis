@@ -11,5 +11,6 @@
   "real_raster_reads_verified": 289,
   "historical_log_matches": 65,
   "allocation_rows_verified": 57600,
+  "exact_original_pixel_matches": 67,
   "unsupported_new_models_accepted": 0
 }

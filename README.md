@@ -36,5 +36,7 @@ work/venv/bin/python analysis/research_decision_support_demo.py
 Historical funding obligations are accounting outcomes, not humanitarian need.
 Missing satellite observations are not dry land. Local water changes are not
 certified disaster footprints. Historical LFYO scores are not prospective
-operational accuracy. Exact frozen prediction/model artifacts and several
-validation/data gates remain unresolved; see the conclusion before making claims.
+operational accuracy. Exact frozen prediction and original geospatial archives
+were recovered and byte-verified; full metrics and integer-pixel checks were
+recomputed. Separate trained weights and several validation/data gates remain
+unresolved; see the conclusion before making claims.

@@ -54,8 +54,16 @@ def main():
             logs=pd.read_csv(ROOT/'research/source_audit/source_retrieval_log.csv')
             entry=logs[logs.name==path.name]
             if len(entry):assert hashlib.sha256(path.read_bytes()).hexdigest()==entry.sha256.iloc[0]
+    recovered=ROOT/'research/recovered_artifacts/RECOVERY_AUDIT.json'
+    if recovered.exists():
+        from continuation_archive_recovery_audit import geometry_and_pixels,EXPECTED
+        checked=geometry_and_pixels()
+        assert checked['phase50_integer_gain_matches']==67
+        for _,(name,digest,_,_) in EXPECTED.items():
+            assert hashlib.sha256((ROOT/'research/recovered_artifacts'/name).read_bytes()).hexdigest()==digest
     print(json.dumps(dict(frozen_files_verified=len(original),original_band_counts=counts.to_dict(),
         real_raster_reads_verified=289,historical_log_matches=65,allocation_rows_verified=len(alloc),
+        exact_original_pixel_matches=67 if recovered.exists() else None,
         unsupported_new_models_accepted=0),indent=2))
 
 if __name__=='__main__':main()

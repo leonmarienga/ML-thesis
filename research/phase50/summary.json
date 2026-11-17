@@ -21,16 +21,17 @@
         "rule": "official date used; source revision not authenticated as-of; log replay checked"
       }
     ],
-    "original_archive_recovered": false,
+    "original_archive_recovered": true,
     "log_run": 41581240598,
     "log_job": 125736337527,
     "log_sha256": "257b7d8eaf13b8a491e26c49667371ed2402dfb900f046d8f85e90f719d86f51",
     "master_sha256": "20fba55d9c926cefae3b6c2c514a733a315718c6f851108ce5ca574cd7085111",
-    "lineage": "reconstructed logged keys and committed geometry algorithm; not original CSV bytes"
+    "lineage": "reconstructed logged keys and committed geometry algorithm; not original CSV bytes",
+    "archive_verification": "research/recovered_artifacts/RECOVERY_AUDIT.json; all187 geometries exact, all67 integer gains and event observability exact"
   },
   "inference": "exploratory seasonal water variation; placebo is not known flood-free; no FPR or flood extent",
   "primary_metric": "event-minus-placebo gain km2 per100 common observed km2 at >=30%, 63 anchors",
-  "original_csv_reproduction": "blocked by artifact ZIP403; rounded logs checked only",
+  "original_csv_reproduction": "RESOLVED: exact archives recovered through GitHub connector and checked against all67 sites",
   "scientific_stop": "no funding prediction tuning; no certified inundation/exposure",
   "aggregates": [
     {

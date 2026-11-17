@@ -1,0 +1,10 @@
+{
+  "repetitions": 2000,
+  "seed": 20261117,
+  "clusters": "fiscal years, not independently verified physical events",
+  "metric": "accepted minus original MAE_USD",
+  "observed": -116540.52726211677,
+  "percentile95_lower": -301156.44293787266,
+  "percentile95_upper": 28174.455236070015,
+  "inference": "descriptive fixed historical predictions; repeated model development; no independent confirmation or prospective validity"
+}

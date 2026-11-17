@@ -15,9 +15,9 @@ humanitarian needs, affected population or required relief.
 Track A was preserved as a frozen historical benchmark. Six target bands are
 defined by lower-inclusive thresholds0,100,000,1,000,000,50,000,000,200,000,000 and
 500,000,000 dollars, with negative net funding clamped to zero. Its original
-leave-fiscal-year-out predictions were not retrained. A recovered original run
-log provides aggregate evidence; the exact per-row archive could not be
-downloaded during this continuation. LFYO differs from forward-year evaluation
+leave-fiscal-year-out predictions were not retrained. The exact original per-row
+archive was recovered through the GitHub connector, its ZIP SHA256 verified
+against GitHub's digest, and its metrics recomputed. LFYO differs from forward-year evaluation
 because subsequent years can enter a held-year training set.
 
 Phase 50 examined whether prior water-change candidates could reflect seasonal
@@ -85,8 +85,11 @@ normalization therefore materially affected the usable evaluation population.
 DR 4816’s workbook start date differed from official FEMA metadata by two months.
 Correcting only the new observational audit restored historical log agreement.
 All65 comparable site reads reproduced the logged observability and rounded
-gain; two Alaska sites lacked a usable historical log comparator. Original
-archive bytes and full integer counts remain unrecovered.
+gain; two Alaska sites initially lacked a usable historical log comparator.
+Subsequent recovery of all original geospatial archives verified every one of
+the 187 geometries exactly and all 67 Phase50 integer gain counts and event
+observation fractions, including Alaska. Only Alaska rows were replaced when
+merging the correction: 561 monthly records and 374 comparisons remain unique.
 
 All18 requested NASA renders were obtained. The map products show flood-class
 colors at some river-edge Minnesota extra windows and insufficient data across
@@ -149,11 +152,11 @@ prior disaster decision-support and stochastic-allocation research, but a
 comprehensive full-text novelty review is incomplete. No first-of-kind claim
 is warranted.
 
-The study lacks recovered frozen per-case predictions, exact original geospatial
-archive bytes, validated broad flood/other-hazard footprints, contemporaneous
+The study lacks separately verified trained-model weights, validated broad
+flood/other-hazard footprints, contemporaneous
 feature snapshots, independent future outcomes and real need labels. Source
 checks were bounded pilots rather than a complete multi-hazard data assembly.
 The requested final operational framework therefore remains unvalidated and
 the full thesis research objective remains incomplete. The next decisive work
-is artifact recovery, raw historical product/QA ingestion, certified event
+is raw historical product/QA ingestion, certified event
 linkage and prospectively frozen evaluation, not further tuning of examined cases.
