@@ -1,0 +1,21 @@
+incidentType,records,fiscal_years,states,earliest_fy,latest_fy
+Biological,59,2,56,2020,2021
+Coastal Storm,6,4,4,2012,2022
+Dam/Levee Break,1,1,1,2020,2020
+Earthquake,8,6,6,2010,2023
+Fire,33,14,10,2011,2024
+Flood,198,15,45,2010,2024
+Freezing,1,1,1,2013,2013
+Hurricane,108,13,29,2010,2024
+Mud/Landslide,9,8,6,2013,2024
+Other,2,2,2,2013,2021
+Severe Ice Storm,21,7,14,2010,2021
+Severe Storm,430,15,53,2010,2024
+Snowstorm,36,10,19,2010,2023
+Straight-Line Winds,1,1,1,2024,2024
+Tornado,27,14,17,2010,2024
+Tropical Storm,9,2,8,2023,2024
+Tsunami,3,1,3,2011,2011
+Typhoon,6,3,2,2015,2019
+Volcanic Eruption,2,2,1,2015,2018
+Winter Storm,11,2,9,2023,2024

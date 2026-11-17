@@ -1,0 +1,15 @@
+{
+  "seed": 20261117,
+  "episodes": 300,
+  "arrivals_per_episode": 8,
+  "evaluations": 7200,
+  "allocation_rows": 57600,
+  "all_cash_constraints_verified": true,
+  "data_classification": "SYNTHETIC SCENARIO",
+  "historical_funding_used": false,
+  "need_model": "estimated lognormal(2,.7); realized independent mean-preserving lognormal multiplicative error sigma=.3+.5*vulnerability",
+  "budgets": "planned ratios .4/.7/1 of estimated total need; .6 initially, .4 times .5/1.5 shock at arrival4",
+  "fairness": "one operational illustration: floors half of equal estimated service fraction; policy choice requires human governance",
+  "oracle": "hindsight need-aware LP; sequential prefix cash constraints; descriptive upper bound, not deployable policy",
+  "limitations": "one synthetic generator; policies are illustrative; no causal benefit, empirical need validity, or optimal human welfare claim"
+}

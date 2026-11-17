@@ -1,0 +1,5 @@
+work/
+__pycache__/
+*.pyc
+audit_inputs/
+audit_outputs/

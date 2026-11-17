@@ -1,0 +1,51 @@
+source_event_type,records,classification,MAGNITUDE_nonmissing,MAGNITUDE_TYPE_nonmissing,TOR_F_SCALE_nonmissing,TOR_LENGTH_nonmissing,TOR_WIDTH_nonmissing,FLOOD_CAUSE_nonmissing
+Astronomical Low Tide,17,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Avalanche,26,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Blizzard,332,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Coastal Flood,382,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Cold/Wind Chill,741,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Debris Flow,171,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,171
+Dense Fog,839,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Drought,3473,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Dust Devil,7,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Dust Storm,88,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Excessive Heat,2660,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Extreme Cold/Wind Chill,705,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Flash Flood,4661,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,4661
+Flood,2472,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,2472
+Freezing Fog,5,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Frost/Freeze,393,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Funnel Cloud,279,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Hail,8941,UNVERIFIED CANDIDATE for FEMA linkage,8941,0,0,0,0,0
+Heat,3171,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Heavy Rain,918,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Heavy Snow,2210,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+High Surf,109,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+High Wind,3994,UNVERIFIED CANDIDATE for FEMA linkage,3994,3994,0,0,0,0
+Hurricane (Typhoon),76,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Ice Storm,113,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Lake-Effect Snow,124,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Lakeshore Flood,1,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Lightning,191,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Marine Dense Fog,2,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Marine Hail,22,UNVERIFIED CANDIDATE for FEMA linkage,22,0,0,0,0,0
+Marine High Wind,64,UNVERIFIED CANDIDATE for FEMA linkage,64,64,0,0,0,0
+Marine Hurricane/Typhoon,11,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Marine Strong Wind,3,UNVERIFIED CANDIDATE for FEMA linkage,3,3,0,0,0,0
+Marine Thunderstorm Wind,2192,UNVERIFIED CANDIDATE for FEMA linkage,2192,2192,0,0,0,0
+Marine Tropical Depression,1,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Marine Tropical Storm,74,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Rip Current,73,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Seiche,3,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Sleet,6,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Sneakerwave,15,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Storm Surge/Tide,71,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Strong Wind,1311,UNVERIFIED CANDIDATE for FEMA linkage,1311,1311,0,0,0,0
+Thunderstorm Wind,19940,UNVERIFIED CANDIDATE for FEMA linkage,19940,19940,0,0,0,0
+Tornado,2137,UNVERIFIED CANDIDATE for FEMA linkage,0,0,2137,2137,2137,0
+Tropical Depression,36,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Tropical Storm,544,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Waterspout,192,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Wildfire,336,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Winter Storm,2112,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0
+Winter Weather,3557,UNVERIFIED CANDIDATE for FEMA linkage,0,0,0,0,0,0

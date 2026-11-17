@@ -1,0 +1,25 @@
+setting,budget_ratio,policy,baseline,paired_mean_unmet_delta,mc95_lower,mc95_upper,interpretation
+sequential,0.4,equal_pacing,equal_pacing,0.0,0.0,0.0,Monte Carlo error under specified synthetic generator only
+sequential,0.4,forecast_reserve,equal_pacing,-0.981823841963552,-1.2725245058520471,-0.6911231780750569,Monte Carlo error under specified synthetic generator only
+sequential,0.4,greedy_current,equal_pacing,1.1021899573566654,0.6218774436851962,1.5825024710281346,Monte Carlo error under specified synthetic generator only
+sequential,0.7,equal_pacing,equal_pacing,0.0,0.0,0.0,Monte Carlo error under specified synthetic generator only
+sequential,0.7,forecast_reserve,equal_pacing,-2.920593314476445,-3.5261300207476194,-2.315056608205271,Monte Carlo error under specified synthetic generator only
+sequential,0.7,greedy_current,equal_pacing,-4.353468312166127,-5.315387702585321,-3.3915489217469332,Monte Carlo error under specified synthetic generator only
+sequential,1.0,equal_pacing,equal_pacing,0.0,0.0,0.0,Monte Carlo error under specified synthetic generator only
+sequential,1.0,forecast_reserve,equal_pacing,-3.9729324426275356,-4.72846132005806,-3.217403565197011,Monte Carlo error under specified synthetic generator only
+sequential,1.0,greedy_current,equal_pacing,-8.649194753883046,-9.760815238589839,-7.537574269176254,Monte Carlo error under specified synthetic generator only
+simultaneous,0.4,equal_capped,proportional_estimated_need,1.4292519128438788,1.1523448927677618,1.7061589329199958,Monte Carlo error under specified synthetic generator only
+simultaneous,0.4,fairness_floor_LP,proportional_estimated_need,3.8172537269514746,3.3947185864205527,4.239788867482397,Monte Carlo error under specified synthetic generator only
+simultaneous,0.4,proportional_estimated_need,proportional_estimated_need,0.0,0.0,0.0,Monte Carlo error under specified synthetic generator only
+simultaneous,0.4,robust_upper_need,proportional_estimated_need,0.21202225128565158,0.16835149672949518,0.255693005841808,Monte Carlo error under specified synthetic generator only
+simultaneous,0.4,vulnerability_LP,proportional_estimated_need,6.473882925195132,5.861532419369808,7.086233431020456,Monte Carlo error under specified synthetic generator only
+simultaneous,0.7,equal_capped,proportional_estimated_need,1.5711608629555183,1.1962176279023893,1.9461040980086473,Monte Carlo error under specified synthetic generator only
+simultaneous,0.7,fairness_floor_LP,proportional_estimated_need,3.7684200547253104,3.3629561088803928,4.1738840005702285,Monte Carlo error under specified synthetic generator only
+simultaneous,0.7,proportional_estimated_need,proportional_estimated_need,0.0,0.0,0.0,Monte Carlo error under specified synthetic generator only
+simultaneous,0.7,robust_upper_need,proportional_estimated_need,0.4397870968202932,0.3373846088027628,0.5421895848378236,Monte Carlo error under specified synthetic generator only
+simultaneous,0.7,vulnerability_LP,proportional_estimated_need,5.612059101457462,5.103884961229205,6.120233241685719,Monte Carlo error under specified synthetic generator only
+simultaneous,1.0,equal_capped,proportional_estimated_need,0.5953306851465038,0.3271362803015252,0.8635250899914824,Monte Carlo error under specified synthetic generator only
+simultaneous,1.0,fairness_floor_LP,proportional_estimated_need,1.6028180328732926,1.2681705399712326,1.9374655257753526,Monte Carlo error under specified synthetic generator only
+simultaneous,1.0,proportional_estimated_need,proportional_estimated_need,0.0,0.0,0.0,Monte Carlo error under specified synthetic generator only
+simultaneous,1.0,robust_upper_need,proportional_estimated_need,0.2236773525705484,0.1399253630783092,0.3074293420627876,Monte Carlo error under specified synthetic generator only
+simultaneous,1.0,vulnerability_LP,proportional_estimated_need,2.299828275433754,1.910342627841815,2.6893139230256926,Monte Carlo error under specified synthetic generator only

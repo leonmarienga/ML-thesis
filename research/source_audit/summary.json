@@ -1,0 +1,12 @@
+{
+  "master_rows": 971,
+  "nonbiological_rows": 912,
+  "hazards": 20,
+  "drought_rows": 0,
+  "negative_funding_rows": 1,
+  "completed": "hazard inventory and bounded real-source availability retrieval",
+  "uncompleted": "disaster-specific physical feature certification, full multi-hazard enrichment and independent validation",
+  "trained_models": 0,
+  "accepted_unverified_features": 0,
+  "limits": "NOAA2024 only; Atlantic HURDAT only; regional earthquake candidates not independently linked; MTBS catalog not measured fire extent"
+}

@@ -1,0 +1,21 @@
+incidentType,0-100K,100K-1M,1M-50M,50-200M,200-500M,500M+
+Biological,2,1,24,26,4,2
+Coastal Storm,6,0,0,0,0,0
+Dam/Levee Break,1,0,0,0,0,0
+Earthquake,6,0,2,0,0,0
+Fire,18,2,8,3,0,2
+Flood,139,30,28,1,0,0
+Freezing,1,0,0,0,0,0
+Hurricane,59,15,19,8,5,2
+Mud/Landslide,7,1,1,0,0,0
+Other,2,0,0,0,0,0
+Severe Ice Storm,16,3,2,0,0,0
+Severe Storm,367,48,15,0,0,0
+Snowstorm,35,1,0,0,0,0
+Straight-Line Winds,1,0,0,0,0,0
+Tornado,17,6,4,0,0,0
+Tropical Storm,5,2,1,0,0,1
+Tsunami,3,0,0,0,0,0
+Typhoon,4,0,1,1,0,0
+Volcanic Eruption,1,0,1,0,0,0
+Winter Storm,11,0,0,0,0,0
