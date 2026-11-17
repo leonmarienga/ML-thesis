@@ -150,3 +150,7 @@ unavailability describe the earlier failed route and are not the final status.
 Next justified action: raw flood-product QA and verified multi-hazard event
 linkage, followed by the prospectively frozen evaluation protocol. Do not rerun
 completed source/metric experiments merely because a new session begins.
+
+## Final archive-mode reproduction
+
+The expanded notebook executed all 25 cells (14 code cells) successfully from a fresh source/archive copy without Git metadata. Exact frozen metrics, original pixel checks, offline Phase50 tables and synthetic allocations recomputed. The notebook now handles ZIP extraction without a .git directory. No additional model training or new scientific comparison was introduced.

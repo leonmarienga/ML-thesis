@@ -1,0 +1,12 @@
+{
+  "result": "PASSED",
+  "notebook_cells": 25,
+  "executed_code_cells": 14,
+  "original_artifacts_and_inputs_present": true,
+  "git_metadata_available": false,
+  "external_data_requests_required": false,
+  "full_frozen_prediction_recomputation": true,
+  "offline_phase50_recomputation": true,
+  "synthetic_allocation_recomputation": true,
+  "comment": "Executed from a fresh tracked-files copy with Git parent discovery prohibited; download-ZIP reproduction verified"
+}

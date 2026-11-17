@@ -335,7 +335,7 @@ def notebook():
        'Cropped JRC array checksums do not identify entire remote tiles. Unknown release dates and licensing details '
        'remain explicitly unknown. References verified only at abstract/metadata level are labelled accordingly. '
        'A comprehensive novelty claim is not established.')
-    code("display(pd.read_csv(ROOT/'REFERENCE_REGISTRY.csv'))\nprint('Source-registry records:',len(pd.read_csv(ROOT/'DATA_SOURCE_REGISTRY.csv')))\nprint('Current git checkpoint:',subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip())")
+    code("display(pd.read_csv(ROOT/'REFERENCE_REGISTRY.csv'))\nprint('Source-registry records:',len(pd.read_csv(ROOT/'DATA_SOURCE_REGISTRY.csv')))\ngit_result=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,capture_output=True,text=True)\nprint('Source checkpoint:',git_result.stdout.strip() if git_result.returncode==0 else 'archive snapshot without .git; see the verified repository release')")
     nb=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'display_name':'Python 3 research','language':'python','name':'python3'},
                                                'language_info':{'name':'python','version':'3.12'}})
     nbf.write(nb,R/'REPRODUCIBLE_RESEARCH.ipynb')
