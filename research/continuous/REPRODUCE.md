@@ -64,3 +64,18 @@ python analysis/thesis_full_geography_ablation.py research/continuous/complete_g
 ```
 
 To rebuild observed hazard features, pass the original complete source cache and the earlier extracted hazard artifacts to `thesis_full_page_geography.py` with `--artifacts`. The cache includes the originally registered NOAA, Census, USGS and vegetation inputs. The model replay above uses the retained feature matrix and the archive retains source-level linkage outputs. The original hazard assembly code and old results remain in place. [Original registered inputs](../inputs/RAW_SOURCE_MANIFEST.csv).
+
+## Earlier announcement vintages and short-horizon disturbance duration
+
+Use the archived bytes and their acquisition manifests to replay both Batch 6 workstreams without network access.
+
+```bash
+sha256sum -c research/continuous/BATCH6_SHA256SUMS
+mkdir -p work/continuous-replay/{older-source,doe-source,older-announcements,disturbance-duration}
+tar xf research/continuous/older_announcements/inputs/older_announcement_responses.tar.gz -C work/continuous-replay/older-source
+tar xf research/continuous/disturbance_duration/inputs/doe_annual_summaries.tar.gz -C work/continuous-replay/doe-source
+python analysis/thesis_older_announcement_archive.py work/continuous-replay/older-source work/continuous-replay/older-announcements
+python analysis/thesis_disturbance_duration.py work/continuous-replay/doe-source work/continuous-replay/disturbance-duration
+```
+
+The announcement replay includes the civil-day claims, independent timestamped archived bodies and origin-maturity bounds. The DOE replay preserves the complete-case screen, held report predictions and paired block bootstrap under the published protocol. The seven DOE files require both XLS and XLSX readers. [Batch 6 protocol](BATCH6_PROTOCOL.md).

@@ -15,6 +15,9 @@ on:
       - 'analysis/thesis_announcement_fields.py'
       - 'analysis/thesis_full_page_geography.py'
       - 'analysis/thesis_full_geography_ablation.py'
+      - 'analysis/thesis_older_announcement_archive.py'
+      - 'analysis/thesis_disturbance_duration.py'
+      - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
   workflow_dispatch:
@@ -134,4 +137,23 @@ jobs:
                   expected = Path("research/continuous") / ref / generated.name
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(expected),
                                                 check_exact=False, rtol=1e-6, atol=1e-6)
+          PY
+      - name: Replay earlier announcement vintages and disturbance duration priors
+        run: |
+          sha256sum -c research/continuous/BATCH6_SHA256SUMS
+          mkdir -p work/batch6/{older-source,doe-source,older_announcements,disturbance_duration}
+          tar xf research/continuous/older_announcements/inputs/older_announcement_responses.tar.gz -C work/batch6/older-source
+          tar xf research/continuous/disturbance_duration/inputs/doe_annual_summaries.tar.gz -C work/batch6/doe-source
+          python analysis/thesis_older_announcement_archive.py work/batch6/older-source work/batch6/older_announcements
+          python analysis/thesis_disturbance_duration.py work/batch6/doe-source work/batch6/disturbance_duration
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          for scope in ("older_announcements", "disturbance_duration"):
+              reference = Path("research/continuous") / scope / "results"
+              replay = Path("work/batch6") / scope
+              assert {file.name for file in reference.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
+              for generated in sorted(replay.glob("*.csv")):
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(reference / generated.name),
+                                                check_exact=False, rtol=1e-8, atol=1e-8)
           PY
