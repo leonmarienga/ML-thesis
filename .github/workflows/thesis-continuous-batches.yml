@@ -1,0 +1,56 @@
+name: Replay continuous thesis batches
+on:
+  push:
+    branches: [experiment/thesis-research-continuation-20261117]
+    paths:
+      - 'analysis/thesis_historical_coverage.py'
+      - 'analysis/thesis_precoverage_ablation.py'
+      - 'analysis/thesis_earthquake_auxiliary.py'
+      - 'research/continuous/**'
+      - '.github/workflows/thesis-continuous-batches.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  batch1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_CORETYPE: Haswell
+      NPY_DISABLE_CPU_FEATURES: X86_V4,AVX512_ICL,AVX512_SPR
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: research/requirements.txt
+      - run: python -m pip install -r research/requirements.txt
+      - name: Verify frozen historical and target-free inputs
+        run: |
+          git diff --exit-code ebad27b HEAD -- research/results research/inputs research/follow_up research/augmentation master_openfema_40plus.xlsx
+          sha256sum -c research/continuous/coverage/inputs/SHA256SUMS
+          sha256sum -c research/continuous/earthquake/inputs/SHA256SUMS
+      - name: Reproduce historical coverage and PGA transfer
+        run: |
+          mkdir -p work/batch1/{openfema,usgs,coverage,ablation,pga-input,pga}
+          tar xf research/continuous/coverage/inputs/openfema_public_responses.tar.gz -C work/batch1/openfema
+          tar xf research/continuous/earthquake/inputs/usgs_public_responses.tar.gz -C work/batch1/usgs
+          python analysis/thesis_historical_coverage.py work/batch1/openfema work/batch1/coverage
+          python analysis/thesis_precoverage_ablation.py work/batch1/ablation
+          python analysis/thesis_earthquake_auxiliary.py work/batch1/pga-input work/batch1/pga --fetch work/batch1/usgs
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          expected = Path("research/continuous")
+          for source, dest in [("coverage", "coverage/audit"), ("ablation", "coverage/ablation"),
+                               ("pga-input", "earthquake/inputs"), ("pga", "earthquake/results")]:
+              for generated in sorted((Path("work/batch1") / source).iterdir()):
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(expected / dest / generated.name),
+                                                check_exact=False, rtol=1e-6, atol=1e-6)
+          PY
