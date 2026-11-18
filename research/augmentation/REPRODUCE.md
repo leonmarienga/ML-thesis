@@ -1,9 +1,11 @@
 # Replay the rare-disaster augmentation study
 
-Run from the repository root in a Python 3.12 environment with the pinned `research/requirements.txt` dependencies. The benchmark uses the retained FY2024-and-earlier inputs and runs without network access. Four workers are the upper parallelism used for this study. Replay fits fresh models within every fold and compares the tabular evidence to the archived results.
+Run from the repository root on x86-64 Linux in a Python 3.12 environment with the pinned `research/requirements.txt` dependencies. Match the numeric backend below to the archived fit. The benchmark uses the retained FY2024-and-earlier inputs and runs without network access. Four workers are the upper parallelism used for this study. Replay fits fresh models within every fold and compares the tabular evidence to the archived results.
 
 ```bash
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+export OPENBLAS_CORETYPE=Haswell
+export NPY_DISABLE_CPU_FEATURES=X86_V4,AVX512_ICL,AVX512_SPR
 sha256sum -c research/augmentation/inputs/SHA256SUMS
 git diff --exit-code 45eeaaf HEAD -- research/results research/inputs research/follow_up
 mkdir -p /tmp/thesis-augmentation
@@ -13,6 +15,8 @@ python analysis/thesis_physics_impact_pilot.py --retained-inventory-summary rese
 cmp /tmp/thesis-augmentation/physics_impact_pilot.csv research/augmentation/results/physics_impact_pilot.csv
 jupyter execute research/THESIS_REPRODUCTION.ipynb
 ```
+
+The local full refit and the backend-matched GitHub refit reproduced all 16 augmentation tables and passed donor verification. An earlier runner configuration produced some differences in Extra Trees dollar predictions and interval widths. Core nested tail MAE, class metrics, donor lineage and interval coverage matched in that diagnostic. [Initial environment comparison](https://github.com/leonmarienga/ML-thesis/actions/runs/44325716374), [successful matched replay](https://github.com/leonmarienga/ML-thesis/actions/runs/44326464427).
 
 The physics replay uses the retained aggregate of the byte-identified USACE structure inventory. To independently compute the aggregate from the same payload, obtain the study-vintage county GeoJSON and pass its path with `--inventory-api-file`. The public API is mutable, so a later download may have a different digest. The original payload digest and size are recorded in [the NSI source record](inputs/nsi_22063.geojson.json). The `physics_impact_pilot.csv` table is independent of the supervised benchmark.
 
