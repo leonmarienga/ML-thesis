@@ -18,6 +18,8 @@ jobs:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
       MKL_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: 'X86_V4,AVX512_ICL,AVX512_SPR'
+      OPENBLAS_CORETYPE: 'Haswell'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,6 +41,7 @@ jobs:
           cmp work/augmentation/physics_impact_pilot.csv research/augmentation/results/physics_impact_pilot.csv
       - name: Refit all chronological folds and verify donor lineage and scores
         run: |
+          python -c "import numpy as np; np.show_runtime()"
           python analysis/thesis_augmentation_study.py work/augmentation --workers 4
           python analysis/thesis_augmentation_verify.py work/augmentation --reference research/augmentation/results
       - name: Retain replay evidence
