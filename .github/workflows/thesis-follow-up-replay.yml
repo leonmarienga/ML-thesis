@@ -1,0 +1,58 @@
+name: Replay thesis follow-up
+on:
+  push:
+    branches: [experiment/thesis-research-continuation-20261117]
+    paths:
+      - 'analysis/thesis_*followup.py'
+      - 'analysis/thesis_fy2025_metadata_guard.py'
+      - 'research/follow_up/**'
+      - '.github/workflows/thesis-follow-up-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r research/requirements.txt
+      - name: Verify inputs and replay historical trials
+        run: |
+          sha256sum -c research/inputs/SHA256SUMS
+          sha256sum -c research/follow_up/inputs/SHA256SUMS
+          mkdir -p work/follow_up_check/metadata
+          python analysis/thesis_decision_time_followup.py work/follow_up_check/timing --mission-archive research/follow_up/inputs/mission_asof.zip
+          python analysis/thesis_physical_model_followup.py --weather research/follow_up/results/weather --spatial research/follow_up/results/spatial work/follow_up_check/physical_model
+          python analysis/thesis_rare_event_followup.py --physical work/follow_up_check/physical_model/physical_model_inputs.csv work/follow_up_check/rare_event
+          tar -xzf research/follow_up/inputs/fy2025_metadata_only.tar.gz -C work/follow_up_check/metadata
+          python analysis/thesis_fy2025_metadata_guard.py research/results/follow_up/fy2025_target_free_roster.csv work/follow_up_check/metadata work/follow_up_check/reservation
+      - name: Compare retained tables
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+
+          output = Path("work/follow_up_check")
+          published = Path("research/follow_up/results")
+          checks = {
+              "timing": ["decision_time_coverage.csv", "decision_time_metrics.csv"],
+              "physical_model": ["hazard_feature_coverage_audit.csv", "physical_matched_metrics.csv"],
+              "rare_event": ["tail_point_metrics.csv", "tail_risk_metrics.csv", "tail_interval_metrics.csv", "tail_gpd_support.csv"],
+              "reservation": ["fy2025_target_free_protocol_audit.csv"],
+          }
+          for stage, files in checks.items():
+              for file in files:
+                  pd.testing.assert_frame_equal(pd.read_csv(output/stage/file), pd.read_csv(published/stage/file),
+                                                check_exact=False, rtol=1e-6, atol=1e-6, obj=f"{stage}/{file}")
+          roster = pd.read_csv(output/"reservation/fy2025_target_free_protocol_audit.csv")
+          assert len(roster) == 143 and not roster.outcome_access_authorized.any()
+          assert roster.declarationType.value_counts().to_dict() == {"FM": 75, "DR": 61, "EM": 7}
+          PY

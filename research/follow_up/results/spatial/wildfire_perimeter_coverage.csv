@@ -1,0 +1,34 @@
+disasterNumber,status,expected_reviewed_names,mapped_reviewed_names,nifc_observations,names_from_supplemental_documents,fire_mapped_union_acres
+1999,no_named_evidence,,,0,False,
+4029,no_named_evidence,,,0,False,
+4067,all_reviewed_names_mapped,HIGH PARK|WALDO CANYON,HIGH PARK|WALDO CANYON,0,False,110880.23242744486
+4074,no_named_evidence,,,0,False,
+4078,all_reviewed_names_mapped,NOBLE,NOBLE,0,False,7037.858895593225
+4142,no_named_evidence,,,0,False,
+4133,all_reviewed_names_mapped,ROYAL GORGE,ROYAL GORGE,0,False,3290.3438489095215
+4134,all_reviewed_names_mapped,BLACK FOREST,BLACK FOREST,0,False,11885.76981678871
+4158,all_reviewed_names_mapped,RIM,RIM,0,True,250288.4228614154
+4188,no_named_evidence,,,0,False,
+4240,all_reviewed_names_mapped,BUTTE|VALLEY,BUTTE|VALLEY,1,False,140278.02288763045
+4243,no_named_evidence,,,0,False,
+4293,no_named_evidence,,,0,False,
+4344,partial_reviewed_names,ATLAS|CANYON II|CASCADE|CHEROKEE|LA PORTE|LOBO|PATRICK|REDWOOD COMPLEX|SULPHUR|TUBBS,ATLAS|CASCADE|CHEROKEE|LOBO|TUBBS,3,True,113718.55336963374
+4353,partial_reviewed_names,CREEK|LIBERTY|LILAC|LITTLE MOUNTAIN|RYE|SKIRBALL|THOMAS,CREEK|RYE|SKIRBALL|THOMAS,2,True,302924.2397364254
+4382,no_named_evidence,,,0,False,
+4373,no_named_evidence,,,0,False,
+4407,all_reviewed_names_mapped,CAMP|HILL|WOOLSEY,CAMP|HILL|WOOLSEY,3,True,246880.19464479317
+4558,no_named_evidence,,,0,False,
+4562,no_named_evidence,,,0,False,
+4569,no_named_evidence,,,0,False,
+4610,no_named_evidence,,,0,False,
+4619,no_named_evidence,,,0,False,
+4581,no_named_evidence,,,0,False,
+4623,no_named_evidence,,,0,False,
+4584,no_named_evidence,,,0,False,
+4634,no_named_evidence,,,0,False,
+4652,all_reviewed_names_mapped,CALF CANYON|HERMITS PEAK,CALF CANYON|HERMITS PEAK,2,True,330909.43141760083
+4631,no_named_evidence,,,0,False,
+4724,partial_reviewed_names,KULA|LAHAINA|OLINDA|PULEHU,KULA|LAHAINA|PULEHU,4,True,5567.672188042601
+4795,all_reviewed_names_mapped,SALT,SALT,1,False,7914.447656537926
+4759,no_named_evidence,,,0,False,
+4823,no_named_evidence,,,0,False,

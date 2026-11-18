@@ -1,0 +1,3 @@
+variant,reference,episode_groups,valid_draws,ap_difference_p025,ap_difference_p975,brier_difference_p025,brier_difference_p975
+physical_regularized_tail_probability,regularized_tail_probability,325,1200,-0.07474608886007628,0.4238677735837555,-0.00852158509339531,0.004577148308580816
+forward_router_sum,regularized_tail_probability,325,1200,-0.23227149586188434,0.19555242051720867,0.004111622812315152,0.030525803151202794

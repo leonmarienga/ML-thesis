@@ -9,3 +9,5 @@ The continuation starts at Phase 50 and preserves the historical predictions and
 - [Final metrics](FINAL_METRICS.csv)
 - [Dataset registry](DATA_SOURCE_REGISTRY.csv) and [feature manifest](SOURCE_AND_FEATURE_MANIFEST.csv)
 - [Model registry](MODEL_REGISTRY.csv) and [reference registry](REFERENCE_REGISTRY.csv)
+
+[Follow-up on hazard coverage, rare obligations and decision timing](follow_up/REPORT.md) · [FY2025 target-free protocol](follow_up/FY2025_LOCK.md)

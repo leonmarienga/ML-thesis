@@ -15,7 +15,7 @@ from sklearn.metrics import average_precision_score, brier_score_loss, roc_auc_s
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-from thesis_forward_models import ARMS, CATS, LABELS, META, SEED, YEARS, fit_predict, read_table, split
+from thesis_forward_models import CATS, LABELS, META, SEED, YEARS, read_table, split
 from thesis_uncertainty import conformal_quantile
 
 TAIL = 50_000_000
@@ -198,6 +198,33 @@ def risk_score(frame):
     return pd.DataFrame(rows)
 
 
+def risk_bootstrap(frame):
+    """Paired episode-cluster resampling for risk ranking and Brier scores."""
+    variants = [c for c in ("regularized_tail_probability", "physical_regularized_tail_probability",
+                           "forward_router_sum") if c in frame]
+    groups = [q.index.to_numpy() for _, q in frame.groupby("event_group")]
+    n = len(groups)
+    y = frame.target.ge(TAIL).to_numpy()
+    p = frame[variants].to_numpy()
+    reference = variants.index("regularized_tail_probability")
+    rng = np.random.default_rng(SEED+18)
+    draws = []
+    for selection in rng.integers(0,n,size=(1200,n)):
+        loc = np.concatenate([groups[i] for i in selection])
+        actual = y[loc]
+        if not actual.any() or actual.all():
+            continue
+        ap = np.array([average_precision_score(actual, x) for x in p[loc].T])
+        brier = ((p[loc]-actual[:,None])**2).mean(axis=0)
+        draws.append(np.column_stack([ap-ap[reference], brier-brier[reference]]))
+    vals = np.array(draws)
+    limits = np.quantile(vals,[.025,.975],axis=0)
+    return pd.DataFrame([{"variant":name,"reference":variants[reference],"episode_groups":n,
+        "valid_draws":len(vals),"ap_difference_p025":limits[0,i,0],"ap_difference_p975":limits[1,i,0],
+        "brier_difference_p025":limits[0,i,1],"brier_difference_p975":limits[1,i,1]}
+        for i,name in enumerate(variants) if i != reference])
+
+
 def interval_score(frame):
     rows = []
     for (variant, level), subset in frame.groupby(["variant", "level"]):
@@ -259,6 +286,7 @@ def main():
         risk_row = identity.assign(**z, forward_router_sum=probs[:, 3:].sum(axis=1))
         estimands = {
             "nested_metadata": base, "same_router_band_medians": medians[order, band],
+            "training_median_reference": np.repeat(train.target.median(), len(test)),
             "forward_hurdle_and_band_specialists": expert[order, band],
             "oracle_forward_band_specialists": expert[order, oracle_band],
             "global_tail_oracle": np.where(test.target.ge(TAIL), z["global_tail_size"], base),
@@ -303,9 +331,18 @@ def main():
     assert all_point.groupby("variant").size().eq(376).all()
     assert all_risk.target.ge(TAIL).sum() == 13
     assert all_intervals.groupby(["variant", "level"]).size().eq(308).all()
+    baseline = all_point[all_point.variant.eq("nested_metadata") & all_point.target.ge(TAIL)].copy()
+    baseline["absolute_error_usd"] = (baseline.amount_usd - baseline.target).abs()
+    baseline = baseline.sort_values("absolute_error_usd", ascending=False)
+    baseline["share_of_tail_total_absolute_error"] = baseline.absolute_error_usd/baseline.absolute_error_usd.sum()
+    baseline["share_of_full_total_absolute_error"] = baseline.absolute_error_usd/(
+        all_point.query("variant == 'nested_metadata'").eval("amount_usd - target").abs().sum()
+    )
     for name, values in {
+        "tail_error_concentration": baseline,
         "tail_point_predictions": all_point, "tail_point_metrics": evaluate_point(all_point),
         "tail_risk_predictions": all_risk, "tail_risk_metrics": risk_score(all_risk),
+        "tail_risk_group_bootstrap": risk_bootstrap(all_risk),
         "tail_interval_predictions": all_intervals, "tail_interval_metrics": interval_score(all_intervals),
         "tail_gpd_support": pd.DataFrame(gpd), "forward_specialist_support": pd.DataFrame(supports),
         "tail_leave_one_group_out": held_episode_influence(all_point),

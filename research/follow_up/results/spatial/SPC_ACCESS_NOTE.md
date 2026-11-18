@@ -1,0 +1,3 @@
+# SPC path archive check
+
+The public SPC severe weather climatology page, GIS directory and 1950–2024 actual-tornado CSV probe returned HTTP 403 in this environment. The archive check used the public source URLs below. There was no accepted new path geometry, and no proof of lack of underlying coverage. The analysis retains versioned Storm Events measurements and newly matched nClimGrid-Daily precipitation. [SPC climatology page](https://www.spc.noaa.gov/wcm/), [SPC GIS directory](https://www.spc.noaa.gov/gis/svrgis/), [CSV probe](https://www.spc.noaa.gov/wcm/data/1950-2024_actual_tornadoes.csv).

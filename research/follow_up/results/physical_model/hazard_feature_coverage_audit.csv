@@ -1,0 +1,45 @@
+cohort,hazard,cases,old_county_population,old_NHC_best_track,new_named_track_with_nearby_wind,new_wind_footprint_overlap,new_wind_footprint_population_proxy,old_MTBS_single_named_fire,new_has_mapped_fire_area,new_all_reviewed_fire_names_mapped,new_fire_housing_proxy,old_NOAA_county_report,old_NOAA_measured_gust,old_NOAA_estimated_gust,old_NOAA_hail,old_NOAA_tornado_EF,new_county_rain,new_all_declared_counties_rain,both_NOAA_report_and_new_rain,rain_without_NOAA_report
+nonbiological_912,Coastal Storm,6,6,0,1,1,1,0,0,0,0,2,0,0,0,0,4,4,2,2
+nonbiological_912,Dam/Levee Break,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Earthquake,8,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Fire,33,28,0,0,0,0,4,12,9,11,0,0,0,0,0,0,0,0,0
+nonbiological_912,Flood,198,167,0,0,0,0,0,0,0,0,157,0,0,0,0,118,53,115,3
+nonbiological_912,Freezing,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Hurricane,108,83,86,88,80,61,0,0,0,0,67,0,0,0,0,71,48,55,16
+nonbiological_912,Mud/Landslide,9,4,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+nonbiological_912,Other,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Severe Ice Storm,21,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Severe Storm,430,369,0,0,0,0,0,0,0,0,301,123,212,170,155,300,163,243,57
+nonbiological_912,Snowstorm,36,34,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Straight-Line Winds,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Tornado,27,25,0,0,0,0,0,0,0,0,25,0,0,0,25,22,13,21,1
+nonbiological_912,Tropical Storm,9,6,6,7,5,2,0,0,0,0,6,0,0,0,0,5,4,5,0
+nonbiological_912,Tsunami,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Typhoon,6,0,0,6,6,6,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Volcanic Eruption,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nonbiological_912,Winter Storm,11,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Coastal Storm,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,0
+test_FY2019_24,Dam/Levee Break,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Earthquake,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Fire,16,13,0,0,0,0,1,4,3,3,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Flood,92,73,0,0,0,0,0,0,0,0,68,0,0,0,0,47,27,46,1
+test_FY2019_24,Hurricane,50,41,42,43,39,31,0,0,0,0,29,0,0,0,0,35,24,24,11
+test_FY2019_24,Mud/Landslide,5,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Other,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Severe Ice Storm,9,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Severe Storm,153,120,0,0,0,0,0,0,0,0,105,49,73,53,58,98,52,91,7
+test_FY2019_24,Snowstorm,6,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Straight-Line Winds,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Tornado,14,13,0,0,0,0,0,0,0,0,12,0,0,0,12,11,5,10,1
+test_FY2019_24,Tropical Storm,9,6,6,7,5,2,0,0,0,0,6,0,0,0,0,5,4,5,0
+test_FY2019_24,Typhoon,3,0,0,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_FY2019_24,Winter Storm,11,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+all_tail_cases,Fire,5,5,0,0,0,0,0,5,2,4,0,0,0,0,0,0,0,0,0
+all_tail_cases,Flood,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,0
+all_tail_cases,Hurricane,15,11,13,14,14,7,0,0,0,0,7,0,0,0,0,11,6,7,4
+all_tail_cases,Tropical Storm,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,1,0,1,0
+all_tail_cases,Typhoon,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+test_tail_cases,Fire,3,3,0,0,0,0,0,3,2,2,0,0,0,0,0,0,0,0,0
+test_tail_cases,Hurricane,8,6,7,8,8,5,0,0,0,0,3,0,0,0,0,6,3,3,3
+test_tail_cases,Tropical Storm,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,1,0,1,0
+test_tail_cases,Typhoon,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0

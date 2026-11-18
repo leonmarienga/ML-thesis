@@ -19,3 +19,7 @@ The empirical stopping decision retains the frozen historical model. Neither the
 ## Exact follow-up
 
 The next experiment is a preregistered frozen-vintage FY2025 test of the metadata baseline and one physically enriched candidate. Use `results/follow_up/fy2025_target_free_roster.csv` as the locked set of candidate IDs. Finalize a mission-obligation target horizon, audit release dates and overlaps, and hash the feature and evaluation manifests before joining monetary targets. Follow the command in the technical guide to reproduce the frozen models and then adapt the same origin evaluation only once the new as-of inputs and comparable outcomes are available. The current cohort is target-free and cannot yield that prospective comparison by itself.
+
+## Follow-up evidence
+
+The follow-up audited county weather, cyclone wind, named wildfire perimeters and Census block-group exposure. It compared fixed matched physical ablations, forward-adapted funding specialists and rare-obligation risk and intervals, and audited decision timing with historical archive snapshots. It retains negative results, including unstable generalized Pareto fits, and distinguishes improved exploratory risk ranking from usable high-dollar amounts. The 143-case FY2025 cohort remains embargoed for outcomes. A metadata-only audit established that 61 major declarations form the primary scope compatible with the historical population. [Follow-up report](follow_up/REPORT.md), [locked target-free protocol](follow_up/FY2025_LOCK.md), [replay guide](follow_up/REPRODUCE.md).
