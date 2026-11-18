@@ -1,0 +1,8 @@
+reference_id,author_or_publisher,year,title,verified_url,doi,use
+pekel2016,"Pekel, Cottam, Gorelick and Belward",2016,High-resolution mapping of global surface water and its long-term changes,https://www.nature.com/articles/nature20584,10.1038/nature20584,Landsat global surface water methodology
+tellman2021,Tellman et al.,2021,Satellite imaging reveals increased proportion of population exposed to floods,https://www.nature.com/articles/s41586-021-03695-w,10.1038/s41586-021-03695-w,Global flood archive time coverage and exposure delineation
+barber2023,"Barber, Candès, Ramdas and Tibshirani",2023,Conformal prediction beyond exchangeability,https://projecteuclid.org/journals/annals-of-statistics/volume-51/issue-2/Conformal-prediction-beyond-exchangeability/10.1214/23-AOS2276.full,10.1214/23-AOS2276,Formal coverage and temporal distribution shift
+holguin2013,Holguín-Veras et al.,2013,On the appropriate objective function for post-disaster humanitarian logistics models,https://onlinelibrary.wiley.com/doi/10.1016/j.jom.2013.06.002,10.1016/j.jom.2013.06.002,Deprivation objective and equity motivation
+jrcdoc,European Commission JRC,2026,Global Surface Water data access and product notes,https://global-surface-water.appspot.com/download,,Edition and attribution
+nws2023,NOAA National Weather Service,2023,Mississippi River Flood of 2023,https://www.weather.gov/arx/flood2023,,Regional date and hydrograph context
+state2024,Minnesota Department of Public Safety,2024,Disaster assistance legislative report,https://www.lrl.mn.gov/docs/2024/mandated/241147.pdf,,Authoritative DR4722 date and county context

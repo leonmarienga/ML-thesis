@@ -1,0 +1,1243 @@
+analysis,variant,metric,value,design,population,method,level,axis,group,policy,planned_budget_ratio,need_log_noise,arrival_type
+historical LFYO,track_a_original_stack,n,912.0,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,n,912.0,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,n,912.0,,,,,,,,,,
+historical LFYO,track_a_original_stack,accuracy,0.9100877192982456,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,accuracy,0.9100877192982456,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,accuracy,0.9100877192982456,,,,,,,,,,
+historical LFYO,track_a_original_stack,balanced_accuracy,0.8954508207273482,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,balanced_accuracy,0.8954508207273482,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,balanced_accuracy,0.8954508207273482,,,,,,,,,,
+historical LFYO,track_a_original_stack,macro_precision,0.8672919106592576,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,macro_precision,0.8672919106592576,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,macro_precision,0.8672919106592576,,,,,,,,,,
+historical LFYO,track_a_original_stack,macro_recall,0.8954508207273482,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,macro_recall,0.8954508207273482,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,macro_recall,0.8954508207273482,,,,,,,,,,
+historical LFYO,track_a_original_stack,macro_f1,0.8785607328185371,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,macro_f1,0.8785607328185371,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,macro_f1,0.8785607328185371,,,,,,,,,,
+historical LFYO,track_a_original_stack,mae_usd,5131359.538876612,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,mae_usd,5014819.011614494,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,mae_usd,5127644.080431649,,,,,,,,,,
+historical LFYO,track_a_original_stack,rmse_usd,64714795.00308969,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,rmse_usd,64653747.252143376,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,rmse_usd,64714775.95031881,,,,,,,,,,
+historical LFYO,track_a_original_stack,median_ae_usd,0.0,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,median_ae_usd,0.0,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,median_ae_usd,0.0,,,,,,,,,,
+historical LFYO,track_a_original_stack,r2,0.8865626531213634,,,,,,,,,,
+historical LFYO,track_a_reported_historical_50_200m_overlay,r2,0.8867765710842239,,,,,,,,,,
+historical LFYO,track_a_two_accepted_low_specialists,r2,0.8865627199158409,,,,,,,,,,
+purged rolling origin,ablation_combined,n,376.0,,,,,,,,,,
+purged rolling origin,ablation_geography,n,376.0,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,n,376.0,,,,,,,,,,
+purged rolling origin,ablation_metadata,n,376.0,,,,,,,,,,
+purged rolling origin,ablation_physical,n,376.0,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,n,376.0,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,n,376.0,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,n,376.0,,,,,,,,,,
+purged rolling origin,equal_blend_verified,n,376.0,,,,,,,,,,
+purged rolling origin,hard_funding_band,n,376.0,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,n,376.0,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,n,376.0,,,,,,,,,,
+purged rolling origin,nested_combined,n,376.0,,,,,,,,,,
+purged rolling origin,nested_metadata,n,376.0,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,n,376.0,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,n,376.0,,,,,,,,,,
+purged rolling origin,soft_funding_band,n,376.0,,,,,,,,,,
+purged rolling origin,ablation_combined,accuracy,0.5930851063829787,,,,,,,,,,
+purged rolling origin,ablation_geography,accuracy,0.5797872340425532,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,accuracy,0.5824468085106383,,,,,,,,,,
+purged rolling origin,ablation_metadata,accuracy,0.4601063829787234,,,,,,,,,,
+purged rolling origin,ablation_physical,accuracy,0.4893617021276595,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,accuracy,0.5611702127659575,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,accuracy,0.5106382978723404,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,accuracy,0.5957446808510638,,,,,,,,,,
+purged rolling origin,equal_blend_verified,accuracy,0.601063829787234,,,,,,,,,,
+purged rolling origin,hard_funding_band,accuracy,0.5957446808510638,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,accuracy,0.5718085106382979,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,accuracy,0.5957446808510638,,,,,,,,,,
+purged rolling origin,nested_combined,accuracy,0.6223404255319149,,,,,,,,,,
+purged rolling origin,nested_metadata,accuracy,0.598404255319149,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,accuracy,0.6356382978723404,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,accuracy,0.6063829787234043,,,,,,,,,,
+purged rolling origin,soft_funding_band,accuracy,0.5957446808510638,,,,,,,,,,
+purged rolling origin,ablation_combined,balanced_accuracy,0.3208835327088407,,,,,,,,,,
+purged rolling origin,ablation_geography,balanced_accuracy,0.301501685656221,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,balanced_accuracy,0.3304301533976785,,,,,,,,,,
+purged rolling origin,ablation_metadata,balanced_accuracy,0.4074949785812048,,,,,,,,,,
+purged rolling origin,ablation_physical,balanced_accuracy,0.2650216557943322,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,balanced_accuracy,0.2911146660978688,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,balanced_accuracy,0.4252388062354468,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,balanced_accuracy,0.3319116348791601,,,,,,,,,,
+purged rolling origin,equal_blend_verified,balanced_accuracy,0.3032349786997044,,,,,,,,,,
+purged rolling origin,hard_funding_band,balanced_accuracy,0.3319116348791601,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,balanced_accuracy,0.3331246556106578,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,balanced_accuracy,0.3319116348791601,,,,,,,,,,
+purged rolling origin,nested_combined,balanced_accuracy,0.3204981128945294,,,,,,,,,,
+purged rolling origin,nested_metadata,balanced_accuracy,0.4671525148568822,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,balanced_accuracy,0.43055434093508,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,balanced_accuracy,0.3388183816515284,,,,,,,,,,
+purged rolling origin,soft_funding_band,balanced_accuracy,0.3319116348791601,,,,,,,,,,
+purged rolling origin,ablation_combined,macro_precision,0.2718935287227951,,,,,,,,,,
+purged rolling origin,ablation_geography,macro_precision,0.2629188948306595,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,macro_precision,0.265646334698754,,,,,,,,,,
+purged rolling origin,ablation_metadata,macro_precision,0.2273605426403131,,,,,,,,,,
+purged rolling origin,ablation_physical,macro_precision,0.2274674540999869,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,macro_precision,0.2511633249791145,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,macro_precision,0.2429373295211804,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,macro_precision,0.2751679148737971,,,,,,,,,,
+purged rolling origin,equal_blend_verified,macro_precision,0.2828889889289048,,,,,,,,,,
+purged rolling origin,hard_funding_band,macro_precision,0.2751679148737971,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,macro_precision,0.2760811803260515,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,macro_precision,0.2751679148737971,,,,,,,,,,
+purged rolling origin,nested_combined,macro_precision,0.30080878148511,,,,,,,,,,
+purged rolling origin,nested_metadata,macro_precision,0.3414940581607248,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,macro_precision,0.2875283446712018,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,macro_precision,0.2881425288918556,,,,,,,,,,
+purged rolling origin,soft_funding_band,macro_precision,0.2751679148737971,,,,,,,,,,
+purged rolling origin,ablation_combined,macro_recall,0.3208835327088407,,,,,,,,,,
+purged rolling origin,ablation_geography,macro_recall,0.301501685656221,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,macro_recall,0.3304301533976785,,,,,,,,,,
+purged rolling origin,ablation_metadata,macro_recall,0.4074949785812048,,,,,,,,,,
+purged rolling origin,ablation_physical,macro_recall,0.2650216557943322,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,macro_recall,0.2911146660978688,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,macro_recall,0.4252388062354468,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,macro_recall,0.3319116348791601,,,,,,,,,,
+purged rolling origin,equal_blend_verified,macro_recall,0.3032349786997044,,,,,,,,,,
+purged rolling origin,hard_funding_band,macro_recall,0.3319116348791601,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,macro_recall,0.3331246556106578,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,macro_recall,0.3319116348791601,,,,,,,,,,
+purged rolling origin,nested_combined,macro_recall,0.3204981128945294,,,,,,,,,,
+purged rolling origin,nested_metadata,macro_recall,0.4671525148568822,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,macro_recall,0.43055434093508,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,macro_recall,0.3388183816515284,,,,,,,,,,
+purged rolling origin,soft_funding_band,macro_recall,0.3319116348791601,,,,,,,,,,
+purged rolling origin,ablation_combined,macro_f1,0.2778073762659609,,,,,,,,,,
+purged rolling origin,ablation_geography,macro_f1,0.2667985433185781,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,macro_f1,0.277497964932282,,,,,,,,,,
+purged rolling origin,ablation_metadata,macro_f1,0.2236973839891165,,,,,,,,,,
+purged rolling origin,ablation_physical,macro_f1,0.2260408686241423,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,macro_f1,0.2543452266564174,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,macro_f1,0.2431470129923738,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,macro_f1,0.2843520964891432,,,,,,,,,,
+purged rolling origin,equal_blend_verified,macro_f1,0.2806106174527227,,,,,,,,,,
+purged rolling origin,hard_funding_band,macro_f1,0.2843520964891432,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,macro_f1,0.2882480285805974,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,macro_f1,0.2843520964891432,,,,,,,,,,
+purged rolling origin,nested_combined,macro_f1,0.3007515892045138,,,,,,,,,,
+purged rolling origin,nested_metadata,macro_f1,0.3368458180211895,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,macro_f1,0.2983429266906256,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,macro_f1,0.2950833884440624,,,,,,,,,,
+purged rolling origin,soft_funding_band,macro_f1,0.2843520964891432,,,,,,,,,,
+purged rolling origin,ablation_combined,mae_usd,19902801.325449053,,,,,,,,,,
+purged rolling origin,ablation_geography,mae_usd,19892996.29613655,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,mae_usd,19903179.983833343,,,,,,,,,,
+purged rolling origin,ablation_metadata,mae_usd,19864460.25918205,,,,,,,,,,
+purged rolling origin,ablation_physical,mae_usd,19878776.72411409,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,mae_usd,19921761.66830942,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,mae_usd,19892009.079657663,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,mae_usd,19905140.20301736,,,,,,,,,,
+purged rolling origin,equal_blend_verified,mae_usd,31288389.62317213,,,,,,,,,,
+purged rolling origin,hard_funding_band,mae_usd,80854278.45667554,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,mae_usd,19902959.77797998,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,mae_usd,74644614.5620756,,,,,,,,,,
+purged rolling origin,nested_combined,mae_usd,19839396.753736302,,,,,,,,,,
+purged rolling origin,nested_metadata,mae_usd,19912263.114904784,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,mae_usd,31257469.65740076,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,mae_usd,31293063.93252189,,,,,,,,,,
+purged rolling origin,soft_funding_band,mae_usd,74657676.48779029,,,,,,,,,,
+purged rolling origin,ablation_combined,rmse_usd,190730617.1747135,,,,,,,,,,
+purged rolling origin,ablation_geography,rmse_usd,190668254.63281924,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,rmse_usd,190735388.76868168,,,,,,,,,,
+purged rolling origin,ablation_metadata,rmse_usd,190558169.5865822,,,,,,,,,,
+purged rolling origin,ablation_physical,rmse_usd,190707908.1026028,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,rmse_usd,190584426.0596102,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,rmse_usd,190633887.5914569,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,rmse_usd,190730752.26399627,,,,,,,,,,
+purged rolling origin,equal_blend_verified,rmse_usd,244921276.79346457,,,,,,,,,,
+purged rolling origin,hard_funding_band,rmse_usd,417252926.1904147,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,rmse_usd,190725395.94718933,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,rmse_usd,270980455.67867,,,,,,,,,,
+purged rolling origin,nested_combined,rmse_usd,190674868.46782404,,,,,,,,,,
+purged rolling origin,nested_metadata,rmse_usd,190265451.1469593,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,rmse_usd,295284124.86715984,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,rmse_usd,295286396.1412654,,,,,,,,,,
+purged rolling origin,soft_funding_band,rmse_usd,270971272.02606165,,,,,,,,,,
+purged rolling origin,ablation_combined,median_ae_usd,961.7939754194908,,,,,,,,,,
+purged rolling origin,ablation_geography,median_ae_usd,974.5102428419488,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,median_ae_usd,1167.7725187432593,,,,,,,,,,
+purged rolling origin,ablation_metadata,median_ae_usd,935.8880438512664,,,,,,,,,,
+purged rolling origin,ablation_physical,median_ae_usd,1254.9549203906863,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,median_ae_usd,629.3767534856879,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,median_ae_usd,1248.0657701526898,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,median_ae_usd,1006.2233157486762,,,,,,,,,,
+purged rolling origin,equal_blend_verified,median_ae_usd,871.0339771080561,,,,,,,,,,
+purged rolling origin,hard_funding_band,median_ae_usd,57591.055,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,median_ae_usd,996.0898740034572,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,median_ae_usd,411655.81847463833,,,,,,,,,,
+purged rolling origin,nested_combined,median_ae_usd,1421.2227671221133,,,,,,,,,,
+purged rolling origin,nested_metadata,median_ae_usd,888.2102239667752,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,median_ae_usd,1756.977003382997,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,median_ae_usd,1167.4870676407445,,,,,,,,,,
+purged rolling origin,soft_funding_band,median_ae_usd,578990.7721240476,,,,,,,,,,
+purged rolling origin,ablation_combined,r2,-0.0108832784722403,,,,,,,,,,
+purged rolling origin,ablation_geography,r2,-0.0102223364006861,,,,,,,,,,
+purged rolling origin,ablation_geography_physical,r2,-0.0109338585517442,,,,,,,,,,
+purged rolling origin,ablation_metadata,r2,-0.0090561405032503,,,,,,,,,,
+purged rolling origin,ablation_physical,r2,-0.0106425740171163,,,,,,,,,,
+purged rolling origin,ablation_report_proxy,r2,-0.0093342296628879,,,,,,,,,,
+purged rolling origin,ablation_retrospective_metadata,r2,-0.0098581937280792,,,,,,,,,,
+purged rolling origin,ablation_verified_link_only,r2,-0.0108847104347378,,,,,,,,,,
+purged rolling origin,equal_blend_verified,r2,-0.6669140766453074,,,,,,,,,,
+purged rolling origin,hard_funding_band,r2,-3.8379231647516017,,,,,,,,,,
+purged rolling origin,hazard_experts_verified,r2,-0.0108279336153689,,,,,,,,,,
+purged rolling origin,hybrid_hazard_band,r2,-1.040497758503817,,,,,,,,,,
+purged rolling origin,nested_combined,r2,-0.010292422107883,,,,,,,,,,
+purged rolling origin,nested_metadata,r2,-0.0059584776784848,,,,,,,,,,
+purged rolling origin,nested_verified_link_only,r2,-1.4229272951778331,,,,,,,,,,
+purged rolling origin,oof_weighted_blend_verified,r2,-1.4229645687914574,,,,,,,,,,
+purged rolling origin,soft_funding_band,r2,-1.0403594540273944,,,,,,,,,,
+surface-water matched audit,,sites,17.0,interannual_2024,anchors,,,,,,,,
+surface-water matched audit,,sites,17.0,interannual_2024,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,sites,0.0,interannual_2024,six_4722_sites,,,,,,,,
+surface-water matched audit,,sites,44.0,seasonal,anchors,,,,,,,,
+surface-water matched audit,,sites,43.0,seasonal,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,sites,3.0,seasonal,six_4722_sites,,,,,,,,
+surface-water matched audit,,disasters,11.0,interannual_2024,anchors,,,,,,,,
+surface-water matched audit,,disasters,11.0,interannual_2024,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,disasters,0.0,interannual_2024,six_4722_sites,,,,,,,,
+surface-water matched audit,,disasters,27.0,seasonal,anchors,,,,,,,,
+surface-water matched audit,,disasters,26.0,seasonal,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,disasters,1.0,seasonal,six_4722_sites,,,,,,,,
+surface-water matched audit,,event_gain_rate,0.1174703167932687,interannual_2024,anchors,,,,,,,,
+surface-water matched audit,,event_gain_rate,0.1174703167932687,interannual_2024,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,event_gain_rate,,interannual_2024,six_4722_sites,,,,,,,,
+surface-water matched audit,,event_gain_rate,0.0808623927396951,seasonal,anchors,,,,,,,,
+surface-water matched audit,,event_gain_rate,0.0828886901680128,seasonal,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,event_gain_rate,10.049477311617018,seasonal,six_4722_sites,,,,,,,,
+surface-water matched audit,,event_loss_rate,0.1020533261451095,interannual_2024,anchors,,,,,,,,
+surface-water matched audit,,event_loss_rate,0.1020533261451095,interannual_2024,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,event_loss_rate,,interannual_2024,six_4722_sites,,,,,,,,
+surface-water matched audit,,event_loss_rate,0.1911315756876647,seasonal,anchors,,,,,,,,
+surface-water matched audit,,event_loss_rate,0.1959210632005183,seasonal,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,event_loss_rate,0.2567547943963396,seasonal,six_4722_sites,,,,,,,,
+surface-water matched audit,,placebo_gain_rate,0.0310959505312925,interannual_2024,anchors,,,,,,,,
+surface-water matched audit,,placebo_gain_rate,0.0310959505312925,interannual_2024,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,placebo_gain_rate,,interannual_2024,six_4722_sites,,,,,,,,
+surface-water matched audit,,placebo_gain_rate,0.0277842257098289,seasonal,anchors,,,,,,,,
+surface-water matched audit,,placebo_gain_rate,0.028480459189895,seasonal,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,placebo_gain_rate,0.1892421452818585,seasonal,six_4722_sites,,,,,,,,
+surface-water matched audit,,placebo_loss_rate,0.0409506032601869,interannual_2024,anchors,,,,,,,,
+surface-water matched audit,,placebo_loss_rate,0.0409506032601869,interannual_2024,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,placebo_loss_rate,,interannual_2024,six_4722_sites,,,,,,,,
+surface-water matched audit,,placebo_loss_rate,0.0809332831161682,seasonal,anchors,,,,,,,,
+surface-water matched audit,,placebo_loss_rate,0.0829613569572617,seasonal,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,placebo_loss_rate,1.4090702264688737,seasonal,six_4722_sites,,,,,,,,
+surface-water matched audit,,delta_net_rate,0.0252716433770536,interannual_2024,anchors,,,,,,,,
+surface-water matched audit,,delta_net_rate,0.0252716433770536,interannual_2024,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,delta_net_rate,,interannual_2024,six_4722_sites,,,,,,,,
+surface-water matched audit,,delta_net_rate,-0.0571201255416303,seasonal,anchors,,,,,,,,
+surface-water matched audit,,delta_net_rate,-0.0585514752651387,seasonal,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,delta_net_rate,11.012550598407692,seasonal,six_4722_sites,,,,,,,,
+surface-water matched audit,,median_case_delta,0.0,interannual_2024,anchors,,,,,,,,
+surface-water matched audit,,median_case_delta,0.0,interannual_2024,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,median_case_delta,,interannual_2024,six_4722_sites,,,,,,,,
+surface-water matched audit,,median_case_delta,0.0,seasonal,anchors,,,,,,,,
+surface-water matched audit,,median_case_delta,0.0,seasonal,anchors_excluding_4722,,,,,,,,
+surface-water matched audit,,median_case_delta,11.012550598407692,seasonal,six_4722_sites,,,,,,,,
+empirical uncertainty,ablation_metadata,n,308.0,,,dollar,0.8,all,all,,,,
+empirical uncertainty,ablation_metadata,n,308.0,,,dollar,0.9,all,all,,,,
+empirical uncertainty,ablation_metadata,n,308.0,,,log1p,0.8,all,all,,,,
+empirical uncertainty,ablation_metadata,n,308.0,,,log1p,0.9,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,308.0,,,dollar,0.8,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,308.0,,,dollar,0.9,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,308.0,,,log1p,0.8,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,308.0,,,log1p,0.9,all,all,,,,
+empirical uncertainty,nested_metadata,n,308.0,,,dollar,0.8,all,all,,,,
+empirical uncertainty,nested_metadata,n,308.0,,,dollar,0.9,all,all,,,,
+empirical uncertainty,nested_metadata,n,308.0,,,log1p,0.8,all,all,,,,
+empirical uncertainty,nested_metadata,n,308.0,,,log1p,0.9,all,all,,,,
+empirical uncertainty,nested_verified_link_only,n,308.0,,,dollar,0.8,all,all,,,,
+empirical uncertainty,nested_verified_link_only,n,308.0,,,dollar,0.9,all,all,,,,
+empirical uncertainty,nested_verified_link_only,n,308.0,,,log1p,0.8,all,all,,,,
+empirical uncertainty,nested_verified_link_only,n,308.0,,,log1p,0.9,all,all,,,,
+empirical uncertainty,ablation_metadata,n,223.0,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,n,41.0,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,n,35.0,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,n,5.0,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,n,1.0,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,n,3.0,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,n,223.0,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,n,41.0,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,n,35.0,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,n,5.0,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,n,1.0,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,n,3.0,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,n,223.0,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,n,41.0,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,n,35.0,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,n,5.0,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,n,1.0,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,n,3.0,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,n,223.0,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,n,41.0,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,n,35.0,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,n,5.0,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,n,1.0,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,n,3.0,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,223.0,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,41.0,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,35.0,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,5.0,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,1.0,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,3.0,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,223.0,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,41.0,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,35.0,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,5.0,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,1.0,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,3.0,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,223.0,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,41.0,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,35.0,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,5.0,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,1.0,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,3.0,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,223.0,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,41.0,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,35.0,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,5.0,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,1.0,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,n,3.0,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,nested_metadata,n,223.0,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,nested_metadata,n,41.0,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,nested_metadata,n,35.0,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,nested_metadata,n,5.0,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,nested_metadata,n,1.0,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,nested_metadata,n,3.0,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,nested_metadata,n,223.0,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,nested_metadata,n,41.0,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,nested_metadata,n,35.0,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,nested_metadata,n,5.0,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,nested_metadata,n,1.0,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,nested_metadata,n,3.0,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,nested_metadata,n,223.0,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,nested_metadata,n,41.0,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,nested_metadata,n,35.0,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,nested_metadata,n,5.0,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,nested_metadata,n,1.0,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,nested_metadata,n,3.0,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,nested_metadata,n,223.0,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,nested_metadata,n,41.0,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,nested_metadata,n,35.0,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,nested_metadata,n,5.0,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,nested_metadata,n,1.0,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,nested_metadata,n,3.0,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,n,223.0,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,n,41.0,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,n,35.0,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,n,5.0,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,n,1.0,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,n,3.0,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,n,223.0,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,n,41.0,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,n,35.0,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,n,5.0,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,n,1.0,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,n,3.0,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,n,223.0,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,n,41.0,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,n,35.0,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,n,5.0,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,n,1.0,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,n,3.0,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,n,223.0,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,n,41.0,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,n,35.0,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,n,5.0,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,n,1.0,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,n,3.0,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,coverage,0.8311688311688312,,,dollar,0.8,all,all,,,,
+empirical uncertainty,ablation_metadata,coverage,0.8993506493506493,,,dollar,0.9,all,all,,,,
+empirical uncertainty,ablation_metadata,coverage,0.8571428571428571,,,log1p,0.8,all,all,,,,
+empirical uncertainty,ablation_metadata,coverage,0.922077922077922,,,log1p,0.9,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.8441558441558441,,,dollar,0.8,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.8993506493506493,,,dollar,0.9,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.8409090909090909,,,log1p,0.8,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.9318181818181818,,,log1p,0.9,all,all,,,,
+empirical uncertainty,nested_metadata,coverage,0.8441558441558441,,,dollar,0.8,all,all,,,,
+empirical uncertainty,nested_metadata,coverage,0.9123376623376624,,,dollar,0.9,all,all,,,,
+empirical uncertainty,nested_metadata,coverage,0.827922077922078,,,log1p,0.8,all,all,,,,
+empirical uncertainty,nested_metadata,coverage,0.922077922077922,,,log1p,0.9,all,all,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.8506493506493507,,,dollar,0.8,all,all,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.9090909090909092,,,dollar,0.9,all,all,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.8571428571428571,,,log1p,0.8,all,all,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.9285714285714286,,,log1p,0.9,all,all,,,,
+empirical uncertainty,ablation_metadata,coverage,0.9955156950672646,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,coverage,0.7804878048780488,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0571428571428571,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,coverage,1.0,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,coverage,1.0,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,coverage,0.3714285714285714,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,coverage,0.9506726457399104,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,coverage,0.5609756097560976,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,coverage,0.7428571428571429,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,coverage,0.2,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,coverage,0.6666666666666666,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,coverage,0.9820627802690582,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,coverage,0.7560975609756098,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,coverage,0.8571428571428571,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,coverage,0.2,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,coverage,0.0,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,coverage,1.0,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.9955156950672646,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.8536585365853658,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0857142857142857,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,1.0,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,1.0,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.3714285714285714,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.937219730941704,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.5121951219512195,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.7428571428571429,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.2,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.6666666666666666,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.9865470852017936,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.8292682926829268,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.8285714285714286,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.2,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,0.0,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,coverage,1.0,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,nested_metadata,coverage,0.9955156950672646,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,nested_metadata,coverage,0.8780487804878049,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,nested_metadata,coverage,0.0571428571428571,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,nested_metadata,coverage,0.0,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,nested_metadata,coverage,0.0,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,nested_metadata,coverage,0.0,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,nested_metadata,coverage,1.0,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,nested_metadata,coverage,1.0,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,nested_metadata,coverage,0.4857142857142857,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,nested_metadata,coverage,0.0,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,nested_metadata,coverage,0.0,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,nested_metadata,coverage,0.0,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,nested_metadata,coverage,0.9147982062780268,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,nested_metadata,coverage,0.5121951219512195,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,nested_metadata,coverage,0.7714285714285715,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,nested_metadata,coverage,0.2,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,nested_metadata,coverage,0.0,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,nested_metadata,coverage,0.6666666666666666,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,nested_metadata,coverage,0.9820627802690582,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,nested_metadata,coverage,0.7560975609756098,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,nested_metadata,coverage,0.8285714285714286,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,nested_metadata,coverage,0.4,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,nested_metadata,coverage,0.0,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,nested_metadata,coverage,1.0,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.9910313901345292,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.902439024390244,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.1142857142857142,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.0,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.0,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.0,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,coverage,1.0,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,coverage,1.0,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.4571428571428571,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.0,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.0,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.0,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.9192825112107624,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.7560975609756098,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.7142857142857143,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.4,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,coverage,1.0,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.0,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.968609865470852,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.902439024390244,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.8,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.6,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,coverage,1.0,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,coverage,0.3333333333333333,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,663042.1608489756,,,dollar,0.8,all,all,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,2902316.703300258,,,dollar,0.9,all,all,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,218909.6045466059,,,log1p,0.8,all,all,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,998018.5546112364,,,log1p,0.9,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,736928.6958035782,,,dollar,0.8,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,3409993.003047544,,,dollar,0.9,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,162930.79907146192,,,log1p,0.8,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,960935.3597497436,,,log1p,0.9,all,all,,,,
+empirical uncertainty,nested_metadata,median_width_usd,748587.3243917981,,,dollar,0.8,all,all,,,,
+empirical uncertainty,nested_metadata,median_width_usd,4283240.89776092,,,dollar,0.9,all,all,,,,
+empirical uncertainty,nested_metadata,median_width_usd,159872.26561426575,,,log1p,0.8,all,all,,,,
+empirical uncertainty,nested_metadata,median_width_usd,898012.6095451757,,,log1p,0.9,all,all,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,765157.9327971473,,,dollar,0.8,all,all,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,3433792.172090251,,,dollar,0.9,all,all,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,311534.2511881696,,,log1p,0.8,all,all,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,1738289.261516317,,,log1p,0.9,all,all,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,662970.3817863578,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,679096.02535241,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,729596.6107747778,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,732320.0809409653,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,663119.9811113316,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,1250492.8845401923,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,2902310.6115115904,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,2902459.810267652,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,2906321.3002392,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,2905888.740476912,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,2291075.0108963177,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,4983418.568364285,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,123183.83972022132,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,830670.9291253146,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,67000077.76083581,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,1139656.9420180786,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,766607.1807346722,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,7596037182.995671,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,603568.6143093659,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,4005226.766381027,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,325932775.95051795,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,5784689.381122281,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,3638661.6375834574,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,median_width_usd,41508875864.37255,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,736900.8130175915,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,737216.0640616098,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,766177.8960607984,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,739498.0038062099,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,765575.058552492,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,1305134.9234938023,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,3409987.66006912,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,3410008.8513666405,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,3411204.390699313,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,3412591.0095097213,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,2291352.7962506926,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,4361036.761635805,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,111787.95524190804,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,517693.9786604617,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,56076629.12852737,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,1588744.9351456854,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,1468182.5154223624,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,4072635156.777363,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,613033.2065120642,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,2943465.053174094,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,236862880.46970108,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,9166971.555693995,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,10291878.217374424,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,median_width_usd,23498872336.864613,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,nested_metadata,median_width_usd,748575.7437032923,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,nested_metadata,median_width_usd,748918.0399805163,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,nested_metadata,median_width_usd,770314.539270843,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,nested_metadata,median_width_usd,752157.0604332103,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,nested_metadata,median_width_usd,765167.3760514284,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,nested_metadata,median_width_usd,1325903.6688011317,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,nested_metadata,median_width_usd,4283238.242238097,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,nested_metadata,median_width_usd,4283242.663219216,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,nested_metadata,median_width_usd,4293023.659294082,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,nested_metadata,median_width_usd,4286819.928283102,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,nested_metadata,median_width_usd,2290879.335051621,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,nested_metadata,median_width_usd,6587474.554162597,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,nested_metadata,median_width_usd,90771.79220203124,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,nested_metadata,median_width_usd,1012089.9159338198,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,nested_metadata,median_width_usd,74580207.40516444,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,nested_metadata,median_width_usd,1435958.5051751584,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,nested_metadata,median_width_usd,112511.76554050496,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,nested_metadata,median_width_usd,15843857282.580778,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,nested_metadata,median_width_usd,496533.1199370511,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,nested_metadata,median_width_usd,5444857.118759846,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,nested_metadata,median_width_usd,415525074.3548608,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,nested_metadata,median_width_usd,8083217.581311151,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,nested_metadata,median_width_usd,511152.0559898479,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,nested_metadata,median_width_usd,89187312907.0227,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,765151.4795056096,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,766235.0586202518,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,828947.4506133058,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,769994.0226809519,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,1424341.9343665063,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,757694.3091644145,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,3433607.35843713,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,3446928.358021715,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,3484289.007529469,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,3789186.544684749,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,2891869.488938334,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,3460150.621681495,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,112040.16638564836,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,3974990.738605851,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,57600211.341644354,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,17745952.88220247,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,6538533411.18601,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,92522732.39901292,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,613341.4638098804,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,23381704.468841624,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,249305042.0456549,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,134655024.49379796,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,26135054966.658325,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,median_width_usd,738983508.9640497,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,813606.1367491364,,,dollar,0.8,all,all,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,3178436.4867802365,,,dollar,0.9,all,all,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,383089553.1640323,,,log1p,0.8,all,all,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,1787645912.4809563,,,log1p,0.9,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,849409.3842651476,,,dollar,0.8,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,3463016.356702799,,,dollar,0.9,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,200051753.6584184,,,log1p,0.8,all,all,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,1145539580.778591,,,log1p,0.9,all,all,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,866340.4618605848,,,dollar,0.8,all,all,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,4004412.733428529,,,dollar,0.9,all,all,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,2471733496.090032,,,log1p,0.8,all,all,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,12000086943.123444,,,log1p,0.9,all,all,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,886086.4297662571,,,dollar,0.8,all,all,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,3598929.8891843134,,,dollar,0.9,all,all,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,155192391091.68124,,,log1p,0.8,all,all,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,621756338055.7588,,,log1p,0.9,all,all,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,779341.991871829,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,817682.379627752,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,983113.0727004436,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,952708.1036891348,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,663119.9811113316,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,1145610.107501926,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,3105100.2876208303,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,3176175.4593190067,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,3505917.413597644,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,3509918.893466402,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,2291075.0108963177,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,4583367.000880822,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,38151230.95758827,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,48293612.5316687,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,2394197242.8640146,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,613166110.8788893,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,766607.1807346722,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,6880106365.121887,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,193196405.4747665,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,213399132.8937029,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,10689235169.538054,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,3350346517.6328044,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,3638661.6375834574,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_metadata,mean_width_usd,35961391996.99545,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,821303.4679857547,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,860183.0617995,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,966917.7794629186,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,998827.0800419232,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,765575.058552492,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,1199359.573032804,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,3415533.4428714444,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,3461862.5779211507,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,3673056.17451378,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,3817861.1335457554,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,2291352.7962506926,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,4357029.9458003,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,32443095.229943648,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,42670277.75539012,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,1110857856.5917192,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,564727335.6746304,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,1468182.5154223624,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,3642172886.981893,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,187906189.11477268,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,234992098.3391676,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,6358817662.258835,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,3211867240.880296,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,10291878.217374424,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,ablation_retrospective_metadata,mean_width_usd,20886729471.209213,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,827816.0799814548,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,886853.6563565793,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,1039349.913010604,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,1005317.6731809344,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,765167.3760514284,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,1233291.2697495564,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,3896273.905837304,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,3920936.511079743,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,4491931.111359343,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,4926709.0019223,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,2290879.335051621,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,6529876.899252879,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,48250988.73051243,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,193399945.5030192,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,19064388769.43478,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,5376480650.339481,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,112511.76554050496,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,16156141949.840528,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,274391927.0610773,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,946678604.600848,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,89666323988.28091,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,33233862693.748688,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,511152.0559898479,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,nested_metadata,mean_width_usd,97177463916.04475,,,log1p,0.9,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,853837.4932486089,,,dollar,0.8,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,921922.5123332108,,,dollar,0.8,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,1016552.8898365024,,,dollar,0.8,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,1068662.6312192108,,,dollar,0.8,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,1424341.9343665063,,,dollar,0.8,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,787676.7110552153,,,dollar,0.8,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,3525004.6072978545,,,dollar,0.9,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,3606641.426593232,,,dollar,0.9,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,3956801.617881017,,,dollar,0.9,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,4506960.527479319,,,dollar,0.9,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,2891869.488938334,,,dollar,0.9,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,3535783.732951297,,,dollar,0.9,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,82634857.28877135,,,log1p,0.8,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,536977869.7658299,,,log1p,0.8,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,1363876750558.1094,,,log1p,0.8,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,3194262986.143605,,,log1p,0.8,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,6538533411.18601,,,log1p,0.8,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,205557508.76431,,,log1p,0.8,actual_band,5,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,483242222.5410905,,,log1p,0.9,actual_band,0,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,2176734692.564012,,,log1p,0.9,actual_band,1,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,5461783048106.363,,,log1p,0.9,actual_band,2,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,22138364796.35288,,,log1p,0.9,actual_band,3,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,26135054966.658325,,,log1p,0.9,actual_band,4,,,,
+empirical uncertainty,nested_verified_link_only,mean_width_usd,1569806826.934884,,,log1p,0.9,actual_band,5,,,,
+synthetic allocation,,need_met,0.3753579486201204,,,,,,,efficient_expected,0.4,0.25,sequential
+synthetic allocation,,need_met,0.3416217419262562,,,,,,,equal,0.4,0.25,sequential
+synthetic allocation,,need_met,0.3743529623821379,,,,,,,equity_expected,0.4,0.25,sequential
+synthetic allocation,,need_met,0.3691145595210847,,,,,,,equity_robust,0.4,0.25,sequential
+synthetic allocation,,need_met,0.3143196261699669,,,,,,,exposure_priority,0.4,0.25,sequential
+synthetic allocation,,need_met,0.3630979819853311,,,,,,,proportional_need,0.4,0.25,sequential
+synthetic allocation,,need_met,0.2989533368936194,,,,,,,severity_priority,0.4,0.25,sequential
+synthetic allocation,,need_met,0.3899462614579292,,,,,,,efficient_expected,0.4,0.25,simultaneous
+synthetic allocation,,need_met,0.3640901951406088,,,,,,,equal,0.4,0.25,simultaneous
+synthetic allocation,,need_met,0.3901445764435474,,,,,,,equity_expected,0.4,0.25,simultaneous
+synthetic allocation,,need_met,0.3825637263313199,,,,,,,equity_robust,0.4,0.25,simultaneous
+synthetic allocation,,need_met,0.2959825684736568,,,,,,,exposure_priority,0.4,0.25,simultaneous
+synthetic allocation,,need_met,0.3913577055918917,,,,,,,proportional_need,0.4,0.25,simultaneous
+synthetic allocation,,need_met,0.2915674659327941,,,,,,,severity_priority,0.4,0.25,simultaneous
+synthetic allocation,,need_met,0.3282309546715061,,,,,,,efficient_expected,0.4,0.6,sequential
+synthetic allocation,,need_met,0.3057279783583578,,,,,,,equal,0.4,0.6,sequential
+synthetic allocation,,need_met,0.3313518748516305,,,,,,,equity_expected,0.4,0.6,sequential
+synthetic allocation,,need_met,0.3255318950624489,,,,,,,equity_robust,0.4,0.6,sequential
+synthetic allocation,,need_met,0.2711234169043867,,,,,,,exposure_priority,0.4,0.6,sequential
+synthetic allocation,,need_met,0.324647766723837,,,,,,,proportional_need,0.4,0.6,sequential
+synthetic allocation,,need_met,0.2630761999858834,,,,,,,severity_priority,0.4,0.6,sequential
+synthetic allocation,,need_met,0.3268246981623883,,,,,,,efficient_expected,0.4,0.6,simultaneous
+synthetic allocation,,need_met,0.3134849432271498,,,,,,,equal,0.4,0.6,simultaneous
+synthetic allocation,,need_met,0.3341111449494359,,,,,,,equity_expected,0.4,0.6,simultaneous
+synthetic allocation,,need_met,0.3239419444982712,,,,,,,equity_robust,0.4,0.6,simultaneous
+synthetic allocation,,need_met,0.2613296765390393,,,,,,,exposure_priority,0.4,0.6,simultaneous
+synthetic allocation,,need_met,0.3474535633155517,,,,,,,proportional_need,0.4,0.6,simultaneous
+synthetic allocation,,need_met,0.2512049351002682,,,,,,,severity_priority,0.4,0.6,simultaneous
+synthetic allocation,,need_met,0.5919444031378073,,,,,,,efficient_expected,0.65,0.25,sequential
+synthetic allocation,,need_met,0.5280621286695201,,,,,,,equal,0.65,0.25,sequential
+synthetic allocation,,need_met,0.5899153029398371,,,,,,,equity_expected,0.65,0.25,sequential
+synthetic allocation,,need_met,0.581368560395262,,,,,,,equity_robust,0.65,0.25,sequential
+synthetic allocation,,need_met,0.464096224075825,,,,,,,exposure_priority,0.65,0.25,sequential
+synthetic allocation,,need_met,0.5509374839480583,,,,,,,proportional_need,0.65,0.25,sequential
+synthetic allocation,,need_met,0.4784100346740111,,,,,,,severity_priority,0.65,0.25,sequential
+synthetic allocation,,need_met,0.6318132497636876,,,,,,,efficient_expected,0.65,0.25,simultaneous
+synthetic allocation,,need_met,0.5526691415918666,,,,,,,equal,0.65,0.25,simultaneous
+synthetic allocation,,need_met,0.6255121340199506,,,,,,,equity_expected,0.65,0.25,simultaneous
+synthetic allocation,,need_met,0.6105683042999974,,,,,,,equity_robust,0.65,0.25,simultaneous
+synthetic allocation,,need_met,0.4559797856923598,,,,,,,exposure_priority,0.65,0.25,simultaneous
+synthetic allocation,,need_met,0.6354992333178144,,,,,,,proportional_need,0.65,0.25,simultaneous
+synthetic allocation,,need_met,0.4557323582832673,,,,,,,severity_priority,0.65,0.25,simultaneous
+synthetic allocation,,need_met,0.4968815749752526,,,,,,,efficient_expected,0.65,0.6,sequential
+synthetic allocation,,need_met,0.4542886808797046,,,,,,,equal,0.65,0.6,sequential
+synthetic allocation,,need_met,0.4959056495837956,,,,,,,equity_expected,0.65,0.6,sequential
+synthetic allocation,,need_met,0.4883328000722681,,,,,,,equity_robust,0.65,0.6,sequential
+synthetic allocation,,need_met,0.4075202925174229,,,,,,,exposure_priority,0.65,0.6,sequential
+synthetic allocation,,need_met,0.4719002045472319,,,,,,,proportional_need,0.65,0.6,sequential
+synthetic allocation,,need_met,0.3990524954941701,,,,,,,severity_priority,0.65,0.6,sequential
+synthetic allocation,,need_met,0.511263008350756,,,,,,,efficient_expected,0.65,0.6,simultaneous
+synthetic allocation,,need_met,0.4616946140446245,,,,,,,equal,0.65,0.6,simultaneous
+synthetic allocation,,need_met,0.503597756524891,,,,,,,equity_expected,0.65,0.6,simultaneous
+synthetic allocation,,need_met,0.4912994820364648,,,,,,,equity_robust,0.65,0.6,simultaneous
+synthetic allocation,,need_met,0.37487563755389,,,,,,,exposure_priority,0.65,0.6,simultaneous
+synthetic allocation,,need_met,0.5159806134523872,,,,,,,proportional_need,0.65,0.6,simultaneous
+synthetic allocation,,need_met,0.3930048916630425,,,,,,,severity_priority,0.65,0.6,simultaneous
+synthetic allocation,,need_met,0.7583428925574487,,,,,,,efficient_expected,0.9,0.25,sequential
+synthetic allocation,,need_met,0.6873959741427511,,,,,,,equal,0.9,0.25,sequential
+synthetic allocation,,need_met,0.7578080947744623,,,,,,,equity_expected,0.9,0.25,sequential
+synthetic allocation,,need_met,0.7520537734224949,,,,,,,equity_robust,0.9,0.25,sequential
+synthetic allocation,,need_met,0.6039243630378609,,,,,,,exposure_priority,0.9,0.25,sequential
+synthetic allocation,,need_met,0.6934311109017163,,,,,,,proportional_need,0.9,0.25,sequential
+synthetic allocation,,need_met,0.6145763256505851,,,,,,,severity_priority,0.9,0.25,sequential
+synthetic allocation,,need_met,0.8093348578202766,,,,,,,efficient_expected,0.9,0.25,simultaneous
+synthetic allocation,,need_met,0.7098607709990657,,,,,,,equal,0.9,0.25,simultaneous
+synthetic allocation,,need_met,0.8097801842375623,,,,,,,equity_expected,0.9,0.25,simultaneous
+synthetic allocation,,need_met,0.8054682654229622,,,,,,,equity_robust,0.9,0.25,simultaneous
+synthetic allocation,,need_met,0.5957007951183996,,,,,,,exposure_priority,0.9,0.25,simultaneous
+synthetic allocation,,need_met,0.8240220809825002,,,,,,,proportional_need,0.9,0.25,simultaneous
+synthetic allocation,,need_met,0.6031171117313294,,,,,,,severity_priority,0.9,0.25,simultaneous
+synthetic allocation,,need_met,0.6484411375357426,,,,,,,efficient_expected,0.9,0.6,sequential
+synthetic allocation,,need_met,0.6050810990699685,,,,,,,equal,0.9,0.6,sequential
+synthetic allocation,,need_met,0.6452255305062641,,,,,,,equity_expected,0.9,0.6,sequential
+synthetic allocation,,need_met,0.6393886189881718,,,,,,,equity_robust,0.9,0.6,sequential
+synthetic allocation,,need_met,0.5471238399702544,,,,,,,exposure_priority,0.9,0.6,sequential
+synthetic allocation,,need_met,0.6114431595657467,,,,,,,proportional_need,0.9,0.6,sequential
+synthetic allocation,,need_met,0.5408987855099815,,,,,,,severity_priority,0.9,0.6,sequential
+synthetic allocation,,need_met,0.6748246596268811,,,,,,,efficient_expected,0.9,0.6,simultaneous
+synthetic allocation,,need_met,0.622844696177912,,,,,,,equal,0.9,0.6,simultaneous
+synthetic allocation,,need_met,0.6725199912437195,,,,,,,equity_expected,0.9,0.6,simultaneous
+synthetic allocation,,need_met,0.6704277666662952,,,,,,,equity_robust,0.9,0.6,simultaneous
+synthetic allocation,,need_met,0.5126230455120321,,,,,,,exposure_priority,0.9,0.6,simultaneous
+synthetic allocation,,need_met,0.6790723560668925,,,,,,,proportional_need,0.9,0.6,simultaneous
+synthetic allocation,,need_met,0.5389518876915459,,,,,,,severity_priority,0.9,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.012396409303026,,,,,,,efficient_expected,0.4,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.1238571684873391,,,,,,,equal,0.4,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.0780335131095861,,,,,,,equity_expected,0.4,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.070881915032265,,,,,,,equity_robust,0.4,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.4,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.1018452708943318,,,,,,,proportional_need,0.4,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,severity_priority,0.4,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.0216233818144845,,,,,,,efficient_expected,0.4,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.2256987319720968,,,,,,,equal,0.4,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.149919326201474,,,,,,,equity_expected,0.4,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.1414772136119521,,,,,,,equity_robust,0.4,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.4,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.30465554075004,,,,,,,proportional_need,0.4,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,severity_priority,0.4,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.0107027762618515,,,,,,,efficient_expected,0.4,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.117737008935314,,,,,,,equal,0.4,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0803123649575942,,,,,,,equity_expected,0.4,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0725517532697665,,,,,,,equity_robust,0.4,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.4,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0995994272012462,,,,,,,proportional_need,0.4,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,severity_priority,0.4,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0136880305950548,,,,,,,efficient_expected,0.4,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.2062739817829551,,,,,,,equal,0.4,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.1383862522934286,,,,,,,equity_expected,0.4,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.121529943061118,,,,,,,equity_robust,0.4,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.4,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.2237543914373685,,,,,,,proportional_need,0.4,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,severity_priority,0.4,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.2437368020081675,,,,,,,efficient_expected,0.65,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.2708659183797219,,,,,,,equal,0.65,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.2687865584436858,,,,,,,equity_expected,0.65,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.2179786901903306,,,,,,,equity_robust,0.65,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.65,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.1802994612710304,,,,,,,proportional_need,0.65,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.0009261184183222,,,,,,,severity_priority,0.65,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.4476576072018111,,,,,,,efficient_expected,0.65,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.4432871648000319,,,,,,,equal,0.65,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.4105859550776958,,,,,,,equity_expected,0.65,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.3209465644475003,,,,,,,equity_robust,0.65,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.65,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.5113902022773874,,,,,,,proportional_need,0.65,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,severity_priority,0.65,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.1692152745565814,,,,,,,efficient_expected,0.65,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.2429332749510778,,,,,,,equal,0.65,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.2331738367393145,,,,,,,equity_expected,0.65,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.19258550525073,,,,,,,equity_robust,0.65,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.65,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.1617367032471671,,,,,,,proportional_need,0.65,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0069352439371784,,,,,,,severity_priority,0.65,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.3254141359855053,,,,,,,efficient_expected,0.65,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.345230277800162,,,,,,,equal,0.65,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.3123885382665891,,,,,,,equity_expected,0.65,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.2544140762203196,,,,,,,equity_robust,0.65,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.65,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.3484630467684247,,,,,,,proportional_need,0.65,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,severity_priority,0.65,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.5080932486173643,,,,,,,efficient_expected,0.9,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.4617892866437815,,,,,,,equal,0.9,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.4726675627109223,,,,,,,equity_expected,0.9,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.4246911504889754,,,,,,,equity_robust,0.9,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.9,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.3133205159254417,,,,,,,proportional_need,0.9,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.0110116528840112,,,,,,,severity_priority,0.9,0.25,sequential
+synthetic allocation,,p10_service_fraction,0.6371704033323428,,,,,,,efficient_expected,0.9,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.6520532954869646,,,,,,,equal,0.9,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.6276802844790142,,,,,,,equity_expected,0.9,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.5973588974826562,,,,,,,equity_robust,0.9,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.9,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.6836768850709801,,,,,,,proportional_need,0.9,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.0058243315197356,,,,,,,severity_priority,0.9,0.25,simultaneous
+synthetic allocation,,p10_service_fraction,0.3755763645753757,,,,,,,efficient_expected,0.9,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.4280596646079952,,,,,,,equal,0.9,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.3964426570814879,,,,,,,equity_expected,0.9,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.3585000445106127,,,,,,,equity_robust,0.9,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0005765259682436,,,,,,,exposure_priority,0.9,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.2841931404717479,,,,,,,proportional_need,0.9,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.0018950181512836,,,,,,,severity_priority,0.9,0.6,sequential
+synthetic allocation,,p10_service_fraction,0.4657063628421977,,,,,,,efficient_expected,0.9,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.5364944394911166,,,,,,,equal,0.9,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.4710588672181058,,,,,,,equity_expected,0.9,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.4616910004589581,,,,,,,equity_robust,0.9,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.0,,,,,,,exposure_priority,0.9,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.4882762499736067,,,,,,,proportional_need,0.9,0.6,simultaneous
+synthetic allocation,,p10_service_fraction,0.0008435510372356,,,,,,,severity_priority,0.9,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.3756791271634461,,,,,,,efficient_expected,0.4,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.3616445055672775,,,,,,,equal,0.4,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.517214773463539,,,,,,,equity_expected,0.4,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.5368581924852095,,,,,,,equity_robust,0.4,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.284460009142686,,,,,,,exposure_priority,0.4,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.3570474106733828,,,,,,,proportional_need,0.4,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.296988203630498,,,,,,,severity_priority,0.4,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.4010941298915772,,,,,,,efficient_expected,0.4,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.3857704210066138,,,,,,,equal,0.4,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.5864534033213528,,,,,,,equity_expected,0.4,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.6074043382272855,,,,,,,equity_robust,0.4,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.2768461369670637,,,,,,,exposure_priority,0.4,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.3903589775207334,,,,,,,proportional_need,0.4,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.2859490822830637,,,,,,,severity_priority,0.4,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.3453608985853896,,,,,,,efficient_expected,0.4,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.3226472284508874,,,,,,,equal,0.4,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.4585208465698557,,,,,,,equity_expected,0.4,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.4708512310063226,,,,,,,equity_robust,0.4,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.2641960012949249,,,,,,,exposure_priority,0.4,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.3265144128724514,,,,,,,proportional_need,0.4,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.267869906966694,,,,,,,severity_priority,0.4,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.3365816094528066,,,,,,,efficient_expected,0.4,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.3880591547583796,,,,,,,equal,0.4,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.5245317104082732,,,,,,,equity_expected,0.4,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.5454676918736112,,,,,,,equity_robust,0.4,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.2173818658458349,,,,,,,exposure_priority,0.4,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.3679006344697816,,,,,,,proportional_need,0.4,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.2442810272324057,,,,,,,severity_priority,0.4,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.5928688778681275,,,,,,,efficient_expected,0.65,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.543443704937141,,,,,,,equal,0.65,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.6989443761893241,,,,,,,equity_expected,0.65,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.7361776125065298,,,,,,,equity_robust,0.65,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.4188030848588866,,,,,,,exposure_priority,0.65,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.5260504645302183,,,,,,,proportional_need,0.65,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.4366177810133986,,,,,,,severity_priority,0.65,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.6427253572815691,,,,,,,efficient_expected,0.65,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.6158352664692057,,,,,,,equal,0.65,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.7371767719757043,,,,,,,equity_expected,0.65,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.8234447879647065,,,,,,,equity_robust,0.65,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.3606550650194654,,,,,,,exposure_priority,0.65,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.6415034940801555,,,,,,,proportional_need,0.65,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.4182933645284633,,,,,,,severity_priority,0.65,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.5272008699808103,,,,,,,efficient_expected,0.65,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.5089492581157616,,,,,,,equal,0.65,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.6233214561913759,,,,,,,equity_expected,0.65,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.6521958718904984,,,,,,,equity_robust,0.65,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.3667078250746592,,,,,,,exposure_priority,0.65,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.487559625567881,,,,,,,proportional_need,0.65,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.4129330886775904,,,,,,,severity_priority,0.65,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.5339989558403687,,,,,,,efficient_expected,0.65,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.504354374006732,,,,,,,equal,0.65,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.6003384804627806,,,,,,,equity_expected,0.65,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.6627106252153094,,,,,,,equity_robust,0.65,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.3570613741666611,,,,,,,exposure_priority,0.65,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.537914090042681,,,,,,,proportional_need,0.65,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.4037513169698404,,,,,,,severity_priority,0.65,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.7682726720235497,,,,,,,efficient_expected,0.9,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.699078966088793,,,,,,,equal,0.9,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.8398074323687857,,,,,,,equity_expected,0.9,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.8576798058049542,,,,,,,equity_robust,0.9,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.5830649940706402,,,,,,,exposure_priority,0.9,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.6885751649748906,,,,,,,proportional_need,0.9,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.5809586424713261,,,,,,,severity_priority,0.9,0.25,sequential
+synthetic allocation,,high_vulnerability_service,0.8142761042575991,,,,,,,efficient_expected,0.9,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.7426581974393905,,,,,,,equal,0.9,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.8834931999267458,,,,,,,equity_expected,0.9,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.8887586921792994,,,,,,,equity_robust,0.9,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.5467574112753274,,,,,,,exposure_priority,0.9,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.8305599136332903,,,,,,,proportional_need,0.9,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.5972680930974056,,,,,,,severity_priority,0.9,0.25,simultaneous
+synthetic allocation,,high_vulnerability_service,0.6744838172199547,,,,,,,efficient_expected,0.9,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.6791100933965899,,,,,,,equal,0.9,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.7406341065932966,,,,,,,equity_expected,0.9,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.7498602083848579,,,,,,,equity_robust,0.9,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.4938773690990672,,,,,,,exposure_priority,0.9,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.6331457326443596,,,,,,,proportional_need,0.9,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.5380297698489523,,,,,,,severity_priority,0.9,0.6,sequential
+synthetic allocation,,high_vulnerability_service,0.6819017542613774,,,,,,,efficient_expected,0.9,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.6700777247640897,,,,,,,equal,0.9,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.7271208314913067,,,,,,,equity_expected,0.9,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.73327087351136,,,,,,,equity_robust,0.9,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.4588920328939814,,,,,,,exposure_priority,0.9,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.6908048108136273,,,,,,,proportional_need,0.9,0.6,simultaneous
+synthetic allocation,,high_vulnerability_service,0.5210903690116296,,,,,,,severity_priority,0.9,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,10311.2083649164,,,,,,,efficient_expected,0.4,0.25,sequential
+synthetic allocation,,weighted_wait_units,10845.3135699101,,,,,,,equal,0.4,0.25,sequential
+synthetic allocation,,weighted_wait_units,10022.010515044964,,,,,,,equity_expected,0.4,0.25,sequential
+synthetic allocation,,weighted_wait_units,10058.552223574356,,,,,,,equity_robust,0.4,0.25,sequential
+synthetic allocation,,weighted_wait_units,11398.967090738246,,,,,,,exposure_priority,0.4,0.25,sequential
+synthetic allocation,,weighted_wait_units,10473.736503277803,,,,,,,proportional_need,0.4,0.25,sequential
+synthetic allocation,,weighted_wait_units,11561.894248835768,,,,,,,severity_priority,0.4,0.25,sequential
+synthetic allocation,,weighted_wait_units,18347.7667232202,,,,,,,efficient_expected,0.4,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,18716.43782594335,,,,,,,equal,0.4,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,17735.601157044017,,,,,,,equity_expected,0.4,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,17764.787644784978,,,,,,,equity_robust,0.4,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,19587.6587113144,,,,,,,exposure_priority,0.4,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,18312.24390004125,,,,,,,proportional_need,0.4,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,19898.563220445667,,,,,,,severity_priority,0.4,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,13391.201666400584,,,,,,,efficient_expected,0.4,0.6,sequential
+synthetic allocation,,weighted_wait_units,13874.833311247186,,,,,,,equal,0.4,0.6,sequential
+synthetic allocation,,weighted_wait_units,13073.89973561378,,,,,,,equity_expected,0.4,0.6,sequential
+synthetic allocation,,weighted_wait_units,13122.787068992124,,,,,,,equity_robust,0.4,0.6,sequential
+synthetic allocation,,weighted_wait_units,14379.296857516138,,,,,,,exposure_priority,0.4,0.6,sequential
+synthetic allocation,,weighted_wait_units,13456.681113407089,,,,,,,proportional_need,0.4,0.6,sequential
+synthetic allocation,,weighted_wait_units,14613.481326165456,,,,,,,severity_priority,0.4,0.6,sequential
+synthetic allocation,,weighted_wait_units,24276.97111590478,,,,,,,efficient_expected,0.4,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,24344.71489777127,,,,,,,equal,0.4,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,23452.081980344665,,,,,,,equity_expected,0.4,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,23587.869647175605,,,,,,,equity_robust,0.4,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,25300.288121543224,,,,,,,exposure_priority,0.4,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,23747.710074103536,,,,,,,proportional_need,0.4,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,25674.78882349652,,,,,,,severity_priority,0.4,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,6709.956421755747,,,,,,,efficient_expected,0.65,0.25,sequential
+synthetic allocation,,weighted_wait_units,7762.039211211128,,,,,,,equal,0.65,0.25,sequential
+synthetic allocation,,weighted_wait_units,6459.837250135916,,,,,,,equity_expected,0.65,0.25,sequential
+synthetic allocation,,weighted_wait_units,6506.266367809479,,,,,,,equity_robust,0.65,0.25,sequential
+synthetic allocation,,weighted_wait_units,8781.88488182743,,,,,,,exposure_priority,0.65,0.25,sequential
+synthetic allocation,,weighted_wait_units,7228.183927338189,,,,,,,proportional_need,0.65,0.25,sequential
+synthetic allocation,,weighted_wait_units,8665.858880178104,,,,,,,severity_priority,0.65,0.25,sequential
+synthetic allocation,,weighted_wait_units,15298.61008327228,,,,,,,efficient_expected,0.65,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,16738.569534824033,,,,,,,equal,0.65,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,14773.038107712247,,,,,,,equity_expected,0.65,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,14866.2618190239,,,,,,,equity_robust,0.65,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,18257.536792576724,,,,,,,exposure_priority,0.65,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,15258.265312506368,,,,,,,proportional_need,0.65,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,18406.718708453307,,,,,,,severity_priority,0.65,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,10616.523029138683,,,,,,,efficient_expected,0.65,0.6,sequential
+synthetic allocation,,weighted_wait_units,11447.944601116962,,,,,,,equal,0.65,0.6,sequential
+synthetic allocation,,weighted_wait_units,10391.998100034514,,,,,,,equity_expected,0.65,0.6,sequential
+synthetic allocation,,weighted_wait_units,10423.084093600562,,,,,,,equity_robust,0.65,0.6,sequential
+synthetic allocation,,weighted_wait_units,12193.576242873767,,,,,,,exposure_priority,0.65,0.6,sequential
+synthetic allocation,,weighted_wait_units,10993.008399558055,,,,,,,proportional_need,0.65,0.6,sequential
+synthetic allocation,,weighted_wait_units,12282.32626011257,,,,,,,severity_priority,0.65,0.6,sequential
+synthetic allocation,,weighted_wait_units,20601.62130926537,,,,,,,efficient_expected,0.65,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,21502.19733997984,,,,,,,equal,0.65,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,20125.14834301644,,,,,,,equity_expected,0.65,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,20278.55634615392,,,,,,,equity_robust,0.65,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,22901.54970351644,,,,,,,exposure_priority,0.65,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,20286.259608069657,,,,,,,proportional_need,0.65,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,22833.79072974132,,,,,,,severity_priority,0.65,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,4034.797149245697,,,,,,,efficient_expected,0.9,0.25,sequential
+synthetic allocation,,weighted_wait_units,5180.779050524308,,,,,,,equal,0.9,0.25,sequential
+synthetic allocation,,weighted_wait_units,3880.0509299510113,,,,,,,equity_expected,0.9,0.25,sequential
+synthetic allocation,,weighted_wait_units,3911.0529635471366,,,,,,,equity_robust,0.9,0.25,sequential
+synthetic allocation,,weighted_wait_units,6495.616134564541,,,,,,,exposure_priority,0.9,0.25,sequential
+synthetic allocation,,weighted_wait_units,4822.586641347575,,,,,,,proportional_need,0.9,0.25,sequential
+synthetic allocation,,weighted_wait_units,6334.453039306467,,,,,,,severity_priority,0.9,0.25,sequential
+synthetic allocation,,weighted_wait_units,11168.249375338337,,,,,,,efficient_expected,0.9,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,13148.035873614112,,,,,,,equal,0.9,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,10674.062303706469,,,,,,,equity_expected,0.9,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,10708.73090013996,,,,,,,equity_robust,0.9,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,15277.234124736717,,,,,,,exposure_priority,0.9,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,10960.402473946357,,,,,,,proportional_need,0.9,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,15393.781022460644,,,,,,,severity_priority,0.9,0.25,simultaneous
+synthetic allocation,,weighted_wait_units,7782.172068252473,,,,,,,efficient_expected,0.9,0.6,sequential
+synthetic allocation,,weighted_wait_units,8560.429686883506,,,,,,,equal,0.9,0.6,sequential
+synthetic allocation,,weighted_wait_units,7694.488228136318,,,,,,,equity_expected,0.9,0.6,sequential
+synthetic allocation,,weighted_wait_units,7743.604201917302,,,,,,,equity_robust,0.9,0.6,sequential
+synthetic allocation,,weighted_wait_units,9474.272150306064,,,,,,,exposure_priority,0.9,0.6,sequential
+synthetic allocation,,weighted_wait_units,8204.306105825697,,,,,,,proportional_need,0.9,0.6,sequential
+synthetic allocation,,weighted_wait_units,9561.881140403071,,,,,,,severity_priority,0.9,0.6,sequential
+synthetic allocation,,weighted_wait_units,16419.433860168476,,,,,,,efficient_expected,0.9,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,17890.371331706378,,,,,,,equal,0.9,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,16066.536599469971,,,,,,,equity_expected,0.9,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,16207.900928384912,,,,,,,equity_robust,0.9,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,20090.105854887064,,,,,,,exposure_priority,0.9,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,16184.787203701966,,,,,,,proportional_need,0.9,0.6,simultaneous
+synthetic allocation,,weighted_wait_units,19542.905148493825,,,,,,,severity_priority,0.9,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0361954315495155,,,,,,,efficient_expected,0.4,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.1214147558542967,,,,,,,equal,0.4,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.0385772182509043,,,,,,,equity_expected,0.4,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.0516166428514102,,,,,,,equity_robust,0.4,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.1881267310610826,,,,,,,exposure_priority,0.4,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.066425002438664,,,,,,,proportional_need,0.4,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.2261327447513605,,,,,,,severity_priority,0.4,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.0033081707631877,,,,,,,efficient_expected,0.4,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0686635386424912,,,,,,,equal,0.4,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0030619775960546,,,,,,,equity_expected,0.4,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.021169446319765,,,,,,,equity_robust,0.4,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2384542906225715,,,,,,,exposure_priority,0.4,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0,,,,,,,proportional_need,0.4,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2528216991476444,,,,,,,severity_priority,0.4,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0810503842328464,,,,,,,efficient_expected,0.4,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.1448385243777984,,,,,,,equal,0.4,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.0711827447722563,,,,,,,equity_expected,0.4,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.0867215443904397,,,,,,,equity_robust,0.4,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.2279334434460994,,,,,,,exposure_priority,0.4,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.0914674517897338,,,,,,,proportional_need,0.4,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.2571496232252407,,,,,,,severity_priority,0.4,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.0699898239731478,,,,,,,efficient_expected,0.4,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1132461460303181,,,,,,,equal,0.4,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0516162206696434,,,,,,,equity_expected,0.4,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0788138318117552,,,,,,,equity_robust,0.4,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2382201205924169,,,,,,,exposure_priority,0.4,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0178271388278986,,,,,,,proportional_need,0.4,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2715480891071685,,,,,,,severity_priority,0.4,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.066867580252095,,,,,,,efficient_expected,0.65,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.1672396625078424,,,,,,,equal,0.65,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.0698156636806436,,,,,,,equity_expected,0.65,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.0827970808983102,,,,,,,equity_robust,0.65,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.2650383493554427,,,,,,,exposure_priority,0.65,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.1297558599941519,,,,,,,proportional_need,0.65,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.2438188530995509,,,,,,,severity_priority,0.65,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.0102124787341394,,,,,,,efficient_expected,0.65,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1324128941703372,,,,,,,equal,0.65,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0197985889493625,,,,,,,equity_expected,0.65,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0425132486435344,,,,,,,equity_robust,0.65,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2774082342504188,,,,,,,exposure_priority,0.65,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0049540597901185,,,,,,,proportional_need,0.65,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2793885192929434,,,,,,,severity_priority,0.65,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1034760563516539,,,,,,,efficient_expected,0.65,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.1812341566074018,,,,,,,equal,0.65,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.1053719002253829,,,,,,,equity_expected,0.65,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.1188446492719342,,,,,,,equity_robust,0.65,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.2561032034976015,,,,,,,exposure_priority,0.65,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.1474536417063771,,,,,,,proportional_need,0.65,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.2761434982266161,,,,,,,severity_priority,0.65,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.0697416523689301,,,,,,,efficient_expected,0.65,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.162776676630207,,,,,,,equal,0.65,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0822436359476823,,,,,,,equity_expected,0.65,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1019980883181695,,,,,,,equity_robust,0.65,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2887993815346792,,,,,,,exposure_priority,0.65,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0619232172878737,,,,,,,proportional_need,0.65,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2656348355655174,,,,,,,severity_priority,0.65,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1207569813441221,,,,,,,efficient_expected,0.9,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.2043999041859273,,,,,,,equal,0.9,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.1214522418136926,,,,,,,equity_expected,0.9,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.1276296982431873,,,,,,,equity_robust,0.9,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.2965513837103276,,,,,,,exposure_priority,0.9,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.1945697038750333,,,,,,,proportional_need,0.9,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.28590827851233,,,,,,,severity_priority,0.9,0.25,sequential
+synthetic allocation,,wasted_budget_fraction,0.0624849040787204,,,,,,,efficient_expected,0.9,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1788960467312783,,,,,,,equal,0.9,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.061795526422851,,,,,,,equity_expected,0.9,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.0667318393384618,,,,,,,equity_robust,0.9,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.3036194644613801,,,,,,,exposure_priority,0.9,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.045628502841931,,,,,,,proportional_need,0.9,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2977117169445926,,,,,,,severity_priority,0.9,0.25,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1977717147297584,,,,,,,efficient_expected,0.9,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.2538243969419294,,,,,,,equal,0.9,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.2021302798074971,,,,,,,equity_expected,0.9,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.2089449418959031,,,,,,,equity_robust,0.9,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.3151691286560748,,,,,,,exposure_priority,0.9,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.2410860295482834,,,,,,,proportional_need,0.9,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.327138656642876,,,,,,,severity_priority,0.9,0.6,sequential
+synthetic allocation,,wasted_budget_fraction,0.1428918524560209,,,,,,,efficient_expected,0.9,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.2162347232111352,,,,,,,equal,0.9,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1446992020912339,,,,,,,equity_expected,0.9,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.147057237718565,,,,,,,equity_robust,0.9,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.3317240912902742,,,,,,,exposure_priority,0.9,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.1377300111024163,,,,,,,proportional_need,0.9,0.6,simultaneous
+synthetic allocation,,wasted_budget_fraction,0.3030336280244092,,,,,,,severity_priority,0.9,0.6,simultaneous
+archived flood phase36,fema_normalized_report_density,n,59.0,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_reporting,n,59.0,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts,n,59.0,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_and_rain,n,59.0,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts_plus_rain,n,59.0,,,,,,,,,,
+archived flood phase36,fema_prior_reporting_only,n,59.0,,,,,,,,,,
+archived flood phase36,fema_only,n,59.0,,,,,,,,,,
+archived flood phase36,fema_multiloc_rain,n,59.0,,,,,,,,,,
+archived flood phase36,fema_normalized_report_density,MAE_USD,355021.15082498523,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_reporting,MAE_USD,361157.8765561656,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts,MAE_USD,384133.2951672982,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_and_rain,MAE_USD,396027.2639831026,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts_plus_rain,MAE_USD,423531.09824668977,,,,,,,,,,
+archived flood phase36,fema_prior_reporting_only,MAE_USD,460142.5652919075,,,,,,,,,,
+archived flood phase36,fema_only,MAE_USD,537057.013478171,,,,,,,,,,
+archived flood phase36,fema_multiloc_rain,MAE_USD,538104.8830995103,,,,,,,,,,
+archived flood phase36,fema_normalized_report_density,RMSE_USD,856456.477215288,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_reporting,RMSE_USD,893987.4457013492,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts,RMSE_USD,925578.317643384,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_and_rain,RMSE_USD,996214.9937728494,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts_plus_rain,RMSE_USD,1055998.4827657752,,,,,,,,,,
+archived flood phase36,fema_prior_reporting_only,RMSE_USD,1141301.2292816718,,,,,,,,,,
+archived flood phase36,fema_only,RMSE_USD,1364052.5292902875,,,,,,,,,,
+archived flood phase36,fema_multiloc_rain,RMSE_USD,1360210.5139937063,,,,,,,,,,
+archived flood phase36,fema_normalized_report_density,R2,0.7901439689035553,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_reporting,R2,0.7713486874974953,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts,R2,0.7549034470286257,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_and_rain,R2,0.7160662578006103,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts_plus_rain,R2,0.6809656488564267,,,,,,,,,,
+archived flood phase36,fema_prior_reporting_only,R2,0.6273411592171241,,,,,,,,,,
+archived flood phase36,fema_only,R2,0.4676796745843391,,,,,,,,,,
+archived flood phase36,fema_multiloc_rain,R2,0.4706741378317453,,,,,,,,,,
+archived flood phase36,fema_normalized_report_density,six_band_accuracy,0.847457627118644,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_reporting,six_band_accuracy,0.8305084745762712,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts,six_band_accuracy,0.847457627118644,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_and_rain,six_band_accuracy,0.8305084745762712,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts_plus_rain,six_band_accuracy,0.847457627118644,,,,,,,,,,
+archived flood phase36,fema_prior_reporting_only,six_band_accuracy,0.7457627118644068,,,,,,,,,,
+archived flood phase36,fema_only,six_band_accuracy,0.7627118644067796,,,,,,,,,,
+archived flood phase36,fema_multiloc_rain,six_band_accuracy,0.7627118644067796,,,,,,,,,,
+archived flood phase36,fema_normalized_report_density,n_positive,31.0,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_reporting,n_positive,31.0,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts,n_positive,31.0,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_and_rain,n_positive,31.0,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts_plus_rain,n_positive,31.0,,,,,,,,,,
+archived flood phase36,fema_prior_reporting_only,n_positive,31.0,,,,,,,,,,
+archived flood phase36,fema_only,n_positive,31.0,,,,,,,,,,
+archived flood phase36,fema_multiloc_rain,n_positive,31.0,,,,,,,,,,
+archived flood phase36,fema_normalized_report_density,positive_target_MAE_USD,675685.4160862623,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_reporting,positive_target_MAE_USD,687364.9908649602,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts,positive_target_MAE_USD,731092.3979140177,,,,,,,,,,
+archived flood phase36,fema_normalized_plus_prior_and_rain,positive_target_MAE_USD,753729.3088710663,,,,,,,,,,
+archived flood phase36,fema_geo_event_counts_plus_rain,positive_target_MAE_USD,806075.3126169243,,,,,,,,,,
+archived flood phase36,fema_prior_reporting_only,positive_target_MAE_USD,875755.2045503117,,,,,,,,,,
+archived flood phase36,fema_only,positive_target_MAE_USD,1022140.7675874864,,,,,,,,,,
+archived flood phase36,fema_multiloc_rain,positive_target_MAE_USD,1024135.1000926164,,,,,,,,,,
+archived flood phase37,fema_normalized_report_density,n,59.0,,,,,,,,,,
+archived flood phase37,fema_density_plus_rain_presence,n,59.0,,,,,,,,,,
+archived flood phase37,fema_geo_event_counts,n,59.0,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain_usgs,n,59.0,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain,n,59.0,,,,,,,,,,
+archived flood phase37,fema_rain_presence_only,n,59.0,,,,,,,,,,
+archived flood phase37,fema_single_rain_magnitude,n,59.0,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain_plus_usgs,n,59.0,,,,,,,,,,
+archived flood phase37,fema_only,n,59.0,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain,n,59.0,,,,,,,,,,
+archived flood phase37,fema_normalized_report_density,MAE_USD,355021.1508249853,,,,,,,,,,
+archived flood phase37,fema_density_plus_rain_presence,MAE_USD,358124.2291319923,,,,,,,,,,
+archived flood phase37,fema_geo_event_counts,MAE_USD,384133.2951672984,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain_usgs,MAE_USD,386319.50004179246,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain,MAE_USD,404804.1791574168,,,,,,,,,,
+archived flood phase37,fema_rain_presence_only,MAE_USD,527706.452302485,,,,,,,,,,
+archived flood phase37,fema_single_rain_magnitude,MAE_USD,530415.2324139591,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain_plus_usgs,MAE_USD,536317.4983709921,,,,,,,,,,
+archived flood phase37,fema_only,MAE_USD,537057.0134781707,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain,MAE_USD,538104.8830995102,,,,,,,,,,
+archived flood phase37,fema_normalized_report_density,RMSE_USD,856456.477215288,,,,,,,,,,
+archived flood phase37,fema_density_plus_rain_presence,RMSE_USD,873493.0482525536,,,,,,,,,,
+archived flood phase37,fema_geo_event_counts,RMSE_USD,925578.317643384,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain_usgs,RMSE_USD,957980.0828687038,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain,RMSE_USD,1025881.5105749044,,,,,,,,,,
+archived flood phase37,fema_rain_presence_only,RMSE_USD,1343532.77394485,,,,,,,,,,
+archived flood phase37,fema_single_rain_magnitude,RMSE_USD,1345727.0159879064,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain_plus_usgs,RMSE_USD,1353718.1770671366,,,,,,,,,,
+archived flood phase37,fema_only,RMSE_USD,1364052.5292902868,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain,RMSE_USD,1360210.513993706,,,,,,,,,,
+archived flood phase37,fema_normalized_report_density,R2,0.7901439689035553,,,,,,,,,,
+archived flood phase37,fema_density_plus_rain_presence,R2,0.7817120488720651,,,,,,,,,,
+archived flood phase37,fema_geo_event_counts,R2,0.7549034470286256,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain_usgs,R2,0.7374428688828887,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain,R2,0.6989038074035987,,,,,,,,,,
+archived flood phase37,fema_rain_presence_only,R2,0.483574844878341,,,,,,,,,,
+archived flood phase37,fema_single_rain_magnitude,R2,0.4818866283453991,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain_plus_usgs,R2,0.4757150640489286,,,,,,,,,,
+archived flood phase37,fema_only,R2,0.4676796745843394,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain,R2,0.4706741378317455,,,,,,,,,,
+archived flood phase37,fema_normalized_report_density,six_band_accuracy,0.847457627118644,,,,,,,,,,
+archived flood phase37,fema_density_plus_rain_presence,six_band_accuracy,0.847457627118644,,,,,,,,,,
+archived flood phase37,fema_geo_event_counts,six_band_accuracy,0.847457627118644,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain_usgs,six_band_accuracy,0.847457627118644,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain,six_band_accuracy,0.8305084745762712,,,,,,,,,,
+archived flood phase37,fema_rain_presence_only,six_band_accuracy,0.7627118644067796,,,,,,,,,,
+archived flood phase37,fema_single_rain_magnitude,six_band_accuracy,0.7457627118644068,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain_plus_usgs,six_band_accuracy,0.7627118644067796,,,,,,,,,,
+archived flood phase37,fema_only,six_band_accuracy,0.7627118644067796,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain,six_band_accuracy,0.7627118644067796,,,,,,,,,,
+archived flood phase37,fema_normalized_report_density,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_density_plus_rain_presence,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_geo_event_counts,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain_usgs,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_rain_presence_only,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_single_rain_magnitude,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain_plus_usgs,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_only,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain,n_positive,31.0,,,,,,,,,,
+archived flood phase37,fema_normalized_report_density,positive_target_MAE_USD,675685.4160862623,,,,,,,,,,
+archived flood phase37,fema_density_plus_rain_presence,positive_target_MAE_USD,681591.2747995983,,,,,,,,,,
+archived flood phase37,fema_geo_event_counts,positive_target_MAE_USD,731092.3979140179,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain_usgs,positive_target_MAE_USD,735253.2420150243,,,,,,,,,,
+archived flood phase37,fema_density_plus_multiloc_rain,positive_target_MAE_USD,770433.7603318578,,,,,,,,,,
+archived flood phase37,fema_rain_presence_only,positive_target_MAE_USD,1004344.5378311236,,,,,,,,,,
+archived flood phase37,fema_single_rain_magnitude,positive_target_MAE_USD,1009499.9577519211,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain_plus_usgs,positive_target_MAE_USD,1020733.3033512428,,,,,,,,,,
+archived flood phase37,fema_only,positive_target_MAE_USD,1022140.7675874862,,,,,,,,,,
+archived flood phase37,fema_multiloc_rain,positive_target_MAE_USD,1024135.1000926162,,,,,,,,,,

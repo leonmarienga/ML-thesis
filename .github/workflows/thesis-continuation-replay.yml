@@ -1,0 +1,41 @@
+name: Replay thesis continuation
+on:
+  push:
+    branches: [experiment/thesis-research-continuation-20261117]
+    paths:
+      - 'analysis/phase50_temporal_placebo.py'
+      - 'analysis/thesis_*.py'
+      - 'research/**'
+      - '.github/workflows/thesis-continuation-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r research/requirements.txt
+      - name: Verify retained evidence
+        run: sha256sum -c research/inputs/SHA256SUMS
+      - name: Replay Phase 50 from original pixels
+        run: |
+          mkdir -p work/artifacts work/phase50
+          for k in phase48 phase49 phase49b; do
+            unzip -oq "research/inputs/actions/${k}.zip" -d "work/artifacts/${k}"
+          done
+          tar -xzf research/inputs/snapshots/phase50_sampled_pixels.tar.gz -C work/phase50
+          python analysis/phase50_temporal_placebo.py --artifacts work/artifacts --output work/phase50
+          for f in phase50_summary.csv phase50_phase49_replay.csv phase50_monthly_source_log.csv; do
+            cmp "work/phase50/$f" "research/results/phase50/$f"
+          done
+      - name: Check the integrated study notebook
+        run: jupyter execute research/THESIS_REPRODUCTION.ipynb
