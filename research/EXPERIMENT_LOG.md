@@ -24,3 +24,10 @@ The original reinforcement learning notebook was reviewed for sequential budget 
 ## Input sensitivity
 
 Held-out perturbations to the verified-link Extra Trees candidate used fixed training sets and model settings. A ±10% wind stress changed no classifications among 48 measured cases and shifted 90th-percentile estimated dollars by $79,523–$94,025. A ±20% designated population stress changed 1.0%–1.7% of routes among 293 covered cases. One MTBS-covered test record is insufficient for a useful wildfire sensitivity estimate. The perturbations are sensitivity scenarios, with no independently estimated measurement-error distribution.
+
+## Rare-obligation synthetic augmentation
+
+- Locked the protocol before fitting and replayed six forward origins with real calibration and validation. The earlier calibration and tuning score pools were screened for shared episodes. Sample weights and repeats were tested at 2×, 5×, 10× and 20×. Novel methods used training-only support gates and capped draws. [Protocol](augmentation/PROTOCOL.md), [fold ledger](augmentation/results/membership.csv.gz).
+- Preserved cost-sensitive and repeat-sampling improvements as exploratory controls. Retained all fixed and nested metrics, losses and paired episode resamples. [Control findings](augmentation/REPORT.md), [matched metrics](augmentation/results/metrics.csv).
+- Archived the unsuccessful or support-gated SMOTE, SMOTENC, SMOTER, SMOGN, hybrid, copula and CTGAN investigations and an independent USACE physics pilot. No synthetic challenger entered the final framework. [Generator audit](augmentation/GENERATOR_AUDIT.md), [synthetic registry](augmentation/results/registry.csv.gz).
+- Refit after removing the largest eligible episode or most frequent SMOTER donor. Preserved held cases and reused the original random-number namespace for the omission refits. FY2025 outcomes remained embargoed. [Sensitivity results](augmentation/results/sensitivity_summary.csv), [FY2025 protocol](follow_up/FY2025_LOCK.md).

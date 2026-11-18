@@ -1,0 +1,43 @@
+name: Replay rare-disaster augmentation
+on:
+  push:
+    branches: [experiment/thesis-research-continuation-20261117]
+    paths:
+      - 'analysis/thesis_augmentation_*.py'
+      - 'analysis/thesis_physics_impact_pilot.py'
+      - 'research/augmentation/**'
+      - '.github/workflows/thesis-augmentation-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: research/requirements.txt
+      - run: python -m pip install -r research/requirements.txt
+      - name: Verify the archived benchmark and target-free roster
+        run: |
+          git diff --exit-code 45eeaaf HEAD -- research/results research/inputs research/follow_up
+          sha256sum -c research/augmentation/inputs/SHA256SUMS
+      - name: Replay the economics-only flood scenarios
+        run: |
+          mkdir -p work/augmentation
+          python analysis/thesis_physics_impact_pilot.py --retained-inventory-summary research/augmentation/inputs/physics_inventory_summary.json work/augmentation
+          cmp work/augmentation/physics_impact_pilot.csv research/augmentation/results/physics_impact_pilot.csv
+      - name: Refit all chronological folds and verify donor lineage and scores
+        run: |
+          python analysis/thesis_augmentation_study.py work/augmentation --workers 4
+          python analysis/thesis_augmentation_verify.py work/augmentation --reference research/augmentation/results

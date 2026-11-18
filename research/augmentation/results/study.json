@@ -1,0 +1,17 @@
+{
+  "n_real_held": 376,
+  "test_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "high_band_real_held": 13,
+  "configs": 33,
+  "real_calibration_only": true,
+  "ctgan_research_support_floor": 100,
+  "ctgan_fit": false,
+  "bootstrap_seed": 246885
+}

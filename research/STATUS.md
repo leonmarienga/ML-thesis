@@ -23,3 +23,7 @@ The next experiment is a preregistered frozen-vintage FY2025 test of the metadat
 ## Follow-up evidence
 
 The follow-up audited county weather, cyclone wind, named wildfire perimeters and Census block-group exposure. It compared fixed matched physical ablations, forward-adapted funding specialists and rare-obligation risk and intervals, and audited decision timing with historical archive snapshots. It retains negative results, including unstable generalized Pareto fits, and distinguishes improved exploratory risk ranking from usable high-dollar amounts. The 143-case FY2025 cohort remains embargoed for outcomes. A metadata-only audit established that 61 major declarations form the primary scope compatible with the historical population. [Follow-up report](follow_up/REPORT.md), [locked target-free protocol](follow_up/FY2025_LOCK.md), [replay guide](follow_up/REPRODUCE.md).
+
+## Rare-obligation augmentation completed
+
+The matched FY2019–24 study compared training-only weight, repeat and constrained synthetic designs. Tail-MAE improvements for weight and repeat controls remain exploratory. No synthetic method entered the candidate and every tested dollar interval missed all 13 $50M+ cases. The FY2025 outcome embargo remains governed by the locked follow-up protocol. [Augmentation report](augmentation/REPORT.md), [generator audit](augmentation/GENERATOR_AUDIT.md), [replay instructions](augmentation/REPRODUCE.md).

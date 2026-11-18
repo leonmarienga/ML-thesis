@@ -11,3 +11,7 @@ The continuation starts at Phase 50 and preserves the historical predictions and
 - [Model registry](MODEL_REGISTRY.csv) and [reference registry](REFERENCE_REGISTRY.csv)
 
 [Follow-up on hazard coverage, rare obligations and decision timing](follow_up/REPORT.md) · [FY2025 target-free protocol](follow_up/FY2025_LOCK.md)
+
+## Rare-obligation augmentation study
+
+Forward-only augmentation comparisons, fold-local donor lineage, physical loss scenarios and episode-level evidence are archived with the thesis. The study updates the integrated notebook and leaves FY2025 outcomes sealed. [Results](augmentation/REPORT.md), [scientific limits](augmentation/GENERATOR_AUDIT.md), [reproduce](augmentation/REPRODUCE.md).

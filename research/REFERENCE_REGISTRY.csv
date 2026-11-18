@@ -6,3 +6,10 @@ holguin2013,Holguín-Veras et al.,2013,On the appropriate objective function for
 jrcdoc,European Commission JRC,2026,Global Surface Water data access and product notes,https://global-surface-water.appspot.com/download,,Edition and attribution
 nws2023,NOAA National Weather Service,2023,Mississippi River Flood of 2023,https://www.weather.gov/arx/flood2023,,Regional date and hydrograph context
 state2024,Minnesota Department of Public Safety,2024,Disaster assistance legislative report,https://www.lrl.mn.gov/docs/2024/mandated/241147.pdf,,Authoritative DR4722 date and county context
+chawla2002,Chawla et al.,2002,SMOTE: Synthetic Minority Over-sampling Technique,https://doi.org/10.1613/jair.953,10.1613/jair.953,SMOTE and SMOTE-NC foundations; this study restricts eligible strata and nominal tuples
+torgo2013,Torgo et al.,2013,SMOTE for Regression,https://doi.org/10.1007/978-3-642-40669-0_33,10.1007/978-3-642-40669-0_33,Rare regression interpolation; compatible log-dollar proxy variant
+branco2017,Branco et al.,2017,SMOGN: A Pre-processing Approach for Imbalanced Regression,https://proceedings.mlr.press/v74/branco17a.html,,Rare regression variants using interpolation and Gaussian noise
+xu2019,Xu et al.,2019,Modeling Tabular Data using Conditional GAN,https://proceedings.neurips.cc/paper/2019/hash/254ed7d2de3b23ab10936522dd547b78-Abstract.html,,CTGAN family considered at a training support gate
+usace2000,USACE,2000,Generic Depth-Damage Relationships,https://planning.erdc.dren.mil/toolbox/library/EGMs/egm01-03.pdf,,Tables 1 and 4 provide one-story no-basement mean depth-damage curves
+usace2026,USACE,2026,National Structure Inventory technical documentation,https://www.hec.usace.army.mil/confluence/nsi/technicalreferences/2026/technical-documentation,,Occupancy code and modeled exposure value definitions
+femama2024,FEMA,2024,Mission Assignments Policy 104-010-3,https://www.fema.gov/sites/default/files/documents/fema_policy-104-010-3_mission-assignments_2024.pdf,,Federal tasking and obligation distinction from property damage
