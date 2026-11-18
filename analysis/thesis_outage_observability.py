@@ -32,17 +32,21 @@ def retain_county_rows(national, raw):
     release = json.loads((raw / "figshare_release.json").read_text())
     assert release["doi"] == "10.6084/m9.figshare.24237376.v1"
     metadata = next(row for row in release["files"] if row["name"] == NATIONAL_DOCUMENT)
-    assert national.stat().st_size == metadata["size"] == 999_210_542
-    assert metadata["id"] == 42547879
+    assert metadata["size"] == 999_210_542 and metadata["id"] == 42547879
+    return retain_eaglei_rows(national, raw / COUNTY_SOURCE, metadata, release)
+
+
+def retain_eaglei_rows(national, out, metadata, release):
+    assert national.stat().st_size == metadata["size"]
     source_digest = sha256()
     original_digest = md5(usedforsecurity=False)
     fips_values = {value.encode() for value in COUNTIES}
-    out = raw / COUNTY_SOURCE
     rows = 0
     with national.open("rb") as source, out.open("wb") as compressed:
         with gzip.GzipFile(fileobj=compressed, filename="", mode="wb", mtime=0) as selected:
             header = source.readline()
-            assert header.strip().lower() == b"fips_code,county,state,customers_out,run_start_time"
+            count_column = b"sum" if metadata["name"] == "eaglei_outages_2023.csv" else b"customers_out"
+            assert header.strip().lower().split(b",") == [b"fips_code", b"county", b"state", count_column, b"run_start_time"]
             source_digest.update(header)
             original_digest.update(header)
             selected.write(header)
@@ -56,7 +60,7 @@ def retain_county_rows(national, raw):
     return {"annual_doi": release["doi"], "annual_file_id": metadata["id"], "annual_bytes": metadata["size"],
             "annual_md5": original_digest.hexdigest(), "annual_sha256": source_digest.hexdigest(),
             "annual_url": metadata["download_url"], "license": release["license"]["name"],
-            "slice": COUNTY_SOURCE, "slice_rows": rows, "slice_sha256": sha256(out.read_bytes()).hexdigest()}
+            "slice": out.name, "slice_rows": rows, "slice_sha256": sha256(out.read_bytes()).hexdigest()}
 
 
 def mesa_url():
@@ -66,8 +70,12 @@ def mesa_url():
     return requests.Request("GET", base, params=args).prepare().url
 
 
-def valid_county_rows(raw):
-    data = pd.read_csv(raw / COUNTY_SOURCE, dtype={"fips_code": "string"})
+def valid_county_rows(raw, year=2018, source=COUNTY_SOURCE):
+    start = pd.Timestamp(year=year, month=1, day=1, tz="UTC")
+    end = pd.Timestamp(year=year + 1, month=1, day=1, tz="UTC")
+    data = pd.read_csv(raw / source, dtype={"fips_code": "string"})
+    if year == 2023:
+        data = data.rename(columns={"sum": "customers_out"})
     data["fips_code"] = data.fips_code.str.zfill(5)
     data["utc"] = pd.to_datetime(data.run_start_time, format="mixed", errors="coerce", utc=True)
     data["customers_out"] = pd.to_numeric(data.customers_out, errors="coerce")
@@ -75,7 +83,7 @@ def valid_county_rows(raw):
     audit, observations = [], []
     for fips in COUNTIES:
         subset = data[data.fips_code.eq(fips)]
-        in_year = subset.utc.between(COUNTY_START, COUNTY_END, inclusive="left")
+        in_year = subset.utc.between(start, end, inclusive="left")
         on_grid = in_year & subset.utc.eq(subset.utc.dt.floor("15min"))
         selected = subset[on_grid]
         exact = selected[["utc", "customers_out"]].drop_duplicates()
@@ -90,7 +98,7 @@ def valid_county_rows(raw):
                       "missing_or_nonnumeric_count_rows": int(missing_count.sum()),
                       "negative_or_fractional_count_rows": int(malformed_count.sum()), "usable_snapshot_count": len(usable),
                       "explicit_zero_count": int(usable.customers_out.eq(0).sum()),
-                      "usable_fraction_of_2018_quarters": len(usable) / int((COUNTY_END - COUNTY_START) / PERIOD)})
+                      f"usable_fraction_of_{year}_quarters": len(usable) / int((end - start) / PERIOD)})
         observations.append((fips, usable.sort_values("utc")))
     return pd.DataFrame(audit), observations
 
