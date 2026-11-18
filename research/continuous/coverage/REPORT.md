@@ -14,7 +14,7 @@ Of the 19 audited cases with a 36-month anniversary already elapsed, 12 had a mo
 
 ## What the coverage screen changed
 
-The comparison reproduced the exact real-only and fixed 20× controls from the 33-configuration study. All models scored the same 376 real FY2019–24 cases. Screening removed 223 precoverage training examples in each origin while preserving all eligible positive and catastrophic training episodes. The 689 later workbook cases include 349 positive obligation values. In FY2019 the eligible training sample shrank from 536 to 313. One separately fitted binary positive-obligation classifier used the same features and tree settings under both training policies. Results are exploratory.
+The comparison reproduced the exact real-only and fixed 20× controls from the 33-configuration study. All models scored the same 376 real FY2019–24 cases. Screening removed 223 precoverage training examples in each origin while preserving all eligible positive and catastrophic training episodes. The 689 later workbook cases include 349 positive obligation values. In FY2019 the eligible training sample shrank from 514 to 291. One separately fitted binary positive-obligation classifier used the same features and tree settings under both training policies. Results are exploratory.
 
 | Forecast | Training policy | Six-band accuracy | Balanced accuracy | $50M+ AP | Overall MAE | $50M+ MAE |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
