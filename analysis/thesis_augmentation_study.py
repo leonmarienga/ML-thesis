@@ -394,7 +394,7 @@ def generator_distribution(synthetic):
                      "synthetic_delay_min":d.declaration_delay_days.min(),
                      "synthetic_delay_median":d.declaration_delay_days.median(),
                      "synthetic_delay_max":d.declaration_delay_days.max(),
-                     "synthetic_target_min":d.target.min(),"synthetic_target_median":d.target.median(),
+                     "synthetic_target_min":d.target.min(),"synthetic_target_median":d.target.dropna().median(),
                      "synthetic_target_max":d.target.max(),"synthetic_spearman_delay_target":corr})
     return pd.DataFrame(rows)
 

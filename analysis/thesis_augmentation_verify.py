@@ -76,6 +76,37 @@ def verify(directory):
     print(f"Verified {len(rows):,} generated rows across {registry.trial_id.nunique():,} fold/configuration trials.")
 
 
+
+def verify_replay(directory, reference):
+    outputs = sorted(reference.glob("*.csv")) + sorted(reference.glob("*.csv.gz"))
+    outputs = [file for file in outputs if not file.name.startswith("physics_")]
+    failed = []
+    for file in outputs:
+        actual = pd.read_csv(directory / file.name)
+        expected = pd.read_csv(file)
+        try:
+            pd.testing.assert_frame_equal(actual, expected, check_exact=False, rtol=1e-6, atol=1e-6)
+        except AssertionError as exc:
+            failed.append(file.name)
+            print(f"{file.name}: {str(exc).splitlines()[0]}", flush=True)
+            if actual.shape != expected.shape or not actual.columns.equals(expected.columns):
+                continue
+            keys = [name for name in ("variant", "fold", "config", "probability_scope", "metric",
+                                      "outer_year", "disasterNumber", "subset") if name in expected]
+            for column in expected:
+                left, right = expected[column], actual[column]
+                if pd.api.types.is_numeric_dtype(left) and pd.api.types.is_numeric_dtype(right):
+                    differs = ~np.isclose(left, right, rtol=1e-6, atol=1e-6, equal_nan=True)
+                else:
+                    differs = left.ne(right) & ~(left.isna() & right.isna())
+                if differs.any():
+                    display = expected.loc[differs, [*filter(lambda key: key != column, keys), column]].copy()
+                    display["replay_value"] = actual.loc[differs, column]
+                    print(f"  {column} ({len(display)} rows):", display.head(2).to_dict("records"), flush=True)
+    assert not failed, f"Replay differs in {', '.join(failed)}"
+    print(f"Replayed {len(outputs)} augmentation ledgers and metric tables.")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("results", type=Path)
@@ -83,12 +114,7 @@ def main():
     args = parser.parse_args()
     verify(args.results)
     if args.reference:
-        outputs = sorted(args.reference.glob("*.csv")) + sorted(args.reference.glob("*.csv.gz"))
-        outputs = [file for file in outputs if not file.name.startswith("physics_")]
-        for file in outputs:
-            pd.testing.assert_frame_equal(pd.read_csv(args.results / file.name), pd.read_csv(file),
-                                          check_exact=False, rtol=1e-6, atol=1e-6)
-        print(f"Replayed {len(outputs)} augmentation ledgers and metric tables.")
+        verify_replay(args.results, args.reference)
 
 
 if __name__ == "__main__":
