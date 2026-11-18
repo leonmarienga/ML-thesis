@@ -49,3 +49,18 @@ tar xf research/continuous/winds/inputs/noaa_public_wind_responses.tar.gz -C wor
 python analysis/thesis_whitehouse_announcements.py work/continuous-replay/announcement-snapshot work/continuous-replay/announcements
 python analysis/thesis_tropical_wind_verification.py work/continuous-replay/wind-snapshot work/continuous-replay/winds
 ```
+
+## Full-page geography, documentary fields and independent storm replay
+
+```bash
+sha256sum -c research/continuous/BATCH5_SHA256SUMS
+mkdir -p work/continuous-replay/{dds-complete,wind-extension-source,complete-geography,announcement-fields,wind-extension,geography-ablation}
+tar xf research/continuous/complete_geography/inputs/openfema_all_36_verified_pages.tar.gz -C work/continuous-replay/dds-complete
+tar xf research/continuous/wind_extension/inputs/noaa_additional_wind_responses.tar.gz -C work/continuous-replay/wind-extension-source
+python analysis/thesis_full_page_geography.py work/continuous-replay/dds-complete work/continuous-replay/complete-geography
+python analysis/thesis_announcement_fields.py work/continuous-replay/announcement-snapshot work/continuous-replay/announcement-fields
+python analysis/thesis_tropical_wind_verification.py work/continuous-replay/wind-extension-source work/continuous-replay/wind-extension --independent-extension
+python analysis/thesis_full_geography_ablation.py research/continuous/complete_geography/hazard_replay/cohort_features.csv work/continuous-replay/geography-ablation
+```
+
+To rebuild observed hazard features, pass the original complete source cache and the earlier extracted hazard artifacts to `thesis_full_page_geography.py` with `--artifacts`. The cache includes the originally registered NOAA, Census, USGS and vegetation inputs. The model replay above uses the retained feature matrix and the archive retains source-level linkage outputs. The original hazard assembly code and old results remain in place. [Original registered inputs](../inputs/RAW_SOURCE_MANIFEST.csv).

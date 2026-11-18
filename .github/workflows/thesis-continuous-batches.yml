@@ -12,6 +12,9 @@ on:
       - 'analysis/thesis_water_recourse.py'
       - 'analysis/thesis_whitehouse_announcements.py'
       - 'analysis/thesis_tropical_wind_verification.py'
+      - 'analysis/thesis_announcement_fields.py'
+      - 'analysis/thesis_full_page_geography.py'
+      - 'analysis/thesis_full_geography_ablation.py'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
   workflow_dispatch:
@@ -109,6 +112,26 @@ jobs:
           for scope in ("announcements", "winds"):
               for generated in sorted((Path("work/batch4") / scope).iterdir()):
                   expected = Path("research/continuous") / scope / "results" / generated.name
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(expected),
+                                                check_exact=False, rtol=1e-6, atol=1e-6)
+          PY
+      - name: Replay complete geography, early fields and independent tropical wind
+        run: |
+          sha256sum -c research/continuous/BATCH5_SHA256SUMS
+          mkdir -p work/batch5/{dds,wind-source,complete_geography,announcement_fields,wind_extension,ablation}
+          tar xf research/continuous/complete_geography/inputs/openfema_all_36_verified_pages.tar.gz -C work/batch5/dds
+          tar xf research/continuous/wind_extension/inputs/noaa_additional_wind_responses.tar.gz -C work/batch5/wind-source
+          python analysis/thesis_full_page_geography.py work/batch5/dds work/batch5/complete_geography
+          python analysis/thesis_announcement_fields.py work/batch4/announcements-source work/batch5/announcement_fields
+          python analysis/thesis_tropical_wind_verification.py work/batch5/wind-source work/batch5/wind_extension --independent-extension
+          python analysis/thesis_full_geography_ablation.py research/continuous/complete_geography/hazard_replay/cohort_features.csv work/batch5/ablation
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          for scope in ("complete_geography", "announcement_fields", "wind_extension", "ablation"):
+              for generated in sorted((Path("work/batch5") / scope).iterdir()):
+                  ref = "complete_geography/ablation" if scope == "ablation" else f"{scope}/results"
+                  expected = Path("research/continuous") / ref / generated.name
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(expected),
                                                 check_exact=False, rtol=1e-6, atol=1e-6)
           PY
