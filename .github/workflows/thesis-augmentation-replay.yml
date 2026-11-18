@@ -41,3 +41,10 @@ jobs:
         run: |
           python analysis/thesis_augmentation_study.py work/augmentation --workers 4
           python analysis/thesis_augmentation_verify.py work/augmentation --reference research/augmentation/results
+      - name: Retain replay evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: augmentation-replay
+          path: work/augmentation/
+          retention-days: 14
