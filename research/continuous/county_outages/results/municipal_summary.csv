@@ -1,0 +1,3 @@
+calendar_year,population,source_rows,distinct_event_ids,rows_without_event_id,rows_with_valid_end,rows_missing_end,valid_elapsed_over_24h,valid_gte_1000_customers_reported,valid_with_vendor_duration,vendor_duration_matches_clock_minutes_within_one,partial_restoration_report_rows,valid_14_day_blocks
+2020,all_causes,18,17,0,18,0,0,2,18,18,0,10
+2020,explicit_weather_cause,0,0,0,0,0,0,0,0,0,0,0

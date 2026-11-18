@@ -1,0 +1,100 @@
+horizon_hours,evidence_tier,incident_type,cases,groups,elapsed_label_eligible_cases
+24,exact_captures_2017_2020,Earthquake,2,2,2
+24,exact_captures_2017_2020,Fire,1,1,1
+24,exact_captures_2017_2020,Flood,6,6,5
+24,exact_captures_2017_2020,Hurricane,5,3,3
+24,exact_captures_2017_2020,Severe Storm,6,6,2
+24,exact_captures_2017_2020,Tornado,1,1,0
+24,archived_edit_metadata_2021_2024,Coastal Storm,1,1,0
+24,archived_edit_metadata_2021_2024,Fire,5,4,4
+24,archived_edit_metadata_2021_2024,Flood,15,15,6
+24,archived_edit_metadata_2021_2024,Hurricane,4,3,3
+24,archived_edit_metadata_2021_2024,Mud/Landslide,1,1,0
+24,archived_edit_metadata_2021_2024,Other,1,1,0
+24,archived_edit_metadata_2021_2024,Severe Ice Storm,4,4,0
+24,archived_edit_metadata_2021_2024,Severe Storm,36,36,9
+24,archived_edit_metadata_2021_2024,Snowstorm,2,2,1
+24,archived_edit_metadata_2021_2024,Straight-Line Winds,1,1,0
+24,archived_edit_metadata_2021_2024,Tornado,4,4,3
+24,archived_edit_metadata_2021_2024,Tropical Storm,2,2,0
+24,archived_edit_metadata_2021_2024,Winter Storm,1,1,0
+24,combined_distinct_evidence_tiers,Coastal Storm,1,1,0
+24,combined_distinct_evidence_tiers,Earthquake,2,2,2
+24,combined_distinct_evidence_tiers,Fire,6,5,5
+24,combined_distinct_evidence_tiers,Flood,21,21,11
+24,combined_distinct_evidence_tiers,Hurricane,9,6,6
+24,combined_distinct_evidence_tiers,Mud/Landslide,1,1,0
+24,combined_distinct_evidence_tiers,Other,1,1,0
+24,combined_distinct_evidence_tiers,Severe Ice Storm,4,4,0
+24,combined_distinct_evidence_tiers,Severe Storm,42,42,11
+24,combined_distinct_evidence_tiers,Snowstorm,2,2,1
+24,combined_distinct_evidence_tiers,Straight-Line Winds,1,1,0
+24,combined_distinct_evidence_tiers,Tornado,5,5,3
+24,combined_distinct_evidence_tiers,Tropical Storm,2,2,0
+24,combined_distinct_evidence_tiers,Winter Storm,1,1,0
+48,exact_captures_2017_2020,Earthquake,2,2,2
+48,exact_captures_2017_2020,Fire,2,2,2
+48,exact_captures_2017_2020,Flood,8,8,5
+48,exact_captures_2017_2020,Hurricane,6,3,4
+48,exact_captures_2017_2020,Severe Storm,12,12,7
+48,exact_captures_2017_2020,Tornado,1,1,0
+48,archived_edit_metadata_2021_2024,Coastal Storm,1,1,0
+48,archived_edit_metadata_2021_2024,Fire,6,5,5
+48,archived_edit_metadata_2021_2024,Flood,17,17,7
+48,archived_edit_metadata_2021_2024,Hurricane,5,4,3
+48,archived_edit_metadata_2021_2024,Mud/Landslide,1,1,0
+48,archived_edit_metadata_2021_2024,Other,1,1,0
+48,archived_edit_metadata_2021_2024,Severe Ice Storm,6,6,1
+48,archived_edit_metadata_2021_2024,Severe Storm,38,38,11
+48,archived_edit_metadata_2021_2024,Snowstorm,3,3,1
+48,archived_edit_metadata_2021_2024,Straight-Line Winds,1,1,0
+48,archived_edit_metadata_2021_2024,Tornado,6,6,4
+48,archived_edit_metadata_2021_2024,Tropical Storm,2,2,0
+48,archived_edit_metadata_2021_2024,Winter Storm,1,1,0
+48,combined_distinct_evidence_tiers,Coastal Storm,1,1,0
+48,combined_distinct_evidence_tiers,Earthquake,2,2,2
+48,combined_distinct_evidence_tiers,Fire,8,7,7
+48,combined_distinct_evidence_tiers,Flood,25,25,12
+48,combined_distinct_evidence_tiers,Hurricane,11,7,7
+48,combined_distinct_evidence_tiers,Mud/Landslide,1,1,0
+48,combined_distinct_evidence_tiers,Other,1,1,0
+48,combined_distinct_evidence_tiers,Severe Ice Storm,6,6,1
+48,combined_distinct_evidence_tiers,Severe Storm,50,50,18
+48,combined_distinct_evidence_tiers,Snowstorm,3,3,1
+48,combined_distinct_evidence_tiers,Straight-Line Winds,1,1,0
+48,combined_distinct_evidence_tiers,Tornado,7,7,4
+48,combined_distinct_evidence_tiers,Tropical Storm,2,2,0
+48,combined_distinct_evidence_tiers,Winter Storm,1,1,0
+72,exact_captures_2017_2020,Earthquake,2,2,2
+72,exact_captures_2017_2020,Fire,2,2,2
+72,exact_captures_2017_2020,Flood,8,8,5
+72,exact_captures_2017_2020,Hurricane,6,3,4
+72,exact_captures_2017_2020,Severe Storm,12,12,7
+72,exact_captures_2017_2020,Tornado,1,1,0
+72,archived_edit_metadata_2021_2024,Coastal Storm,1,1,0
+72,archived_edit_metadata_2021_2024,Fire,6,5,5
+72,archived_edit_metadata_2021_2024,Flood,17,17,7
+72,archived_edit_metadata_2021_2024,Hurricane,5,4,3
+72,archived_edit_metadata_2021_2024,Mud/Landslide,2,2,0
+72,archived_edit_metadata_2021_2024,Other,1,1,0
+72,archived_edit_metadata_2021_2024,Severe Ice Storm,7,7,1
+72,archived_edit_metadata_2021_2024,Severe Storm,39,39,11
+72,archived_edit_metadata_2021_2024,Snowstorm,3,3,1
+72,archived_edit_metadata_2021_2024,Straight-Line Winds,1,1,0
+72,archived_edit_metadata_2021_2024,Tornado,6,6,4
+72,archived_edit_metadata_2021_2024,Tropical Storm,2,2,0
+72,archived_edit_metadata_2021_2024,Winter Storm,1,1,0
+72,combined_distinct_evidence_tiers,Coastal Storm,1,1,0
+72,combined_distinct_evidence_tiers,Earthquake,2,2,2
+72,combined_distinct_evidence_tiers,Fire,8,7,7
+72,combined_distinct_evidence_tiers,Flood,25,25,12
+72,combined_distinct_evidence_tiers,Hurricane,11,7,7
+72,combined_distinct_evidence_tiers,Mud/Landslide,2,2,0
+72,combined_distinct_evidence_tiers,Other,1,1,0
+72,combined_distinct_evidence_tiers,Severe Ice Storm,7,7,1
+72,combined_distinct_evidence_tiers,Severe Storm,51,51,18
+72,combined_distinct_evidence_tiers,Snowstorm,3,3,1
+72,combined_distinct_evidence_tiers,Straight-Line Winds,1,1,0
+72,combined_distinct_evidence_tiers,Tornado,7,7,4
+72,combined_distinct_evidence_tiers,Tropical Storm,2,2,0
+72,combined_distinct_evidence_tiers,Winter Storm,1,1,0

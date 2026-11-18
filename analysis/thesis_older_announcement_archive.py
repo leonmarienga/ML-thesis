@@ -168,11 +168,21 @@ def support(cohort, records):
     return pd.DataFrame(rows)
 
 
+def extended_capture_selection(matched_bodies, legacy_urls):
+    ordered = sorted(matched_bodies, key=lambda link: (matched_bodies[link][0], link))
+    retained = [link for link in ordered if link in legacy_urls]
+    remaining = [link for link in ordered if link not in legacy_urls]
+    for year in range(2017, 2021):
+        retained.extend([link for link in remaining if matched_bodies[link][1].year == year][:4])
+    return set(retained)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("raw", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--fetch", action="store_true")
+    parser.add_argument("--extend-quarterly-sample", action="store_true")
     args = parser.parse_args()
     args.raw.mkdir(parents=True, exist_ok=True)
     args.output.mkdir(parents=True, exist_ok=True)
@@ -186,14 +196,18 @@ def main():
     maps = sorted(url for url in xml_urls(store.get(ROOT, ".xml")) if SAMPLE.search(url))
     assert len(maps) == 16
     candidates, records, matched_bodies, versions = [], [], {}, []
+    legacy_urls = set()
+    articles_per_month = 4 if args.extend_quarterly_sample else 2
     for sitemap in maps:
         urls = sorted({url for url in xml_urls(store.get(sitemap, ".xml"))
                        if re.search(r"president-.*(?:approves|signs|declares).*disaster-declaration", url)
                        and "emergency-declaration" not in url})
         for i, url in enumerate(urls):
-            candidates.append({"sitemap": sitemap, "article": url, "sampled": i < 2})
-            if i >= 2:
+            candidates.append({"sitemap": sitemap, "article": url, "sampled": i < articles_per_month})
+            if i >= articles_per_month:
                 continue
+            if i < 2:
+                legacy_urls.add(url)
             data = notice(store.get(url, ".html"))
             body = data.pop("body")
             keyed = {**data, "inferred_declaration_day": data["inferred_declaration_day"].strftime("%Y-%m-%d")
@@ -209,7 +223,8 @@ def main():
                             "earliest_capture_text_matches_later_copy": None})
             if nr is not None:
                 matched_bodies[url] = (day.tz_localize(EASTERN), release.tz_localize(EASTERN), body)
-    selected = sorted(matched_bodies, key=lambda link: (matched_bodies[link][0], link))[:CAPTURE_LIMIT]
+    selected = (extended_capture_selection(matched_bodies, legacy_urls) if args.extend_quarterly_sample
+                else set(sorted(matched_bodies, key=lambda link: (matched_bodies[link][0], link))[:CAPTURE_LIMIT]))
     for row in records:
         link = row["article"]
         if link in selected:

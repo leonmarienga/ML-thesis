@@ -1,0 +1,17 @@
+evidence_tier,horizon_hours,general_eligible_origins,rare_eligible_origins,general_gate_met,rare_gate_met
+archived_edit_metadata_2021_2024,0,0,0,False,False
+archived_edit_metadata_2021_2024,24,0,0,False,False
+archived_edit_metadata_2021_2024,48,0,0,False,False
+archived_edit_metadata_2021_2024,72,0,0,False,False
+combined_distinct_evidence_tiers,0,0,0,False,False
+combined_distinct_evidence_tiers,24,0,0,False,False
+combined_distinct_evidence_tiers,48,0,0,False,False
+combined_distinct_evidence_tiers,72,0,0,False,False
+exact_captures_2017_2020,0,0,0,False,False
+exact_captures_2017_2020,24,0,0,False,False
+exact_captures_2017_2020,48,0,0,False,False
+exact_captures_2017_2020,72,0,0,False,False
+maturity_only_ceiling,0,5,0,True,False
+maturity_only_ceiling,24,5,0,True,False
+maturity_only_ceiling,48,5,0,True,False
+maturity_only_ceiling,72,5,0,True,False
