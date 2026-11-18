@@ -1,0 +1,21 @@
+incidentType,total,measured_gust_kt,estimated_gust_kt,hail_in,tornado_ef,tornado_length_mi,tornado_width_yd,cyclone_max_wind_kt,cyclone_min_pressure_mb,cyclone_max_34kt_radius_nm,cyclone_landfall_records,mtbs_burned_acres,quake_magnitude,quake_depth_km,quake_shakemap_max_mmi,daymet_point_max_24h_mm,daymet_point_incident_total_mm,usgs_discharge_anomaly,designated_county_count,designated_2020_population,noaa_event_count,noaa_episode_count,noaa_county_count
+Biological,59,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,56,47,0,0,0
+Coastal Storm,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,6,2,2,2
+Dam/Levee Break,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1
+Earthquake,8,0,0,0,0,0,0,0,0,0,0,0,2,2,2,0,0,0,7,6,0,0,0
+Fire,33,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,30,30,0,0,0
+Flood,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,87,11,187,183,172,172,172
+Freezing,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hurricane,108,0,0,0,0,0,0,95,95,95,95,0,0,0,0,0,0,0,105,90,80,80,80
+Mud/Landslide,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,4,2,2,2
+Other,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0
+Severe Ice Storm,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,21,0,0,0
+Severe Storm,430,144,232,181,173,174,174,0,0,0,0,0,0,0,0,0,0,0,405,384,316,316,316
+Snowstorm,36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,36,35,0,0,0
+Straight-Line Winds,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1
+Tornado,27,0,0,0,26,26,26,0,0,0,0,0,0,0,0,0,0,0,27,26,26,26,26
+Tropical Storm,9,0,0,0,0,0,0,6,6,6,6,0,0,0,0,0,0,0,7,6,6,6,6
+Tsunami,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0
+Typhoon,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0
+Volcanic Eruption,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0
+Winter Storm,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,7,0,0,0

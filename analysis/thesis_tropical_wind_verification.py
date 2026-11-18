@@ -20,6 +20,14 @@ STORMS = {
     "ida_2021": (2021, "09", "2021-08-28", "2021-08-31"),
     "ian_2022": (2022, "09", "2022-09-27", "2022-09-30"),
 }
+EXTENSION = {
+    "harvey_2017": (2017, "09", "2017-08-24", "2017-08-29"),
+    "irma_2017": (2017, "11", "2017-09-09", "2017-09-13"),
+    "maria_2017": (2017, "15", "2017-09-18", "2017-09-23"),
+    "michael_2018": (2018, "14", "2018-10-08", "2018-10-12"),
+    "idalia_2023": (2023, "10", "2023-08-29", "2023-09-01"),
+    "helene_2024": (2024, "09", "2024-09-25", "2024-09-30"),
+}
 STATION = "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations.json?type=met"
 MEASURE = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
 GEODESY = Geod(ellps="WGS84")
@@ -145,13 +153,15 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("raw",type=Path)
     p.add_argument("output",type=Path)
+    p.add_argument("--independent-extension", action="store_true")
     args=p.parse_args()
     args.raw.mkdir(parents=True,exist_ok=True)
     args.output.mkdir(parents=True,exist_ok=True)
     manifest=[acquire("noaa_coops_meteorological_sites",STATION,"coops_sites.json",args.raw)]
     stations=pd.DataFrame(json.loads((args.raw/"coops_sites.json").read_text())["stations"])
     station_log, matched=[],[]
-    for storm, (year,basin_id,start,end) in STORMS.items():
+    cohort = EXTENSION if args.independent_extension else STORMS
+    for storm, (year,basin_id,start,end) in cohort.items():
         rows,detail=forecast(args.raw,storm,year,basin_id,start,end)
         manifest.append(detail)
         selected=station_candidates(stations,rows)

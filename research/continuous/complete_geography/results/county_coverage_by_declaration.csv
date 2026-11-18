@@ -1,0 +1,913 @@
+disasterNumber,fyDeclared,state,incidentType,prior_counties,recovered_counties
+1865,2010,AK,Severe Storm,0,1
+1866,2010,AL,Hurricane,0,2
+1870,2010,AL,Severe Storm,7,14
+1908,2010,AL,Severe Storm,2,3
+1861,2010,AR,Severe Storm,23,38
+1872,2010,AR,Severe Storm,18,25
+1888,2010,AZ,Severe Storm,6,8
+1884,2010,CA,Severe Storm,4,6
+1911,2010,CA,Earthquake,0,1
+1904,2010,CT,Severe Storm,2,5
+1882,2010,DC,Snowstorm,0,1
+1890,2010,DC,Severe Storm,1,1
+1896,2010,DE,Snowstorm,2,3
+1877,2010,IA,Severe Storm,17,27
+1880,2010,IA,Severe Storm,18,27
+1928,2010,IA,Severe Storm,1,2
+1930,2010,IA,Severe Storm,34,61
+1927,2010,ID,Severe Storm,2,7
+1935,2010,IL,Severe Storm,8,11
+1868,2010,KS,Severe Storm,2,3
+1885,2010,KS,Severe Storm,25,51
+1932,2010,KS,Severe Storm,22,41
+1912,2010,KY,Severe Storm,46,83
+1925,2010,KY,Severe Storm,4,8
+1863,2010,LA,Severe Storm,9,11
+1895,2010,MA,Severe Storm,5,7
+1875,2010,MD,Snowstorm,5,12
+1910,2010,MD,Snowstorm,19,22
+1891,2010,ME,Severe Storm,4,5
+1920,2010,ME,Severe Storm,0,2
+1900,2010,MN,Flood,16,26
+1921,2010,MN,Tornado,6,13
+1934,2010,MO,Severe Storm,17,37
+1906,2010,MS,Severe Storm,6,9
+1916,2010,MS,Severe Storm,6,9
+1922,2010,MT,Severe Storm,2,2
+1871,2010,NC,Severe Storm,8,13
+1879,2010,ND,Severe Storm,14,25
+1901,2010,ND,Severe Storm,8,12
+1907,2010,ND,Flood,16,29
+1864,2010,NE,Severe Storm,5,7
+1878,2010,NE,Severe Storm,40,58
+1902,2010,NE,Flood,20,37
+1924,2010,NE,Severe Storm,36,61
+1892,2010,NH,Severe Storm,4,6
+1913,2010,NH,Severe Storm,2,2
+1867,2010,NJ,Severe Storm,2,3
+1873,2010,NJ,Snowstorm,4,7
+1889,2010,NJ,Snowstorm,4,7
+1897,2010,NJ,Severe Storm,11,16
+1936,2010,NM,Flood,4,5
+1869,2010,NY,Severe Storm,1,2
+1899,2010,NY,Severe Storm,6,9
+1876,2010,OK,Severe Storm,34,54
+1883,2010,OK,Severe Ice Storm,35,50
+1917,2010,OK,Severe Storm,10,16
+1926,2010,OK,Severe Storm,2,7
+1898,2010,PA,Snowstorm,15,27
+1919,2010,PR,Severe Storm,7,10
+1894,2010,RI,Severe Storm,4,5
+1886,2010,SD,Severe Storm,9,13
+1887,2010,SD,Severe Storm,19,29
+1914,2010,SD,Severe Storm,2,3
+1915,2010,SD,Flood,20,37
+1929,2010,SD,Severe Storm,1,3
+1938,2010,SD,Severe Storm,9,12
+1909,2010,TN,Severe Storm,27,49
+1937,2010,TN,Severe Storm,6,10
+1931,2010,TX,Hurricane,14,21
+1862,2010,VA,Severe Storm,8,12
+1874,2010,VA,Snowstorm,28,50
+1905,2010,VA,Snowstorm,25,38
+1939,2010,VI,Hurricane,2,3
+1933,2010,WI,Severe Storm,2,3
+1881,2010,WV,Snowstorm,14,18
+1893,2010,WV,Severe Storm,2,6
+1903,2010,WV,Snowstorm,13,20
+1918,2010,WV,Flood,3,5
+1923,2010,WY,Flood,1,2
+1992,2011,AK,Flood,0,1
+1971,2011,AL,Severe Storm,22,67
+1975,2011,AR,Severe Storm,24,60
+4000,2011,AR,Severe Storm,0,3
+1940,2011,AZ,Severe Storm,1,1
+1950,2011,AZ,Severe Storm,0,0
+1952,2011,CA,Flood,5,10
+1968,2011,CA,Tsunami,3,3
+1958,2011,CT,Snowstorm,2,6
+4023,2011,CT,Hurricane,2,8
+4036,2011,DC,Hurricane,0,1
+4037,2011,DE,Hurricane,0,2
+1973,2011,GA,Severe Storm,9,26
+1967,2011,HI,Tsunami,2,3
+1977,2011,IA,Severe Storm,4,6
+1998,2011,IA,Flood,3,6
+4016,2011,IA,Severe Storm,2,6
+4018,2011,IA,Severe Storm,2,2
+1987,2011,ID,Flood,2,5
+1960,2011,IL,Snowstorm,26,65
+1991,2011,IL,Severe Storm,2,21
+1997,2011,IN,Severe Storm,12,36
+4010,2011,KS,Severe Storm,8,25
+4035,2011,KS,Flood,3,4
+1976,2011,KY,Severe Storm,22,79
+4008,2011,KY,Severe Storm,3,7
+4015,2011,LA,Flood,8,22
+1959,2011,MA,Snowstorm,3,7
+1994,2011,MA,Tornado,1,2
+4028,2011,MA,Hurricane,2,9
+4034,2011,MD,Hurricane,2,15
+1953,2011,ME,Severe Storm,1,3
+4032,2011,ME,Hurricane,0,4
+1941,2011,MN,Severe Storm,8,29
+1982,2011,MN,Flood,16,33
+1990,2011,MN,Severe Storm,1,2
+4009,2011,MN,Severe Storm,4,15
+1961,2011,MO,Severe Storm,28,62
+1980,2011,MO,Severe Storm,13,41
+4012,2011,MO,Flood,3,11
+1972,2011,MS,Severe Storm,18,40
+1983,2011,MS,Flood,6,14
+1996,2011,MT,Severe Storm,23,49
+1942,2011,NC,Severe Storm,6,14
+1969,2011,NC,Severe Storm,10,20
+4019,2011,NC,Hurricane,15,38
+1981,2011,ND,Flood,14,44
+1986,2011,ND,Severe Storm,5,9
+1945,2011,NE,Severe Storm,3,7
+4013,2011,NE,Flood,5,16
+4014,2011,NE,Severe Storm,5,12
+4006,2011,NH,Flood,0,2
+4026,2011,NH,Hurricane,3,7
+1954,2011,NJ,Snowstorm,6,15
+4021,2011,NJ,Hurricane,4,21
+4033,2011,NJ,Severe Storm,3,3
+1962,2011,NM,Severe Storm,1,6
+1943,2011,NY,Tornado,2,3
+1957,2011,NY,Severe Storm,2,10
+1993,2011,NY,Flood,8,23
+4020,2011,NY,Hurricane,9,32
+4031,2011,NY,Severe Storm,6,15
+4002,2011,OH,Severe Storm,7,21
+1970,2011,OK,Severe Storm,1,2
+1985,2011,OK,Severe Storm,7,16
+1988,2011,OK,Severe Storm,3,10
+1989,2011,OK,Severe Storm,4,15
+1956,2011,OR,Severe Storm,1,6
+1964,2011,OR,Tsunami,2,3
+4003,2011,PA,Severe Storm,2,5
+4025,2011,PA,Hurricane,4,14
+4030,2011,PA,Flood,8,34
+1946,2011,PR,Severe Storm,8,21
+4004,2011,PR,Severe Storm,5,13
+4017,2011,PR,Hurricane,26,56
+4027,2011,RI,Hurricane,2,5
+1947,2011,SD,Severe Storm,2,4
+1984,2011,SD,Flood,14,40
+1965,2011,TN,Severe Storm,7,13
+1974,2011,TN,Severe Storm,25,52
+1978,2011,TN,Severe Storm,3,9
+1979,2011,TN,Severe Storm,5,18
+4005,2011,TN,Severe Storm,3,7
+1999,2011,TX,Fire,37,122
+4029,2011,TX,Fire,25,65
+1955,2011,UT,Flood,0,3
+4011,2011,UT,Flood,7,18
+4024,2011,VA,Hurricane,17,48
+1948,2011,VI,Severe Storm,3,3
+1949,2011,VI,Severe Storm,0,1
+1951,2011,VT,Severe Storm,3,3
+1995,2011,VT,Severe Storm,3,8
+4001,2011,VT,Severe Storm,2,4
+4022,2011,VT,Hurricane,7,14
+1963,2011,WA,Severe Storm,2,7
+1944,2011,WI,Severe Storm,4,9
+1966,2011,WI,Snowstorm,7,11
+4007,2011,WY,Severe Storm,6,15
+4050,2012,AK,Severe Storm,4,4
+4054,2012,AK,Severe Storm,1,1
+4052,2012,AL,Severe Storm,3,3
+4082,2012,AL,Hurricane,8,8
+4067,2012,CO,Fire,3,3
+4046,2012,CT,Severe Storm,7,7
+4044,2012,DC,Earthquake,1,1
+4073,2012,DC,Severe Storm,1,1
+4068,2012,FL,Severe Storm,34,34
+4062,2012,HI,Severe Storm,2,2
+4058,2012,IN,Severe Storm,6,6
+4063,2012,KS,Severe Storm,14,14
+4057,2012,KY,Severe Storm,23,23
+4041,2012,LA,Coastal Storm,8,8
+4080,2012,LA,Hurricane,55,55
+4051,2012,MA,Severe Storm,6,6
+4038,2012,MD,Flood,7,7
+4075,2012,MD,Severe Storm,6,6
+4069,2012,MN,Severe Storm,15,15
+4081,2012,MS,Hurricane,48,48
+4074,2012,MT,Fire,2,2
+4049,2012,NH,Severe Storm,2,2
+4065,2012,NH,Severe Storm,1,1
+4039,2012,NJ,Severe Storm,5,5
+4048,2012,NJ,Severe Storm,11,11
+4070,2012,NJ,Severe Storm,3,3
+4047,2012,NM,Flood,3,3
+4079,2012,NM,Flood,3,3
+4077,2012,OH,Severe Storm,39,39
+4064,2012,OK,Severe Storm,5,5
+4078,2012,OK,Fire,2,2
+4055,2012,OR,Flood,12,12
+4040,2012,PR,Hurricane,3,3
+4060,2012,TN,Severe Storm,10,10
+4053,2012,UT,Severe Storm,1,1
+4042,2012,VA,Earthquake,10,10
+4045,2012,VA,Severe Storm,8,8
+4072,2012,VA,Severe Storm,69,69
+4043,2012,VT,Severe Storm,3,3
+4066,2012,VT,Severe Storm,3,3
+4056,2012,WA,Severe Storm,11,11
+4083,2012,WA,Severe Storm,2,2
+4076,2012,WI,Severe Storm,3,3
+4059,2012,WV,Severe Storm,11,11
+4061,2012,WV,Severe Storm,3,3
+4071,2012,WV,Severe Storm,47,47
+4094,2013,AK,Severe Storm,4,5
+4122,2013,AK,Flood,3,3
+4100,2013,AR,Severe Ice Storm,7,8
+4124,2013,AR,Severe Storm,10,11
+4143,2013,AR,Severe Storm,6,6
+4104,2013,AZ,Freezing,0,0
+4142,2013,CA,Fire,0,0
+4133,2013,CO,Fire,1,1
+4134,2013,CO,Fire,1,1
+4145,2013,CO,Flood,14,18
+4087,2013,CT,Hurricane,6,7
+4106,2013,CT,Severe Storm,7,8
+4096,2013,DC,Hurricane,0,1
+4090,2013,DE,Hurricane,3,3
+4084,2013,FL,Hurricane,12,12
+4138,2013,FL,Severe Storm,3,4
+4114,2013,IA,Severe Storm,3,5
+4119,2013,IA,Flood,17,20
+4126,2013,IA,Severe Storm,40,49
+4135,2013,IA,Severe Storm,10,12
+4116,2013,IL,Flood,36,47
+4112,2013,KS,Snowstorm,18,23
+4102,2013,LA,Severe Storm,9,11
+4097,2013,MA,Hurricane,6,6
+4110,2013,MA,Severe Storm,13,14
+4091,2013,MD,Hurricane,22,24
+4108,2013,ME,Severe Storm,5,6
+4121,2013,MI,Flood,13,16
+4113,2013,MN,Severe Storm,3,5
+4131,2013,MN,Severe Storm,18,18
+4130,2013,MO,Severe Storm,24,28
+4144,2013,MO,Severe Storm,17,18
+4101,2013,MS,Severe Storm,6,7
+4127,2013,MT,Flood,10,12
+4103,2013,NC,Mud/Landslide,0,0
+4146,2013,NC,Flood,11,13
+4118,2013,ND,Flood,13,16
+4123,2013,ND,Flood,0,0
+4128,2013,ND,Severe Storm,18,19
+4095,2013,NH,Hurricane,6,6
+4105,2013,NH,Severe Storm,6,8
+4139,2013,NH,Severe Storm,2,3
+4086,2013,NJ,Hurricane,19,21
+4147,2013,NM,Severe Storm,0,0
+4148,2013,NM,Severe Storm,5,6
+4085,2013,NY,Hurricane,9,14
+4111,2013,NY,Severe Storm,1,1
+4129,2013,NY,Flood,12,16
+4098,2013,OH,Hurricane,1,2
+4109,2013,OK,Severe Storm,15,17
+4117,2013,OK,Tornado,18,21
+4099,2013,PA,Hurricane,15,18
+4089,2013,RI,Hurricane,3,4
+4107,2013,RI,Severe Storm,4,5
+4115,2013,SD,Severe Storm,7,7
+4125,2013,SD,Severe Storm,5,5
+4137,2013,SD,Severe Storm,8,8
+4136,2013,TX,Other,1,1
+4088,2013,UT,Flood,1,1
+4092,2013,VA,Hurricane,25,29
+4120,2013,VT,Flood,3,3
+4140,2013,VT,Flood,6,7
+4141,2013,WI,Severe Storm,5,8
+4093,2013,WV,Hurricane,17,18
+4132,2013,WV,Flood,0,2
+4161,2014,AK,Flood,1,1
+4162,2014,AK,Severe Storm,3,3
+4176,2014,AL,Severe Storm,21,21
+4160,2014,AR,Severe Ice Storm,14,14
+4174,2014,AR,Severe Storm,12,12
+4192,2014,AS,Severe Storm,5,5
+4158,2014,CA,Fire,1,1
+4193,2014,CA,Earthquake,2,2
+4177,2014,FL,Severe Storm,9,9
+4165,2014,GA,Severe Ice Storm,45,45
+4191,2014,GU,Severe Storm,1,1
+4194,2014,HI,Severe Storm,2,2
+4181,2014,IA,Severe Storm,9,9
+4184,2014,IA,Flood,26,26
+4187,2014,IA,Severe Storm,24,24
+4157,2014,IL,Tornado,15,15
+4173,2014,IN,Severe Storm,30,30
+4150,2014,KS,Severe Storm,46,46
+4196,2014,KY,Severe Storm,4,4
+4170,2014,MD,Severe Storm,3,3
+4195,2014,MI,Flood,3,3
+4182,2014,MN,Flood,37,37
+4175,2014,MS,Severe Storm,13,13
+4172,2014,MT,Flood,15,15
+4153,2014,NC,Flood,6,6
+4167,2014,NC,Severe Ice Storm,9,9
+4154,2014,ND,Severe Storm,7,7
+4190,2014,ND,Flood,9,9
+4156,2014,NE,Severe Storm,10,10
+4179,2014,NE,Tornado,6,6
+4183,2014,NE,Severe Storm,12,12
+4185,2014,NE,Severe Storm,12,12
+4151,2014,NM,Severe Storm,0,0
+4152,2014,NM,Flood,23,23
+4180,2014,NY,Severe Storm,11,11
+4164,2014,OK,Severe Storm,4,4
+4169,2014,OR,Severe Storm,4,4
+4149,2014,PA,Severe Storm,11,11
+4166,2014,SC,Severe Ice Storm,22,22
+4155,2014,SD,Severe Storm,14,14
+4186,2014,SD,Flood,12,12
+4171,2014,TN,Severe Ice Storm,10,10
+4189,2014,TN,Severe Storm,23,23
+4159,2014,TX,Severe Storm,4,4
+4163,2014,VT,Severe Ice Storm,7,7
+4178,2014,VT,Flood,7,7
+4168,2014,WA,Mud/Landslide,1,1
+4188,2014,WA,Fire,2,2
+4226,2015,AR,Severe Storm,29,29
+4203,2015,AZ,Flood,2,2
+4206,2015,CA,Flood,0,0
+4240,2015,CA,Fire,2,2
+4229,2015,CO,Flood,15,15
+4213,2015,CT,Severe Storm,4,4
+4215,2015,GA,Severe Ice Storm,16,16
+4224,2015,GU,Typhoon,1,1
+4201,2015,HI,Volcanic Eruption,1,1
+4234,2015,IA,Severe Storm,19,19
+4230,2015,KS,Severe Storm,44,44
+4216,2015,KY,Snowstorm,41,41
+4217,2015,KY,Flood,29,29
+4218,2015,KY,Flood,59,59
+4239,2015,KY,Severe Storm,34,34
+4228,2015,LA,Flood,7,7
+4214,2015,MA,Severe Storm,10,10
+4208,2015,ME,Snowstorm,4,4
+4200,2015,MO,Severe Storm,20,20
+4238,2015,MO,Severe Storm,76,76
+4235,2015,MP,Typhoon,3,3
+4205,2015,MS,Tornado,1,1
+4198,2015,MT,Severe Storm,5,5
+4225,2015,NE,Severe Storm,28,28
+4209,2015,NH,Severe Storm,3,3
+4231,2015,NJ,Severe Storm,4,4
+4197,2015,NM,Severe Storm,6,6
+4199,2015,NM,Severe Storm,8,8
+4202,2015,NV,Flood,0,0
+4204,2015,NY,Snowstorm,9,9
+4222,2015,OK,Severe Storm,63,63
+4212,2015,RI,Severe Storm,5,5
+4233,2015,SD,Severe Storm,12,12
+4237,2015,SD,Severe Storm,0,0
+4211,2015,TN,Severe Ice Storm,45,45
+4223,2015,TX,Severe Storm,113,113
+4207,2015,VT,Severe Storm,10,10
+4232,2015,VT,Severe Storm,2,2
+4210,2015,WV,Severe Storm,32,32
+4219,2015,WV,Severe Storm,6,6
+4220,2015,WV,Flood,12,12
+4221,2015,WV,Flood,8,8
+4236,2015,WV,Severe Storm,9,9
+4227,2015,WY,Flood,4,4
+4244,2016,AK,Coastal Storm,1,1
+4257,2016,AK,Severe Storm,1,1
+4251,2016,AL,Severe Storm,39,39
+4254,2016,AR,Severe Storm,38,38
+4270,2016,AR,Severe Storm,12,12
+4260,2016,DC,Snowstorm,1,1
+4265,2016,DE,Snowstorm,1,1
+4280,2016,FL,Hurricane,26,26
+4259,2016,GA,Severe Storm,34,34
+4281,2016,IA,Flood,8,8
+4246,2016,ID,Severe Storm,4,4
+4252,2016,ID,Severe Storm,3,3
+4278,2016,KY,Severe Storm,20,20
+4263,2016,LA,Flood,37,37
+4277,2016,LA,Flood,26,26
+4261,2016,MD,Snowstorm,19,19
+4279,2016,MD,Flood,1,1
+4250,2016,MO,Flood,52,52
+4248,2016,MS,Severe Storm,12,12
+4268,2016,MS,Flood,29,29
+4271,2016,MT,Severe Storm,5,5
+4275,2016,MT,Tornado,1,1
+4264,2016,NJ,Severe Storm,17,17
+4247,2016,OK,Severe Ice Storm,21,21
+4256,2016,OK,Severe Storm,42,42
+4274,2016,OK,Flood,8,8
+4258,2016,OR,Severe Storm,14,14
+4267,2016,PA,Snowstorm,23,23
+4241,2016,SC,Flood,36,36
+4245,2016,TX,Severe Storm,22,22
+4255,2016,TX,Severe Storm,51,51
+4266,2016,TX,Flood,21,21
+4269,2016,TX,Flood,27,27
+4272,2016,TX,Flood,46,46
+4262,2016,VA,Snowstorm,30,30
+4242,2016,WA,Severe Storm,6,6
+4243,2016,WA,Fire,8,8
+4249,2016,WA,Severe Storm,16,16
+4253,2016,WA,Flood,10,10
+4276,2016,WI,Severe Storm,8,8
+4273,2016,WV,Flood,18,18
+4318,2017,AR,Severe Storm,23,32
+4301,2017,CA,Severe Storm,17,34
+4302,2017,CA,Severe Storm,0,0
+4305,2017,CA,Flood,9,22
+4308,2017,CA,Flood,25,43
+4312,2017,CA,Severe Storm,0,0
+4283,2017,FL,Hurricane,9,18
+4337,2017,FL,Hurricane,36,67
+4341,2017,FL,Hurricane,0,0
+4284,2017,GA,Hurricane,12,20
+4294,2017,GA,Severe Storm,3,7
+4297,2017,GA,Tornado,15,23
+4338,2017,GA,Hurricane,88,159
+4282,2017,HI,Mud/Landslide,0,1
+4289,2017,IA,Flood,10,19
+4334,2017,IA,Severe Storm,4,9
+4310,2017,ID,Flood,7,11
+4313,2017,ID,Flood,5,9
+4333,2017,ID,Flood,3,5
+4287,2017,KS,Severe Storm,5,13
+4304,2017,KS,Severe Ice Storm,11,20
+4319,2017,KS,Snowstorm,14,27
+4300,2017,LA,Tornado,2,2
+4326,2017,MI,Severe Storm,2,4
+4290,2017,MN,Flood,7,10
+4317,2017,MO,Flood,28,55
+4295,2017,MS,Tornado,3,4
+4314,2017,MS,Severe Storm,2,9
+4285,2017,NC,Hurricane,28,50
+4323,2017,ND,Flood,5,10
+4321,2017,NE,Severe Storm,6,10
+4325,2017,NE,Severe Storm,11,19
+4316,2017,NH,Severe Storm,0,2
+4329,2017,NH,Severe Storm,0,2
+4303,2017,NV,Severe Storm,1,5
+4307,2017,NV,Severe Storm,4,7
+4322,2017,NY,Snowstorm,18,28
+4299,2017,OK,Severe Storm,5,11
+4315,2017,OK,Severe Storm,11,20
+4324,2017,OK,Tornado,10,16
+4296,2017,OR,Severe Storm,2,2
+4328,2017,OR,Severe Storm,1,4
+4292,2017,PA,Flood,3,4
+4336,2017,PR,Hurricane,17,32
+4339,2017,PR,Hurricane,46,78
+4286,2017,SC,Hurricane,12,26
+4298,2017,SD,Severe Storm,16,24
+4293,2017,TN,Fire,0,1
+4320,2017,TN,Severe Storm,5,14
+4332,2017,TX,Hurricane,32,53
+4311,2017,UT,Flood,0,2
+4291,2017,VA,Hurricane,6,10
+4335,2017,VI,Hurricane,2,3
+4340,2017,VI,Hurricane,0,3
+4330,2017,VT,Severe Storm,5,7
+4309,2017,WA,Flood,7,15
+4288,2017,WI,Flood,5,10
+4331,2017,WV,Severe Storm,9,12
+4306,2017,WY,Severe Storm,1,1
+4327,2017,WY,Flood,0,3
+4351,2018,AK,Severe Storm,1,1
+4369,2018,AK,Coastal Storm,1,1
+4391,2018,AK,Flood,1,1
+4349,2018,AL,Hurricane,8,8
+4362,2018,AL,Severe Storm,4,4
+4357,2018,AS,Hurricane,5,5
+4389,2018,AZ,Flood,0,0
+4344,2018,CA,Fire,9,9
+4353,2018,CA,Fire,4,4
+4382,2018,CA,Fire,2,2
+4385,2018,CT,Tornado,2,2
+4365,2018,HI,Flood,2,2
+4366,2018,HI,Volcanic Eruption,1,1
+4395,2018,HI,Hurricane,3,3
+4386,2018,IA,Severe Storm,31,31
+4392,2018,IA,Severe Storm,4,4
+4342,2018,ID,Flood,2,2
+4363,2018,IN,Flood,31,31
+4347,2018,KS,Severe Storm,2,2
+4358,2018,KY,Flood,22,22
+4361,2018,KY,Flood,35,35
+4345,2018,LA,Hurricane,20,20
+4372,2018,MA,Severe Storm,6,6
+4379,2018,MA,Snowstorm,5,5
+4374,2018,MD,Severe Storm,2,2
+4376,2018,MD,Flood,2,2
+4354,2018,ME,Severe Storm,13,13
+4367,2018,ME,Coastal Storm,1,1
+4381,2018,MI,Flood,3,3
+4390,2018,MN,Flood,28,28
+4396,2018,MP,Typhoon,3,3
+4350,2018,MS,Hurricane,6,6
+4388,2018,MT,Flood,7,7
+4364,2018,NC,Severe Storm,2,2
+4393,2018,NC,Hurricane,52,52
+4375,2018,NE,Snowstorm,31,31
+4387,2018,NE,Severe Storm,11,11
+4355,2018,NH,Severe Storm,6,6
+4370,2018,NH,Coastal Storm,1,1
+4371,2018,NH,Snowstorm,3,3
+4368,2018,NJ,Severe Storm,6,6
+4352,2018,NM,Flood,0,0
+4348,2018,NY,Flood,8,8
+4360,2018,OH,Flood,22,22
+4373,2018,OK,Fire,5,5
+4346,2018,SC,Hurricane,46,46
+4394,2018,SC,Hurricane,19,19
+4377,2018,TX,Flood,3,3
+4356,2018,VT,Severe Storm,10,10
+4380,2018,VT,Severe Storm,5,5
+4384,2018,WA,Flood,0,0
+4343,2018,WI,Severe Storm,11,11
+4383,2018,WI,Flood,6,6
+4359,2018,WV,Mud/Landslide,21,21
+4378,2018,WV,Severe Storm,7,7
+4413,2019,AK,Earthquake,2,3
+4406,2019,AL,Hurricane,3,5
+4419,2019,AL,Tornado,1,1
+4426,2019,AL,Severe Storm,9,12
+4441,2019,AR,Flood,6,17
+4460,2019,AR,Flood,1,3
+4409,2019,AZ,Severe Storm,0,0
+4436,2019,AZ,Severe Storm,0,0
+4407,2019,CA,Fire,3,3
+4422,2019,CA,Severe Storm,0,0
+4423,2019,CA,Severe Storm,0,0
+4425,2019,CA,Severe Storm,0,0
+4431,2019,CA,Severe Storm,6,11
+4434,2019,CA,Severe Storm,5,18
+4410,2019,CT,Severe Storm,1,2
+4399,2019,FL,Hurricane,6,18
+4400,2019,GA,Hurricane,36,69
+4398,2019,GU,Typhoon,1,1
+4433,2019,GU,Typhoon,1,1
+4421,2019,IA,Flood,38,80
+4430,2019,IA,Flood,0,0
+4443,2019,ID,Flood,3,5
+4461,2019,IL,Flood,12,28
+4403,2019,KS,Severe Storm,4,8
+4417,2019,KS,Severe Storm,8,14
+4449,2019,KS,Severe Storm,37,70
+4428,2019,KY,Severe Storm,35,61
+4439,2019,LA,Severe Storm,1,3
+4458,2019,LA,Hurricane,15,26
+4462,2019,LA,Flood,7,14
+4414,2019,MN,Flood,1,1
+4442,2019,MN,Flood,24,51
+4435,2019,MO,Flood,9,16
+4451,2019,MO,Severe Storm,47,87
+4404,2019,MP,Typhoon,3,4
+4415,2019,MS,Severe Storm,6,11
+4429,2019,MS,Severe Storm,15,30
+4450,2019,MS,Severe Storm,5,9
+4405,2019,MT,Flood,4,9
+4437,2019,MT,Flood,6,8
+4412,2019,NC,Hurricane,9,21
+4444,2019,ND,Flood,10,19
+4420,2019,NE,Flood,41,84
+4446,2019,NE,Flood,0,0
+4457,2019,NH,Severe Storm,0,1
+4397,2019,NY,Flood,3,7
+4424,2019,OH,Flood,13,21
+4447,2019,OH,Tornado,4,12
+4438,2019,OK,Severe Storm,23,50
+4453,2019,OK,Severe Storm,7,19
+4456,2019,OK,Severe Storm,0,0
+4432,2019,OR,Severe Storm,3,5
+4452,2019,OR,Flood,4,6
+4408,2019,PA,Severe Storm,5,11
+4464,2019,SC,Hurricane,4,12
+4440,2019,SD,Flood,30,58
+4448,2019,SD,Severe Storm,0,0
+4463,2019,SD,Flood,14,25
+4427,2019,TN,Flood,37,59
+4416,2019,TX,Flood,18,36
+4454,2019,TX,Flood,0,3
+4401,2019,VA,Hurricane,16,32
+4411,2019,VA,Hurricane,19,36
+4445,2019,VT,Flood,5,6
+4418,2019,WA,Severe Storm,4,8
+4402,2019,WI,Flood,4,14
+4459,2019,WI,Flood,10,18
+4455,2019,WV,Flood,4,5
+4546,2020,AL,Severe Storm,3,19
+4554,2020,AL,Severe Storm,0,10
+4555,2020,AL,Severe Storm,1,7
+4563,2020,AL,Hurricane,2,14
+4544,2020,AR,Tornado,0,1
+4556,2020,AR,Tornado,2,12
+4558,2020,CA,Fire,5,20
+4468,2020,FL,Hurricane,2,14
+4564,2020,FL,Hurricane,0,14
+4549,2020,HI,Severe Storm,0,1
+4557,2020,IA,Severe Storm,0,23
+4561,2020,IA,Severe Storm,0,0
+4540,2020,KY,Severe Storm,2,27
+4559,2020,LA,Hurricane,6,64
+4547,2020,MI,Dam/Levee Break,0,5
+4552,2020,MO,Severe Storm,3,19
+4470,2020,MS,Severe Storm,4,19
+4478,2020,MS,Severe Storm,1,13
+4536,2020,MS,Severe Storm,4,29
+4538,2020,MS,Severe Storm,1,15
+4551,2020,MS,Severe Storm,0,11
+4465,2020,NC,Hurricane,3,28
+4543,2020,NC,Severe Storm,0,19
+4475,2020,ND,Flood,0,18
+4553,2020,ND,Flood,1,20
+4472,2020,NY,Severe Storm,1,18
+4519,2020,OR,Flood,0,3
+4562,2020,OR,Fire,1,20
+4473,2020,PR,Earthquake,4,34
+4560,2020,PR,Hurricane,0,4
+4479,2020,SC,Severe Storm,2,10
+4542,2020,SC,Severe Storm,1,10
+4467,2020,SD,Severe Storm,0,0
+4469,2020,SD,Severe Storm,3,23
+4471,2020,TN,Severe Storm,0,10
+4476,2020,TN,Tornado,1,6
+4541,2020,TN,Severe Storm,1,9
+4550,2020,TN,Severe Storm,2,20
+4466,2020,TX,Flood,0,7
+4548,2020,UT,Earthquake,0,2
+4474,2020,VT,Severe Storm,1,8
+4539,2020,WA,Flood,4,15
+4477,2020,WI,Flood,1,3
+4585,2021,AK,Mud/Landslide,2,5
+4573,2021,AL,Hurricane,9,21
+4596,2021,AL,Severe Storm,4,8
+4620,2021,AZ,Flood,1,3
+4569,2021,CA,Fire,5,12
+4610,2021,CA,Fire,3,6
+4619,2021,CA,Fire,1,2
+4581,2021,CO,Fire,2,2
+4580,2021,CT,Hurricane,5,8
+4566,2021,DE,Hurricane,2,2
+4579,2021,GA,Hurricane,9,21
+4600,2021,GA,Severe Storm,7,9
+4604,2021,HI,Flood,1,1
+4589,2021,ID,Severe Storm,1,4
+4592,2021,KY,Severe Ice Storm,22,45
+4595,2021,KY,Flood,19,50
+4570,2021,LA,Hurricane,34,64
+4577,2021,LA,Hurricane,15,35
+4590,2021,LA,Severe Ice Storm,32,64
+4606,2021,LA,Flood,4,7
+4611,2021,LA,Hurricane,27,64
+4583,2021,MD,Hurricane,0,3
+4607,2021,MI,Severe Storm,3,5
+4612,2021,MO,Severe Storm,11,21
+4576,2021,MS,Hurricane,1,8
+4598,2021,MS,Severe Ice Storm,19,36
+4608,2021,MT,Other,2,5
+4623,2021,MT,Fire,0,1
+4568,2021,NC,Hurricane,5,16
+4588,2021,NC,Severe Storm,7,19
+4617,2021,NC,Hurricane,4,11
+4565,2021,ND,Severe Storm,3,6
+4613,2021,ND,Severe Storm,6,9
+4616,2021,NE,Severe Storm,7,14
+4622,2021,NH,Severe Storm,1,1
+4574,2021,NJ,Hurricane,4,11
+4597,2021,NJ,Snowstorm,3,5
+4614,2021,NJ,Hurricane,16,21
+4567,2021,NY,Hurricane,1,7
+4615,2021,NY,Hurricane,6,14
+4575,2021,OK,Severe Ice Storm,18,29
+4587,2021,OK,Severe Ice Storm,27,77
+4599,2021,OR,Severe Storm,3,6
+4618,2021,PA,Hurricane,8,13
+4571,2021,PR,Flood,1,1
+4594,2021,TN,Severe Ice Storm,6,13
+4601,2021,TN,Tornado,10,24
+4609,2021,TN,Flood,2,4
+4572,2021,TX,Hurricane,2,5
+4586,2021,TX,Severe Ice Storm,123,254
+4578,2021,UT,Severe Storm,1,4
+4602,2021,VA,Severe Ice Storm,10,33
+4621,2021,VT,Flood,0,2
+4584,2021,WA,Fire,7,10
+4593,2021,WA,Severe Storm,6,17
+4603,2021,WV,Severe Ice Storm,1,5
+4605,2021,WV,Flood,5,7
+4638,2022,AK,Severe Storm,1,1
+4646,2022,AK,Severe Storm,1,1
+4648,2022,AK,Severe Storm,2,3
+4661,2022,AK,Mud/Landslide,1,1
+4667,2022,AK,Flood,2,2
+4672,2022,AK,Severe Storm,4,4
+4632,2022,AL,Severe Storm,2,2
+4633,2022,AR,Tornado,5,5
+4669,2022,AS,Severe Storm,0,0
+4668,2022,AZ,Severe Storm,0,0
+4634,2022,CO,Fire,1,1
+4629,2022,CT,Hurricane,5,5
+4627,2022,DE,Hurricane,1,1
+4673,2022,FL,Hurricane,62,67
+4675,2022,FL,Hurricane,0,0
+4639,2022,HI,Severe Storm,2,2
+4642,2022,IA,Severe Storm,25,25
+4640,2022,KS,Severe Storm,55,55
+4654,2022,KS,Snowstorm,19,20
+4630,2022,KY,Tornado,22,23
+4643,2022,KY,Severe Storm,13,13
+4663,2022,KY,Flood,20,20
+4651,2022,MA,Snowstorm,4,4
+4647,2022,ME,Coastal Storm,3,3
+4658,2022,MN,Severe Storm,23,23
+4659,2022,MN,Flood,15,15
+4666,2022,MN,Severe Storm,22,23
+4636,2022,MO,Severe Storm,7,7
+4665,2022,MO,Flood,4,4
+4626,2022,MS,Hurricane,74,82
+4655,2022,MT,Flood,7,7
+4660,2022,ND,Severe Storm,40,40
+4641,2022,NE,Severe Storm,23,25
+4662,2022,NE,Severe Storm,19,20
+4624,2022,NH,Flood,2,2
+4652,2022,NM,Fire,7,7
+4625,2022,NY,Hurricane,8,9
+4657,2022,OK,Severe Storm,6,7
+4670,2022,OK,Severe Storm,0,0
+4649,2022,PR,Flood,5,5
+4671,2022,PR,Hurricane,75,78
+4653,2022,RI,Snowstorm,5,5
+4656,2022,SD,Severe Storm,20,20
+4664,2022,SD,Severe Storm,6,6
+4637,2022,TN,Tornado,13,14
+4645,2022,TN,Severe Storm,7,7
+4628,2022,VA,Flood,1,1
+4644,2022,VA,Severe Storm,28,28
+4674,2022,VA,Severe Storm,2,2
+4631,2022,WA,Fire,0,0
+4635,2022,WA,Flood,7,7
+4650,2022,WA,Flood,15,15
+4730,2023,AK,Flood,3,5
+4684,2023,AL,Severe Storm,10,13
+4710,2023,AL,Severe Storm,7,10
+4698,2023,AR,Severe Storm,3,3
+4700,2023,AR,Winter Storm,8,13
+4681,2023,AZ,Flood,0,0
+4703,2023,AZ,Severe Storm,0,0
+4683,2023,CA,Flood,32,44
+4692,2023,CA,Earthquake,0,0
+4699,2023,CA,Severe Storm,33,46
+4707,2023,CA,Winter Storm,0,0
+4713,2023,CA,Severe Storm,0,0
+4714,2023,CA,Severe Storm,0,0
+4743,2023,CA,Hurricane,0,0
+4731,2023,CO,Flood,10,14
+4680,2023,FL,Hurricane,47,61
+4709,2023,FL,Flood,1,1
+4734,2023,FL,Hurricane,38,49
+4685,2023,GA,Severe Storm,7,9
+4738,2023,GA,Hurricane,24,32
+4715,2023,GU,Hurricane,0,1
+4724,2023,HI,Fire,2,2
+4732,2023,IA,Flood,6,7
+4676,2023,IL,Flood,1,1
+4728,2023,IL,Severe Storm,16,22
+4704,2023,IN,Severe Storm,9,13
+4702,2023,KY,Severe Storm,68,88
+4711,2023,KY,Flood,14,22
+4696,2023,ME,Severe Storm,4,6
+4719,2023,ME,Flood,6,8
+4736,2023,ME,Flood,1,1
+4737,2023,ME,Flood,1,1
+4722,2023,MN,Flood,19,25
+4741,2023,MO,Severe Storm,25,33
+4716,2023,MP,Tropical Storm,3,3
+4697,2023,MS,Severe Storm,4,7
+4727,2023,MS,Severe Storm,22,29
+4726,2023,MT,Flood,5,7
+4686,2023,ND,Snowstorm,5,7
+4717,2023,ND,Flood,19,21
+4693,2023,NH,Severe Storm,3,4
+4740,2023,NH,Flood,3,7
+4725,2023,NJ,Severe Storm,1,1
+4708,2023,NV,Flood,4,6
+4694,2023,NY,Snowstorm,3,5
+4723,2023,NY,Severe Storm,5,9
+4690,2023,OK,Severe Storm,0,0
+4706,2023,OK,Tornado,3,3
+4721,2023,OK,Severe Storm,20,25
+4733,2023,OR,Mud/Landslide,0,0
+4677,2023,SC,Hurricane,33,46
+4687,2023,SD,Winter Storm,0,0
+4688,2023,SD,Winter Storm,0,0
+4689,2023,SD,Winter Storm,11,17
+4718,2023,SD,Flood,9,10
+4691,2023,TN,Winter Storm,7,11
+4701,2023,TN,Severe Storm,9,13
+4712,2023,TN,Severe Storm,35,45
+4729,2023,TN,Severe Storm,2,3
+4735,2023,TN,Severe Storm,3,4
+4742,2023,TN,Severe Storm,8,10
+4705,2023,TX,Winter Storm,17,23
+4695,2023,VT,Severe Storm,6,8
+4720,2023,VT,Flood,14,14
+4682,2023,WA,Severe Storm,5,9
+4678,2023,WV,Flood,1,1
+4679,2023,WV,Severe Storm,1,1
+4739,2023,WY,Flood,1,1
+4763,2024,AK,Mud/Landslide,0,0
+4767,2024,AK,Mud/Landslide,1,3
+4748,2024,AR,Severe Storm,1,4
+4788,2024,AR,Severe Storm,4,11
+4746,2024,CA,Tropical Storm,0,0
+4750,2024,CA,Hurricane,2,5
+4758,2024,CA,Flood,0,1
+4769,2024,CA,Severe Storm,3,9
+4772,2024,CA,Severe Storm,0,0
+4773,2024,CA,Severe Storm,0,0
+4820,2024,CT,Severe Storm,1,3
+4794,2024,FL,Severe Storm,5,13
+4806,2024,FL,Tropical Storm,24,61
+4828,2024,FL,Hurricane,20,47
+4821,2024,GA,Tropical Storm,14,35
+4830,2024,GA,Hurricane,45,94
+4793,2024,HI,Flood,1,1
+4779,2024,IA,Tornado,8,9
+4784,2024,IA,Severe Storm,12,29
+4796,2024,IA,Severe Storm,15,29
+4789,2024,ID,Flood,0,3
+4749,2024,IL,Flood,0,1
+4819,2024,IL,Flood,5,7
+4747,2024,KS,Severe Storm,7,21
+4774,2024,KS,Winter Storm,9,17
+4800,2024,KS,Severe Storm,6,13
+4811,2024,KS,Severe Storm,5,14
+4824,2024,KS,Severe Storm,7,17
+4782,2024,KY,Severe Storm,6,11
+4804,2024,KY,Severe Storm,29,58
+4817,2024,LA,Hurricane,7,22
+4780,2024,MA,Flood,0,2
+4754,2024,ME,Severe Storm,4,10
+4764,2024,ME,Severe Storm,5,8
+4785,2024,ME,Winter Storm,2,2
+4757,2024,MI,Flood,5,9
+4797,2024,MN,Flood,8,32
+4803,2024,MO,Severe Storm,4,15
+4790,2024,MS,Severe Storm,3,6
+4745,2024,MT,Flood,5,10
+4801,2024,MT,Severe Storm,4,10
+4813,2024,MT,Straight-Line Winds,0,2
+4827,2024,NC,Tropical Storm,18,39
+4760,2024,ND,Winter Storm,8,13
+4778,2024,NE,Tornado,2,6
+4786,2024,NE,Severe Storm,4,8
+4808,2024,NE,Severe Storm,8,19
+4822,2024,NE,Severe Storm,9,17
+4761,2024,NH,Severe Storm,1,3
+4771,2024,NH,Severe Storm,0,2
+4799,2024,NH,Winter Storm,2,5
+4812,2024,NH,Severe Storm,1,2
+4795,2024,NM,Fire,3,4
+4809,2024,NM,Flood,0,0
+4755,2024,NY,Flood,1,3
+4814,2024,NY,Flood,3,5
+4818,2024,NY,Tropical Storm,0,0
+4825,2024,NY,Tropical Storm,7,11
+4777,2024,OH,Tornado,5,11
+4776,2024,OK,Tornado,9,25
+4791,2024,OK,Severe Storm,7,10
+4802,2024,OK,Severe Storm,0,0
+4768,2024,OR,Severe Storm,7,12
+4815,2024,PA,Tropical Storm,6,13
+4805,2024,PR,Flood,6,13
+4753,2024,RI,Severe Storm,0,1
+4765,2024,RI,Severe Storm,2,3
+4766,2024,RI,Severe Storm,0,4
+4829,2024,SC,Hurricane,15,33
+4835,2024,SC,Tropical Storm,7,14
+4807,2024,SD,Flood,12,25
+4751,2024,TN,Severe Storm,5,9
+4792,2024,TN,Severe Storm,8,12
+4781,2024,TX,Flood,36,83
+4798,2024,TX,Hurricane,30,67
+4752,2024,UT,Flood,3,5
+4744,2024,VT,Flood,0,1
+4762,2024,VT,Severe Storm,3,7
+4770,2024,VT,Severe Storm,2,5
+4810,2024,VT,Severe Storm,4,8
+4816,2024,VT,Flood,0,0
+4826,2024,VT,Flood,1,3
+4759,2024,WA,Fire,2,2
+4775,2024,WA,Severe Storm,10,16
+4823,2024,WA,Fire,0,0
+4756,2024,WV,Flood,4,6
+4783,2024,WV,Severe Storm,7,15
+4787,2024,WV,Flood,9,13
