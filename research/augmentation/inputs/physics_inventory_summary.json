@@ -1,0 +1,10 @@
+{
+  "county_fips": "22063",
+  "county_name": "Livingston Parish, Louisiana",
+  "occupancy": "RES1-1SNB",
+  "all_inventory_structures": 66814,
+  "eligible_structures": 42409,
+  "inventory_replacement_value_usd": 13026297737.56938,
+  "nsi_public_payload_sha256": "d84a82e0301c6240748c14350cc41cd609699ed333e5054ea21c4ec63be82c1f",
+  "underlying_inventory_is_modeled": true
+}

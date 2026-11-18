@@ -1,0 +1,10 @@
+{
+  "source_id": "usace_nsi",
+  "filename": "nsi_22063.geojson",
+  "download_url": "https://nsi.sec.usace.army.mil/nsiapi/structures?fips=22063",
+  "sha256": "d84a82e0301c6240748c14350cc41cd609699ed333e5054ea21c4ec63be82c1f",
+  "bytes": 58774706,
+  "retrieved_utc": "2026-11-18T14:06:15.273217+00:00",
+  "last_modified": null,
+  "etag": null
+}

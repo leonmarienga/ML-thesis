@@ -20,3 +20,7 @@ Report six-band accuracy, balanced accuracy, macro F1, every upper-band recall, 
 ## Provenance and safeguards
 
 Every generator runs on eligible training inputs only. Validate geographic and hazard identity, joint categorical support, continuous source bounds and the funding band when applicable. Preserve generation seed, source declaration and episode keys, support and rejection counts, generated-row keys and duplication, source distance and distribution diagnostics. Numeric synthesis occurs only in feature space, with no synthetic date, physical measurement, kind of FEMA transaction or real declaration identifier. Retain exact repeats only as a labeled control. Review memorization against the generating training fold. Retain failures where novelty or source support is inadequate.
+
+## Implementation clarification
+
+The existing per-fit episode purge applies at every origin. When earlier tuning and calibration windows shared an episode across fiscal years, exclude its calibration-window records so ratio selection and calibration use disjoint episode groups. Keep those records labeled in the inner prediction ledger. The episode-omission refits reuse the corresponding original outer random-number seed namespace so the omission comparisons retain the original randomization wherever the donor pool permits.
