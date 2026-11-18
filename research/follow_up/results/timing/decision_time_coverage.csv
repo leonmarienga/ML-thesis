@@ -1,0 +1,22 @@
+axis,group,cohort_count,event_groups,any_final_missions,any_t0_action_proxy,any_t72_action_proxy,any_recent_nhc_t0,any_recent_nhc_t72,final_count_rows_after_t0,aliases_with_verified_original_fema_title,exact_release_certified
+hazard,Coastal Storm,6,6,2,0,0,0,0,13.0,0,0
+hazard,Dam/Levee Break,1,1,1,0,1,0,0,7.0,0,0
+hazard,Earthquake,8,8,2,0,2,0,0,122.0,0,0
+hazard,Fire,33,30,20,2,18,0,0,2233.0,0,0
+hazard,Flood,198,194,97,11,48,0,0,2365.0,0,0
+hazard,Freezing,1,1,0,0,0,0,0,0.0,0,0
+hazard,Hurricane,108,51,64,9,46,39,25,12217.0,0,0
+hazard,Mud/Landslide,9,8,2,0,2,0,0,80.0,0,0
+hazard,Other,2,2,1,0,0,0,0,4.0,0,0
+hazard,Severe Ice Storm,21,21,8,2,6,0,0,114.0,0,0
+hazard,Severe Storm,430,416,158,12,73,0,0,1777.0,0,0
+hazard,Snowstorm,36,36,7,0,0,0,0,34.0,0,0
+hazard,Straight-Line Winds,1,1,0,0,0,0,0,0.0,0,0
+hazard,Tornado,27,27,19,0,9,0,0,400.0,0,0
+hazard,Tropical Storm,9,4,6,0,4,2,2,812.0,0,0
+hazard,Tsunami,3,3,0,0,0,0,0,0.0,0,0
+hazard,Typhoon,6,6,3,0,2,0,0,468.0,0,0
+hazard,Volcanic Eruption,2,2,1,0,1,0,0,115.0,0,0
+hazard,Winter Storm,11,9,4,0,0,0,0,9.0,0,0
+all,all,912,821,395,36,212,41,27,20770.0,0,0
+tail,at_least_50m,23,20,23,6,23,15,13,11952.0,0,0
