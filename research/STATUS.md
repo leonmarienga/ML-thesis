@@ -27,3 +27,7 @@ The follow-up audited county weather, cyclone wind, named wildfire perimeters an
 ## Rare-obligation augmentation completed
 
 The matched FY2019–24 study compared training-only weight, repeat and constrained synthetic designs. Tail-MAE improvements for weight and repeat controls remain exploratory. No synthetic method entered the candidate and every tested dollar interval missed all 13 $50M+ cases. The FY2025 outcome embargo remains governed by the locked follow-up protocol. [Augmentation report](augmentation/REPORT.md), [generator audit](augmentation/GENERATOR_AUDIT.md), [replay instructions](augmentation/REPRODUCE.md).
+
+## Continuous authentic-data and simulation research
+
+Verified the local and remote continuation head `ebad27b2921f7099778a68d7d216e28d58dc4dd7` and the original branch head `041afba8a10da9c2a962222e0a2644284a84fb7b`. The next batch examines Mission Assignment source coverage and a separate earthquake physical-simulation pathway. The precoverage label check found 223 non-Biological FY2010–12 declarations with a recorded zero and no positive obligations in the workbook. The planned comparison changes only a versioned training input policy. [Batch protocol](continuous/PROTOCOL.md).
