@@ -60,6 +60,7 @@ python analysis/thesis_hazard_features.py --raw work/raw --artifacts work/artifa
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
   python analysis/thesis_forward_models.py work/hazards/cohort_features.csv work/forward --workers 4
 python analysis/thesis_uncertainty.py work/forward/forward_predictions.csv work/uncertainty
+python analysis/thesis_measurement_sensitivity.py work/hazards/cohort_features.csv work/uncertainty
 python analysis/thesis_allocation.py work/allocation
 ```
 

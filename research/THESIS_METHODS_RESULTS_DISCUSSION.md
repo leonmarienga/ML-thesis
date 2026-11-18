@@ -30,6 +30,8 @@ Within 376 matched forward cases, the verified-link feature arm increased raw Ex
 
 The nested metadata dollar intervals achieved 84.42% and 91.23% coverage across 308 later cases, with median widths $0.749M and $4.283M. At 90%, all nine cases of $50M or more were missed. Original CQR intervals covered 95.13% nominally 90% across the same size broader period, with conditional high-band intervals around billions of dollars and six of nine high-band outcomes covered. Chronological residual methods cannot remove uncertainty caused by a shortage of extreme observations.
 
+In a held-out-input sensitivity check, perturbing verified linked wind by ±10% changed no routes among 48 covered cases, while the 90th percentile of absolute amount change was $79,523–$94,025. Perturbing designated county population by ±20% changed 1.0%–1.7% of routes among 293 covered cases. Only one test case had a named MTBS single-fire feature. The perturbations were prescribed sensitivity ranges, with no inferred stochastic sensor-error model.
+
 In the high-noise sequential allocation scenario with a planned 65% budget, equal allocation reached 45.43% demand served, expected efficiency 49.69%, and expected equity 49.59%. The equity rule raised coverage of the higher-vulnerability group from 52.72% to 62.33% compared with expected efficiency and reduced weighted waiting. The tail-weighted policy increased higher-vulnerability service to 65.22% while reducing overall service to 48.83%. Sampling uncertainty and sensitivity by budget and arrival regime are available in the scenario results.
 
 ## Discussion and limitations

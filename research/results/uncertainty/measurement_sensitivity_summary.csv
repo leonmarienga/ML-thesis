@@ -1,0 +1,7 @@
+scenario,affected_cases,band_change_rate,median_absolute_change_usd,p90_absolute_change_usd,max_absolute_change_usd
+fire_area_minus_20_percent,1,0.0,0.0,0.0,0.0
+fire_area_plus_20_percent,1,0.0,0.0,0.0,0.0
+population_minus_20_percent,293,0.017064846416382253,0.1139014479656586,161.11840813158392,1036464.2972292063
+population_plus_20_percent,293,0.010238907849829351,0.10394699401815388,131.76963084755886,175252.65652035573
+wind_minus_10_percent,48,0.0,0.0,94025.42138550934,557523.9729017213
+wind_plus_10_percent,48,0.0,0.0,79522.53335110031,1360125.9576018346
