@@ -1,0 +1,13 @@
+fold,rows,episodes,precoverage_rows,positive_rows,high_episodes
+2019/archive_all/2019,514,477,223,159,8
+2019/coverage_screened/2019,291,270,0,159,8
+2020/archive_all/2020,593,544,223,196,12
+2020/coverage_screened/2020,370,337,0,196,12
+2021/archive_all/2021,638,584,223,212,12
+2021/coverage_screened/2021,415,377,0,212,12
+2022/archive_all/2022,692,629,223,236,13
+2022/coverage_screened/2022,469,422,0,236,13
+2023/archive_all/2023,746,674,223,264,14
+2023/coverage_screened/2023,523,467,0,264,14
+2024/archive_all/2024,796,719,223,290,17
+2024/coverage_screened/2024,573,512,0,290,17
