@@ -1,0 +1,13 @@
+monitoring_location_id,station_name,parameter_code,unit_of_measure,year,month,time,value
+USGS-05227500,Mississippi River at Aitkin,00060,ft^3/s,2022,3,2022-03-31,2040
+USGS-05227500,Mississippi River at Aitkin,00060,ft^3/s,2022,4,2022-04-30,8400
+USGS-05227500,Mississippi River at Aitkin,00060,ft^3/s,2023,3,2023-03-31,2080
+USGS-05227500,Mississippi River at Aitkin,00060,ft^3/s,2023,4,2023-04-25,14100
+USGS-05227500,Mississippi River at Aitkin,00060,ft^3/s,2024,3,2024-03-04,2000
+USGS-05227500,Mississippi River at Aitkin,00060,ft^3/s,2024,4,2024-04-30,4320
+USGS-05385000,Root River near Houston,00060,ft^3/s,2022,3,2022-03-06,5410
+USGS-05385000,Root River near Houston,00060,ft^3/s,2022,4,2022-04-14,4420
+USGS-05385000,Root River near Houston,00060,ft^3/s,2023,3,2023-03-02,3450
+USGS-05385000,Root River near Houston,00060,ft^3/s,2023,4,2023-04-02,4160
+USGS-05385000,Root River near Houston,00060,ft^3/s,2024,3,2024-03-29,734
+USGS-05385000,Root River near Houston,00060,ft^3/s,2024,4,2024-04-20,940

@@ -1,0 +1,121 @@
+{
+  "historical_disaster": {
+    "id": 4722,
+    "hazard": "Flood",
+    "state": "MN",
+    "recorded_dates": {
+      "start": "2023-04-11",
+      "end": "2023-04-30"
+    },
+    "historical_fema_obligations_usd": 1243478.26,
+    "evidence_fields_available": [
+      "daymet_point_max_24h_mm",
+      "daymet_point_incident_total_mm"
+    ],
+    "evidence_fields_missing": [
+      "measured_gust_kt",
+      "estimated_gust_kt",
+      "hail_in",
+      "tornado_ef",
+      "tornado_length_mi",
+      "tornado_width_yd",
+      "cyclone_max_wind_kt",
+      "cyclone_min_pressure_mb",
+      "cyclone_max_34kt_radius_nm",
+      "cyclone_landfall_records",
+      "mtbs_burned_acres",
+      "quake_magnitude",
+      "quake_depth_km",
+      "quake_shakemap_max_mmi",
+      "usgs_discharge_anomaly"
+    ],
+    "evidence_provenance": "research/SOURCE_AND_FEATURE_MANIFEST.csv"
+  },
+  "retrospective_model_estimate": {
+    "historical_obligation_estimate_usd": 5677.770840429999,
+    "band": "1M-50M",
+    "band_probabilities": {
+      "0-100K": 0.0744928966533713,
+      "100K-1M": 0.0027450918417107,
+      "1M-50M": 0.9227620115049188,
+      "50-200M": 0.0,
+      "200-500M": 0.0,
+      "500M+": 0.0
+    },
+    "intervals": [
+      {
+        "level": 0.8,
+        "lower_usd": 0.0,
+        "upper_usd": 754245.3430860257
+      },
+      {
+        "level": 0.9,
+        "lower_usd": 0.0,
+        "upper_usd": 4288908.210935917
+      }
+    ],
+    "human_review": true,
+    "availability_limit": "later-year retrospective test, exact original decision-time versions unverified"
+  },
+  "simulated_humanitarian_allocation": {
+    "status": "independent synthetic scenario, expressed in service units",
+    "policy_comparison": [
+      {
+        "hazard": "winter",
+        "estimated_need_units": 1090.4240082515134,
+        "simulated_need_units": 1144.6212896693785,
+        "allocation_units": 690.9625140818071,
+        "vulnerability": 0.4376778923791486,
+        "policy": "equal"
+      },
+      {
+        "hazard": "winter",
+        "estimated_need_units": 1090.4240082515134,
+        "simulated_need_units": 1144.6212896693785,
+        "allocation_units": 916.55873693636,
+        "vulnerability": 0.4376778923791486,
+        "policy": "proportional_need"
+      },
+      {
+        "hazard": "winter",
+        "estimated_need_units": 1090.4240082515134,
+        "simulated_need_units": 1144.6212896693785,
+        "allocation_units": 1690.157212789846,
+        "vulnerability": 0.4376778923791486,
+        "policy": "severity_priority"
+      },
+      {
+        "hazard": "winter",
+        "estimated_need_units": 1090.4240082515134,
+        "simulated_need_units": 1144.6212896693785,
+        "allocation_units": 0.0,
+        "vulnerability": 0.4376778923791486,
+        "policy": "exposure_priority"
+      },
+      {
+        "hazard": "winter",
+        "estimated_need_units": 1090.4240082515134,
+        "simulated_need_units": 1144.6212896693785,
+        "allocation_units": 867.4280306260785,
+        "vulnerability": 0.4376778923791486,
+        "policy": "efficient_expected"
+      },
+      {
+        "hazard": "winter",
+        "estimated_need_units": 1090.4240082515134,
+        "simulated_need_units": 1144.6212896693785,
+        "allocation_units": 708.7756053634838,
+        "vulnerability": 0.4376778923791486,
+        "policy": "equity_expected"
+      },
+      {
+        "hazard": "winter",
+        "estimated_need_units": 1090.4240082515134,
+        "simulated_need_units": 1144.6212896693785,
+        "allocation_units": 1090.4240082515134,
+        "vulnerability": 0.4376778923791486,
+        "policy": "equity_robust"
+      }
+    ]
+  }
+}

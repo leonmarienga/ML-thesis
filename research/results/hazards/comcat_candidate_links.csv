@@ -1,0 +1,20 @@
+disasterNumber,source_event_id,source_date,source_url,quake_magnitude,magnitude_type,quake_depth_km,quake_shakemap_max_mmi,point_inside_designated_county,event_begins_incident,evidence_class
+4042,se609218,2011-08-25,https://earthquake.usgs.gov/earthquakes/eventpage/se609218,4.5,mlg,6.81,5.671,True,False,UNVERIFIED CANDIDATE
+4042,se609215,2011-08-24,https://earthquake.usgs.gov/earthquakes/eventpage/se609215,4.2,mlg,0.0,,True,False,UNVERIFIED CANDIDATE
+4042,se609212,2011-08-23,https://earthquake.usgs.gov/earthquakes/eventpage/se609212,5.8,mw,6.0,7.764,True,True,UNVERIFIED CANDIDATE
+4193,nc72282711,2014-08-24,https://earthquake.usgs.gov/earthquakes/eventpage/nc72282711,6.02,mw,11.12,8.197,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcr8hkj,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcr8hkj,4.1,ml,39.7,5.07,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcpkhyx,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcpkhyx,4.5,ml,37.4,3.46,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcpk9xi,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcpk9xi,5.0,ml,37.7,4.25,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcpjyfi,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcpjyfi,4.2,ml,36.8,2.29,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcoysc3,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcoysc3,4.8,ml,39.8,4.12,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcoefol,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcoefol,4.0,ml,42.7,2.89,True,True,UNVERIFIED CANDIDATE
+4413,us1000hyge,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/us1000hyge,5.2,mww,40.2,3.77,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcnvewx,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnvewx,4.5,ml,43.3,3.71,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcnvbvw,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnvbvw,4.0,ml,36.6,3.19,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcnv73y,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnv73y,4.0,ml,43.4,3.09,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcnub7f,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnub7f,4.0,ml,41.1,2.88,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcntv5m,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcntv5m,5.8,mw,40.8,5.741,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcnt7zk,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnt7zk,4.6,ml,37.2,3.51,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcnt79k,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnt79k,4.5,ml,47.0,3.63,True,True,UNVERIFIED CANDIDATE
+4413,ak018fcnsk91,2018-11-30,https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91,7.1,mw,46.7,7.696,True,True,UNVERIFIED CANDIDATE
