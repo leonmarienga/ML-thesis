@@ -79,3 +79,17 @@ python analysis/thesis_disturbance_duration.py work/continuous-replay/doe-source
 ```
 
 The announcement replay includes the civil-day claims, independent timestamped archived bodies and origin-maturity bounds. The DOE replay preserves the complete-case screen, held report predictions and paired block bootstrap under the published protocol. The seven DOE files require both XLS and XLSX readers. [Batch 6 protocol](BATCH6_PROTOCOL.md).
+
+## Expanded declaration text coverage and independent outage observations
+
+```bash
+sha256sum -c research/continuous/BATCH7_SHA256SUMS
+mkdir -p work/continuous-replay/{older-extension,outage-source,documentary-extension,county-outages}
+tar xf research/continuous/documentary_extension/inputs/extended_announcement_responses.tar.gz -C work/continuous-replay/older-extension
+tar xf research/continuous/county_outages/inputs/eaglei_and_mesa_evidence.tar.gz -C work/continuous-replay/outage-source
+python analysis/thesis_older_announcement_archive.py work/continuous-replay/older-extension work/continuous-replay/documentary-extension --extend-quarterly-sample
+python analysis/thesis_documentary_support.py work/continuous-replay/documentary-extension/document_identity.csv work/continuous-replay/documentary-extension
+python analysis/thesis_outage_observability.py work/continuous-replay/outage-source work/continuous-replay/county-outages
+```
+
+The archived outage inputs include the exact rows for the fixed 24 counties and the filtered utility CSV. To reconstruct the slice, obtain file 42547879 from the pinned author-release URL and invoke the outage script with `--national /path/to/eaglei_outages_2018.csv`. It reads the retained release metadata, verifies the 999,210,542-byte file against its published MD5 and records SHA-256 for the source and extracted slice. The extracted data are enough for the offline analysis. [Locked protocol](BATCH7_PROTOCOL.md), [author distribution](https://doi.org/10.6084/m9.figshare.24237376.v1).

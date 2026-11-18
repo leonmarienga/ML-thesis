@@ -17,6 +17,8 @@ on:
       - 'analysis/thesis_full_geography_ablation.py'
       - 'analysis/thesis_older_announcement_archive.py'
       - 'analysis/thesis_disturbance_duration.py'
+      - 'analysis/thesis_documentary_support.py'
+      - 'analysis/thesis_outage_observability.py'
       - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
@@ -152,6 +154,26 @@ jobs:
           for scope in ("older_announcements", "disturbance_duration"):
               reference = Path("research/continuous") / scope / "results"
               replay = Path("work/batch6") / scope
+              assert {file.name for file in reference.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
+              for generated in sorted(replay.glob("*.csv")):
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(reference / generated.name),
+                                                check_exact=False, rtol=1e-8, atol=1e-8)
+          PY
+      - name: Replay wider documentary and county outage support
+        run: |
+          sha256sum -c research/continuous/BATCH7_SHA256SUMS
+          mkdir -p work/batch7/{older-source,outage-source,documentary_extension,county_outages}
+          tar xf research/continuous/documentary_extension/inputs/extended_announcement_responses.tar.gz -C work/batch7/older-source
+          tar xf research/continuous/county_outages/inputs/eaglei_and_mesa_evidence.tar.gz -C work/batch7/outage-source
+          python analysis/thesis_older_announcement_archive.py work/batch7/older-source work/batch7/documentary_extension --extend-quarterly-sample
+          python analysis/thesis_documentary_support.py work/batch7/documentary_extension/document_identity.csv work/batch7/documentary_extension
+          python analysis/thesis_outage_observability.py work/batch7/outage-source work/batch7/county_outages
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          for scope in ("documentary_extension", "county_outages"):
+              reference = Path("research/continuous") / scope / "results"
+              replay = Path("work/batch7") / scope
               assert {file.name for file in reference.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
               for generated in sorted(replay.glob("*.csv")):
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(reference / generated.name),
