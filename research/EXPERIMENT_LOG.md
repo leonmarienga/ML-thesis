@@ -47,3 +47,7 @@ The Federal Register screen recovered 341 exact historical declaration date and 
 ## Continuous research batch 3
 
 The full postcoverage signed-action audit processed 20,352 historical public transactions and identified 324 declarations with usable dated actions and an elapsed 36-month plus 90-day window. Strict origin maturity reduces high-band support, with no $500M+ training episodes in three origins and at most two in the others. Earlier constrained donor gates remain closed. The two-day safe-water simulation passed all 960 routing and inventory evaluations. The CVaR policy gained 0.89 points in bottom-decile weighted service and missed the two-point integration gate. [Protocol](continuous/BATCH3_PROTOCOL.md), [horizon audit](continuous/horizons/REPORT.md), [water experiment](continuous/water_recourse/REPORT.md).
+
+## Continuous research batch 4
+
+The White House archived publication route supplied 177 matched original announcements and materially extended early release evidence. The audit preserves published and modified time separately and proves no exact signing instant. The tropical wind trial tested OFCL quadrant forecasts against station observations. Relative to an equal-area circle, the quadrant geometry produced 27 fewer positive signals below the observed threshold and one additional measured exceedance miss. The three storms provide exploratory physical evidence. [Announcement source audit](continuous/announcements/REPORT.md), [wind verification](continuous/winds/REPORT.md).

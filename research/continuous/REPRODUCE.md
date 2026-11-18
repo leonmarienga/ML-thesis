@@ -38,3 +38,14 @@ tar xf research/continuous/horizons/inputs/historical_mission_actions_responses.
 python analysis/thesis_obligation_horizon_audit.py work/continuous-replay/actions-snapshot work/continuous-replay/horizons
 python analysis/thesis_water_recourse.py work/continuous-replay/water-recourse
 ```
+
+## Original announcement and tropical wind replay
+
+```bash
+sha256sum -c research/continuous/BATCH4_SHA256SUMS
+mkdir -p work/continuous-replay/{announcement-snapshot,wind-snapshot,announcements,winds}
+tar xf research/continuous/announcements/inputs/nara_public_html_responses.tar.gz -C work/continuous-replay/announcement-snapshot
+tar xf research/continuous/winds/inputs/noaa_public_wind_responses.tar.gz -C work/continuous-replay/wind-snapshot
+python analysis/thesis_whitehouse_announcements.py work/continuous-replay/announcement-snapshot work/continuous-replay/announcements
+python analysis/thesis_tropical_wind_verification.py work/continuous-replay/wind-snapshot work/continuous-replay/winds
+```

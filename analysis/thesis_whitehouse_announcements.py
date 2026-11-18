@@ -49,7 +49,7 @@ def archive_index(raw):
             stamp = URL_DATE.search(article)
             if stamp and "-".join(stamp.groups()) <= END and "-approves-" in article and "disaster-declaration" in article:
                 urls.add(article)
-    date_check = sorted(urls, key=lambda url: URL_DATE.search(url).group())
+    date_check = sorted(urls, key=lambda url: (URL_DATE.search(url).group(), url))
     if len(date_check) > 400:
         raise ValueError("Archived article cap reached")
     return date_check, source

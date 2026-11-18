@@ -10,6 +10,8 @@ on:
       - 'analysis/thesis_earthquake_impact_audit.py'
       - 'analysis/thesis_obligation_horizon_audit.py'
       - 'analysis/thesis_water_recourse.py'
+      - 'analysis/thesis_whitehouse_announcements.py'
+      - 'analysis/thesis_tropical_wind_verification.py'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
   workflow_dispatch:
@@ -91,5 +93,22 @@ jobs:
                   reader = pd.read_json if generated.name.endswith(".jsonl.gz") else pd.read_csv
                   args = {"lines": True} if reader is pd.read_json else {}
                   pd.testing.assert_frame_equal(reader(generated, **args), reader(expected, **args),
+                                                check_exact=False, rtol=1e-6, atol=1e-6)
+          PY
+      - name: Replay announcement publication and operational wind
+        run: |
+          sha256sum -c research/continuous/BATCH4_SHA256SUMS
+          mkdir -p work/batch4/{announcements-source,winds-source,announcements,winds}
+          tar xf research/continuous/announcements/inputs/nara_public_html_responses.tar.gz -C work/batch4/announcements-source
+          tar xf research/continuous/winds/inputs/noaa_public_wind_responses.tar.gz -C work/batch4/winds-source
+          python analysis/thesis_whitehouse_announcements.py work/batch4/announcements-source work/batch4/announcements
+          python analysis/thesis_tropical_wind_verification.py work/batch4/winds-source work/batch4/winds
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          for scope in ("announcements", "winds"):
+              for generated in sorted((Path("work/batch4") / scope).iterdir()):
+                  expected = Path("research/continuous") / scope / "results" / generated.name
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(expected),
                                                 check_exact=False, rtol=1e-6, atol=1e-6)
           PY
