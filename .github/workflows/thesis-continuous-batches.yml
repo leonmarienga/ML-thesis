@@ -6,6 +6,8 @@ on:
       - 'analysis/thesis_historical_coverage.py'
       - 'analysis/thesis_precoverage_ablation.py'
       - 'analysis/thesis_earthquake_auxiliary.py'
+      - 'analysis/thesis_declaration_publication.py'
+      - 'analysis/thesis_earthquake_impact_audit.py'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
   workflow_dispatch:
@@ -52,5 +54,22 @@ jobs:
                                ("pga-input", "earthquake/inputs"), ("pga", "earthquake/results")]:
               for generated in sorted((Path("work/batch1") / source).iterdir()):
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(expected / dest / generated.name),
+                                                check_exact=False, rtol=1e-6, atol=1e-6)
+          PY
+      - name: Replay publication timing and earthquake impact linkage
+        run: |
+          sha256sum -c research/continuous/BATCH2_SHA256SUMS
+          mkdir -p work/batch2/{filing-snapshot,impact-snapshot,filings,impacts}
+          tar xf research/continuous/filings/inputs/federal_register_public_responses.tar.gz -C work/batch2/filing-snapshot
+          tar xf research/continuous/impacts/inputs/noaa_impact_public_responses.tar.gz -C work/batch2/impact-snapshot
+          python analysis/thesis_declaration_publication.py work/batch2/filing-snapshot work/batch2/filings
+          python analysis/thesis_earthquake_impact_audit.py work/batch2/impact-snapshot work/batch2/impacts
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          for scope in ("filings", "impacts"):
+              for generated in sorted((Path("work/batch2") / scope).iterdir()):
+                  expected = Path("research/continuous") / scope / "results" / generated.name
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(expected),
                                                 check_exact=False, rtol=1e-6, atol=1e-6)
           PY

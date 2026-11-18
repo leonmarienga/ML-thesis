@@ -17,3 +17,14 @@ jupyter execute research/THESIS_REPRODUCTION.ipynb
 ```
 
 For the earthquake model alone, pass the retained `research/continuous/earthquake/inputs` folder without the paired fetch argument. The archive also retains the initial narrow query and data to support the recorded coverage diagnostic. The replay never joins the locked FY2025 cohort to obligations.
+
+## Publication and impact evidence replay
+
+```bash
+sha256sum -c research/continuous/BATCH2_SHA256SUMS
+mkdir -p work/continuous-replay/{filing-snapshot,impact-snapshot,filings,impacts}
+tar xf research/continuous/filings/inputs/federal_register_public_responses.tar.gz -C work/continuous-replay/filing-snapshot
+tar xf research/continuous/impacts/inputs/noaa_impact_public_responses.tar.gz -C work/continuous-replay/impact-snapshot
+python analysis/thesis_declaration_publication.py work/continuous-replay/filing-snapshot work/continuous-replay/filings
+python analysis/thesis_earthquake_impact_audit.py work/continuous-replay/impact-snapshot work/continuous-replay/impacts
+```
