@@ -28,3 +28,13 @@ tar xf research/continuous/impacts/inputs/noaa_impact_public_responses.tar.gz -C
 python analysis/thesis_declaration_publication.py work/continuous-replay/filing-snapshot work/continuous-replay/filings
 python analysis/thesis_earthquake_impact_audit.py work/continuous-replay/impact-snapshot work/continuous-replay/impacts
 ```
+
+## Obligation horizons and water simulation replay
+
+```bash
+sha256sum -c research/continuous/horizons/inputs/SHA256SUMS
+mkdir -p work/continuous-replay/{actions-snapshot,horizons,water-recourse}
+tar xf research/continuous/horizons/inputs/historical_mission_actions_responses.tar.gz -C work/continuous-replay/actions-snapshot
+python analysis/thesis_obligation_horizon_audit.py work/continuous-replay/actions-snapshot work/continuous-replay/horizons
+python analysis/thesis_water_recourse.py work/continuous-replay/water-recourse
+```

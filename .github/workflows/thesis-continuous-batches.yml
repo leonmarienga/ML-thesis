@@ -8,13 +8,15 @@ on:
       - 'analysis/thesis_earthquake_auxiliary.py'
       - 'analysis/thesis_declaration_publication.py'
       - 'analysis/thesis_earthquake_impact_audit.py'
+      - 'analysis/thesis_obligation_horizon_audit.py'
+      - 'analysis/thesis_water_recourse.py'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  batch1:
+  replay:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
@@ -71,5 +73,23 @@ jobs:
               for generated in sorted((Path("work/batch2") / scope).iterdir()):
                   expected = Path("research/continuous") / scope / "results" / generated.name
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(expected),
+                                                check_exact=False, rtol=1e-6, atol=1e-6)
+          PY
+      - name: Replay signed obligation horizons and water recourse
+        run: |
+          sha256sum -c research/continuous/horizons/inputs/SHA256SUMS
+          mkdir -p work/batch3/{snapshot,horizons,water_recourse}
+          tar xf research/continuous/horizons/inputs/historical_mission_actions_responses.tar.gz -C work/batch3/snapshot
+          python analysis/thesis_obligation_horizon_audit.py work/batch3/snapshot work/batch3/horizons
+          python analysis/thesis_water_recourse.py work/batch3/water_recourse
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          for scope in ("horizons", "water_recourse"):
+              for generated in sorted((Path("work/batch3") / scope).iterdir()):
+                  expected = Path("research/continuous") / scope / "results" / generated.name
+                  reader = pd.read_json if generated.name.endswith(".jsonl.gz") else pd.read_csv
+                  args = {"lines": True} if reader is pd.read_json else {}
+                  pd.testing.assert_frame_equal(reader(generated, **args), reader(expected, **args),
                                                 check_exact=False, rtol=1e-6, atol=1e-6)
           PY

@@ -43,3 +43,7 @@ Archived the bulk-source access failure, initial five-episode comparison and reg
 ## Continuous research batch 2
 
 The Federal Register screen recovered 341 exact historical declaration date and filing-time matches. All matched filings followed the seven-day horizon, and 98 were within 30 days even under conservative bounds. Drawing operational features from this route would have insufficient early coverage. The separately retained NOAA impact catalogue contributed 1,477 consequential-event records. Four of 12 instrument-qualified regional earthquakes had matched numeric economic damage. The lower impact support failed the model gate. [Filing report](continuous/filings/REPORT.md), [impact report](continuous/impacts/REPORT.md).
+
+## Continuous research batch 3
+
+The full postcoverage signed-action audit processed 20,352 historical public transactions and identified 324 declarations with usable dated actions and an elapsed 36-month plus 90-day window. Strict origin maturity reduces high-band support, with no $500M+ training episodes in three origins and at most two in the others. Earlier constrained donor gates remain closed. The two-day safe-water simulation passed all 960 routing and inventory evaluations. The CVaR policy gained 0.89 points in bottom-decile weighted service and missed the two-point integration gate. [Protocol](continuous/BATCH3_PROTOCOL.md), [horizon audit](continuous/horizons/REPORT.md), [water experiment](continuous/water_recourse/REPORT.md).
