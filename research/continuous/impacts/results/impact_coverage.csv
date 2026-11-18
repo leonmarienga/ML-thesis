@@ -1,0 +1,661 @@
+population,field,records,cadence,numeric_present,strictly_positive,documented_zero
+global,damageMillionsDollars,1477,all_years_1998_to_2024,275,275,0
+global,damageMillionsDollarsTotal,1477,all_years_1998_to_2024,281,281,0
+global,housesDestroyed,1477,all_years_1998_to_2024,419,419,0
+global,housesDestroyedTotal,1477,all_years_1998_to_2024,424,424,0
+global,deaths,1477,all_years_1998_to_2024,611,611,0
+global,deathsTotal,1477,all_years_1998_to_2024,624,624,0
+AFGHANISTAN,damageMillionsDollars,34,all_years_1998_to_2024,5,5,0
+AFGHANISTAN,damageMillionsDollarsTotal,34,all_years_1998_to_2024,5,5,0
+AFGHANISTAN,housesDestroyed,34,all_years_1998_to_2024,15,15,0
+AFGHANISTAN,housesDestroyedTotal,34,all_years_1998_to_2024,15,15,0
+AFGHANISTAN,deaths,34,all_years_1998_to_2024,27,27,0
+AFGHANISTAN,deathsTotal,34,all_years_1998_to_2024,27,27,0
+ALBANIA,damageMillionsDollars,9,all_years_1998_to_2024,2,2,0
+ALBANIA,damageMillionsDollarsTotal,9,all_years_1998_to_2024,2,2,0
+ALBANIA,housesDestroyed,9,all_years_1998_to_2024,3,3,0
+ALBANIA,housesDestroyedTotal,9,all_years_1998_to_2024,3,3,0
+ALBANIA,deaths,9,all_years_1998_to_2024,2,2,0
+ALBANIA,deathsTotal,9,all_years_1998_to_2024,2,2,0
+ALGERIA,damageMillionsDollars,17,all_years_1998_to_2024,2,2,0
+ALGERIA,damageMillionsDollarsTotal,17,all_years_1998_to_2024,2,2,0
+ALGERIA,housesDestroyed,17,all_years_1998_to_2024,2,2,0
+ALGERIA,housesDestroyedTotal,17,all_years_1998_to_2024,3,3,0
+ALGERIA,deaths,17,all_years_1998_to_2024,8,8,0
+ALGERIA,deathsTotal,17,all_years_1998_to_2024,8,8,0
+ANTARCTICA,damageMillionsDollars,4,all_years_1998_to_2024,0,0,0
+ANTARCTICA,damageMillionsDollarsTotal,4,all_years_1998_to_2024,0,0,0
+ANTARCTICA,housesDestroyed,4,all_years_1998_to_2024,0,0,0
+ANTARCTICA,housesDestroyedTotal,4,all_years_1998_to_2024,0,0,0
+ANTARCTICA,deaths,4,all_years_1998_to_2024,0,0,0
+ANTARCTICA,deathsTotal,4,all_years_1998_to_2024,0,0,0
+ARGENTINA,damageMillionsDollars,7,all_years_1998_to_2024,1,1,0
+ARGENTINA,damageMillionsDollarsTotal,7,all_years_1998_to_2024,1,1,0
+ARGENTINA,housesDestroyed,7,all_years_1998_to_2024,2,2,0
+ARGENTINA,housesDestroyedTotal,7,all_years_1998_to_2024,2,2,0
+ARGENTINA,deaths,7,all_years_1998_to_2024,3,3,0
+ARGENTINA,deathsTotal,7,all_years_1998_to_2024,3,3,0
+ARMENIA,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+ARMENIA,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+ARMENIA,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+ARMENIA,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+ARMENIA,deaths,1,all_years_1998_to_2024,0,0,0
+ARMENIA,deathsTotal,1,all_years_1998_to_2024,0,0,0
+ATLANTIC OCEAN,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+ATLANTIC OCEAN,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+ATLANTIC OCEAN,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+ATLANTIC OCEAN,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+ATLANTIC OCEAN,deaths,2,all_years_1998_to_2024,0,0,0
+ATLANTIC OCEAN,deathsTotal,2,all_years_1998_to_2024,0,0,0
+AUSTRALIA,damageMillionsDollars,6,all_years_1998_to_2024,1,1,0
+AUSTRALIA,damageMillionsDollarsTotal,6,all_years_1998_to_2024,1,1,0
+AUSTRALIA,housesDestroyed,6,all_years_1998_to_2024,0,0,0
+AUSTRALIA,housesDestroyedTotal,6,all_years_1998_to_2024,0,0,0
+AUSTRALIA,deaths,6,all_years_1998_to_2024,0,0,0
+AUSTRALIA,deathsTotal,6,all_years_1998_to_2024,0,0,0
+AUSTRIA,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+AUSTRIA,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+AUSTRIA,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+AUSTRIA,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+AUSTRIA,deaths,2,all_years_1998_to_2024,1,1,0
+AUSTRIA,deathsTotal,2,all_years_1998_to_2024,1,1,0
+AZERBAIJAN,damageMillionsDollars,6,all_years_1998_to_2024,1,1,0
+AZERBAIJAN,damageMillionsDollarsTotal,6,all_years_1998_to_2024,1,1,0
+AZERBAIJAN,housesDestroyed,6,all_years_1998_to_2024,1,1,0
+AZERBAIJAN,housesDestroyedTotal,6,all_years_1998_to_2024,1,1,0
+AZERBAIJAN,deaths,6,all_years_1998_to_2024,3,3,0
+AZERBAIJAN,deathsTotal,6,all_years_1998_to_2024,3,3,0
+AZORES (PORTUGAL),damageMillionsDollars,1,all_years_1998_to_2024,1,1,0
+AZORES (PORTUGAL),damageMillionsDollarsTotal,1,all_years_1998_to_2024,1,1,0
+AZORES (PORTUGAL),housesDestroyed,1,all_years_1998_to_2024,1,1,0
+AZORES (PORTUGAL),housesDestroyedTotal,1,all_years_1998_to_2024,1,1,0
+AZORES (PORTUGAL),deaths,1,all_years_1998_to_2024,1,1,0
+AZORES (PORTUGAL),deathsTotal,1,all_years_1998_to_2024,1,1,0
+BANGLADESH,damageMillionsDollars,8,all_years_1998_to_2024,0,0,0
+BANGLADESH,damageMillionsDollarsTotal,8,all_years_1998_to_2024,0,0,0
+BANGLADESH,housesDestroyed,8,all_years_1998_to_2024,2,2,0
+BANGLADESH,housesDestroyedTotal,8,all_years_1998_to_2024,2,2,0
+BANGLADESH,deaths,8,all_years_1998_to_2024,3,3,0
+BANGLADESH,deathsTotal,8,all_years_1998_to_2024,3,3,0
+BHUTAN,damageMillionsDollars,5,all_years_1998_to_2024,0,0,0
+BHUTAN,damageMillionsDollarsTotal,5,all_years_1998_to_2024,0,0,0
+BHUTAN,housesDestroyed,5,all_years_1998_to_2024,2,2,0
+BHUTAN,housesDestroyedTotal,5,all_years_1998_to_2024,2,2,0
+BHUTAN,deaths,5,all_years_1998_to_2024,1,1,0
+BHUTAN,deathsTotal,5,all_years_1998_to_2024,1,1,0
+BOLIVIA,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+BOLIVIA,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+BOLIVIA,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+BOLIVIA,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+BOLIVIA,deaths,1,all_years_1998_to_2024,1,1,0
+BOLIVIA,deathsTotal,1,all_years_1998_to_2024,1,1,0
+BOSNIA-HERZEGOVINA,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+BOSNIA-HERZEGOVINA,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+BOSNIA-HERZEGOVINA,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+BOSNIA-HERZEGOVINA,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+BOSNIA-HERZEGOVINA,deaths,2,all_years_1998_to_2024,2,2,0
+BOSNIA-HERZEGOVINA,deathsTotal,2,all_years_1998_to_2024,2,2,0
+BRAZIL,damageMillionsDollars,4,all_years_1998_to_2024,0,0,0
+BRAZIL,damageMillionsDollarsTotal,4,all_years_1998_to_2024,0,0,0
+BRAZIL,housesDestroyed,4,all_years_1998_to_2024,1,1,0
+BRAZIL,housesDestroyedTotal,4,all_years_1998_to_2024,1,1,0
+BRAZIL,deaths,4,all_years_1998_to_2024,1,1,0
+BRAZIL,deathsTotal,4,all_years_1998_to_2024,1,1,0
+BULGARIA,damageMillionsDollars,3,all_years_1998_to_2024,0,0,0
+BULGARIA,damageMillionsDollarsTotal,3,all_years_1998_to_2024,0,0,0
+BULGARIA,housesDestroyed,3,all_years_1998_to_2024,1,1,0
+BULGARIA,housesDestroyedTotal,3,all_years_1998_to_2024,1,1,0
+BULGARIA,deaths,3,all_years_1998_to_2024,0,0,0
+BULGARIA,deathsTotal,3,all_years_1998_to_2024,0,0,0
+BURUNDI,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+BURUNDI,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+BURUNDI,housesDestroyed,1,all_years_1998_to_2024,1,1,0
+BURUNDI,housesDestroyedTotal,1,all_years_1998_to_2024,1,1,0
+BURUNDI,deaths,1,all_years_1998_to_2024,1,1,0
+BURUNDI,deathsTotal,1,all_years_1998_to_2024,1,1,0
+CANADA,damageMillionsDollars,5,all_years_1998_to_2024,0,0,0
+CANADA,damageMillionsDollarsTotal,5,all_years_1998_to_2024,0,0,0
+CANADA,housesDestroyed,5,all_years_1998_to_2024,0,0,0
+CANADA,housesDestroyedTotal,5,all_years_1998_to_2024,0,0,0
+CANADA,deaths,5,all_years_1998_to_2024,0,0,0
+CANADA,deathsTotal,5,all_years_1998_to_2024,1,1,0
+CHILE,damageMillionsDollars,32,all_years_1998_to_2024,6,6,0
+CHILE,damageMillionsDollarsTotal,32,all_years_1998_to_2024,6,6,0
+CHILE,housesDestroyed,32,all_years_1998_to_2024,3,3,0
+CHILE,housesDestroyedTotal,32,all_years_1998_to_2024,3,3,0
+CHILE,deaths,32,all_years_1998_to_2024,13,13,0
+CHILE,deathsTotal,32,all_years_1998_to_2024,13,13,0
+CHINA,damageMillionsDollars,165,all_years_1998_to_2024,52,52,0
+CHINA,damageMillionsDollarsTotal,165,all_years_1998_to_2024,53,53,0
+CHINA,housesDestroyed,165,all_years_1998_to_2024,85,85,0
+CHINA,housesDestroyedTotal,165,all_years_1998_to_2024,85,85,0
+CHINA,deaths,165,all_years_1998_to_2024,71,71,0
+CHINA,deathsTotal,165,all_years_1998_to_2024,71,71,0
+COLOMBIA,damageMillionsDollars,14,all_years_1998_to_2024,2,2,0
+COLOMBIA,damageMillionsDollarsTotal,14,all_years_1998_to_2024,2,2,0
+COLOMBIA,housesDestroyed,14,all_years_1998_to_2024,7,7,0
+COLOMBIA,housesDestroyedTotal,14,all_years_1998_to_2024,7,7,0
+COLOMBIA,deaths,14,all_years_1998_to_2024,7,7,0
+COLOMBIA,deathsTotal,14,all_years_1998_to_2024,7,7,0
+COMOROS,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+COMOROS,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+COMOROS,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+COMOROS,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+COMOROS,deaths,1,all_years_1998_to_2024,0,0,0
+COMOROS,deathsTotal,1,all_years_1998_to_2024,0,0,0
+CONGO,damageMillionsDollars,4,all_years_1998_to_2024,1,1,0
+CONGO,damageMillionsDollarsTotal,4,all_years_1998_to_2024,1,1,0
+CONGO,housesDestroyed,4,all_years_1998_to_2024,2,2,0
+CONGO,housesDestroyedTotal,4,all_years_1998_to_2024,2,2,0
+CONGO,deaths,4,all_years_1998_to_2024,4,4,0
+CONGO,deathsTotal,4,all_years_1998_to_2024,4,4,0
+COSTA RICA,damageMillionsDollars,6,all_years_1998_to_2024,2,2,0
+COSTA RICA,damageMillionsDollarsTotal,6,all_years_1998_to_2024,2,2,0
+COSTA RICA,housesDestroyed,6,all_years_1998_to_2024,2,2,0
+COSTA RICA,housesDestroyedTotal,6,all_years_1998_to_2024,2,2,0
+COSTA RICA,deaths,6,all_years_1998_to_2024,4,4,0
+COSTA RICA,deathsTotal,6,all_years_1998_to_2024,4,4,0
+CROATIA,damageMillionsDollars,2,all_years_1998_to_2024,2,2,0
+CROATIA,damageMillionsDollarsTotal,2,all_years_1998_to_2024,2,2,0
+CROATIA,housesDestroyed,2,all_years_1998_to_2024,2,2,0
+CROATIA,housesDestroyedTotal,2,all_years_1998_to_2024,2,2,0
+CROATIA,deaths,2,all_years_1998_to_2024,2,2,0
+CROATIA,deathsTotal,2,all_years_1998_to_2024,2,2,0
+CUBA,damageMillionsDollars,2,all_years_1998_to_2024,1,1,0
+CUBA,damageMillionsDollarsTotal,2,all_years_1998_to_2024,1,1,0
+CUBA,housesDestroyed,2,all_years_1998_to_2024,2,2,0
+CUBA,housesDestroyedTotal,2,all_years_1998_to_2024,2,2,0
+CUBA,deaths,2,all_years_1998_to_2024,0,0,0
+CUBA,deathsTotal,2,all_years_1998_to_2024,0,0,0
+CYPRUS,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+CYPRUS,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+CYPRUS,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+CYPRUS,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+CYPRUS,deaths,1,all_years_1998_to_2024,1,1,0
+CYPRUS,deathsTotal,1,all_years_1998_to_2024,1,1,0
+CZECH REPUBLIC,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+CZECH REPUBLIC,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+CZECH REPUBLIC,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+CZECH REPUBLIC,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+CZECH REPUBLIC,deaths,1,all_years_1998_to_2024,1,1,0
+CZECH REPUBLIC,deathsTotal,1,all_years_1998_to_2024,1,1,0
+DOMINICAN REPUBLIC,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+DOMINICAN REPUBLIC,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+DOMINICAN REPUBLIC,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+DOMINICAN REPUBLIC,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+DOMINICAN REPUBLIC,deaths,2,all_years_1998_to_2024,1,1,0
+DOMINICAN REPUBLIC,deathsTotal,2,all_years_1998_to_2024,1,1,0
+ECUADOR,damageMillionsDollars,18,all_years_1998_to_2024,1,1,0
+ECUADOR,damageMillionsDollarsTotal,18,all_years_1998_to_2024,1,1,0
+ECUADOR,housesDestroyed,18,all_years_1998_to_2024,6,6,0
+ECUADOR,housesDestroyedTotal,18,all_years_1998_to_2024,6,6,0
+ECUADOR,deaths,18,all_years_1998_to_2024,10,10,0
+ECUADOR,deathsTotal,18,all_years_1998_to_2024,10,10,0
+EGYPT,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+EGYPT,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+EGYPT,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+EGYPT,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+EGYPT,deaths,1,all_years_1998_to_2024,0,0,0
+EGYPT,deathsTotal,1,all_years_1998_to_2024,0,0,0
+EL SALVADOR,damageMillionsDollars,10,all_years_1998_to_2024,2,2,0
+EL SALVADOR,damageMillionsDollarsTotal,10,all_years_1998_to_2024,2,2,0
+EL SALVADOR,housesDestroyed,10,all_years_1998_to_2024,6,6,0
+EL SALVADOR,housesDestroyedTotal,10,all_years_1998_to_2024,6,6,0
+EL SALVADOR,deaths,10,all_years_1998_to_2024,6,6,0
+EL SALVADOR,deathsTotal,10,all_years_1998_to_2024,6,6,0
+ETHIOPIA,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+ETHIOPIA,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+ETHIOPIA,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+ETHIOPIA,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+ETHIOPIA,deaths,2,all_years_1998_to_2024,0,0,0
+ETHIOPIA,deathsTotal,2,all_years_1998_to_2024,0,0,0
+FIJI,damageMillionsDollars,5,all_years_1998_to_2024,0,0,0
+FIJI,damageMillionsDollarsTotal,5,all_years_1998_to_2024,0,0,0
+FIJI,housesDestroyed,5,all_years_1998_to_2024,0,0,0
+FIJI,housesDestroyedTotal,5,all_years_1998_to_2024,0,0,0
+FIJI,deaths,5,all_years_1998_to_2024,0,0,0
+FIJI,deathsTotal,5,all_years_1998_to_2024,0,0,0
+FRANCE,damageMillionsDollars,6,all_years_1998_to_2024,2,2,0
+FRANCE,damageMillionsDollarsTotal,6,all_years_1998_to_2024,2,2,0
+FRANCE,housesDestroyed,6,all_years_1998_to_2024,0,0,0
+FRANCE,housesDestroyedTotal,6,all_years_1998_to_2024,0,0,0
+FRANCE,deaths,6,all_years_1998_to_2024,0,0,0
+FRANCE,deathsTotal,6,all_years_1998_to_2024,0,0,0
+GEORGIA,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+GEORGIA,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+GEORGIA,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+GEORGIA,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+GEORGIA,deaths,2,all_years_1998_to_2024,1,1,0
+GEORGIA,deathsTotal,2,all_years_1998_to_2024,1,1,0
+GERMANY,damageMillionsDollars,4,all_years_1998_to_2024,1,1,0
+GERMANY,damageMillionsDollarsTotal,4,all_years_1998_to_2024,1,1,0
+GERMANY,housesDestroyed,4,all_years_1998_to_2024,0,0,0
+GERMANY,housesDestroyedTotal,4,all_years_1998_to_2024,0,0,0
+GERMANY,deaths,4,all_years_1998_to_2024,0,0,0
+GERMANY,deathsTotal,4,all_years_1998_to_2024,0,0,0
+GREECE,damageMillionsDollars,28,all_years_1998_to_2024,4,4,0
+GREECE,damageMillionsDollarsTotal,28,all_years_1998_to_2024,4,4,0
+GREECE,housesDestroyed,28,all_years_1998_to_2024,7,7,0
+GREECE,housesDestroyedTotal,28,all_years_1998_to_2024,7,7,0
+GREECE,deaths,28,all_years_1998_to_2024,6,6,0
+GREECE,deathsTotal,28,all_years_1998_to_2024,6,6,0
+GUADELOUPE,damageMillionsDollars,2,all_years_1998_to_2024,1,1,0
+GUADELOUPE,damageMillionsDollarsTotal,2,all_years_1998_to_2024,1,1,0
+GUADELOUPE,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+GUADELOUPE,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+GUADELOUPE,deaths,2,all_years_1998_to_2024,1,1,0
+GUADELOUPE,deathsTotal,2,all_years_1998_to_2024,1,1,0
+GUATEMALA,damageMillionsDollars,11,all_years_1998_to_2024,2,2,0
+GUATEMALA,damageMillionsDollarsTotal,11,all_years_1998_to_2024,2,2,0
+GUATEMALA,housesDestroyed,11,all_years_1998_to_2024,4,4,0
+GUATEMALA,housesDestroyedTotal,11,all_years_1998_to_2024,4,4,0
+GUATEMALA,deaths,11,all_years_1998_to_2024,6,6,0
+GUATEMALA,deathsTotal,11,all_years_1998_to_2024,6,6,0
+HAITI,damageMillionsDollars,5,all_years_1998_to_2024,3,3,0
+HAITI,damageMillionsDollarsTotal,5,all_years_1998_to_2024,3,3,0
+HAITI,housesDestroyed,5,all_years_1998_to_2024,4,4,0
+HAITI,housesDestroyedTotal,5,all_years_1998_to_2024,4,4,0
+HAITI,deaths,5,all_years_1998_to_2024,5,5,0
+HAITI,deathsTotal,5,all_years_1998_to_2024,5,5,0
+HONDURAS,damageMillionsDollars,3,all_years_1998_to_2024,1,1,0
+HONDURAS,damageMillionsDollarsTotal,3,all_years_1998_to_2024,1,1,0
+HONDURAS,housesDestroyed,3,all_years_1998_to_2024,2,2,0
+HONDURAS,housesDestroyedTotal,3,all_years_1998_to_2024,2,2,0
+HONDURAS,deaths,3,all_years_1998_to_2024,1,1,0
+HONDURAS,deathsTotal,3,all_years_1998_to_2024,1,1,0
+HUNGARY,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+HUNGARY,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+HUNGARY,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+HUNGARY,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+HUNGARY,deaths,2,all_years_1998_to_2024,0,0,0
+HUNGARY,deathsTotal,2,all_years_1998_to_2024,0,0,0
+ICELAND,damageMillionsDollars,3,all_years_1998_to_2024,2,2,0
+ICELAND,damageMillionsDollarsTotal,3,all_years_1998_to_2024,2,2,0
+ICELAND,housesDestroyed,3,all_years_1998_to_2024,2,2,0
+ICELAND,housesDestroyedTotal,3,all_years_1998_to_2024,2,2,0
+ICELAND,deaths,3,all_years_1998_to_2024,0,0,0
+ICELAND,deathsTotal,3,all_years_1998_to_2024,0,0,0
+INDIA,damageMillionsDollars,53,all_years_1998_to_2024,5,5,0
+INDIA,damageMillionsDollarsTotal,53,all_years_1998_to_2024,4,4,0
+INDIA,housesDestroyed,53,all_years_1998_to_2024,6,6,0
+INDIA,housesDestroyedTotal,53,all_years_1998_to_2024,6,6,0
+INDIA,deaths,53,all_years_1998_to_2024,17,17,0
+INDIA,deathsTotal,53,all_years_1998_to_2024,18,18,0
+INDIAN OCEAN,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+INDIAN OCEAN,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+INDIAN OCEAN,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+INDIAN OCEAN,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+INDIAN OCEAN,deaths,1,all_years_1998_to_2024,0,0,0
+INDIAN OCEAN,deathsTotal,1,all_years_1998_to_2024,0,0,0
+INDONESIA,damageMillionsDollars,151,all_years_1998_to_2024,24,24,0
+INDONESIA,damageMillionsDollarsTotal,151,all_years_1998_to_2024,26,26,0
+INDONESIA,housesDestroyed,151,all_years_1998_to_2024,51,51,0
+INDONESIA,housesDestroyedTotal,151,all_years_1998_to_2024,55,55,0
+INDONESIA,deaths,151,all_years_1998_to_2024,85,85,0
+INDONESIA,deathsTotal,151,all_years_1998_to_2024,89,89,0
+IRAN,damageMillionsDollars,95,all_years_1998_to_2024,15,15,0
+IRAN,damageMillionsDollarsTotal,95,all_years_1998_to_2024,15,15,0
+IRAN,housesDestroyed,95,all_years_1998_to_2024,21,21,0
+IRAN,housesDestroyedTotal,95,all_years_1998_to_2024,21,21,0
+IRAN,deaths,95,all_years_1998_to_2024,47,47,0
+IRAN,deathsTotal,95,all_years_1998_to_2024,47,47,0
+ITALY,damageMillionsDollars,20,all_years_1998_to_2024,9,9,0
+ITALY,damageMillionsDollarsTotal,20,all_years_1998_to_2024,9,9,0
+ITALY,housesDestroyed,20,all_years_1998_to_2024,3,3,0
+ITALY,housesDestroyedTotal,20,all_years_1998_to_2024,3,3,0
+ITALY,deaths,20,all_years_1998_to_2024,11,11,0
+ITALY,deathsTotal,20,all_years_1998_to_2024,11,11,0
+JAPAN,damageMillionsDollars,84,all_years_1998_to_2024,17,17,0
+JAPAN,damageMillionsDollarsTotal,84,all_years_1998_to_2024,17,17,0
+JAPAN,housesDestroyed,84,all_years_1998_to_2024,20,20,0
+JAPAN,housesDestroyedTotal,84,all_years_1998_to_2024,19,19,0
+JAPAN,deaths,84,all_years_1998_to_2024,19,19,0
+JAPAN,deathsTotal,84,all_years_1998_to_2024,20,20,0
+JORDAN,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+JORDAN,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+JORDAN,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+JORDAN,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+JORDAN,deaths,1,all_years_1998_to_2024,0,0,0
+JORDAN,deathsTotal,1,all_years_1998_to_2024,0,0,0
+KAZAKHSTAN,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+KAZAKHSTAN,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+KAZAKHSTAN,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+KAZAKHSTAN,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+KAZAKHSTAN,deaths,1,all_years_1998_to_2024,1,1,0
+KAZAKHSTAN,deathsTotal,1,all_years_1998_to_2024,1,1,0
+KERMADEC ISLANDS (NEW ZEALAND),damageMillionsDollars,9,all_years_1998_to_2024,0,0,0
+KERMADEC ISLANDS (NEW ZEALAND),damageMillionsDollarsTotal,9,all_years_1998_to_2024,0,0,0
+KERMADEC ISLANDS (NEW ZEALAND),housesDestroyed,9,all_years_1998_to_2024,0,0,0
+KERMADEC ISLANDS (NEW ZEALAND),housesDestroyedTotal,9,all_years_1998_to_2024,0,0,0
+KERMADEC ISLANDS (NEW ZEALAND),deaths,9,all_years_1998_to_2024,0,0,0
+KERMADEC ISLANDS (NEW ZEALAND),deathsTotal,9,all_years_1998_to_2024,0,0,0
+KYRGYZSTAN,damageMillionsDollars,6,all_years_1998_to_2024,1,1,0
+KYRGYZSTAN,damageMillionsDollarsTotal,6,all_years_1998_to_2024,1,1,0
+KYRGYZSTAN,housesDestroyed,6,all_years_1998_to_2024,4,4,0
+KYRGYZSTAN,housesDestroyedTotal,6,all_years_1998_to_2024,4,4,0
+KYRGYZSTAN,deaths,6,all_years_1998_to_2024,1,1,0
+KYRGYZSTAN,deathsTotal,6,all_years_1998_to_2024,1,1,0
+LAOS,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+LAOS,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+LAOS,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+LAOS,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+LAOS,deaths,2,all_years_1998_to_2024,0,0,0
+LAOS,deathsTotal,2,all_years_1998_to_2024,0,0,0
+LEBANON,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+LEBANON,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+LEBANON,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+LEBANON,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+LEBANON,deaths,1,all_years_1998_to_2024,0,0,0
+LEBANON,deathsTotal,1,all_years_1998_to_2024,0,0,0
+MADAGASCAR,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+MADAGASCAR,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+MADAGASCAR,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+MADAGASCAR,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+MADAGASCAR,deaths,1,all_years_1998_to_2024,1,1,0
+MADAGASCAR,deathsTotal,1,all_years_1998_to_2024,1,1,0
+MALAWI,damageMillionsDollars,3,all_years_1998_to_2024,0,0,0
+MALAWI,damageMillionsDollarsTotal,3,all_years_1998_to_2024,0,0,0
+MALAWI,housesDestroyed,3,all_years_1998_to_2024,1,1,0
+MALAWI,housesDestroyedTotal,3,all_years_1998_to_2024,1,1,0
+MALAWI,deaths,3,all_years_1998_to_2024,2,2,0
+MALAWI,deathsTotal,3,all_years_1998_to_2024,2,2,0
+MALAYSIA,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+MALAYSIA,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+MALAYSIA,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+MALAYSIA,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+MALAYSIA,deaths,1,all_years_1998_to_2024,1,1,0
+MALAYSIA,deathsTotal,1,all_years_1998_to_2024,1,1,0
+MARTINIQUE,damageMillionsDollars,1,all_years_1998_to_2024,1,1,0
+MARTINIQUE,damageMillionsDollarsTotal,1,all_years_1998_to_2024,1,1,0
+MARTINIQUE,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+MARTINIQUE,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+MARTINIQUE,deaths,1,all_years_1998_to_2024,1,1,0
+MARTINIQUE,deathsTotal,1,all_years_1998_to_2024,1,1,0
+MEXICO,damageMillionsDollars,35,all_years_1998_to_2024,13,13,0
+MEXICO,damageMillionsDollarsTotal,35,all_years_1998_to_2024,13,13,0
+MEXICO,housesDestroyed,35,all_years_1998_to_2024,7,7,0
+MEXICO,housesDestroyedTotal,35,all_years_1998_to_2024,7,7,0
+MEXICO,deaths,35,all_years_1998_to_2024,18,18,0
+MEXICO,deathsTotal,35,all_years_1998_to_2024,18,18,0
+MONTENEGRO,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+MONTENEGRO,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+MONTENEGRO,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+MONTENEGRO,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+MONTENEGRO,deaths,1,all_years_1998_to_2024,0,0,0
+MONTENEGRO,deathsTotal,1,all_years_1998_to_2024,0,0,0
+MOROCCO,damageMillionsDollars,3,all_years_1998_to_2024,2,2,0
+MOROCCO,damageMillionsDollarsTotal,3,all_years_1998_to_2024,2,2,0
+MOROCCO,housesDestroyed,3,all_years_1998_to_2024,2,2,0
+MOROCCO,housesDestroyedTotal,3,all_years_1998_to_2024,2,2,0
+MOROCCO,deaths,3,all_years_1998_to_2024,3,3,0
+MOROCCO,deathsTotal,3,all_years_1998_to_2024,3,3,0
+MOZAMBIQUE,damageMillionsDollars,3,all_years_1998_to_2024,0,0,0
+MOZAMBIQUE,damageMillionsDollarsTotal,3,all_years_1998_to_2024,0,0,0
+MOZAMBIQUE,housesDestroyed,3,all_years_1998_to_2024,3,3,0
+MOZAMBIQUE,housesDestroyedTotal,3,all_years_1998_to_2024,3,3,0
+MOZAMBIQUE,deaths,3,all_years_1998_to_2024,1,1,0
+MOZAMBIQUE,deathsTotal,3,all_years_1998_to_2024,1,1,0
+MYANMAR (BURMA),damageMillionsDollars,12,all_years_1998_to_2024,3,3,0
+MYANMAR (BURMA),damageMillionsDollarsTotal,12,all_years_1998_to_2024,3,3,0
+MYANMAR (BURMA),housesDestroyed,12,all_years_1998_to_2024,2,2,0
+MYANMAR (BURMA),housesDestroyedTotal,12,all_years_1998_to_2024,2,2,0
+MYANMAR (BURMA),deaths,12,all_years_1998_to_2024,8,8,0
+MYANMAR (BURMA),deathsTotal,12,all_years_1998_to_2024,8,8,0
+NEPAL,damageMillionsDollars,10,all_years_1998_to_2024,2,2,0
+NEPAL,damageMillionsDollarsTotal,10,all_years_1998_to_2024,2,2,0
+NEPAL,housesDestroyed,10,all_years_1998_to_2024,6,6,0
+NEPAL,housesDestroyedTotal,10,all_years_1998_to_2024,6,6,0
+NEPAL,deaths,10,all_years_1998_to_2024,8,8,0
+NEPAL,deathsTotal,10,all_years_1998_to_2024,8,8,0
+NETHERLANDS,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+NETHERLANDS,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+NETHERLANDS,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+NETHERLANDS,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+NETHERLANDS,deaths,2,all_years_1998_to_2024,0,0,0
+NETHERLANDS,deathsTotal,2,all_years_1998_to_2024,0,0,0
+NEW CALEDONIA,damageMillionsDollars,20,all_years_1998_to_2024,0,0,0
+NEW CALEDONIA,damageMillionsDollarsTotal,20,all_years_1998_to_2024,0,0,0
+NEW CALEDONIA,housesDestroyed,20,all_years_1998_to_2024,0,0,0
+NEW CALEDONIA,housesDestroyedTotal,20,all_years_1998_to_2024,0,0,0
+NEW CALEDONIA,deaths,20,all_years_1998_to_2024,0,0,0
+NEW CALEDONIA,deathsTotal,20,all_years_1998_to_2024,0,0,0
+NEW ZEALAND,damageMillionsDollars,30,all_years_1998_to_2024,5,5,0
+NEW ZEALAND,damageMillionsDollarsTotal,30,all_years_1998_to_2024,5,5,0
+NEW ZEALAND,housesDestroyed,30,all_years_1998_to_2024,3,3,0
+NEW ZEALAND,housesDestroyedTotal,30,all_years_1998_to_2024,3,3,0
+NEW ZEALAND,deaths,30,all_years_1998_to_2024,5,5,0
+NEW ZEALAND,deathsTotal,30,all_years_1998_to_2024,5,5,0
+NICARAGUA,damageMillionsDollars,8,all_years_1998_to_2024,1,1,0
+NICARAGUA,damageMillionsDollarsTotal,8,all_years_1998_to_2024,1,1,0
+NICARAGUA,housesDestroyed,8,all_years_1998_to_2024,5,5,0
+NICARAGUA,housesDestroyedTotal,8,all_years_1998_to_2024,5,5,0
+NICARAGUA,deaths,8,all_years_1998_to_2024,3,3,0
+NICARAGUA,deathsTotal,8,all_years_1998_to_2024,3,3,0
+NORTH MACEDONIA,damageMillionsDollars,2,all_years_1998_to_2024,1,1,0
+NORTH MACEDONIA,damageMillionsDollarsTotal,2,all_years_1998_to_2024,1,1,0
+NORTH MACEDONIA,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+NORTH MACEDONIA,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+NORTH MACEDONIA,deaths,2,all_years_1998_to_2024,0,0,0
+NORTH MACEDONIA,deathsTotal,2,all_years_1998_to_2024,0,0,0
+PAKISTAN,damageMillionsDollars,25,all_years_1998_to_2024,3,3,0
+PAKISTAN,damageMillionsDollarsTotal,25,all_years_1998_to_2024,3,3,0
+PAKISTAN,housesDestroyed,25,all_years_1998_to_2024,9,9,0
+PAKISTAN,housesDestroyedTotal,25,all_years_1998_to_2024,8,8,0
+PAKISTAN,deaths,25,all_years_1998_to_2024,17,17,0
+PAKISTAN,deathsTotal,25,all_years_1998_to_2024,17,17,0
+PANAMA,damageMillionsDollars,9,all_years_1998_to_2024,0,0,0
+PANAMA,damageMillionsDollarsTotal,9,all_years_1998_to_2024,0,0,0
+PANAMA,housesDestroyed,9,all_years_1998_to_2024,0,0,0
+PANAMA,housesDestroyedTotal,9,all_years_1998_to_2024,0,0,0
+PANAMA,deaths,9,all_years_1998_to_2024,1,1,0
+PANAMA,deathsTotal,9,all_years_1998_to_2024,1,1,0
+PAPUA NEW GUINEA,damageMillionsDollars,29,all_years_1998_to_2024,2,2,0
+PAPUA NEW GUINEA,damageMillionsDollarsTotal,29,all_years_1998_to_2024,2,2,0
+PAPUA NEW GUINEA,housesDestroyed,29,all_years_1998_to_2024,8,8,0
+PAPUA NEW GUINEA,housesDestroyedTotal,29,all_years_1998_to_2024,8,8,0
+PAPUA NEW GUINEA,deaths,29,all_years_1998_to_2024,15,15,0
+PAPUA NEW GUINEA,deathsTotal,29,all_years_1998_to_2024,16,16,0
+PERU,damageMillionsDollars,43,all_years_1998_to_2024,2,2,0
+PERU,damageMillionsDollarsTotal,43,all_years_1998_to_2024,3,3,0
+PERU,housesDestroyed,43,all_years_1998_to_2024,26,26,0
+PERU,housesDestroyedTotal,43,all_years_1998_to_2024,26,26,0
+PERU,deaths,43,all_years_1998_to_2024,21,21,0
+PERU,deathsTotal,43,all_years_1998_to_2024,21,21,0
+PHILIPPINES,damageMillionsDollars,46,all_years_1998_to_2024,17,17,0
+PHILIPPINES,damageMillionsDollarsTotal,46,all_years_1998_to_2024,17,17,0
+PHILIPPINES,housesDestroyed,46,all_years_1998_to_2024,23,23,0
+PHILIPPINES,housesDestroyedTotal,46,all_years_1998_to_2024,23,23,0
+PHILIPPINES,deaths,46,all_years_1998_to_2024,24,24,0
+PHILIPPINES,deathsTotal,46,all_years_1998_to_2024,24,24,0
+POLAND,damageMillionsDollars,8,all_years_1998_to_2024,0,0,0
+POLAND,damageMillionsDollarsTotal,8,all_years_1998_to_2024,0,0,0
+POLAND,housesDestroyed,8,all_years_1998_to_2024,0,0,0
+POLAND,housesDestroyedTotal,8,all_years_1998_to_2024,0,0,0
+POLAND,deaths,8,all_years_1998_to_2024,7,7,0
+POLAND,deathsTotal,8,all_years_1998_to_2024,7,7,0
+ROMANIA,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+ROMANIA,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+ROMANIA,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+ROMANIA,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+ROMANIA,deaths,1,all_years_1998_to_2024,0,0,0
+ROMANIA,deathsTotal,1,all_years_1998_to_2024,0,0,0
+RUSSIA,damageMillionsDollars,26,all_years_1998_to_2024,6,6,0
+RUSSIA,damageMillionsDollarsTotal,26,all_years_1998_to_2024,6,6,0
+RUSSIA,housesDestroyed,26,all_years_1998_to_2024,2,2,0
+RUSSIA,housesDestroyedTotal,26,all_years_1998_to_2024,2,2,0
+RUSSIA,deaths,26,all_years_1998_to_2024,4,4,0
+RUSSIA,deathsTotal,26,all_years_1998_to_2024,4,4,0
+RWANDA,damageMillionsDollars,5,all_years_1998_to_2024,1,1,0
+RWANDA,damageMillionsDollarsTotal,5,all_years_1998_to_2024,1,1,0
+RWANDA,housesDestroyed,5,all_years_1998_to_2024,2,2,0
+RWANDA,housesDestroyedTotal,5,all_years_1998_to_2024,3,3,0
+RWANDA,deaths,5,all_years_1998_to_2024,3,3,0
+RWANDA,deathsTotal,5,all_years_1998_to_2024,5,5,0
+SAMOA,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+SAMOA,damageMillionsDollarsTotal,2,all_years_1998_to_2024,1,1,0
+SAMOA,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+SAMOA,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+SAMOA,deaths,2,all_years_1998_to_2024,0,0,0
+SAMOA,deathsTotal,2,all_years_1998_to_2024,1,1,0
+SAUDI ARABIA,damageMillionsDollars,3,all_years_1998_to_2024,0,0,0
+SAUDI ARABIA,damageMillionsDollarsTotal,3,all_years_1998_to_2024,0,0,0
+SAUDI ARABIA,housesDestroyed,3,all_years_1998_to_2024,0,0,0
+SAUDI ARABIA,housesDestroyedTotal,3,all_years_1998_to_2024,0,0,0
+SAUDI ARABIA,deaths,3,all_years_1998_to_2024,0,0,0
+SAUDI ARABIA,deathsTotal,3,all_years_1998_to_2024,0,0,0
+SERBIA,damageMillionsDollars,4,all_years_1998_to_2024,1,1,0
+SERBIA,damageMillionsDollarsTotal,4,all_years_1998_to_2024,1,1,0
+SERBIA,housesDestroyed,4,all_years_1998_to_2024,1,1,0
+SERBIA,housesDestroyedTotal,4,all_years_1998_to_2024,1,1,0
+SERBIA,deaths,4,all_years_1998_to_2024,3,3,0
+SERBIA,deathsTotal,4,all_years_1998_to_2024,3,3,0
+SLOVAKIA,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+SLOVAKIA,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+SLOVAKIA,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+SLOVAKIA,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+SLOVAKIA,deaths,1,all_years_1998_to_2024,0,0,0
+SLOVAKIA,deathsTotal,1,all_years_1998_to_2024,0,0,0
+SLOVENIA,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+SLOVENIA,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+SLOVENIA,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+SLOVENIA,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+SLOVENIA,deaths,1,all_years_1998_to_2024,1,1,0
+SLOVENIA,deathsTotal,1,all_years_1998_to_2024,1,1,0
+SOLOMON ISLANDS,damageMillionsDollars,19,all_years_1998_to_2024,0,0,0
+SOLOMON ISLANDS,damageMillionsDollarsTotal,19,all_years_1998_to_2024,1,1,0
+SOLOMON ISLANDS,housesDestroyed,19,all_years_1998_to_2024,4,4,0
+SOLOMON ISLANDS,housesDestroyedTotal,19,all_years_1998_to_2024,5,5,0
+SOLOMON ISLANDS,deaths,19,all_years_1998_to_2024,2,2,0
+SOLOMON ISLANDS,deathsTotal,19,all_years_1998_to_2024,3,3,0
+SOUTH AFRICA,damageMillionsDollars,5,all_years_1998_to_2024,1,1,0
+SOUTH AFRICA,damageMillionsDollarsTotal,5,all_years_1998_to_2024,1,1,0
+SOUTH AFRICA,housesDestroyed,5,all_years_1998_to_2024,1,1,0
+SOUTH AFRICA,housesDestroyedTotal,5,all_years_1998_to_2024,1,1,0
+SOUTH AFRICA,deaths,5,all_years_1998_to_2024,4,4,0
+SOUTH AFRICA,deathsTotal,5,all_years_1998_to_2024,4,4,0
+SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS,damageMillionsDollars,3,all_years_1998_to_2024,0,0,0
+SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS,damageMillionsDollarsTotal,3,all_years_1998_to_2024,0,0,0
+SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS,housesDestroyed,3,all_years_1998_to_2024,0,0,0
+SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS,housesDestroyedTotal,3,all_years_1998_to_2024,0,0,0
+SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS,deaths,3,all_years_1998_to_2024,0,0,0
+SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS,deathsTotal,3,all_years_1998_to_2024,0,0,0
+SOUTH KOREA,damageMillionsDollars,3,all_years_1998_to_2024,2,2,0
+SOUTH KOREA,damageMillionsDollarsTotal,3,all_years_1998_to_2024,2,2,0
+SOUTH KOREA,housesDestroyed,3,all_years_1998_to_2024,0,0,0
+SOUTH KOREA,housesDestroyedTotal,3,all_years_1998_to_2024,0,0,0
+SOUTH KOREA,deaths,3,all_years_1998_to_2024,1,1,0
+SOUTH KOREA,deathsTotal,3,all_years_1998_to_2024,1,1,0
+SPAIN,damageMillionsDollars,3,all_years_1998_to_2024,2,2,0
+SPAIN,damageMillionsDollarsTotal,3,all_years_1998_to_2024,2,2,0
+SPAIN,housesDestroyed,3,all_years_1998_to_2024,0,0,0
+SPAIN,housesDestroyedTotal,3,all_years_1998_to_2024,0,0,0
+SPAIN,deaths,3,all_years_1998_to_2024,1,1,0
+SPAIN,deathsTotal,3,all_years_1998_to_2024,1,1,0
+SWITZERLAND,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+SWITZERLAND,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+SWITZERLAND,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+SWITZERLAND,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+SWITZERLAND,deaths,1,all_years_1998_to_2024,0,0,0
+SWITZERLAND,deathsTotal,1,all_years_1998_to_2024,0,0,0
+SYRIA,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+SYRIA,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+SYRIA,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+SYRIA,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+SYRIA,deaths,1,all_years_1998_to_2024,1,1,0
+SYRIA,deathsTotal,1,all_years_1998_to_2024,1,1,0
+TAIWAN,damageMillionsDollars,28,all_years_1998_to_2024,9,9,0
+TAIWAN,damageMillionsDollarsTotal,28,all_years_1998_to_2024,9,9,0
+TAIWAN,housesDestroyed,28,all_years_1998_to_2024,5,5,0
+TAIWAN,housesDestroyedTotal,28,all_years_1998_to_2024,4,4,0
+TAIWAN,deaths,28,all_years_1998_to_2024,17,17,0
+TAIWAN,deathsTotal,28,all_years_1998_to_2024,17,17,0
+TAJIKISTAN,damageMillionsDollars,16,all_years_1998_to_2024,2,2,0
+TAJIKISTAN,damageMillionsDollarsTotal,16,all_years_1998_to_2024,2,2,0
+TAJIKISTAN,housesDestroyed,16,all_years_1998_to_2024,7,7,0
+TAJIKISTAN,housesDestroyedTotal,16,all_years_1998_to_2024,7,7,0
+TAJIKISTAN,deaths,16,all_years_1998_to_2024,8,8,0
+TAJIKISTAN,deathsTotal,16,all_years_1998_to_2024,8,8,0
+TANZANIA,damageMillionsDollars,5,all_years_1998_to_2024,1,1,0
+TANZANIA,damageMillionsDollarsTotal,5,all_years_1998_to_2024,1,1,0
+TANZANIA,housesDestroyed,5,all_years_1998_to_2024,4,4,0
+TANZANIA,housesDestroyedTotal,5,all_years_1998_to_2024,4,4,0
+TANZANIA,deaths,5,all_years_1998_to_2024,4,4,0
+TANZANIA,deathsTotal,5,all_years_1998_to_2024,4,4,0
+THAILAND,damageMillionsDollars,2,all_years_1998_to_2024,1,1,0
+THAILAND,damageMillionsDollarsTotal,2,all_years_1998_to_2024,1,1,0
+THAILAND,housesDestroyed,2,all_years_1998_to_2024,2,2,0
+THAILAND,housesDestroyedTotal,2,all_years_1998_to_2024,2,2,0
+THAILAND,deaths,2,all_years_1998_to_2024,1,1,0
+THAILAND,deathsTotal,2,all_years_1998_to_2024,1,1,0
+TONGA,damageMillionsDollars,4,all_years_1998_to_2024,0,0,0
+TONGA,damageMillionsDollarsTotal,4,all_years_1998_to_2024,0,0,0
+TONGA,housesDestroyed,4,all_years_1998_to_2024,0,0,0
+TONGA,housesDestroyedTotal,4,all_years_1998_to_2024,0,0,0
+TONGA,deaths,4,all_years_1998_to_2024,0,0,0
+TONGA,deathsTotal,4,all_years_1998_to_2024,0,0,0
+TRINIDAD AND TOBAGO,damageMillionsDollars,3,all_years_1998_to_2024,0,0,0
+TRINIDAD AND TOBAGO,damageMillionsDollarsTotal,3,all_years_1998_to_2024,0,0,0
+TRINIDAD AND TOBAGO,housesDestroyed,3,all_years_1998_to_2024,1,1,0
+TRINIDAD AND TOBAGO,housesDestroyedTotal,3,all_years_1998_to_2024,1,1,0
+TRINIDAD AND TOBAGO,deaths,3,all_years_1998_to_2024,1,1,0
+TRINIDAD AND TOBAGO,deathsTotal,3,all_years_1998_to_2024,1,1,0
+TURKEY,damageMillionsDollars,62,all_years_1998_to_2024,6,6,0
+TURKEY,damageMillionsDollarsTotal,62,all_years_1998_to_2024,6,6,0
+TURKEY,housesDestroyed,62,all_years_1998_to_2024,12,12,0
+TURKEY,housesDestroyedTotal,62,all_years_1998_to_2024,12,12,0
+TURKEY,deaths,62,all_years_1998_to_2024,33,33,0
+TURKEY,deathsTotal,62,all_years_1998_to_2024,33,33,0
+TURKMENISTAN,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+TURKMENISTAN,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+TURKMENISTAN,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+TURKMENISTAN,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+TURKMENISTAN,deaths,1,all_years_1998_to_2024,1,1,0
+TURKMENISTAN,deathsTotal,1,all_years_1998_to_2024,1,1,0
+UK,damageMillionsDollars,3,all_years_1998_to_2024,2,2,0
+UK,damageMillionsDollarsTotal,3,all_years_1998_to_2024,2,2,0
+UK,housesDestroyed,3,all_years_1998_to_2024,0,0,0
+UK,housesDestroyedTotal,3,all_years_1998_to_2024,0,0,0
+UK,deaths,3,all_years_1998_to_2024,0,0,0
+UK,deathsTotal,3,all_years_1998_to_2024,0,0,0
+USA,damageMillionsDollars,62,all_years_1998_to_2024,17,17,0
+USA,damageMillionsDollarsTotal,62,all_years_1998_to_2024,18,18,0
+USA,housesDestroyed,62,all_years_1998_to_2024,11,11,0
+USA,housesDestroyedTotal,62,all_years_1998_to_2024,12,12,0
+USA,deaths,62,all_years_1998_to_2024,8,8,0
+USA,deathsTotal,62,all_years_1998_to_2024,9,9,0
+USA TERRITORY,damageMillionsDollars,10,all_years_1998_to_2024,2,2,0
+USA TERRITORY,damageMillionsDollarsTotal,10,all_years_1998_to_2024,2,2,0
+USA TERRITORY,housesDestroyed,10,all_years_1998_to_2024,1,1,0
+USA TERRITORY,housesDestroyedTotal,10,all_years_1998_to_2024,1,1,0
+USA TERRITORY,deaths,10,all_years_1998_to_2024,1,1,0
+USA TERRITORY,deathsTotal,10,all_years_1998_to_2024,1,1,0
+UZBEKISTAN,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+UZBEKISTAN,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+UZBEKISTAN,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+UZBEKISTAN,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+UZBEKISTAN,deaths,1,all_years_1998_to_2024,1,1,0
+UZBEKISTAN,deathsTotal,1,all_years_1998_to_2024,1,1,0
+VANUATU,damageMillionsDollars,25,all_years_1998_to_2024,1,1,0
+VANUATU,damageMillionsDollarsTotal,25,all_years_1998_to_2024,1,1,0
+VANUATU,housesDestroyed,25,all_years_1998_to_2024,0,0,0
+VANUATU,housesDestroyedTotal,25,all_years_1998_to_2024,0,0,0
+VANUATU,deaths,25,all_years_1998_to_2024,2,2,0
+VANUATU,deathsTotal,25,all_years_1998_to_2024,2,2,0
+VENEZUELA,damageMillionsDollars,8,all_years_1998_to_2024,0,0,0
+VENEZUELA,damageMillionsDollarsTotal,8,all_years_1998_to_2024,0,0,0
+VENEZUELA,housesDestroyed,8,all_years_1998_to_2024,1,1,0
+VENEZUELA,housesDestroyedTotal,8,all_years_1998_to_2024,1,1,0
+VENEZUELA,deaths,8,all_years_1998_to_2024,3,3,0
+VENEZUELA,deathsTotal,8,all_years_1998_to_2024,3,3,0
+VIETNAM,damageMillionsDollars,2,all_years_1998_to_2024,0,0,0
+VIETNAM,damageMillionsDollarsTotal,2,all_years_1998_to_2024,0,0,0
+VIETNAM,housesDestroyed,2,all_years_1998_to_2024,0,0,0
+VIETNAM,housesDestroyedTotal,2,all_years_1998_to_2024,0,0,0
+VIETNAM,deaths,2,all_years_1998_to_2024,0,0,0
+VIETNAM,deathsTotal,2,all_years_1998_to_2024,0,0,0
+ZAMBIA,damageMillionsDollars,1,all_years_1998_to_2024,0,0,0
+ZAMBIA,damageMillionsDollarsTotal,1,all_years_1998_to_2024,0,0,0
+ZAMBIA,housesDestroyed,1,all_years_1998_to_2024,0,0,0
+ZAMBIA,housesDestroyedTotal,1,all_years_1998_to_2024,0,0,0
+ZAMBIA,deaths,1,all_years_1998_to_2024,0,0,0
+ZAMBIA,deathsTotal,1,all_years_1998_to_2024,0,0,0

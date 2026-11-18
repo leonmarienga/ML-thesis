@@ -39,3 +39,7 @@ The coverage audit locked historical-only exact-ID filters, enumerated 1,732 non
 ## Continuous research batch 1B
 
 Archived the bulk-source access failure, initial five-episode comparison and region-preserving extension to 1998. Validated a physics-informed synthetic training prior for peak ground acceleration on seven later episodes and 143 held instrument measurements. Compared 100, 500, 1,000 and 5,000 scenarios at fixed total prior weight. The 3.1% event-level error reduction was below the integration threshold and its paired interval included zero. The physically constrained data and training ledgers support further auxiliary research without assigning any case a synthetic obligation or need label. [Protocol](continuous/EARTHQUAKE_PILOT_PROTOCOL.md), [results](continuous/earthquake/REPORT.md).
+
+## Continuous research batch 2
+
+The Federal Register screen recovered 341 exact historical declaration date and filing-time matches. All matched filings followed the seven-day horizon, and 98 were within 30 days even under conservative bounds. Drawing operational features from this route would have insufficient early coverage. The separately retained NOAA impact catalogue contributed 1,477 consequential-event records. Four of 12 instrument-qualified regional earthquakes had matched numeric economic damage. The lower impact support failed the model gate. [Filing report](continuous/filings/REPORT.md), [impact report](continuous/impacts/REPORT.md).
