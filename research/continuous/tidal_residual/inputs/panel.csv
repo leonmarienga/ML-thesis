@@ -1,0 +1,15 @@
+storm,center_date,station_id,station_name,selection_geography
+Irene,2011-08-27,8656483,Beaufort Duke Marine Lab,Outer Banks and nearby North Carolina coast
+Irene,2011-08-27,8652587,Oregon Inlet Marina,Outer Banks and nearby North Carolina coast
+Sandy,2012-10-29,8518750,The Battery,New York Harbor
+Sandy,2012-10-29,8531680,Sandy Hook,New York Harbor
+Matthew,2016-10-08,8665530,Charleston,South Carolina and Georgia low country
+Matthew,2016-10-08,8670870,Fort Pulaski,South Carolina and Georgia low country
+Florence,2018-09-14,8658163,Wrightsville Beach,North Carolina coast
+Florence,2018-09-14,8656483,Beaufort Duke Marine Lab,North Carolina coast
+Ida,2021-08-29,8760922,Pilots Station East,Louisiana coast and Mississippi River entrance
+Ida,2021-08-29,8761724,Grand Isle,Louisiana coast and Mississippi River entrance
+Ian,2022-09-28,8725110,Naples,Southwest Florida
+Ian,2022-09-28,8725520,Fort Myers,Southwest Florida
+Idalia,2023-08-30,8727520,Cedar Key,Florida Gulf Coast
+Idalia,2023-08-30,8726724,Clearwater Beach,Florida Gulf Coast
