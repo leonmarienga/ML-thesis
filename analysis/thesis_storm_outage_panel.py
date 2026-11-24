@@ -220,6 +220,18 @@ def county_overlap(panel, matches):
     return pd.DataFrame(rows)
 
 
+def prior_endpoint_overlap(matches):
+    keys = ["year", "fips_code", "onset_utc"]
+    prior = pd.read_csv("research/continuous/sustained_outage/results/window_outcomes.csv",
+                        usecols=[*keys, "observed_complete"], dtype={"fips_code": str}, parse_dates=["onset_utc"])
+    m = matches.merge(prior.rename(columns={"observed_complete": "batch8_complete"}), on=keys,
+                      how="inner", validate="many_to_one")
+    m["complete_regional_in_both"] = m.observed_complete & m.batch8_complete & m.stratum.eq("regional")
+    rows = m.groupby("storm").agg(overlapping_entry_keys=("fips_code", "size"),
+                                 overlapping_complete_regional_windows=("complete_regional_in_both", "sum"))
+    return rows.reindex(sorted(matches.storm.unique()), fill_value=0).reset_index()
+
+
 def main():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("mode", choices=["panel", "evaluate", "extract"])
@@ -247,7 +259,8 @@ def main():
         return
     matches, support, gate, clocks = evaluate(args.raw, args.slices, panel, args.exclude_zeros)
     for name, table in [("matched_windows", matches), ("storm_support", support), ("gate_summary", gate),
-                        ("clock_audit", clocks), ("storm_county_overlap", county_overlap(panel, matches))]:
+                        ("clock_audit", clocks), ("storm_county_overlap", county_overlap(panel, matches)),
+                        ("batch8_endpoint_overlap", prior_endpoint_overlap(matches))]:
         table.to_csv(args.output / f"{name}.csv", index=False)
 
 
