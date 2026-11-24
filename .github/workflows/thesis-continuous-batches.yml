@@ -23,6 +23,9 @@ on:
       - 'analysis/thesis_sustained_outage_transfer.py'
       - 'analysis/thesis_component_accounting.py'
       - 'analysis/thesis_county_wind_exposure.py'
+      - 'analysis/thesis_storm_outage_panel.py'
+      - 'analysis/thesis_public_ledger_gate.py'
+      - 'analysis/thesis_humanitarian_source_gate.py'
       - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
@@ -231,5 +234,37 @@ jobs:
               assert {file.name for file in saved.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
               for generated in sorted(replay.glob("*.csv")):
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
+                                                check_exact=False, rtol=1e-7, atol=1e-7)
+          PY
+      - name: Replay exact legacy ledgers, the storm panel, and measured humanitarian sources
+        run: |
+          sha256sum -c research/continuous/BATCH10_SHA256SUMS
+          mkdir -p work/batch10/{legacy-source,wind-source,storm-slices,survey-source,legacy,panel,primary,zero,needs}
+          base=research/continuous
+          tar xf "$base/legacy_ledger_gate/inputs/public_legacy_ledger_routes.tar.gz" -C work/batch10/legacy-source
+          tar xf "$base/humanitarian_source/inputs/public_survey_and_shelter_sources.tar.gz" -C work/batch10/survey-source
+          panel_root="$base/storm_outage_panel/inputs"
+          for input in "$panel_root"/forecast_and_county_sources.tar.gz "$panel_root"/nhc_reports_*.tar.gz; do
+            tar xf "$input" -C work/batch10/wind-source
+          done
+          tar xf "$panel_root/verified_eaglei_event_slices.tar.gz" -C work/batch10/storm-slices
+          python analysis/thesis_public_ledger_gate.py work/batch10/legacy-source work/batch10/legacy
+          python analysis/thesis_humanitarian_source_gate.py work/batch10/survey-source "$base/humanitarian_source/inputs/casper_extract.csv" work/batch10/needs
+          python analysis/thesis_storm_outage_panel.py panel work/batch10/wind-source work/batch10/panel --tcr-markers "$panel_root/tcr_markers.json"
+          python analysis/thesis_storm_outage_panel.py evaluate work/batch10/wind-source work/batch10/primary --slices work/batch10/storm-slices --panel "$panel_root/storm_county_panel.csv"
+          python analysis/thesis_storm_outage_panel.py evaluate work/batch10/wind-source work/batch10/zero --slices work/batch10/storm-slices --panel "$panel_root/storm_county_panel.csv" --exclude-zeros
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          reference = Path("research/continuous")
+          for scope, dest in [("legacy", "legacy_ledger_gate/results"), ("needs", "humanitarian_source/results"),
+                              ("panel", "storm_outage_panel/inputs"), ("primary", "storm_outage_panel/results"),
+                              ("zero", "storm_outage_panel/zero_sensitivity")]:
+              saved = reference / dest
+              replay = Path("work/batch10") / scope
+              assert {file.name for file in saved.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
+              for generated in sorted(replay.glob("*.csv")):
+                  opts = {"dtype": {"fips_code": str}}
+                  pd.testing.assert_frame_equal(pd.read_csv(generated, **opts), pd.read_csv(saved / generated.name, **opts),
                                                 check_exact=False, rtol=1e-7, atol=1e-7)
           PY

@@ -126,3 +126,26 @@ python analysis/thesis_county_wind_exposure.py work/continuous-replay/county-win
 ```
 
 The scanner uses Poppler plus hash-verified archived OCR sidecars. To recreate the sidecars, render all 12 NASA report pages at 200 dpi and the first eight CBP report pages at 140 dpi with `pdftoppm -gray -png`. Apply Tesseract at its default page segmentation and concatenate the per-page text, in order, with form feeds. The retained sidecar hashes identify the original OCR runs. [Batch 9 protocol](BATCH9_PROTOCOL.md).
+
+## Expanded hurricane panel, exact legacy ledgers, and independently measured need
+
+```bash
+sha256sum -c research/continuous/BATCH10_SHA256SUMS
+mkdir -p work/continuous-replay/batch10/{legacy-source,wind-source,storm-slices,survey-source,legacy,panel,primary,zero,needs}
+work=work/continuous-replay/batch10
+base=research/continuous
+panel="$base/storm_outage_panel/inputs"
+tar xf "$base/legacy_ledger_gate/inputs/public_legacy_ledger_routes.tar.gz" -C "$work/legacy-source"
+tar xf "$base/humanitarian_source/inputs/public_survey_and_shelter_sources.tar.gz" -C "$work/survey-source"
+for input in "$panel"/forecast_and_county_sources.tar.gz "$panel"/nhc_reports_*.tar.gz; do
+    tar xf "$input" -C "$work/wind-source"
+done
+tar xf "$panel/verified_eaglei_event_slices.tar.gz" -C "$work/storm-slices"
+python analysis/thesis_public_ledger_gate.py "$work/legacy-source" "$work/legacy"
+python analysis/thesis_humanitarian_source_gate.py "$work/survey-source" "$base/humanitarian_source/inputs/casper_extract.csv" "$work/needs"
+python analysis/thesis_storm_outage_panel.py panel "$work/wind-source" "$work/panel" --tcr-markers "$panel/tcr_markers.json"
+python analysis/thesis_storm_outage_panel.py evaluate "$work/wind-source" "$work/primary" --slices "$work/storm-slices" --panel "$panel/storm_county_panel.csv"
+python analysis/thesis_storm_outage_panel.py evaluate "$work/wind-source" "$work/zero" --slices "$work/storm-slices" --panel "$panel/storm_county_panel.csv" --exclude-zeros
+```
+
+To regenerate the exact outage event slices, place the four previously verified EAGLE-I national CSVs in one directory. Run the panel script with `extract`, the locked panel, an output directory, `--slices`, `--national` and `--file-card "$panel/source_cards.json"`. The extraction revalidates the complete public annual file size, MD5 and SHA-256 for each year. The offline replay uses only the verified subsets. [Locked design](BATCH10_PROTOCOL.md).
