@@ -4,6 +4,7 @@ import argparse
 from contextlib import ExitStack
 import gzip
 from hashlib import md5, sha256
+from itertools import combinations
 import json
 from pathlib import Path
 
@@ -12,6 +13,7 @@ import pandas as pd
 
 from thesis_county_wind_exposure import CENSUS, CENSUS_FILE, LAG, REGIONAL_KM
 from thesis_outage_observability import valid_county_rows
+from thesis_precoverage_documentary import text_pages
 from thesis_retrieve_sources import acquire
 from thesis_sustained_outage_transfer import county_spells
 from thesis_tropical_wind_verification import GEODESY, forecast
@@ -96,6 +98,14 @@ def build_panel(raw):
     return result, pd.DataFrame(evidence)
 
 
+def verify_tcr_text(raw, passages):
+    markers = json.loads(passages.read_text())
+    assert len(markers) == len(FRAME)
+    for filename, record in markers.items():
+        pages = text_pages(raw / filename)
+        assert record["text_marker"].casefold() in pages[record["page"] - 1].casefold(), filename
+
+
 def extract(national, file_card, panel, slices):
     provenance = json.loads(file_card.read_text())
     for year, group in panel.groupby("year"):
@@ -162,7 +172,10 @@ def evaluate(raw, slices, panel, exclude_zeros):
             results.append(matched)
         assert results, name
         m = pd.concat(results, ignore_index=True)
-        assert m.loc[m.valid_utc.notna(), "nominal_initial_utc"].lt(m.onset_utc).all()
+        timed = m[m.valid_utc.notna()]
+        lag = timed.onset_utc - timed.valid_utc
+        assert timed.nominal_initial_utc.lt(timed.onset_utc).all()
+        assert (lag.ge(pd.Timedelta(0, unit="h")) & lag.lt(LAG)).all()
         m["stratum"] = np.select([m.valid_utc.isna(), m.distance_km.le(REGIONAL_KM)], ["no_recent_forecast", "regional"],
                                  default="remote")
         m["storm"] = name
@@ -193,6 +206,20 @@ def evaluate(raw, slices, panel, exclude_zeros):
     return pd.concat(match_rows, ignore_index=True), support, pd.DataFrame(gates), pd.concat(clock_rows, ignore_index=True)
 
 
+def county_overlap(panel, matches):
+    complete = matches[matches.observed_complete & matches.stratum.eq("regional")]
+    selected = {name: (set(rows.fips_code), rows.start_utc.iloc[0]) for name, rows in panel.groupby("storm")}
+    observed = {name: set(rows.fips_code) for name, rows in complete.groupby("storm")}
+    rows = []
+    for a, b in combinations(selected, 2):
+        left, left_day = selected[a]
+        right, right_day = selected[b]
+        rows.append({"storm_a": a, "storm_b": b, "landfall_day_gap": abs((left_day - right_day).days),
+                     "shared_selected_counties": len(left & right),
+                     "shared_complete_regional_counties": len(observed.get(a, set()) & observed.get(b, set()))})
+    return pd.DataFrame(rows)
+
+
 def main():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("mode", choices=["panel", "evaluate", "extract"])
@@ -202,10 +229,13 @@ def main():
     cli.add_argument("--slices", type=Path)
     cli.add_argument("--national", type=Path)
     cli.add_argument("--file-card", type=Path)
+    cli.add_argument("--tcr-markers", type=Path)
     cli.add_argument("--exclude-zeros", action="store_true")
     args = cli.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     if args.mode == "panel":
+        if args.tcr_markers:
+            verify_tcr_text(args.raw, args.tcr_markers)
         panel, manifest = build_panel(args.raw)
         panel.to_csv(args.output / "storm_county_panel.csv", index=False)
         manifest.to_csv(args.output / "source_manifest.csv", index=False)
@@ -216,7 +246,8 @@ def main():
         extract(args.national, args.file_card, panel, args.slices)
         return
     matches, support, gate, clocks = evaluate(args.raw, args.slices, panel, args.exclude_zeros)
-    for name, table in [("matched_windows", matches), ("storm_support", support), ("gate_summary", gate), ("clock_audit", clocks)]:
+    for name, table in [("matched_windows", matches), ("storm_support", support), ("gate_summary", gate),
+                        ("clock_audit", clocks), ("storm_county_overlap", county_overlap(panel, matches))]:
         table.to_csv(args.output / f"{name}.csv", index=False)
 
 

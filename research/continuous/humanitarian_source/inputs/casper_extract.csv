@@ -1,0 +1,10 @@
+phase,unit,measure,weighted_households,percent,ci95_low,ci95_high,pdf_page,marker
+2017-11 response,households,current_food_need,9055,21.0,15.7,26.2,15,9055|21.0|15.7–26.2
+2018-02 recovery,households,current_food_need,4802,11.1,5.7,16.5,15,4802|11.1|5.7–16.5
+2017-11 response,households,current_water_need,10037,23.2,17.6,28.9,15,10 037|23.2|17.6–28.9
+2018-02 recovery,households,current_water_need,4712,10.9,6.4,15.5,15,4712|10.9|6.4–15.5
+2017-11 response,households,utility_electricity_available,11010,25.5,16.9,34.1,15,11 010|25.5|16.9–34.1
+2018-02 recovery,households,utility_electricity_available,41774,96.7,93.6,99.7,15,41 774|96.7|93.6–99.7
+2018-02 recovery,households,received_behavioral_health_services,3327,7.7,3.1,12.3,19,3327 7.7 3.1–12.3
+2018-02 recovery,households,could_not_obtain_needed_behavioral_health_services,1852,4.3,0.3,8.3,19,1852 4.3 0.3–8.3
+2018-02 recovery,households,no_behavioral_health_services_needed,38035,88.0,81.1,94.9,19,38 035 88.0 81.1–94.9

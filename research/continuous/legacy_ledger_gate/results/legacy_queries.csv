@@ -1,0 +1,6 @@
+disasterNumber,fyDeclared,state,declarationType,declarationDate,query_status,scoped_response_pages,returned_actions,advertised_precoverage,signed_complete_legacy_ledger_found,eligible_new_elapsed_label
+1603,2005,LA,DR,2005-08-29T00:00:00.000Z,read,1,0,True,False,False
+1604,2005,MS,DR,2005-08-29T00:00:00.000Z,read,1,0,True,False,False
+1786,2008,LA,DR,2008-09-02T00:00:00.000Z,read,1,0,True,False,False
+1791,2008,TX,DR,2008-09-13T00:00:00.000Z,read,1,0,True,False,False
+4020,2011,NY,DR,2011-08-31T00:00:00.000Z,read,1,0,True,False,False

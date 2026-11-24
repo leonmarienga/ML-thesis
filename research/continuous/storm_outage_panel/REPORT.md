@@ -1,0 +1,20 @@
+# Outcome-blind expansion of the hurricane and county outage panel
+
+Eleven documented continental hurricane landfalls in the verified national EAGLE-I years were specified before reading any new outage windows. Their first qualifying UTC dates were checked against the archived NOAA tropical cyclone reports. The 2017 Census point file and archived nominal NHC forecasts selected 653 storm–county pairs across 449 unique counties. The sorted panel and hashes were pushed at commit `1e7f6db` before extraction. The selection favored points inside either forecast contour and then near the forecast track within the fixed distance. It contains no outage fields. [Protocol](../BATCH10_PROTOCOL.md), [pre-outcome panel](inputs/storm_county_panel.csv), [forecast and documentary provenance](inputs/source_manifest.csv).
+
+The four already verified annual CSVs were scanned to retain exact selected original rows within padded storm windows. Each public national file matched its prior full SHA-256 and published MD5. Measured outcomes kept the observed 1,000-customer entry crossing, 48-hour cooldown, 24-hour observation completeness and all final twelve quarters below threshold. Weather matching used a prior-valid nominal forecast and a lag of less than six hours. A nominal ATCF time alone cannot certify public availability. Forecast geometry at an internal point measures regional context and supplies no observed individual exposure or weather-cause label.
+
+## Measured support
+
+The primary audit found 487 verified entries. Nine lacked a recent prior-valid forecast, 74 were more than 400 km from the matched center, and 404 passed the regional screen. There were **330 complete** regional windows and **95** satisfied the sustained threshold endpoint. The 2022–2023 held group contributed 105 of these complete windows. The two contour geometries disagreed on 46 complete regional cases. The regional screen reduces the number of unrelated coincident entries while leaving outage attribution unresolved. Complete-case sampling can favor locations and times with persistent coverage. [Matched windows](results/matched_windows.csv), [storm support](results/storm_support.csv).
+
+| Analysis | Qualifying earlier storms | Qualifying held storms | Minimum of four earlier and two held |
+| --- | ---: | ---: | --- |
+| All storms, recorded counts | 7 | 3 | Passed |
+| New storm groups only, recorded counts | 5 | 1 | Below minimum |
+| All storms, explicit zero counts excluded | 7 | 2 | Passed |
+| New storm groups only, explicit zero counts excluded | 5 | 0 | Below minimum |
+
+Nicole was the only previously unused held storm in the locked calendar frame. Its 24 complete regional windows included two outside the quadrant contour. Excluding explicit numeric zeros left 20 complete regional windows, all inside that contour, and Nicole lost eligibility. This sensitivity reduced all-storm complete support to 319. Laura and Delta had landfalls 43 days apart and share 22 selected counties and 12 complete-window regional counties, so distinct storm identifiers are insufficient to guarantee independent exposure or restoration. The retained pair audit measures spatial overlap and the gap in landfall dates for sensitivity design. [Gate results](results/gate_summary.csv), [zero exclusion](zero_sensitivity/storm_support.csv), [storm overlap](results/storm_county_overlap.csv).
+
+The geographically targeted screen materially expands authentic physical and recovery evidence. It does not supply two independently held qualifying storms outside previously reviewed groups, and the zero-count convention remains unresolved. The comparison was stopped before generator fitting or outcome-driven tuning. The real-only Batch 8 baseline remains the comparison reference for its original endpoint and population. A future wind-conditioned candidate would need its own matched real-only baseline on the same chronologically held storm cohort. [Real-only reference](../sustained_outage/REPORT.md).

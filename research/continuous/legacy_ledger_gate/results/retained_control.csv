@@ -1,0 +1,3 @@
+disasterNumber,state,event_group,actions,unique_actions,unique_amendments,all_dates,keys_complete,negative_actions,snapshot_status
+4086,NJ,4085,741.0,True,True,True,True,311.0,published_actions
+4085,NY,4085,807.0,True,True,True,True,334.0,published_actions

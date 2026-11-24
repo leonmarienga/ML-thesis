@@ -1,0 +1,50 @@
+{
+  "2018": {
+    "annual_doi": "10.6084/m9.figshare.24237376.v1",
+    "annual_file_id": 42547879,
+    "annual_bytes": 999210542,
+    "annual_md5": "726543e4a392e220108b035ba4c52e43",
+    "annual_sha256": "85e0a864aa272e75892e181f1da4754ed78f7bf0bef75a279d8ab381baa7db70",
+    "annual_url": "https://ndownloader.figshare.com/files/42547879",
+    "license": "CC BY 4.0",
+    "slice": "eaglei_2018_24_counties.csv.gz",
+    "slice_rows": 657547,
+    "slice_sha256": "bbcc066a375f3286b3c608e4df0c9855db545e0ebf3dfedfe5dffa7e9736dc8f"
+  },
+  "2020": {
+    "annual_doi": "10.6084/m9.figshare.24237376.v2",
+    "annual_file_id": 42547894,
+    "annual_bytes": 1170699724,
+    "annual_md5": "3b1e76e7ff0445da2b9a2fe4819c0e88",
+    "annual_sha256": "2a20b62e5245b1b9d4fcedc1bdbaf691bb1e17f75094975c8c6cb854f52e721a",
+    "annual_url": "https://ndownloader.figshare.com/files/42547894",
+    "license": "CC BY 4.0",
+    "slice": "eaglei_2020_24_counties.csv.gz",
+    "slice_rows": 679380,
+    "slice_sha256": "362cc3bba69ec0b03e1fefe78a2dee8727b1923e46ae0d765256b0d512ccdec8"
+  },
+  "2022": {
+    "annual_doi": "10.6084/m9.figshare.24237376.v2",
+    "annual_file_id": 42547897,
+    "annual_bytes": 1187596176,
+    "annual_md5": "0cd04f23ac90ec4ec20ce3a63dcfa25a",
+    "annual_sha256": "ff8b58ae30fcbaf290f820bcd4f1420e536994bc9f0a87bb80991130478461b0",
+    "annual_url": "https://ndownloader.figshare.com/files/42547897",
+    "license": "CC BY 4.0",
+    "slice": "eaglei_2022_24_counties.csv.gz",
+    "slice_rows": 690946,
+    "slice_sha256": "386d2f6701e306bd4be81dc64cc3dc69a2a08a042ba9aa9bb67a5064fea91995"
+  },
+  "2023": {
+    "annual_doi": "10.6084/m9.figshare.24237376.v2",
+    "annual_file_id": 44574907,
+    "annual_bytes": 1199752423,
+    "annual_md5": "4ef3f9290884b4151a43333d28f67369",
+    "annual_sha256": "c028f42dae8522ecfb787ad0b6461cfc809bb04856eef20cb389e486d5657f7e",
+    "annual_url": "https://ndownloader.figshare.com/files/44574907",
+    "license": "CC BY 4.0",
+    "slice": "eaglei_2023_24_counties.csv.gz",
+    "slice_rows": 698729,
+    "slice_sha256": "58e4a1a473de4d5fe750e90918f8e65216eb41d0b1632a75963874a80be2c559"
+  }
+}
