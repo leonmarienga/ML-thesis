@@ -1,0 +1,11 @@
+# Geographically broad service under a fixed priority objective
+
+The replay uses 192 new survey-informed scenario draws with independently seeded planning and held requests. The response and recovery contexts, five essential services and two demand distributions remain the same measurement design as Batch 11. Nominal supply ratios are 55%, 72% and 90% of anchor household requests. Shelter remains a 4%, 8% or 16% assumption. A 70% floor guarantees at least 70% of the stage-specific proportional allocation to each zone. It uses existing inventory at dispatch and replenishment alone for the conservative scenario-specific second-stage constraints. The remaining resources follow the same vulnerability weights as the matched no-floor policy. Equal fraction provides another transparent reference. Each realized policy passes both service-request and inventory constraints. [Protocol](../BATCH12_PROTOCOL.md), [registry](SYNTHETIC_DATA_REGISTRY.csv), [scenario metrics](results/scenario_metrics.csv).
+
+| Priority policy with a 70% floor | Overall service change (pp) | High-vulnerability service change (pp) | Lowest-zone service change (pp) |
+| --- | ---: | ---: | ---: |
+| Myopic | +0.00 | −10.17 | +31.36 |
+| Expected recourse | +0.03 | −10.16 | +31.45 |
+| CVaR recourse | +0.08 | −10.24 | +31.57 |
+
+Paired intervals for the lowest-zone gains were +29.79 to +32.97 points for myopic priority, +29.88 to +33.05 for expected recourse and +30.03 to +33.14 for CVaR. For CVaR, the lowest-zone gain was +34.91 points under the lowest supply ratio and +24.71 under the highest. With almost identical improvements across objectives, much of the protection comes from the explicit constraint. The small overall service changes offer little evidence that complex recourse adds value on this setup. Lowest-zone coverage still measures each scenario's minimum across aggregate service requests. The experiment leaves service-specific and network access claims dependent on witnessed demand, deliveries and operational constraints. Preserve the floor as a transparent simulation option alongside equal-fraction and uncovered priorities. [Paired comparisons and supply sensitivity](results/paired_floors.csv).

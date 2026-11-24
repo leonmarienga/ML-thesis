@@ -28,6 +28,8 @@ on:
       - 'analysis/thesis_humanitarian_source_gate.py'
       - 'analysis/thesis_coverage_specialists.py'
       - 'analysis/thesis_service_scenarios.py'
+      - 'analysis/thesis_service_floor.py'
+      - 'analysis/thesis_tidal_residual.py'
       - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
@@ -282,6 +284,28 @@ jobs:
           for scope in ("coverage_specialists", "service_scenarios"):
               saved = Path("research/continuous") / scope / "results"
               replay = Path("work/batch11") / scope
+              assert {file.name for file in saved.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
+              for generated in sorted(replay.glob("*.csv")):
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
+                                                check_exact=False, rtol=1e-7, atol=1e-7)
+          PY
+      - name: Replay coastal observation gates and minimum service policies
+        run: |
+          sha256sum -c research/continuous/BATCH12_SHA256SUMS
+          mkdir -p work/batch12/tide-raw
+          base=research/continuous/tidal_residual
+          tar xf "$base/inputs/noaa_hourly_stage_archive.tar.gz" -C work/batch12/tide-raw
+          python analysis/thesis_tidal_residual.py "$base/inputs/panel.csv" work/batch12/tide-raw work/batch12/tide
+          python analysis/thesis_tidal_residual.py "$base/inputs/panel.csv" work/batch12/tide-raw work/batch12/unflagged --unflagged-only
+          python analysis/thesis_service_floor.py work/batch10/survey-source/casper_usvi.pdf work/batch12/service_floors
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          reference = Path("research/continuous")
+          for scope, dest in [("tide", "tidal_residual/results"), ("unflagged", "tidal_residual/unflagged"),
+                              ("service_floors", "service_floors/results")]:
+              saved = reference / dest
+              replay = Path("work/batch12") / scope
               assert {file.name for file in saved.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
               for generated in sorted(replay.glob("*.csv")):
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),

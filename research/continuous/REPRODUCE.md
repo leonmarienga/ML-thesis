@@ -163,3 +163,17 @@ python analysis/thesis_service_scenarios.py work/batch11/survey-source/casper_us
 ```
 
 The independent humanitarian crosswalk preserves manually verified published estimates with source locations. The official electricity and tide pages are retained for review. The scripts do not use the crosswalk to select or score a policy.
+
+## Batch 12 coastal tide and service floors
+
+```bash
+sha256sum -c research/continuous/BATCH12_SHA256SUMS
+base=research/continuous/tidal_residual
+mkdir -p work/batch12/tide-raw
+tar xf "$base/inputs/noaa_hourly_stage_archive.tar.gz" -C work/batch12/tide-raw
+python analysis/thesis_tidal_residual.py "$base/inputs/panel.csv" work/batch12/tide-raw work/batch12/tide
+python analysis/thesis_tidal_residual.py "$base/inputs/panel.csv" work/batch12/tide-raw work/batch12/unflagged --unflagged-only
+python analysis/thesis_service_floor.py work/batch11/survey-source/casper_usvi.pdf work/batch12/service_floors
+```
+
+The normal replay reads retained files. The bounded `--acquire` option records new response versions and timestamps for the fixed station panel.

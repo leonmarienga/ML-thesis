@@ -56,17 +56,20 @@ def demand(rng, anchor, severity, family):
     return first, all_requests - first
 
 
-def dispatch(requests, stock, equal):
-    fraction = min(1, stock / max(1, requests.sum()))
+def proportional(requests, stock):
+    return min(1, stock / max(1, requests.sum())) * requests
+
+
+def dispatch(requests, stock, equal, floor=.25):
     if equal:
-        return fraction * requests
-    out = .25 * fraction * requests
+        return proportional(requests, stock)
+    out = floor * proportional(requests, stock)
     for zone in np.argsort(-WEIGHT):
         out[zone] += min(requests[zone] - out[zone], max(0, stock - out.sum()))
     return out
 
 
-def recourse(first, opening, future, replenishments, risk):
+def recourse(first, opening, future, replenishments, risk, floor=0.):
     zones = len(first)
     flow = zones * (1 + DRAWS)
     size = flow + (DRAWS + 1 if risk else 0)
@@ -78,7 +81,9 @@ def recourse(first, opening, future, replenishments, risk):
     matrix[0, :zones] = 1
     rhs = np.empty(rows)
     rhs[0] = opening
-    bounds = [(0, need) for need in np.r_[first, future.ravel()]]
+    lower = [floor * proportional(first, opening)]
+    lower.extend(floor * proportional(need, stock) for need, stock in zip(future, replenishments, strict=True))
+    bounds = list(zip(np.concatenate(lower), np.r_[first, future.ravel()], strict=True))
     if risk:
         c[flow:] = [.60, *np.repeat(.60 / (DRAWS * .25), DRAWS)]
         bounds.extend([(0, None)] * (DRAWS + 1))
@@ -96,7 +101,7 @@ def recourse(first, opening, future, replenishments, risk):
     return optimize(c, (matrix, rhs), bounds)[:zones]
 
 
-def scenario(phase, family, number, held_seed, plan_seed):
+def scenario_inputs(phase, family, number, held_seed, plan_seed, stock_ratio):
     held = np.random.default_rng(held_seed)
     planning = np.random.default_rng(plan_seed)
     severity = held.normal(0, .7)
@@ -105,26 +110,38 @@ def scenario(phase, family, number, held_seed, plan_seed):
     posterior_sd = .7 * .25 / np.hypot(.7, .25)
     shelter = (.04, .08, .16)[number % 3]
     anchors = dict(ANCHORS[phase], shelter=(shelter, shelter * .7, shelter * 1.3))
-    details = []
+    inputs = []
     for service, anchor in anchors.items():
         first, second = demand(held, anchor, severity, family)
-        stock = int(.72 * anchor[0] * HOUSEHOLDS.sum())
+        stock = int(stock_ratio * anchor[0] * HOUSEHOLDS.sum())
         opening = int(.48 * stock)
         future_stock = stock - opening
         observed_supply = round(future_stock * held.uniform(.75, 1.25))
         future = np.array([demand(planning, anchor, s, family)[1]
                            for s in planning.normal(posterior_mean, posterior_sd, DRAWS)])
         planning_supply = np.rint(future_stock * planning.uniform(.75, 1.25, DRAWS))
+        inputs.append((service, first, second, opening, observed_supply, future, planning_supply))
+    return shelter, severity, signal, inputs
+
+
+def verify(first, second, served1, served2, opening, available):
+    assert (served1 >= -1e-6).all() and (served2 >= -1e-6).all()
+    assert (served1 <= first + 1e-6).all() and (served2 <= second + 1e-6).all()
+    assert (first + second <= HOUSEHOLDS).all()
+    assert served1.sum() <= opening + 1e-6 and served2.sum() <= available + 1e-6
+
+
+def scenario(phase, family, number, held_seed, plan_seed):
+    shelter, severity, signal, inputs = scenario_inputs(phase, family, number, held_seed, plan_seed, .72)
+    details = []
+    for service, first, second, opening, observed_supply, future, planning_supply in inputs:
         decisions = (dispatch(first, opening, True), dispatch(first, opening, False),
                      recourse(first, opening, future, planning_supply, False),
                      recourse(first, opening, future, planning_supply, True))
         for policy, served1 in zip(POLICIES, decisions, strict=True):
             available = max(0., opening - served1.sum()) + observed_supply
             served2 = dispatch(second, available, policy == POLICIES[0])
-            assert (served1 >= -1e-6).all() and (served2 >= -1e-6).all()
-            assert (served1 <= first + 1e-6).all() and (served2 <= second + 1e-6).all()
-            assert (first + second <= HOUSEHOLDS).all()
-            assert served1.sum() <= opening + 1e-6 and served2.sum() <= available + 1e-6
+            verify(first, second, served1, served2, opening, available)
             for zone, n1, n2, x1, x2 in zip(range(len(first)), first, second, served1, served2, strict=True):
                 details.append((service, policy, zone, n1, n2, x1, x2, opening, observed_supply))
     return shelter, severity, signal, details

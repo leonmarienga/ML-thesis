@@ -1,0 +1,15 @@
+storm,station_id,observed_hours,tide_hours,matched_hours,longest_missing_hours,observation_status,prediction_status,passes,peak_residual_m
+Irene,8656483,72,72,72,0,available,available,True,0.913
+Irene,8652587,72,72,72,0,available,available,True,2.169
+Sandy,8518750,72,72,72,0,available,available,True,2.79
+Sandy,8531680,46,72,46,24,available,available,False,2.3409999999999997
+Matthew,8665530,72,72,72,0,available,available,True,1.858
+Matthew,8670870,72,72,72,0,available,available,True,2.298
+Florence,8658163,69,72,69,3,available,available,True,1.0919999999999999
+Florence,8656483,72,72,72,0,available,available,True,1.663
+Ida,8760922,70,72,70,1,available,available,True,1.316
+Ida,8761724,69,72,69,3,available,available,True,1.4629999999999999
+Ian,8725110,40,72,40,32,available,available,False,1.4649999999999999
+Ian,8725520,72,72,72,0,available,available,True,2.18
+Idalia,8727520,68,72,68,4,available,available,True,1.77
+Idalia,8726724,71,72,71,1,available,available,True,1.4989999999999999

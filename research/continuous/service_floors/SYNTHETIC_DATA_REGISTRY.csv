@@ -1,0 +1,2 @@
+synthetic_id,records,source_and_reuse,assumptions,parameters,independence,validation_checks,outcome_identity
+multi_service_floor_batch12,192,USVI CASPER Table 4 aggregate anchors and Batch 11 generator,"Fictional zones; two independent contexts; shelter .04/.08/.16","Supply ratios .55/.72/.90; priority floor .70; eight independent planning draws",New Batch 12 held and planning seed pairs in scenario_registry.csv,Separate seed streams and checked inventory and zone floor each stage,Simulated abstract household service requests
