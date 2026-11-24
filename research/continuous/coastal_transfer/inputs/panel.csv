@@ -1,0 +1,25 @@
+storm,center_date,station_id,station_name,landward_degrees,partition
+Isabel,2003-09-18,8652587,Oregon Inlet Marina,285,earlier
+Isabel,2003-09-18,8638610,Sewells Point,135,earlier
+Ike,2008-09-13,8771450,Galveston Pier 21,315,earlier
+Ike,2008-09-13,8770570,Sabine Pass North,0,earlier
+Gustav,2008-09-01,8761724,Grand Isle,330,earlier
+Gustav,2008-09-01,8761305,Shell Beach,315,earlier
+Isaac,2012-08-29,8761724,Grand Isle,330,earlier
+Isaac,2012-08-29,8761305,Shell Beach,315,earlier
+Hermine,2016-09-02,8727520,Cedar Key,45,earlier
+Hermine,2016-09-02,8726724,Clearwater Beach,90,earlier
+Nate,2017-10-08,8735180,Dauphin Island,0,earlier
+Nate,2017-10-08,8741533,Pascagoula NOAA Lab,0,earlier
+Florence,2018-09-14,8658163,Wrightsville Beach,325,earlier
+Florence,2018-09-14,8656483,Beaufort Duke Marine Lab,0,earlier
+Ida,2021-08-29,8760922,Pilots Station East,0,earlier
+Ida,2021-08-29,8761724,Grand Isle,330,earlier
+Debby,2024-08-05,8727520,Cedar Key,45,held
+Debby,2024-08-05,8726724,Clearwater Beach,90,held
+Francine,2024-09-11,8761724,Grand Isle,330,held
+Francine,2024-09-11,8761305,Shell Beach,315,held
+Helene,2024-09-26,8727520,Cedar Key,45,held
+Helene,2024-09-26,8726724,Clearwater Beach,90,held
+Milton,2024-10-09,8726520,St Petersburg,90,held
+Milton,2024-10-09,8726724,Clearwater Beach,90,held
