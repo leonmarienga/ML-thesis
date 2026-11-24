@@ -70,7 +70,7 @@ def mesa_url():
     return requests.Request("GET", base, params=args).prepare().url
 
 
-def valid_county_rows(raw, year=2018, source=COUNTY_SOURCE):
+def valid_county_rows(raw, year=2018, source=COUNTY_SOURCE, counties=COUNTIES):
     start = pd.Timestamp(year=year, month=1, day=1, tz="UTC")
     end = pd.Timestamp(year=year + 1, month=1, day=1, tz="UTC")
     data = pd.read_csv(raw / source, dtype={"fips_code": "string"})
@@ -79,9 +79,9 @@ def valid_county_rows(raw, year=2018, source=COUNTY_SOURCE):
     data["fips_code"] = data.fips_code.str.zfill(5)
     data["utc"] = pd.to_datetime(data.run_start_time, format="mixed", errors="coerce", utc=True)
     data["customers_out"] = pd.to_numeric(data.customers_out, errors="coerce")
-    assert set(data.fips_code) <= set(COUNTIES)
+    assert set(data.fips_code) <= set(counties)
     audit, observations = [], []
-    for fips in COUNTIES:
+    for fips in counties:
         subset = data[data.fips_code.eq(fips)]
         in_year = subset.utc.between(start, end, inclusive="left")
         on_grid = in_year & subset.utc.eq(subset.utc.dt.floor("15min"))
