@@ -32,6 +32,7 @@ on:
       - 'analysis/thesis_tidal_residual.py'
       - 'analysis/thesis_coastal_transfer.py'
       - 'analysis/thesis_weight_influence.py'
+      - 'analysis/thesis_transport_pareto.py'
       - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
@@ -333,4 +334,21 @@ jobs:
               for generated in sorted(replay.glob("*.csv")):
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
                                                 check_exact=False, rtol=1e-7, atol=1e-7)
+          PY
+      - name: Replay transport allocation and its empirical frontier
+        run: |
+          python analysis/thesis_transport_pareto.py work/batch10/survey-source/casper_usvi.pdf work/batch14/transport_pareto
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          import pandas as pd
+          saved = Path("research/continuous/transport_pareto/results")
+          replay = Path("work/batch14/transport_pareto")
+          assert sorted(p.name for p in saved.iterdir()) == sorted(p.name for p in replay.iterdir())
+          for generated in sorted(replay.glob("*.csv")):
+              pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
+                                            check_exact=False, rtol=1e-7, atol=1e-7)
+          for generated in sorted(replay.glob("*.png")):
+              with Image.open(generated) as image:
+                  image.verify()
           PY

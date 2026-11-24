@@ -190,3 +190,13 @@ python analysis/thesis_weight_influence.py work/batch13/weight_influence
 ```
 
 The retained archive contains 96 pinpoint NOAA request and response pairs. The normal replay uses the mirrored responses and does not query OpenFEMA. Acquisition, if separately needed, is bounded and keeps station and date definitions fixed.
+
+## Batch 14 transport and preferences
+
+Use the archived CASPER report extracted in Batch 11 and run the fixed preference replay.
+
+```bash
+python analysis/thesis_transport_pareto.py work/batch11/survey-source/casper_usvi.pdf work/batch14/transport_pareto
+```
+
+The script writes paired case scores, scenario seeds, the nondominated policy comparison, illustrative choices and two static figures. Figure contents are derived from the saved CSV values. The workflow compares the CSV values and opens the generated PNG files to verify image integrity.
