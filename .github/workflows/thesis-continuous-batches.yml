@@ -19,6 +19,8 @@ on:
       - 'analysis/thesis_disturbance_duration.py'
       - 'analysis/thesis_documentary_support.py'
       - 'analysis/thesis_outage_observability.py'
+      - 'analysis/thesis_precoverage_documentary.py'
+      - 'analysis/thesis_sustained_outage_transfer.py'
       - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
@@ -178,4 +180,33 @@ jobs:
               for generated in sorted(replay.glob("*.csv")):
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(reference / generated.name),
                                                 check_exact=False, rtol=1e-8, atol=1e-8)
+          PY
+      - name: Replay historical ledger documents and sustained outage transfer
+        run: |
+          if ! command -v pdftotext; then
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils
+          fi
+          sha256sum -c research/continuous/BATCH8_SHA256SUMS
+          mkdir -p work/batch8/{document-source,outage-source,precoverage_documentary,sustained_outage,zero_sensitivity}
+          tar xf research/continuous/precoverage_documentary/inputs/public_document_archive.tar.gz -C work/batch8/document-source
+          tar xf research/continuous/sustained_outage/inputs/eaglei_annual_slice_archive.tar.gz -C work/batch8/outage-source
+          cp work/batch7/outage-source/eaglei_2018_24_counties.csv.gz work/batch8/outage-source/
+          cp work/batch7/outage-source/national_slice_manifest.json work/batch8/outage-source/slice_manifest_2018.json
+          python analysis/thesis_precoverage_documentary.py work/batch8/document-source research/continuous/precoverage_documentary/inputs/curated_evidence.csv work/batch8/precoverage_documentary
+          python analysis/thesis_sustained_outage_transfer.py work/batch8/outage-source work/batch8/sustained_outage
+          python analysis/thesis_sustained_outage_transfer.py work/batch8/outage-source work/batch8/zero_sensitivity --exclude-zero-counts
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          reference = Path("research/continuous")
+          for scope, dest in [("precoverage_documentary", "precoverage_documentary/results"),
+                              ("sustained_outage", "sustained_outage/results"),
+                              ("zero_sensitivity", "sustained_outage/zero_sensitivity")]:
+              saved = reference / dest
+              replay = Path("work/batch8") / scope
+              assert {file.name for file in saved.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
+              for generated in sorted(replay.glob("*.csv")):
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
+                                                check_exact=False, rtol=1e-6, atol=1e-6)
           PY

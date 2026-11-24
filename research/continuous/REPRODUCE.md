@@ -93,3 +93,21 @@ python analysis/thesis_outage_observability.py work/continuous-replay/outage-sou
 ```
 
 The archived outage inputs include the exact rows for the fixed 24 counties and the filtered utility CSV. To reconstruct the slice, obtain file 42547879 from the pinned author-release URL and invoke the outage script with `--national /path/to/eaglei_outages_2018.csv`. It reads the retained release metadata, verifies the 999,210,542-byte file against its published MD5 and records SHA-256 for the source and extracted slice. The extracted data are enough for the offline analysis. [Locked protocol](BATCH7_PROTOCOL.md), [author distribution](https://doi.org/10.6084/m9.figshare.24237376.v1).
+
+## Precoverage obligation evidence and sustained county outage transfer
+
+Requires `pdftotext` from Poppler for the original government PDFs. The outage analysis verifies the retained county rows from the four source years.
+
+```bash
+sha256sum -c research/continuous/BATCH8_SHA256SUMS
+mkdir -p work/continuous-replay/{precoverage-source,annual-outage-source,precoverage-documents,sustained-outages,zero-sensitivity}
+tar xf research/continuous/precoverage_documentary/inputs/public_document_archive.tar.gz -C work/continuous-replay/precoverage-source
+tar xf research/continuous/sustained_outage/inputs/eaglei_annual_slice_archive.tar.gz -C work/continuous-replay/annual-outage-source
+tar xf research/continuous/county_outages/inputs/eaglei_and_mesa_evidence.tar.gz -C work/continuous-replay/annual-outage-source eaglei_2018_24_counties.csv.gz national_slice_manifest.json
+cp work/continuous-replay/annual-outage-source/national_slice_manifest.json work/continuous-replay/annual-outage-source/slice_manifest_2018.json
+python analysis/thesis_precoverage_documentary.py work/continuous-replay/precoverage-source research/continuous/precoverage_documentary/inputs/curated_evidence.csv work/continuous-replay/precoverage-documents
+python analysis/thesis_sustained_outage_transfer.py work/continuous-replay/annual-outage-source work/continuous-replay/sustained-outages
+python analysis/thesis_sustained_outage_transfer.py work/continuous-replay/annual-outage-source work/continuous-replay/zero-sensitivity --exclude-zero-counts
+```
+
+To rebuild the 2020, 2022 and 2023 slices, acquire their original files from the public links in the archived Figshare v2 metadata and supply the directory to the sustained-outage script with `--national`. Each original file matches its published MD5 before the selected rows are used. [Locked design](BATCH8_PROTOCOL.md), [publisher release](https://doi.org/10.6084/m9.figshare.24237376.v2).
