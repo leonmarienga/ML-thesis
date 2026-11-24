@@ -177,3 +177,16 @@ python analysis/thesis_service_floor.py work/batch11/survey-source/casper_usvi.p
 ```
 
 The normal replay reads retained files. The bounded `--acquire` option records new response versions and timestamps for the fixed station panel.
+
+## Batch 13 coastal transfer and fixed influence
+
+```bash
+sha256sum -c research/continuous/BATCH13_SHA256SUMS
+base=research/continuous/coastal_transfer
+mkdir -p work/batch13/coastal-raw
+tar xf "$base/inputs/noaa_response_archive.tar.gz" -C work/batch13/coastal-raw
+python analysis/thesis_coastal_transfer.py "$base/inputs/panel.csv" work/batch13/coastal-raw work/batch13/coastal_transfer
+python analysis/thesis_weight_influence.py work/batch13/weight_influence
+```
+
+The retained archive contains 96 pinpoint NOAA request and response pairs. The normal replay uses the mirrored responses and does not query OpenFEMA. Acquisition, if separately needed, is bounded and keeps station and date definitions fixed.

@@ -28,10 +28,10 @@ def url_for(row, product):
     return API + "?" + urlencode(queries)
 
 
-def acquire(job):
+def acquire(job, make_url=url_for):
     row, product, root = job
     name = f"{row.storm}_{row.station_id}_{product}"
-    url = url_for(row, product)
+    url = make_url(row, product)
     raw = b""
     for attempt in (1, 2):
         try:
@@ -55,19 +55,26 @@ def acquire(job):
     (root / f"{name}.manifest").write_text(json.dumps(manifest, indent=2) + "\n")
 
 
-def parse(row, product, raw_root, unflagged_only=False):
+def verified_response(row, product, raw_root, make_url=url_for):
     name = f"{row.storm}_{row.station_id}_{product}"
     raw = (raw_root / f"{name}.json").read_bytes()
     manifest = json.loads((raw_root / f"{name}.manifest").read_text())
-    assert manifest["url"] == url_for(row, product)
+    assert manifest["url"] == make_url(row, product)
     assert manifest["sha256"] == hashlib.sha256(raw).hexdigest()
     if manifest["http_status"] != 200:
-        return pd.Series(dtype=float), "transport_unavailable"
+        return {}, "transport_unavailable"
     response = json.loads(raw)
     if "error" in response:
-        return pd.Series(dtype=float), "source_no_product"
-    if product == "hourly_height":
+        return {}, "source_no_product"
+    if product != "predictions":
         assert str(response["metadata"]["id"]) == row.station_id
+    return response, "available"
+
+
+def parse(row, product, raw_root, unflagged_only=False):
+    response, status = verified_response(row, product, raw_root)
+    if not response:
+        return pd.Series(dtype=float), status
     table = pd.DataFrame(response[PRODUCTS[product]])
     if table.empty:
         return pd.Series(dtype=float), "source_no_product"

@@ -30,6 +30,8 @@ on:
       - 'analysis/thesis_service_scenarios.py'
       - 'analysis/thesis_service_floor.py'
       - 'analysis/thesis_tidal_residual.py'
+      - 'analysis/thesis_coastal_transfer.py'
+      - 'analysis/thesis_weight_influence.py'
       - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
@@ -307,6 +309,27 @@ jobs:
               saved = reference / dest
               replay = Path("work/batch12") / scope
               assert {file.name for file in saved.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
+              for generated in sorted(replay.glob("*.csv")):
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
+                                                check_exact=False, rtol=1e-7, atol=1e-7)
+          PY
+      - name: Replay signed weighting influence and held coastal transfer
+        run: |
+          sha256sum -c research/continuous/BATCH13_SHA256SUMS
+          mkdir -p work/batch13/coastal-raw
+          base=research/continuous/coastal_transfer
+          tar xf "$base/inputs/noaa_response_archive.tar.gz" -C work/batch13/coastal-raw
+          python analysis/thesis_coastal_transfer.py "$base/inputs/panel.csv" work/batch13/coastal-raw work/batch13/coastal_transfer
+          python analysis/thesis_weight_influence.py work/batch13/weight_influence
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          reference = Path("research/continuous")
+          for scope in ("coastal_transfer/verified", "coastal_transfer/unflagged", "weight_influence"):
+              name, _, edition = scope.partition("/")
+              saved = reference / name / "results" / edition
+              replay = Path("work/batch13") / scope
+              assert sorted(p.name for p in saved.glob("*.csv")) == sorted(p.name for p in replay.glob("*.csv"))
               for generated in sorted(replay.glob("*.csv")):
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
                                                 check_exact=False, rtol=1e-7, atol=1e-7)

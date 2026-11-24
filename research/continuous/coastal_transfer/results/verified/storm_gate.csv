@@ -1,0 +1,13 @@
+partition,storm,level_sites,forcing_sites,qualifies
+earlier,Florence,2,2,True
+earlier,Gustav,2,2,True
+earlier,Hermine,2,2,True
+earlier,Ida,2,2,True
+earlier,Ike,2,1,True
+earlier,Isaac,2,2,True
+earlier,Isabel,2,1,True
+earlier,Nate,2,1,True
+held,Debby,2,2,True
+held,Francine,2,2,True
+held,Helene,2,2,True
+held,Milton,2,2,True
