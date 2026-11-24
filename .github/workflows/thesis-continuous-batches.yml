@@ -26,6 +26,8 @@ on:
       - 'analysis/thesis_storm_outage_panel.py'
       - 'analysis/thesis_public_ledger_gate.py'
       - 'analysis/thesis_humanitarian_source_gate.py'
+      - 'analysis/thesis_coverage_specialists.py'
+      - 'analysis/thesis_service_scenarios.py'
       - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
@@ -266,5 +268,22 @@ jobs:
               for generated in sorted(replay.glob("*.csv")):
                   opts = {"dtype": {"fips_code": str}}
                   pd.testing.assert_frame_equal(pd.read_csv(generated, **opts), pd.read_csv(saved / generated.name, **opts),
+                                                check_exact=False, rtol=1e-7, atol=1e-7)
+          PY
+      - name: Replay coverage-corrected forecasts and essential-service decisions
+        run: |
+          sha256sum -c research/continuous/BATCH11_SHA256SUMS
+          mkdir -p work/batch11/{coverage_specialists,service_scenarios}
+          python analysis/thesis_coverage_specialists.py work/batch11/coverage_specialists
+          python analysis/thesis_service_scenarios.py work/batch10/survey-source/casper_usvi.pdf work/batch11/service_scenarios
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          for scope in ("coverage_specialists", "service_scenarios"):
+              saved = Path("research/continuous") / scope / "results"
+              replay = Path("work/batch11") / scope
+              assert {file.name for file in saved.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
+              for generated in sorted(replay.glob("*.csv")):
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
                                                 check_exact=False, rtol=1e-7, atol=1e-7)
           PY

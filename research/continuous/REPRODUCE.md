@@ -149,3 +149,17 @@ python analysis/thesis_storm_outage_panel.py evaluate "$work/wind-source" "$work
 ```
 
 To regenerate the exact outage event slices, place the four previously verified EAGLE-I national CSVs in one directory. Run the panel script with `extract`, the locked panel, an output directory, `--slices`, `--national` and `--file-card "$panel/source_cards.json"`. The extraction revalidates the complete public annual file size, MD5 and SHA-256 for each year. The offline replay uses only the verified subsets. [Locked design](BATCH10_PROTOCOL.md).
+
+## Batch 11 coverage-aware funding and sequential services
+
+Run at the repository root with the pinned research requirements and Poppler. Compare the CSV tables with the retained results. The funding loader reads only the frozen historical cohort, the retained coverage ablation and the stored signed-outcome archive. The services script verifies the reported medication, utility access, food and water values directly in the archived survey table before simulating.
+
+```bash
+sha256sum -c research/continuous/BATCH11_SHA256SUMS
+mkdir -p work/batch11/{coverage_specialists,service_scenarios,survey-source}
+tar xf research/continuous/humanitarian_source/inputs/public_survey_and_shelter_sources.tar.gz -C work/batch11/survey-source ./casper_usvi.pdf
+python analysis/thesis_coverage_specialists.py work/batch11/coverage_specialists
+python analysis/thesis_service_scenarios.py work/batch11/survey-source/casper_usvi.pdf work/batch11/service_scenarios
+```
+
+The independent humanitarian crosswalk preserves manually verified published estimates with source locations. The official electricity and tide pages are retained for review. The scripts do not use the crosswalk to select or score a policy.

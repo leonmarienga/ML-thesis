@@ -1,0 +1,12 @@
+endpoint,held_fy,selected_arm
+eventual_proxy,2019,real_only
+eventual_proxy,2020,real_only
+eventual_proxy,2021,real_only
+eventual_proxy,2022,weighted_20x
+eventual_proxy,2023,real_only
+eventual_proxy,2024,weighted_20x
+signed_elapsed,2019,real_only
+signed_elapsed,2020,real_only
+signed_elapsed,2021,real_only
+signed_elapsed,2022,real_only
+signed_elapsed,2023,weighted_20x

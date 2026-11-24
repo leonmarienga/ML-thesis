@@ -1,0 +1,13 @@
+endpoint,held_fy,train_n,held_n,train_tail_groups,held_tail_groups,largest_compatible_tail_stratum,same_strata_with_eight_groups,training_groups_band_3,training_groups_band_4,training_groups_band_5
+eventual_proxy,2019,291,68,8,3,1,0,3,4,2
+eventual_proxy,2020,370,43,12,1,2,0,7,4,2
+eventual_proxy,2021,415,57,12,1,2,0,7,4,2
+eventual_proxy,2022,469,52,13,3,2,0,8,4,2
+eventual_proxy,2023,523,68,14,2,2,0,8,5,2
+eventual_proxy,2024,573,88,17,1,2,0,10,5,3
+signed_elapsed,2019,68,35,1,3,1,0,1,1,0
+signed_elapsed,2020,107,17,1,1,1,0,1,1,0
+signed_elapsed,2021,133,26,2,1,1,0,2,1,0
+signed_elapsed,2022,167,27,8,3,1,0,3,4,2
+signed_elapsed,2023,204,30,12,2,2,0,7,4,2
+signed_elapsed,2024,230,0,12,0,2,0,7,4,2

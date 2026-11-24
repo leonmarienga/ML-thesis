@@ -1,0 +1,13 @@
+source_id,event,geography,observation_context,measure,numerator,denominator,reported_value,unit,source_locator,use_limit
+rockaway_early,Sandy,Rockaway Peninsula,2012-11-17 to 2012-11-19,Households with no electricity source,28,89,31.5,percent,Table 2,Available electricity includes generators
+rockaway_early,Sandy,Rockaway Peninsula,2012-11-17 to 2012-11-19,Reported generator as current electricity source,12,89,13.5,percent,Table 2,Source type is distinct from utility status
+rockaway_early,Sandy,Rockaway Peninsula,2012-11-17 to 2012-11-19,Reported power company as current electricity source,49,89,55.1,percent,Table 2,Retain response denominator and publish as sample proportion
+rockaway_early,Sandy,Rockaway Peninsula,2012-11-17 to 2012-11-19,Households without heat at survey,38,87,43.7,percent,Table 2,Heat is a separate endpoint
+rockaway_early,Sandy,Rockaway Peninsula,2012-11-17 to 2012-11-19,Food sources included donations,18,61,29.5,percent,Table 2,Multiple sources allowed. No program quantities or assignment
+rockaway_early,Sandy,Rockaway Peninsula,2012-11-17 to 2012-11-19,Households reported evacuating,51,90,56.7,percent,Table 2,Evacuation does not establish shelter need or household trajectory
+rockaway_later,Sandy,Rockaway Peninsula,About four months after storm,Household difficulty obtaining food,,,approximately one-third,description,PMID 30488477 abstract,Separate cross-section. No shared household link
+rockaway_later,Sandy,Rockaway Peninsula,About four months after storm,Problems obtaining prescription medication,,,approximately one-quarter,description,PMID 30488477 abstract,Qualitative cross-sectional scope check
+michael_bay_gulf,Michael,Bay and Gulf counties Florida,October and November 2019,Homes with some damage,,,78.1,percent,PMID 34081673 abstract,178 interviews overall. Item denominator and survey weights not verified
+michael_rural,Michael,Gadsden Calhoun and Jackson counties Florida,January 2020,Reported some home damage,,,63,percent,PMID 38189201 abstract,187 interviews overall. Same hurricane as Bay and Gulf study
+eia_pr_maria,Maria,Puerto Rico,April 2018,Customers with power restored,,,96,percent,Energy Information Administration figure discussion,Agency publication cites DOE situation reports. Aggregate utility customers
+noaa_ida_tide,Ida,Pilots Station East Louisiana,August 2021,Water elevation above local MHHW,,,1.2,meters,NOAA NOS Fiscal Year 2021 Year in Review,Observed gauge level with local datum. No event footprint or recovery effect
