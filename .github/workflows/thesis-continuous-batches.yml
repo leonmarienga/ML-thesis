@@ -21,6 +21,8 @@ on:
       - 'analysis/thesis_outage_observability.py'
       - 'analysis/thesis_precoverage_documentary.py'
       - 'analysis/thesis_sustained_outage_transfer.py'
+      - 'analysis/thesis_component_accounting.py'
+      - 'analysis/thesis_county_wind_exposure.py'
       - 'research/requirements.txt'
       - 'research/continuous/**'
       - '.github/workflows/thesis-continuous-batches.yml'
@@ -209,4 +211,25 @@ jobs:
               for generated in sorted(replay.glob("*.csv")):
                   pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
                                                 check_exact=False, rtol=1e-6, atol=1e-6)
+          PY
+      - name: Replay component accounting and county wind exposure
+        run: |
+          sha256sum -c research/continuous/BATCH9_SHA256SUMS
+          mkdir -p work/batch9/{component-source,wind-source,component_accounting,county_wind_exposure}
+          tar xf research/continuous/component_accounting/inputs/public_component_reports.tar.gz -C work/batch9/component-source
+          tar xf research/continuous/county_wind_exposure/inputs/census_2017_county_points.tar.gz -C work/batch9/wind-source
+          tar xf research/continuous/winds/inputs/noaa_public_wind_responses.tar.gz -C work/batch9/wind-source ./aal132020.dat.gz ./aal132020.dat.gz.json ./aal092022.dat.gz ./aal092022.dat.gz.json
+          tar xf research/continuous/wind_extension/inputs/noaa_additional_wind_responses.tar.gz -C work/batch9/wind-source ./aal142018.dat.gz ./aal142018.dat.gz.json ./aal102023.dat.gz ./aal102023.dat.gz.json
+          python analysis/thesis_component_accounting.py work/batch9/component-source research/continuous/component_accounting/inputs/curated_records.csv work/batch9/component_accounting
+          python analysis/thesis_county_wind_exposure.py work/batch9/wind-source work/batch9/county_wind_exposure
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          for scope in ("component_accounting", "county_wind_exposure"):
+              saved = Path("research/continuous") / scope / "results"
+              replay = Path("work/batch9") / scope
+              assert {file.name for file in saved.glob("*.csv")} == {file.name for file in replay.glob("*.csv")}
+              for generated in sorted(replay.glob("*.csv")):
+                  pd.testing.assert_frame_equal(pd.read_csv(generated), pd.read_csv(saved / generated.name),
+                                                check_exact=False, rtol=1e-7, atol=1e-7)
           PY

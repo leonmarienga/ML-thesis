@@ -111,3 +111,18 @@ python analysis/thesis_sustained_outage_transfer.py work/continuous-replay/annua
 ```
 
 To rebuild the 2020, 2022 and 2023 slices, acquire their original files from the public links in the archived Figshare v2 metadata and supply the directory to the sustained-outage script with `--national`. Each original file matches its published MD5 before the selected rows are used. [Locked design](BATCH8_PROTOCOL.md), [publisher release](https://doi.org/10.6084/m9.figshare.24237376.v2).
+
+## Recipient-side audits and county wind geometry
+
+```bash
+sha256sum -c research/continuous/BATCH9_SHA256SUMS
+mkdir -p work/continuous-replay/{component-source,county-wind-source,component-accounting,county-wind-exposure}
+tar xf research/continuous/component_accounting/inputs/public_component_reports.tar.gz -C work/continuous-replay/component-source
+tar xf research/continuous/county_wind_exposure/inputs/census_2017_county_points.tar.gz -C work/continuous-replay/county-wind-source
+tar xf research/continuous/winds/inputs/noaa_public_wind_responses.tar.gz -C work/continuous-replay/county-wind-source ./aal132020.dat.gz ./aal132020.dat.gz.json ./aal092022.dat.gz ./aal092022.dat.gz.json
+tar xf research/continuous/wind_extension/inputs/noaa_additional_wind_responses.tar.gz -C work/continuous-replay/county-wind-source ./aal142018.dat.gz ./aal142018.dat.gz.json ./aal102023.dat.gz ./aal102023.dat.gz.json
+python analysis/thesis_component_accounting.py work/continuous-replay/component-source research/continuous/component_accounting/inputs/curated_records.csv work/continuous-replay/component-accounting
+python analysis/thesis_county_wind_exposure.py work/continuous-replay/county-wind-source work/continuous-replay/county-wind-exposure
+```
+
+The scanner uses Poppler plus hash-verified archived OCR sidecars. To recreate the sidecars, render all 12 NASA report pages at 200 dpi and the first eight CBP report pages at 140 dpi with `pdftoppm -gray -png`. Apply Tesseract at its default page segmentation and concatenate the per-page text, in order, with form feeds. The retained sidecar hashes identify the original OCR runs. [Batch 9 protocol](BATCH9_PROTOCOL.md).
