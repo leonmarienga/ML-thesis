@@ -58,6 +58,14 @@ The 830/912 frozen count is an exactly reproducible historical artifact. It is *
 | Historical precoverage 36-month signed actions | Blocked for model confirmation | No eligible public outcomes for five exact declarations. [Ledger gate](research/continuous/legacy_ledger_gate/REPORT.md). Preserve the missing-data finding rather than imputing totals or awaiting records indefinitely. |
 | FY2025 outcomes | Embargoed; excluded | Never acquire, open, train on, score, or disclose outcomes; do not make their release a submission requirement. |
 
+## Recent substantive research
+
+- **Target-blind router v1 tested, not promoted:** Six chronological origins with held-label perturbation invariance and a matched 376-case comparison. One extra correct decision; uncertainty and affected episode-group support failed the fixed gate. [Research evidence](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/target_blind_router_v1).
+- **Synthetic physics: acquisition and collocation screened; no transfer fit:** Two candidate Irma gauges fail the local representativeness gate for the public ADCIRC+SWAN extraction subset. This negative match result does not evaluate simulator skill. [Research evidence](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/adcirc_collocation).
+- **Catastrophic uncertainty audited:** 0/9 fixed interval coverage above $50M and two misses not flagged for review. No threshold retuning on these already examined observations. [Research audit](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/uncertainty_audit).
+- **Three-arm evaluation implemented and tested as a simulation only:** common synthetic scenarios for a scripted policy, optimizer, and optimizer with scripted veto. No participant study or operational validation; ethics/supervisor review remains necessary before human enrollment. [Fixture](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/policy_veto_fixture).
+- **Next manuscript/software gates:** evidence and policy screens in the integrated app, real-browser and keyboard acceptance, full expanded replay, and supervisor template/disclosure confirmation. Do not rerun a passed baseline absent a material change.
+
 ## Research queue separate from manuscript release
 
 1. **Authentic decision-time severity:** verify archive availability, variable semantics and timestamp provenance before scoring; require independent events and exact scope. Record no-fit and failed paths. [Michigan Bar QINE feasibility](https://github.com/leonmarienga/ML-thesis/blob/thesis/research-followup-20261128/research/followup_20261128/cnrfc_qine/REPORT.md) passed same-site variable matching in one storm; public issue time and generalization remain unverified.
