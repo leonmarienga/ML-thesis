@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Relief allocation trade-offs | Batch 14 research prototype</title>
+<style>
+:root{--ink:#12282d;--muted:#466067;--paper:#f2f6f3;--line:#ccdad3;--accent:#005d51;--tint:#e0f0e9;--warm:#fdf0c9;--plum:#683992;--max:955px;color-scheme:light}
+*{box-sizing:border-box}
+body{font:16px/1.55 system-ui,sans-serif;background:var(--paper);color:var(--ink);margin:0}
+main{max-width:var(--max);margin:auto;padding:2.2rem 1.4rem 4rem}
+.eyebrow{font-size:.78rem;font-weight:750;letter-spacing:.11em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 clamp(2.0rem,6.5vw,3.5rem)/1.05 Georgia,serif;letter-spacing:-.045em;margin:.55rem 0 1rem}
+h2{font-size:1.22rem;line-height:1.3;margin:0 0 .6rem}
+p{margin:.35rem 0 .8rem}
+.lead{max-width:70ch}
+.notice{border-left:5px solid #916300;padding:.7rem .9rem;background:var(--warm);margin:1rem 0}
+.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;padding:1rem 0}
+label{display:block;font-weight:700;font-size:.92rem}select{display:block;color:var(--ink);font:inherit;background:white;padding:.55rem .35rem;margin-top:.25rem;width:100%;border:1px solid #849d92;border-radius:.32rem}
+select:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #19648f;outline-offset:2px}
+.card{background:white;border:1px solid var(--line);margin:.9rem 0;padding:1.1rem 1.25rem;border-radius:.65rem}
+small,.muted,figcaption,caption{color:var(--muted)}
+.numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;padding:.15rem 0}
+.number{display:block;background:var(--tint);padding:.65rem;border-radius:.27rem}
+.number strong{font-size:1.35rem;font-weight:780;display:block}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+caption{text-align:left;padding-bottom:.45rem}th,td{padding:.52rem .42rem;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}thead th{font-size:.85rem;line-height:1.3}
+a{color:var(--accent)}summary{cursor:pointer;font-weight:690}
+figure{margin:.6rem 0}svg{display:block;width:100%;height:auto}
+.legend{font-size:.85rem}.swatch{display:inline-block;width:.7rem;height:.7rem;margin:0 .22rem 0 .55rem;border-radius:50%}
+footer{font-size:.88rem}
+@media(max-width:670px){main{padding:1.2rem .75rem 2rem}.controls{grid-template-columns:1fr;gap:.6rem}.card{padding:.85rem}.numbers{grid-template-columns:1fr}.number strong{display:inline;margin-right:.55rem}th,td{padding:.38rem .24rem}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p class="eyebrow">Research prototype • Batch 14</p>
+<h1>Relief allocation trade-offs</h1>
+<p class="lead">Compare two settings on three simulated service outcomes. Change which outcomes matter most, then see what the selected policy did under different road conditions.</p>
+<p class="notice"><strong>Simulation only.</strong> No observed aid delivered, historical funding, or real-world effectiveness estimates appear in this interface. Do not use these outputs to dispatch aid.</p>
+</header>
+<section aria-labelledby="select-title">
+<h2 id="select-title">Choose how to compare</h2>
+<div class="controls">
+<label>Preference profile<select id="preference"></select></label>
+<label>Comparator setting<select id="comparator"></select></label>
+<label>Results to display<select id="regime"></select></label>
+</div>
+<p id="weights" class="muted"></p>
+</section>
+<section class="card" aria-labelledby="result-title">
+<h2 id="result-title">The two settings</h2>
+<div id="selection" aria-live="polite"></div>
+<table>
+<caption id="coverage-caption"></caption>
+<thead><tr><th scope="col">Simulated outcome</th><th scope="col">Preference pick</th><th scope="col">Comparator</th><th scope="col">Gap (pp)</th></tr></thead>
+<tbody id="comparison"></tbody>
+</table>
+<p class="muted"><small>Gap is the preference pick minus the comparator, in percentage points. Descriptive means; the table does not test an improvement.</small></p>
+</section>
+<section class="card" aria-labelledby="chart-title">
+<h2 id="chart-title">Where these settings sit</h2>
+<div class="legend"><span class="swatch" style="background:#087061"></span>On the three-objective frontier <span class="swatch" style="background:#819091"></span>Other tested settings <span class="swatch" style="background:#131f20"></span>Preference pick <span class="swatch" style="background:#683992"></span>Comparator</div>
+<figure><svg id="chart" viewBox="0 0 620 300" role="img" aria-labelledby="chart-name chart-note"><title id="chart-name">Overall service versus least-served-zone coverage</title><desc id="chart-note">All 89 simulated settings. The table above gives exact values for the selected pair, including the third objective.</desc></svg>
+<figcaption>Positions always use the full 48-case sample. High-vulnerability service is the third frontier objective and is not a chart axis.</figcaption></figure>
+</section>
+<section class="card" aria-labelledby="evidence-title">
+<h2 id="evidence-title">What the study can establish</h2>
+<div class="numbers"><div class="number"><strong>48</strong> synthetic cases</div><div class="number"><strong>89</strong> policy × floor settings</div><div class="number"><strong>46</strong> nondominated settings</div></div>
+<p>Survey anchors informed simulated household demand. Route conditions, storage and resupply were simulated assumptions. The service floor applies only to reachable, stocked request cells; closed routes still count in the coverage denominators.</p>
+<p><strong>Overall:</strong> delivered service divided by demand. <strong>High vulnerability:</strong> that fraction in the designated high-vulnerability zones. <strong>Least served:</strong> the minimum final service fraction across zones with demand in each case. Displayed outcomes average these fractions across the shown cases.</p>
+<details><summary>Source commit and file checksums</summary>
+<p><a id="source-link">Batch 14 report</a> · <a id="protocol-link">Original protocol</a></p>
+<p id="source-commit"></p><ul id="hashes" style="overflow-wrap:anywhere"></ul>
+</details>
+</section>
+<footer>Read-only research demonstration. It does not fit models, rerun the optimizer, alter records, or make network requests.</footer>
+<noscript><p>JavaScript is required to compare settings. Read the Batch 14 report, or enable local scripts and reopen this file.</p></noscript>
+</main>
+<script type="application/json" id="data"><!-- DATA --></script>
+<script><!-- APP --></script>
+</body>
+</html>

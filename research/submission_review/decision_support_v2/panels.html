@@ -1,0 +1,53 @@
+<nav aria-label="Viewer sections" class="shortcuts">
+<a href="#historical">Historical evidence</a><a href="#veto">Scripted veto comparison</a><a href="#select-title">Batch 14 frontier</a><a href="#study-limits">Participant study limits</a>
+</nav>
+<section class="card" aria-labelledby="historical">
+<p class="eyebrow">Historical accounting • not an aid outcome</p>
+<h2 id="historical">What the obligation records actually support</h2>
+<div class="numbers">
+<div class="number"><strong id="track-a-score"></strong> archived routes matched</div>
+<div class="number"><strong id="track-a-mae"></strong> historical overlay MAE</div>
+<div class="number"><strong id="archived-declaration"></strong> recorded obligation in one archived case</div>
+</div>
+<p id="archived-context"></p>
+<p class="notice"><strong>Do not read Track A as a forward prediction score.</strong> The historical replay excludes the held fiscal year from individual fits but can use later years. Four archived routing rules determine eligibility using actual obligations below $50 million. That means held-row outcomes enter the rule selection for those cases. The archived score is not an unbiased out-of-sample estimate; no counterfactual target-blind Track A score is claimed.</p>
+<details><summary>Open target-conditioned rule source links</summary><ul id="historical-gates"></ul><p><a id="track-link">Pinned historical metric table</a></p></details>
+<h3>Nominal interval coverage is not extreme-case coverage</h3>
+<label for="interval-level">Nominal historical interval level</label>
+<select id="interval-level" class="bounded">
+<option value="90" selected>90% nominal interval</option><option value="80">80% nominal interval</option>
+</select>
+<p id="interval-message" aria-live="polite"></p>
+<table>
+<caption>Archived FY2020–24 nested metadata model, dollar-residual intervals</caption>
+<thead><tr><th scope="col">Observed obligation group</th><th scope="col">Covered / cases</th><th scope="col">Observed coverage</th></tr></thead>
+<tbody id="interval-rows"></tbody>
+</table>
+<p class="muted"><small>Groups use the observed dollar amounts after the fact. Small tail support and previously examined years limit inference; these intervals are not clearance for new decisions. <a id="interval-link">Pinned interval metrics</a>.</small></p>
+</section>
+<section class="card" aria-labelledby="veto">
+<p class="eyebrow">Matched simulation • 48 new draws from the Batch 14 generator</p>
+<h2 id="veto">Which trade-offs follow from a scripted veto?</h2>
+<p>Choose an arm, a comparison arm, and optionally a road condition. The two arms are always shown on the same simulated worlds. Three arms were evaluated: a proportional rule, a vulnerability-weighted linear optimizer, and the same optimizer with a fallback to the proportional rule if its worst eligible zone loses more than 10 points.</p>
+<div class="controls">
+<div><label for="veto-primary">Policy of interest</label><select id="veto-primary"></select></div>
+<div><label for="veto-other">Comparison policy</label><select id="veto-other"></select></div>
+<div><label for="veto-regime">Road conditions</label><select id="veto-regime"></select></div>
+</div>
+<p id="veto-summary" aria-live="polite"></p>
+<table class="veto-table">
+<caption id="veto-caption"></caption>
+<thead><tr><th scope="col">Simulated service</th><th scope="col">Policy</th><th scope="col">Comparison</th><th scope="col">Gap (pp)</th><th scope="col">Scenario interval (pp)</th></tr></thead>
+<tbody id="veto-rows"></tbody>
+</table>
+<p id="veto-count" class="muted"></p>
+<p class="muted"><small>Gap = policy minus comparison. Scenario intervals are archived paired resampling results for all 48 draws only, not clinical, human, or real-world effect intervals. Subgroup means are descriptive. Closed zones stay in the scored denominators.</small></p>
+</section>
+<section class="card" aria-labelledby="study-limits">
+<h2 id="study-limits">What these panels do not measure</h2>
+<p>Historical FEMA obligations are accounting amounts, not requests for aid, disaster losses, or observed relief delivered. The simulations report service ratios, not dollars. The proportional rule and veto are programmed algorithms, not actual human participants or observations of human judgment. No participant study, human–AI effectiveness estimate, or field validation is shown. Neither simulation should be used to dispatch aid.</p>
+<details><summary>Data provenance and reproducibility</summary>
+<p>Builds use the frozen history and Batch 14 data at the pinned research commit, and aggregate outputs of the separate matched-scenario fixture. Historical rows and logged synthetic actions are not copied into the viewer.</p>
+<ul id="v2-provenance"></ul>
+</details>
+</section>

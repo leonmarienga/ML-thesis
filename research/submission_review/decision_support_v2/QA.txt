@@ -1,0 +1,5 @@
+PASS: two generated builds byte-identical.
+9ddf0fedf618e7e9e3df5a194890ecb1f88883d4a48a4917cba2d423f7e84203  index.html
+PASS: 1,424 live JS preference/comparator/regime combinations; values, gaps, plot redraw, source and evidence labels.
+PASS: two interval levels and all 24 distinct-arm/regime combinations; role labels, displayed values, interval reversal, warnings, aggregate-only fixture and sources.
+PASS: unique IDs, all navigation and aria-labelledby targets valid, core select labels, main/navigation landmarks, captions and column scopes.

@@ -1,0 +1,8 @@
+.shortcuts{display:flex;flex-wrap:wrap;gap:.65rem 1.1rem;margin:1.25rem 0}
+.shortcuts a{font-weight:690}
+select.bounded{max-width:20rem;margin-bottom:.75rem}
+h3{font-size:1rem;margin:1rem 0 .45rem}
+#historical,#veto,#study-limits,#select-title{scroll-margin-top:1rem}
+#v2-provenance{overflow-wrap:anywhere;font-size:.82rem}
+.veto-table td,.veto-table th{font-variant-numeric:tabular-nums}
+@media(max-width:450px){.veto-table{font-size:.76rem}.veto-table th{font-size:.69rem}.veto-table th,.veto-table td{padding:.38rem .17rem}.veto-table th:first-child{width:30%}}
