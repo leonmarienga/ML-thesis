@@ -1,0 +1,29 @@
+hazard,year,held_n,valid_elapsed_n,gate_eligible_n,changed_n,changed_group_n,changed_corrected_n,changed_new_error_n,actual_ge_50m_n,actual_ge_50m_eligible_n,actual_ge_50m_changed_n
+All,All,376,376,73,3,2,1,0,13,10,2
+All,2019,68,68,8,2,1,0,0,4,2,2
+All,2020,43,43,8,0,0,0,0,1,1,0
+All,2021,57,57,32,0,0,0,0,1,1,0
+All,2022,52,52,9,0,0,0,0,3,3,0
+All,2023,68,68,7,1,1,1,0,2,2,0
+All,2024,88,88,9,0,0,0,0,2,1,0
+Severe Ice Storm,All,9,9,9,0,0,0,0,0,0,0
+Severe Ice Storm,2019,0,0,0,0,0,0,0,0,0,0
+Severe Ice Storm,2020,0,0,0,0,0,0,0,0,0,0
+Severe Ice Storm,2021,9,9,9,0,0,0,0,0,0,0
+Severe Ice Storm,2022,0,0,0,0,0,0,0,0,0,0
+Severe Ice Storm,2023,0,0,0,0,0,0,0,0,0,0
+Severe Ice Storm,2024,0,0,0,0,0,0,0,0,0,0
+Fire,All,16,16,14,0,0,0,0,3,2,0
+Fire,2019,1,1,0,0,0,0,0,1,0,0
+Fire,2020,2,2,2,0,0,0,0,0,0,0
+Fire,2021,6,6,6,0,0,0,0,0,0,0
+Fire,2022,3,3,2,0,0,0,0,1,1,0
+Fire,2023,1,1,1,0,0,0,0,1,1,0
+Fire,2024,3,3,3,0,0,0,0,0,0,0
+Hurricane,All,50,50,50,3,2,1,0,8,8,2
+Hurricane,2019,8,8,8,2,1,0,0,2,2,2
+Hurricane,2020,6,6,6,0,0,0,0,1,1,0
+Hurricane,2021,17,17,17,0,0,0,0,1,1,0
+Hurricane,2022,7,7,7,0,0,0,0,2,2,0
+Hurricane,2023,6,6,6,1,1,1,0,1,1,0
+Hurricane,2024,6,6,6,0,0,0,0,1,1,0

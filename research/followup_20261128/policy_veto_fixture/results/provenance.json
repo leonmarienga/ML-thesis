@@ -1,0 +1,24 @@
+{
+  "action_pairs": 144,
+  "cases": 48,
+  "commit": "b0b6edb229d112dd6d11896a512bf1112414e4f6",
+  "disjoint_seeds": 192,
+  "input_sha256": {
+    "analysis/thesis_precoverage_documentary.py": "76e66b9c5d2328479b33743b3211d0c15a92435d265536941dc8644a2be66b4d",
+    "analysis/thesis_service_scenarios.py": "b1551182fa87c293ecef36c9f512b51065201d3c98ca8f03adbd820f6a429f7f",
+    "analysis/thesis_transport_pareto.py": "1d0710838a9d630682176bca0481a5392c4a6bd304d025c76bfce22b9e2ccbee",
+    "analysis/thesis_water_recourse.py": "fb56ec49e1475715a1e4878d4458d9894ccd89a6e4f57b227480eafad425fff7",
+    "research/continuous/BATCH14_PROTOCOL.md": "8bdb26fea13f9f48fd3e7cb60a93485b7f15d2d8a833408e87d5380ab12f952e",
+    "research/continuous/transport_pareto/results/scenario_registry.csv": "0e79b62d0d6de6cc33032851f9ccb7f7c68e25292b9fe3abf510766beb8c7c9e",
+    "research/requirements.txt": "d4098723ae5a98cc98ae4eb9207a94515bc63f79b221653a04131c30924bfdfb"
+  },
+  "numpy": "2.5.5",
+  "pandas": "2.3.3",
+  "protocol_sha256": "e72a1ae1b20d247163a9a0768804f052bdfd93340d8d2c2634200cd1d3c81976",
+  "python": "3.12.14",
+  "scipy": "1.18.1",
+  "script_sha256": "7a0a255d2ba8958cedbdad9ad2ae7fb107f6c366b7bc5d2c2a956c2ea47f7634",
+  "stage1_future_replacement_checks": 144,
+  "stage_constraint_checks": 288,
+  "survey_sha256": "9991799f25d8be0aa235048806561674ec97b29126af7b8ebb5a5923f7aa94ba"
+}

@@ -1,0 +1,7 @@
+origin_fy,n_train,n_held,held_group_count,max_train_fy,min_held_start_or_declaration,max_train_end_or_start,removed_by_time,removed_by_groups_after_time,held_groups_in_training,baseline_columns,candidate_columns,train_held_declaration_id_intersection,prediction_digest,permutation_held_labels_changed,permutation_invariance,reassignment_held_labels_changed,reassignment_invariance
+2019,514,68,56,2018,2018-05-01,2018-04-20,22,0,0,76,80,0,2e31325feb312e25819a0a609cc0af8d517e67b4c898b9f85d5b2928c2cc8ad4,33,True,55,True
+2020,593,43,41,2019,2019-06-30,2019-06-25,11,0,0,76,80,0,af4128b5835a282bf6dbd3e5b113eb0b091299061f3022b5e9b7cce01a8f7545,17,True,36,True
+2021,638,57,47,2020,2020-06-29,2020-05-22,9,0,0,77,81,0,7e275f1e1671412b1de51d295bc81745ca3e5f16093784e33cae511390838daa,27,True,48,True
+2022,692,52,48,2021,2021-07-12,2021-07-10,12,0,0,77,81,0,740c61908af9d2e2c7fc541759cdcad62619f17d440aeef530532826edbe54a1,23,True,44,True
+2023,746,68,63,2022,2022-07-12,2022-07-05,10,0,0,77,81,0,ca080449e0e963fb9ac69f02899ef640dcfb1ad88739ef63944cf76dbf117aa7,24,True,57,True
+2024,796,88,77,2023,2023-05-01,2023-04-30,28,0,0,78,82,0,204fbb1937cd948450496e6f8a983a216f6f84977eab360fbd557f122bf51cc9,36,True,75,True
