@@ -1,0 +1,119 @@
+{
+  "specification": "One event. Exact USD-free physical discharge match. CNRFC archive time is an exclusion screen, not public dissemination evidence.",
+  "observation_window": [
+    "2022-12-27T00:00:00Z",
+    "2023-01-03T00:00:00Z"
+  ],
+  "raw_usgs_rows": 673,
+  "eligible_usgs_rows": 672,
+  "excluded_usgs_rows": 1,
+  "usgs_series": "380b66b2720f4abca899939349ea4efc",
+  "max_approved_usgs_cfs": "67900",
+  "max_approved_times_utc": [
+    "2022-12-31T17:45:00Z"
+  ],
+  "site_gate": {
+    "MHBC1": {
+      "status": "comparable_documented_same_site_discharge_target",
+      "target": "USGS-11335000/00060",
+      "caveat": "CNRFC QINE is adjusted and may use gauge past, not an independent observation; future approved stage-derived discharge is target only."
+    },
+    "CMPC1": {
+      "status": "blocked_naturalized_inflow_vs_raw_gauge",
+      "target": null,
+      "caveat": "Pardee Dam natural inflow adjusted to daily full natural flow; no raw discharge substitute."
+    },
+    "MCNC1": {
+      "status": "blocked_no_empirical_rating_curve",
+      "target": null,
+      "caveat": "McConnell stage is not flow; CNRFC documents no empirical discharge rating."
+    },
+    "MCNC1L": {
+      "status": "blocked_local_component_and_not_in_returned_zip",
+      "target": null,
+      "caveat": "Excludes upstream contributions from MHBC1 and OTTC1; no total gauge-flow substitute."
+    }
+  },
+  "cycles": {
+    "2022-12-31T12:00:00Z": {
+      "archive_clock_utc": "2022-12-31T16:56:47Z",
+      "row_count": 361,
+      "exclusions": {
+        "outside_gauge_window": 193,
+        "no_exact_gauge": 0,
+        "missing_qine": 0
+      },
+      "pre_cycle_past_alignment": {
+        "count": 108,
+        "mae_cfs": "3.241",
+        "max_abs_diff_cfs": "38.87000",
+        "first_valid_utc": "2022-12-27T00:00:00Z",
+        "last_valid_utc": "2022-12-31T11:00:00Z"
+      },
+      "cycle_to_archive_clock_ambiguous": {
+        "count": 5,
+        "mae_cfs": "1125.590",
+        "max_abs_diff_cfs": "5560.95000",
+        "first_valid_utc": "2022-12-31T12:00:00Z",
+        "last_valid_utc": "2022-12-31T16:00:00Z"
+      },
+      "after_archive_clock_descriptive": {
+        "count": 55,
+        "mae_cfs": "5082.380",
+        "max_abs_diff_cfs": "29186.78000",
+        "first_valid_utc": "2022-12-31T17:00:00Z",
+        "last_valid_utc": "2023-01-02T23:00:00Z"
+      },
+      "official_crest_time_pair": {
+        "cycle_utc": "2022-12-31T12:00:00Z",
+        "archive_last_modified_utc": "2022-12-31T16:56:47Z",
+        "valid_utc": "2022-12-31T18:00:00Z",
+        "clock_band": "after_archive_clock",
+        "qine_cfs": "60579.75000",
+        "approved_usgs_cfs": "63600",
+        "difference_cfs": "-3020.25000",
+        "abs_diff_cfs": "3020.25000"
+      }
+    },
+    "2022-12-31T18:00:00Z": {
+      "archive_clock_utc": "2022-12-31T20:58:13Z",
+      "row_count": 355,
+      "exclusions": {
+        "outside_gauge_window": 187,
+        "no_exact_gauge": 0,
+        "missing_qine": 0
+      },
+      "pre_cycle_past_alignment": {
+        "count": 114,
+        "mae_cfs": "4.119",
+        "max_abs_diff_cfs": "38.87000",
+        "first_valid_utc": "2022-12-27T00:00:00Z",
+        "last_valid_utc": "2022-12-31T17:00:00Z"
+      },
+      "cycle_to_archive_clock_ambiguous": {
+        "count": 3,
+        "mae_cfs": "5064.620",
+        "max_abs_diff_cfs": "8934.8000",
+        "first_valid_utc": "2022-12-31T18:00:00Z",
+        "last_valid_utc": "2022-12-31T20:00:00Z"
+      },
+      "after_archive_clock_descriptive": {
+        "count": 51,
+        "mae_cfs": "4942.052",
+        "max_abs_diff_cfs": "23003.62000",
+        "first_valid_utc": "2022-12-31T21:00:00Z",
+        "last_valid_utc": "2023-01-02T23:00:00Z"
+      },
+      "official_crest_time_pair": {
+        "cycle_utc": "2022-12-31T18:00:00Z",
+        "archive_last_modified_utc": "2022-12-31T20:58:13Z",
+        "valid_utc": "2022-12-31T18:00:00Z",
+        "clock_band": "cycle_to_archive_clock",
+        "qine_cfs": "63627.48000",
+        "approved_usgs_cfs": "63600",
+        "difference_cfs": "27.48000",
+        "abs_diff_cfs": "27.48000"
+      }
+    }
+  }
+}
