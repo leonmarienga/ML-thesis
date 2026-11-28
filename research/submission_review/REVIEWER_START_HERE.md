@@ -18,6 +18,7 @@
 
 | Manuscript question | Inspect this evidence | What it does not establish |
 | --- | --- | --- |
+| Which rows, endpoints and source clocks are comparable? (Ch. 3) | [T1 and T2 sources](tables/T1_T2_EVIDENCE.md) | A linked feature is not necessarily available at decision time; an absent public action is not a verified zero. |
 | What exactly does 91.01% mean? (Ch. 3.2, 4) | [Frozen metrics](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/results/track_a/model_metrics.csv), [F6 counts and errors](figures/F6-T4-band-evidence.csv), [T4 amount versions](figures/T4-amount-versions.csv) | An operational or target-blind score. Four gates used the held amount to decide rule eligibility. The three amount-stack MAEs describe different archived stacks. |
 | Why did forward accuracy and balanced accuracy disagree? (Ch. 4) | [F7 recall and paired error](figures/F7-matched-forward.svg), [T5 exact-band counts](figures/T5-matched-forward.csv) | Most added hits are from the lowest band; the sole $200M to <$500M case contributes −16.67 points to the six-band mean-recall change. The dollar-error interval crosses zero. |
 | Did an outcome-blind replacement improve routing? (Ch. 4) | [Fixed target-blind trial](https://github.com/leonmarienga/ML-thesis/tree/6bd74e7dceaf339df2b9f911141a8a7281428d5f/research/followup_20261128/target_blind_router_v1) | The prespecified gate did not pass. A one-case net difference in previously examined years is not independent confirmation. |

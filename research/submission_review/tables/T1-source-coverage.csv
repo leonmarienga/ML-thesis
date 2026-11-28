@@ -1,0 +1,11 @@
+source_or_feature,cohort,numerator,denominator,unit,vintage_or_interpretation
+OpenFEMA and Census designated-county population,all historical declarations,805,971,declarations,Revised geography and population; not affected population
+NHC storm wind,Hurricane,86,108,declarations,Archived post-event best track
+NHC storm wind,Tropical Storm,6,9,declarations,Archived post-event best track
+NHC storm wind,Typhoon,0,6,declarations,Absent in this pipeline; not no typhoon wind
+MTBS burned area,Fire,4,33,declarations,Derived from published post-event perimeter
+USGS earthquake linked magnitude,Earthquake,2,8,declarations,Retrospective candidate linkage
+NOAA reported measured gust,Severe Storm,123,430,declarations,Final reports; retrospective candidate
+NOAA reported EF,Tornado,25,27,declarations,Final reports; retrospective candidate
+Daymet point 24-hour precipitation,Flood,87,198,declarations,Retrospective gridded estimate
+USGS daily discharge anomaly,Flood,11,198,declarations,Retrospective gauge join; candidate linkage

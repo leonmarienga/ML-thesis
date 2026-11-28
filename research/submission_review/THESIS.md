@@ -50,6 +50,21 @@ Humanitarian logistics has emphasized the cost that delays and deprivation impos
 
 The frozen FY2010–2024 workbook contains 971 declarations, of which 59 Biological records are outside the 912-case router population. The archived benchmark uses bands with lower bounds of $0, $100,000, $1 million, $50 million, $200 million and $500 million. The original workbook's negative totals are clipped to zero under the original convention. Four retained prediction-component archives are combined with the fixed overlay; files, keys, target values and amounts are checked against the archived outputs. Leave-fiscal-year-out folds can include years subsequent to the held fiscal year. This benchmark is consequently a reproducibility target and cannot be used to establish decision-time forecast accuracy.
 
+**Table T1.** Selected nonmissing historical linkages in the frozen FY2010–24 feature audit. The first row uses all historical declarations (including Biological records); other rows use the stated incident type. A missing value means this audit did not populate the feature, not an absence of hazard. These counts are neither decision-time coverage nor an assessment of forecasting accuracy.
+
+| Source or feature | Denominator cohort | Linked / total | Time basis or limit |
+| --- | --- | --- | --- |
+| OpenFEMA and Census designated-county population | all historical declarations | 805/971 | Revised geography and population; not affected population |
+| NHC storm wind | Hurricane | 86/108 | Archived post-event best track |
+| NHC storm wind | Tropical Storm | 6/9 | Archived post-event best track |
+| NHC storm wind | Typhoon | 0/6 | Absent in this pipeline; not no typhoon wind |
+| MTBS burned area | Fire | 4/33 | Derived from published post-event perimeter |
+| USGS earthquake linked magnitude | Earthquake | 2/8 | Retrospective candidate linkage |
+| NOAA reported measured gust | Severe Storm | 123/430 | Final reports; retrospective candidate |
+| NOAA reported EF | Tornado | 25/27 | Final reports; retrospective candidate |
+| Daymet point 24-hour precipitation | Flood | 87/198 | Retrospective gridded estimate |
+| USGS daily discharge anomaly | Flood | 11/198 | Retrospective gauge join; candidate linkage |
+
 ### 3.2 Six-band router and dollar specialists
 
 The router maps fiscal-year and declaration evidence into one of six half-open dollar bands, then passes its predicted band to a distinct amount estimator. The replay combines saved predictions using one-to-one declaration keys and consistent fiscal years and actuals. It does not refit the router. The original amount stack uses outer-training medians in the first two and fourth bands, a log-dollar 900-tree ExtraTrees model in the third band ($1M–<$50M), and separate specialists in the two largest bands. The $200M–<$500M specialist separates $200M–<$300M from $300M–<$500M and retains historical caveats about a small development sample and related-event donor information. The $500M+ estimator selects an analogue configuration using inner fiscal-year splits within the outer training fold; the historical outer fold itself is not chronological.
@@ -71,6 +86,18 @@ The forward research uses earlier fiscal years only and purges shared episodes a
 **Figure F3.** In this Track B split, training uses only earlier fiscal years and cases that end strictly before the earliest held incident start or declaration date, whichever is earlier. A missing training end is replaced by its incident start. Connected events that appear in the held fold are excluded from training. The six held cohorts total 376 declarations; training sets overlap across origins. The displayed end-to-start gap is an audit summary, not a certified feature-release window.
 
 For the separate elapsed signed-action endpoint, declaration keys, action identity, sign, scope and reporting horizon are checked before summing actions. Eligibility requires a 36-calendar-month interval and another 90 days for reporting. A public archive retrieved later is not itself proof of what could be observed at each earlier forecast origin. Precoverage workbook zeros remain unchanged for the historical reconstruction, but 223 such records are marked unavailable under the separately versioned forward eligibility policy. An unverified absence of public records is not a verified zero.
+
+**Table T2.** Distinct evaluation populations and endpoint clocks. The same number of cases does not imply the same feature snapshots, predictions or scientific question. None of the cohorts opens the reserved FY2025 outcomes.
+
+| Analysis | Test years | Cases | Endpoint | Design and scope |
+| --- | --- | --- | --- | --- |
+| Frozen Track A | FY2010-24 | 912 | Clipped workbook obligation and six bands | LFYO can use later years; four held-amount eligibility filters |
+| Matched Track B ablation | FY2019-24 | 376 | Archived workbook obligation proxy | Earlier fiscal years and episode purge; retrospective inputs not certified as of origin |
+| Target-blind replacement | FY2019-24 | 376 | Archived workbook obligation proxy | Past-only episode-disjoint held-label invariant; already examined historical population |
+| Signed endpoint comparison | FY2019-23 | 135 | Signed actions through 36 months and 90 additional days for eligibility | Past-only eligible earlier groups; no FY2024 row cleared held outcome screen; publication vintage not certified |
+| Matched interval audit | FY2020-24 | 308 | Archived workbook outcome | Same scoring rows across two calibration histories; not identical estimators or information sets |
+
+The historical and signed-outcome audits distinguish absent actions from recorded zero. Of the 912 non-Biological declarations, 223 predate the public Mission Assignments v2 coverage boundary. Among the 689 later records, the audit found 313 with no returned actions, one with unusable action dates, 51 not yet elapsed under its publication-lag screen and 324 elapsed, key-complete histories. Within those 324, there were 27 net zeros with documented action by the horizon and 297 positive totals. These are retrospective observability counts at the audit snapshot, not the 135-case held signed cohort in T2. A populated revised county population does not measure either exposure to the specific hazard or individual need. See [source and cohort crosswalk](tables/T1_T2_EVIDENCE.md).
 
 ### 3.4 Hazard linkage and simulation-informed transfer
 
