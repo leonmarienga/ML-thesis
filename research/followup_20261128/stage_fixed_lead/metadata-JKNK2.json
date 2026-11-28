@@ -1,0 +1,197 @@
+{
+  "noaa": {
+    "url": "https://api.water.noaa.gov/nwps/v1/gauges/JKNK2",
+    "metadata": {
+      "lid": "JKNK2",
+      "usgsId": "03280000",
+      "name": "North Fork Kentucky River at Jackson",
+      "reachId": "454154",
+      "rfc": {
+        "abbreviation": "OHRFC",
+        "name": "Ohio River Forecast Center"
+      },
+      "latitude": 37.551383,
+      "longitude": -83.384725,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": "HGIFF"
+      }
+    }
+  },
+  "usgs": {
+    "url": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?monitoring_location_id=USGS-03280000&parameter_code=00065&f=json&limit=100",
+    "metadata": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "62b2a5096b174138bb3ffe9183c70112",
+            "unit_of_measure": "ft",
+            "parameter_name": "Gage height",
+            "parameter_code": "00065",
+            "statistic_id": null,
+            "hydrologic_unit_code": "05100201",
+            "state_name": "Kentucky",
+            "last_modified": "2026-10-16T05:11:59.849831",
+            "begin": "1905-03-10T00:00:00.000001",
+            "end": "2022-07-29T00:00:00.000001",
+            "begin_utc": "1905-03-10T05:00:00+00:00",
+            "end_utc": "2022-07-29T04:00:00+00:00",
+            "computation_period_identifier": "Water Year",
+            "computation_identifier": "Max At Event Time",
+            "thresholds": [],
+            "sublocation_identifier": null,
+            "primary": "Primary",
+            "monitoring_location_id": "USGS-03280000",
+            "web_description": null,
+            "parameter_description": "Gage height, feet",
+            "parent_time_series_id": "aeec7ccf0dfd418a8180011c8f127f97",
+            "data_gap_interval": null
+          },
+          "id": "62b2a5096b174138bb3ffe9183c70112",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -83.3857358036437,
+              37.552312282227
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "aeec7ccf0dfd418a8180011c8f127f97",
+            "unit_of_measure": "ft",
+            "parameter_name": "Gage height",
+            "parameter_code": "00065",
+            "statistic_id": "00011",
+            "hydrologic_unit_code": "05100201",
+            "state_name": "Kentucky",
+            "last_modified": "2026-11-28T08:11:20.655846",
+            "begin": "2007-10-01T05:00:00.000001",
+            "end": "2026-11-28T08:00:00.000001",
+            "begin_utc": "2007-10-01T05:00:00+00:00",
+            "end_utc": "2026-11-28T08:00:00+00:00",
+            "computation_period_identifier": "Points",
+            "computation_identifier": "Instantaneous",
+            "thresholds": [
+              {
+                "Name": "Top of bank.",
+                "Type": "None",
+                "Periods": [
+                  {
+                    "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                    "StartTime": "2015-10-01T00:00:00.0000000-05:00",
+                    "AppliedTime": "2017-01-01T17:35:16.7970134Z",
+                    "SuppressData": false,
+                    "ReferenceValue": 39.8
+                  }
+                ],
+                "Severity": 0,
+                "Description": "Display reference value",
+                "DisplayColor": "#00CCFF",
+                "ReferenceCode": "NWISWeb ref level - Public",
+                "ProcessingOrder": "Suppression"
+              },
+              {
+                "Name": "Operational limit (maximum) Equipment Limit",
+                "Type": "ThresholdAbove",
+                "Periods": [
+                  {
+                    "EndTime": "2021-02-01T00:00:00.0000000-05:00",
+                    "StartTime": "2015-10-01T00:00:00.0000000-05:00",
+                    "AppliedTime": "2017-01-01T17:35:14.5661244Z",
+                    "SuppressData": true,
+                    "ReferenceValue": 37,
+                    "SecondaryReferenceValue": 33.3
+                  },
+                  {
+                    "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                    "StartTime": "2021-02-01T00:00:00.0000000-05:00",
+                    "AppliedTime": "2021-03-02T11:16:00.0757863Z",
+                    "SuppressData": true,
+                    "ReferenceValue": 50
+                  }
+                ],
+                "Severity": 0,
+                "Description": "Values above a specified threshold limit",
+                "DisplayColor": "#CCCCCC",
+                "ReferenceCode": "Operational limit - high-Public",
+                "ProcessingOrder": "Suppression"
+              },
+              {
+                "Name": "Operational limit (minimum) Equipment Limit",
+                "Type": "ThresholdBelow",
+                "Periods": [
+                  {
+                    "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                    "StartTime": "2015-10-01T00:00:00.0000000-05:00",
+                    "AppliedTime": "2017-01-01T17:35:15.5333306Z",
+                    "SuppressData": true,
+                    "ReferenceValue": 0.22,
+                    "SecondaryReferenceValue": 0.42
+                  }
+                ],
+                "Severity": 0,
+                "Description": "Values below a specified threshold limit",
+                "DisplayColor": "#666666",
+                "ReferenceCode": "Operational limit - low-Public",
+                "ProcessingOrder": "Suppression"
+              }
+            ],
+            "sublocation_identifier": null,
+            "primary": "Primary",
+            "monitoring_location_id": "USGS-03280000",
+            "web_description": null,
+            "parameter_description": "Gage height, feet",
+            "parent_time_series_id": "2f8411e7923f4ba59dfc8f023466cea4",
+            "data_gap_interval": "PT1H12M"
+          },
+          "id": "aeec7ccf0dfd418a8180011c8f127f97",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -83.3857358036437,
+              37.552312282227
+            ]
+          }
+        }
+      ],
+      "numberReturned": 2,
+      "links": [
+        {
+          "type": "application/geo+json",
+          "rel": "self",
+          "title": "This document as GeoJSON",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?f=json&monitoring_location_id=USGS-03280000&parameter_code=00065&limit=100"
+        },
+        {
+          "rel": "alternate",
+          "type": "application/ld+json",
+          "title": "This document as RDF (JSON-LD)",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?f=jsonld&monitoring_location_id=USGS-03280000&parameter_code=00065&limit=100"
+        },
+        {
+          "type": "text/html",
+          "rel": "alternate",
+          "title": "This document as HTML",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?f=html&monitoring_location_id=USGS-03280000&parameter_code=00065&limit=100"
+        },
+        {
+          "type": "text/csv; charset=utf-8",
+          "rel": "alternate",
+          "title": "This document as CSV",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?f=csv&monitoring_location_id=USGS-03280000&parameter_code=00065&limit=100"
+        },
+        {
+          "type": "application/json",
+          "title": "Time series metadata",
+          "rel": "collection",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata"
+        }
+      ],
+      "timeStamp": "2026-11-28T10:16:27.431780Z"
+    }
+  }
+}

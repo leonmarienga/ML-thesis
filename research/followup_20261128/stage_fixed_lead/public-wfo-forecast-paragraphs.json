@@ -1,0 +1,109 @@
+[
+  {
+    "event": "KY2022",
+    "pil": "FLWJKL",
+    "site_matched_warning_headers": [
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS43 KJKL 281919"
+      },
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS43 KJKL 281215"
+      },
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS43 KJKL 280905"
+      }
+    ],
+    "source": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=FLWJKL&sdate=2022-07-26&edate=2022-07-29&limit=200&fmt=text",
+    "source_bytes": 107410,
+    "source_sha256": "0be3eef51955a7dc5f7daeec4ba6806f40965318a83f44b6728fcf29b7ac8216",
+    "status": 200
+  },
+  {
+    "event": "KY2022",
+    "pil": "FLSJKL",
+    "site_matched_warning_headers": [
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS83 KJKL 282331"
+      },
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS83 KJKL 281503"
+      }
+    ],
+    "source": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=FLSJKL&sdate=2022-07-26&edate=2022-07-29&limit=200&fmt=text",
+    "source_bytes": 92429,
+    "source_sha256": "c82bf61ab5b76b914e4341a1e0cec80c9ff85eb685960bc27629ac30df9377fa",
+    "status": 200
+  },
+  {
+    "event": "OH2024",
+    "pil": "FLWPBZ",
+    "site_matched_warning_headers": [
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS41 KPBZ 031610"
+      }
+    ],
+    "source": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=FLWPBZ&sdate=2024-04-01&edate=2024-04-04&limit=200&fmt=text",
+    "source_bytes": 139456,
+    "source_sha256": "7a4411bc2bf5d0184599e880ad17a0483062b49c3ce87a0620487cd895bab174",
+    "status": 200
+  },
+  {
+    "event": "OH2024",
+    "pil": "FLSPBZ",
+    "site_matched_warning_headers": [],
+    "source": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=FLSPBZ&sdate=2024-04-01&edate=2024-04-04&limit=200&fmt=text",
+    "source_bytes": 79432,
+    "source_sha256": "e2896b34da5e02fd134ef305ef805ef618f7ce6ac20cbe6e0794dfbff90ec6e0",
+    "status": 200
+  },
+  {
+    "event": "HELENE2024",
+    "pil": "FLWGSP",
+    "site_matched_warning_headers": [
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS42 KGSP 261644"
+      },
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS42 KGSP 251951"
+      }
+    ],
+    "source": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=FLWGSP&sdate=2024-09-25&edate=2024-09-28&limit=200&fmt=text",
+    "source_bytes": 120531,
+    "source_sha256": "7831972d3087435cdd2e65ce0bfa25ec7f8a48249669dd8d59ca993b791634ae",
+    "status": 200
+  },
+  {
+    "event": "HELENE2024",
+    "pil": "FLSGSP",
+    "site_matched_warning_headers": [
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS82 KGSP 271558"
+      },
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS82 KGSP 271347"
+      },
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS82 KGSP 270148"
+      },
+      {
+        "has_labelled_forecast_paragraph": true,
+        "header": "WGUS82 KGSP 260511"
+      }
+    ],
+    "source": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=FLSGSP&sdate=2024-09-25&edate=2024-09-28&limit=200&fmt=text",
+    "source_bytes": 258592,
+    "source_sha256": "b5c6a92e477a0ca49ec30c52673bc58a63fd75bb479d9663f578f4af40b7d945",
+    "status": 200
+  }
+]

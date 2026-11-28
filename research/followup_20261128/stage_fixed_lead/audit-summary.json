@@ -1,0 +1,49 @@
+{
+  "HELENE2024": {
+    "forecasts_with_encoded_site_stage": 12,
+    "guidance_disclaimers": 12,
+    "hml_forecast_rows": 243,
+    "hml_issue_vintages": 12,
+    "metadata_series_id": "ace6cac9d0464163b5acecbda4979855",
+    "shef_channel_counts": {
+      "HGIFFZZ": 12
+    },
+    "target_dispositions": {
+      "ARCHIVE_COMPATIBLE_RFC_GUIDANCE_ONLY": 5,
+      "BLOCKED_NO_CORROBORATED_FIXED_BAND_CANDIDATE": 3
+    },
+    "wmo_hml_uniquely_corroborated": 12
+  },
+  "KY2022": {
+    "forecasts_with_encoded_site_stage": 10,
+    "guidance_disclaimers": 10,
+    "hml_forecast_rows": 200,
+    "hml_issue_vintages": 10,
+    "metadata_series_id": "aeec7ccf0dfd418a8180011c8f127f97",
+    "shef_channel_counts": {
+      "HGIFF": 10
+    },
+    "target_dispositions": {
+      "ARCHIVE_COMPATIBLE_RFC_GUIDANCE_ONLY": 4,
+      "BLOCKED_NO_CORROBORATED_FIXED_BAND_CANDIDATE": 4
+    },
+    "wmo_hml_uniquely_corroborated": 7
+  },
+  "OH2024": {
+    "forecasts_with_encoded_site_stage": 7,
+    "guidance_disclaimers": 7,
+    "hml_forecast_rows": 140,
+    "hml_issue_vintages": 7,
+    "metadata_series_id": "b25321fb288542249dce1b9826f2eb4a",
+    "shef_channel_counts": {
+      "HGIFF": 7
+    },
+    "target_dispositions": {
+      "ARCHIVE_COMPATIBLE_RFC_GUIDANCE_ONLY": 2,
+      "BLOCKED_NO_CORROBORATED_FIXED_BAND_CANDIDATE": 6
+    },
+    "wmo_hml_uniquely_corroborated": 4
+  },
+  "held_observations_accessed": false,
+  "strict_eligible_rows": 0
+}

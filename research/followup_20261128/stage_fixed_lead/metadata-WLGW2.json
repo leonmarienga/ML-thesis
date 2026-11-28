@@ -1,0 +1,190 @@
+{
+  "noaa": {
+    "url": "https://api.water.noaa.gov/nwps/v1/gauges/WLGW2",
+    "metadata": {
+      "lid": "WLGW2",
+      "usgsId": "03112500",
+      "name": "Ohio River at Wheeling",
+      "reachId": "19453201",
+      "rfc": {
+        "abbreviation": "OHRFC",
+        "name": "Ohio River Forecast Center"
+      },
+      "latitude": 40.057222222222,
+      "longitude": -80.728611111111,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": "HGIFF"
+      }
+    }
+  },
+  "usgs": {
+    "url": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?monitoring_location_id=USGS-03112500&parameter_code=00065&f=json&limit=100",
+    "metadata": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "1852fe3026674294b1f32a2cf4c12204",
+            "unit_of_measure": "ft",
+            "parameter_name": "Gage height",
+            "parameter_code": "00065",
+            "statistic_id": null,
+            "hydrologic_unit_code": "050301061205",
+            "state_name": "West Virginia",
+            "last_modified": "2026-10-12T06:46:51.043199",
+            "begin": "2002-05-19T00:00:00.000001",
+            "end": "2025-04-06T00:00:00.000001",
+            "begin_utc": "2002-05-19T04:00:00+00:00",
+            "end_utc": "2025-04-06T04:00:00+00:00",
+            "computation_period_identifier": "Water Year",
+            "computation_identifier": "Max At Event Time",
+            "thresholds": [],
+            "sublocation_identifier": null,
+            "primary": "Primary",
+            "monitoring_location_id": "USGS-03112500",
+            "web_description": null,
+            "parameter_description": "Gage height, feet",
+            "parent_time_series_id": "9131219819fd461a804f89a20a45de9a",
+            "data_gap_interval": null
+          },
+          "id": "1852fe3026674294b1f32a2cf4c12204",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -80.7284154255515,
+              40.0572949390362
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "b25321fb288542249dce1b9826f2eb4a",
+            "unit_of_measure": "ft",
+            "parameter_name": "Gage height",
+            "parameter_code": "00065",
+            "statistic_id": "00011",
+            "hydrologic_unit_code": "050301061205",
+            "state_name": "West Virginia",
+            "last_modified": "2026-11-28T05:45:49.297584",
+            "begin": "2010-10-01T05:00:00.000001",
+            "end": "2026-11-28T05:30:00.000001",
+            "begin_utc": "2010-10-01T05:00:00+00:00",
+            "end_utc": "2026-11-28T05:30:00+00:00",
+            "computation_period_identifier": "Points",
+            "computation_identifier": "Instantaneous",
+            "thresholds": [
+              {
+                "Name": "Operational limit (maximum) BOTTOM OF SHELTER",
+                "Type": "ThresholdAbove",
+                "Periods": [
+                  {
+                    "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                    "StartTime": "2017-05-09T00:00:00.0000000-05:00",
+                    "AppliedTime": "2017-06-19T15:36:46.6365108Z",
+                    "SuppressData": true,
+                    "ReferenceValue": 46,
+                    "SecondaryReferenceValue": 41.4
+                  }
+                ],
+                "Severity": 0,
+                "Description": "Values above a specified threshold limit",
+                "DisplayColor": "#CCCCCC",
+                "ReferenceCode": "Operational limit - high-Public",
+                "ProcessingOrder": "Suppression"
+              },
+              {
+                "Name": "Floodstage",
+                "Type": "None",
+                "Periods": [
+                  {
+                    "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                    "StartTime": "2017-05-09T00:00:00.0000000-05:00",
+                    "AppliedTime": "2017-06-19T15:36:46.9433576Z",
+                    "SuppressData": false,
+                    "ReferenceValue": 36
+                  }
+                ],
+                "Severity": 0,
+                "Description": "Display reference value",
+                "DisplayColor": "#00CCFF",
+                "ReferenceCode": "NWISWeb ref level - Public",
+                "ProcessingOrder": "Suppression"
+              },
+              {
+                "Name": "Operational limit (minimum) ORIFICE",
+                "Type": "ThresholdBelow",
+                "Periods": [
+                  {
+                    "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                    "StartTime": "2017-05-09T00:00:00.0000000-05:00",
+                    "AppliedTime": "2017-06-19T15:36:46.8003918Z",
+                    "SuppressData": true,
+                    "ReferenceValue": 15.21,
+                    "SecondaryReferenceValue": 15.41
+                  }
+                ],
+                "Severity": 0,
+                "Description": "Values below a specified threshold limit",
+                "DisplayColor": "#666666",
+                "ReferenceCode": "Operational limit - low-Public",
+                "ProcessingOrder": "Suppression"
+              }
+            ],
+            "sublocation_identifier": null,
+            "primary": "Primary",
+            "monitoring_location_id": "USGS-03112500",
+            "web_description": null,
+            "parameter_description": "Gage height, feet",
+            "parent_time_series_id": "78e840fb243b449796fe848f414fd815",
+            "data_gap_interval": "PT1H12M"
+          },
+          "id": "b25321fb288542249dce1b9826f2eb4a",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -80.7284154255515,
+              40.0572949390362
+            ]
+          }
+        }
+      ],
+      "numberReturned": 2,
+      "links": [
+        {
+          "type": "application/geo+json",
+          "rel": "self",
+          "title": "This document as GeoJSON",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?f=json&monitoring_location_id=USGS-03112500&parameter_code=00065&limit=100"
+        },
+        {
+          "rel": "alternate",
+          "type": "application/ld+json",
+          "title": "This document as RDF (JSON-LD)",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?f=jsonld&monitoring_location_id=USGS-03112500&parameter_code=00065&limit=100"
+        },
+        {
+          "type": "text/html",
+          "rel": "alternate",
+          "title": "This document as HTML",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?f=html&monitoring_location_id=USGS-03112500&parameter_code=00065&limit=100"
+        },
+        {
+          "type": "text/csv; charset=utf-8",
+          "rel": "alternate",
+          "title": "This document as CSV",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?f=csv&monitoring_location_id=USGS-03112500&parameter_code=00065&limit=100"
+        },
+        {
+          "type": "application/json",
+          "title": "Time series metadata",
+          "rel": "collection",
+          "href": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata"
+        }
+      ],
+      "timeStamp": "2026-11-28T10:16:27.533773Z"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "purpose": "Blind coverage and clock audit, no event observation values; frozen before any event forecasts were queried.",
+  "cohort_rule": "Three physically and date-separated NWS-documented episodes in the pre-2025 eastern river forecast domain, paired to one designated official gauge per distinct episode. This is a purposive feasibility sample, not representatively random. No substitution within version 1.",
+  "episodes": [
+    {"id":"KY2022","occurrence":"https://www.weather.gov/jkl/July2022Flooding","target_dates":["2022-07-28","2022-07-29"],"forecast_wmo_office":"KTIR","nws":"JKNK2","usgs":"03280000"},
+    {"id":"OH2024","occurrence":"https://www.weather.gov/pbz/April2nd3rd2024FloodingandSevereEvent","target_dates":["2024-04-03","2024-04-04"],"forecast_wmo_office":"KTIR","nws":"WHLW2","usgs":"03112500"},
+    {"id":"HELENE2024","occurrence":"https://www.weather.gov/media/gsp/TropicalEventSummary/PSHGSP_2024AL09_Helene_Summary.pdf","target_dates":["2024-09-27","2024-09-28"],"forecast_wmo_office":"KALR","nws":"AVLN7","usgs":"03451500"}
+  ],
+  "valid_synoptic_utc_hours":[0,6,12,18],
+  "lead_minutes_half_open":[1440,1800],
+  "clock":"later of archived WMO dissemination minute and SHEF explicitly UTC DC minute; require uncorrected UTC SHEF and public WMO record; forecast issue strictly before valid time",
+  "product":"NWS-authored RVF public SHEF in Iowa Environmental Mesonet historical archive; early screen preserves only HGIFE surface-stage forecasts, no observed HGIx event values or discharge conversion",
+  "tie_break":"select most recent eligible issue per episode and target only if no unresolved disagreement at that timestamp; exact duplicate copies de-duplicated",
+  "later_observation_join":"USGS continuous exact valid UTC timestamp only; pinned matching site & one 00065/00011 approved series in ft; no interpolation, value-based matching, unverified datum conversion, or observed peaks for target selection; measurement/approval and public issue clocks are distinct.",
+  "minimum_to_proceed":"At least two independently selected event groups should have forecast/identifier eligibility; no accuracy claim in phase 1 even if all are eligible."
+}

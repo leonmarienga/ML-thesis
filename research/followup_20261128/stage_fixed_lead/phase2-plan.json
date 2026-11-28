@@ -1,0 +1,7 @@
+{
+  "action": "query_plan_only_no_network",
+  "status": "blocked_public_clock_gate",
+  "eligible_events": 0,
+  "eligible_rows": 0,
+  "requests": []
+}

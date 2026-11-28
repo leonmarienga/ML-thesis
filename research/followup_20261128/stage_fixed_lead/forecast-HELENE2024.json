@@ -1,0 +1,2168 @@
+{
+  "event": "HELENE2024",
+  "hml_forecast_rows": [
+    {
+      "forecast_valid[UTC]": "2024-09-25 18:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "2.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 00:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "2.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 06:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "3.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 12:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "4.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 18:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "6.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 00:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "7.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 06:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "8.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 12:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "10.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 18:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "15.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "16.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "16.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "15.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "12.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "10.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "9.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "7.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "6.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "5.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "5.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-25 14:46",
+      "primary_value": "5.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 06:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "6.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 12:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "7.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 18:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "8.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 00:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "9.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 06:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "10.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 12:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "12.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 18:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "15.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "16.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "16.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "15.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "12.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "10.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "9.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "7.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "6.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "5.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "5.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "5.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "4.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-26 00:38",
+      "primary_value": "3.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 12:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "9.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 18:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "10.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 00:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "11.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 06:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "13.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 12:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "14.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 18:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "15.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "16.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "16.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "15.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "13.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "11.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "10.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "8.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "7.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "6.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "6.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "5.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "5.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "4.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "4.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-26 06:58",
+      "primary_value": "4.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 18:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "12.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 00:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "15.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 06:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "17.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 12:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "17.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "16.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "14.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "13.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "10.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "9.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "7.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "7.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "6.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-26 14:14",
+      "primary_value": "5.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-26 18:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "12.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 00:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "15.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 06:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "17.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 12:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "17.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "16.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "14.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "13.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "10.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "9.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "7.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "7.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "6.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-26 16:14",
+      "primary_value": "5.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 00:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "8.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 06:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "14.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 12:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "18.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 18:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "20.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "20.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "17.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "16.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "14.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "13.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "10.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "9.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "7.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "7.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "6.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "5.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 18:00",
+      "issued[UTC]": "2024-09-26 19:03",
+      "primary_value": "5.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 00:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "8.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 06:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "13.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 12:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "18.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 18:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "20.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "20.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "17.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "16.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "14.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "13.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "10.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "9.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "7.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "7.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "6.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "5.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 18:00",
+      "issued[UTC]": "2024-09-26 19:10",
+      "primary_value": "5.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 06:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "13.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 12:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "18.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 18:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "20.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "20.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "17.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "16.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "14.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "13.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "10.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "9.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "7.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "7.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "6.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "5.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 18:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "5.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 00:00",
+      "issued[UTC]": "2024-09-27 00:41",
+      "primary_value": "4.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 18:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "17.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "20.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "17.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "16.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "14.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "13.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "10.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "9.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "7.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "7.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "6.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "5.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 18:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "5.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 00:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "4.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 06:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "4.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 12:00",
+      "issued[UTC]": "2024-09-27 14:32",
+      "primary_value": "4.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-27 18:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "20.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "21.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "20.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "19.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "17.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "16.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "14.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "13.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "10.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "9.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "7.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "7.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "6.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "5.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 18:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "5.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 00:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "4.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 06:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "4.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 12:00",
+      "issued[UTC]": "2024-09-27 16:48",
+      "primary_value": "4.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "22.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "22.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "21.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "19.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "17.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "16.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "14.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "13.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "10.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "9.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "7.7",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "7.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "6.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "5.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 18:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "5.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 00:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "4.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 06:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "4.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 12:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "4.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 18:00",
+      "issued[UTC]": "2024-09-27 18:52",
+      "primary_value": "4.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 00:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "24.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 06:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "22.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 12:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "21.1",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-28 18:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "19.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 00:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "18.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 06:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "17.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 12:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "15.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-29 18:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "14.5",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 00:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "13.2",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 06:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "12.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 12:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "11.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-09-30 18:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "10.9",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 00:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "10.3",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 06:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "9.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 12:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "9.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-01 18:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "8.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 00:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "7.8",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 06:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "7.4",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 12:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "7.0",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    },
+    {
+      "forecast_valid[UTC]": "2024-10-02 18:00",
+      "issued[UTC]": "2024-09-27 21:27",
+      "primary_value": "6.6",
+      "primaryname": "Stage",
+      "primaryunits": "ft",
+      "station": "AVLN7"
+    }
+  ],
+  "sources": {
+    "hml_forecasts_only": {
+      "byte_count": 16773,
+      "sha256": "900e4aabb48e52d7d7d9abf13ec525b49c27a9d0dc4a86a4719c0f99a74f7d36",
+      "status": 200,
+      "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/hml.py?kind=forecasts&station=AVLN7&sts=2024-09-25T00%3A00Z&ets=2024-09-28T00%3A00Z&fmt=csv&tz=UTC"
+    },
+    "wmo": {
+      "byte_count": 159972,
+      "sha256": "07e10be6581133e46217c9c8f1c51d913d99a58d3595422fc9a30da004f38ba4",
+      "status": 200,
+      "url": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=RVFGSP&sdate=2024-09-25&edate=2024-09-28&limit=200&fmt=text"
+    }
+  },
+  "wmo_forecast_only": [
+    {
+      "correction": null,
+      "dc": "2024-09-27T21:27:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0927 :                   /  24.1 /  22.6",
+        ".E2    : 0928 :   /  21.1 /  19.9 /  18.5 /  17.0",
+        ".E3    : 0929 :   /  15.9 /  14.5 /  13.2 /  12.3",
+        ".E4    : 0930 :   /  11.6 /  10.9 /  10.3 /   9.6",
+        ".E5    : 1001 :   /   9.0 /   8.4 /   7.8 /   7.4",
+        ".E6    : 1002 :   /   7.0 /   6.6"
+      ],
+      "forecast_header": ".ER AVLN7 0928 Z DC202409272127/DH00/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409272128-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-27T21:28:00+00:00",
+      "wmo_header": "FGUS54 KORN 272128"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-27T18:52:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0927 :                   /  22.5 /  21.2",
+        ".E2    : 0928 :   /  19.5 /  17.6 /  16.1 /  14.6",
+        ".E3    : 0929 :   /  13.1 /  11.6 /  10.2 /   9.3",
+        ".E4    : 0930 :   /   8.4 /   7.7 /   7.0 /   6.4",
+        ".E5    : 1001 :   /   5.8 /   5.3 /   4.9 /   4.6",
+        ".E6    : 1002 :   /   4.4 /   4.1"
+      ],
+      "forecast_header": ".ER AVLN7 0928 Z DC202409271852/DH00/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409271852-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-27T18:52:00+00:00",
+      "wmo_header": "FGUS54 KORN 271852"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-27T16:48:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0927 :           /  20.0 /  21.0 /  20.6",
+        ".E2    : 0928 :   /  19.4 /  17.6 /  16.1 /  14.6",
+        ".E3    : 0929 :   /  13.1 /  11.6 /  10.2 /   9.3",
+        ".E4    : 0930 :   /   8.4 /   7.7 /   7.0 /   6.4",
+        ".E5    : 1001 :   /   5.8 /   5.3 /   4.9 /   4.6",
+        ".E6    : 1002 :   /   4.4"
+      ],
+      "forecast_header": ".ER AVLN7 0927 Z DC202409271648/DH18/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409271648-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-27T16:48:00+00:00",
+      "wmo_header": "FGUS54 KORN 271648"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-27T14:32:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0927 :           /  17.7 /  21.0 /  20.6",
+        ".E2    : 0928 :   /  19.4 /  17.6 /  16.1 /  14.6",
+        ".E3    : 0929 :   /  13.1 /  11.6 /  10.2 /   9.3",
+        ".E4    : 0930 :   /   8.4 /   7.7 /   7.0 /   6.4",
+        ".E5    : 1001 :   /   5.8 /   5.3 /   4.9 /   4.6",
+        ".E6    : 1002 :   /   4.4"
+      ],
+      "forecast_header": ".ER AVLN7 0927 Z DC202409271432/DH18/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409271433-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-27T14:33:00+00:00",
+      "wmo_header": "FGUS54 KORN 271433"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-27T00:41:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0926 :                           /  13.9",
+        ".E2    : 0927 :   /  18.4 /  20.5 /  21.0 /  20.6",
+        ".E3    : 0928 :   /  19.4 /  17.6 /  16.1 /  14.6",
+        ".E4    : 0929 :   /  13.1 /  11.6 /  10.2 /   9.3",
+        ".E5    : 0930 :   /   8.4 /   7.7 /   7.0 /   6.4",
+        ".E6    : 1001 :   /   5.8 /   5.3 /   4.9"
+      ],
+      "forecast_header": ".ER AVLN7 0927 Z DC202409270041/DH06/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409270044-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-27T00:44:00+00:00",
+      "wmo_header": "FGUS54 KORN 270044"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-26T19:10:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0926 :                   /   8.9 /  13.9",
+        ".E2    : 0927 :   /  18.4 /  20.5 /  21.0 /  20.6",
+        ".E3    : 0928 :   /  19.4 /  17.6 /  16.1 /  14.6",
+        ".E4    : 0929 :   /  13.1 /  11.6 /  10.2 /   9.3",
+        ".E5    : 0930 :   /   8.4 /   7.7 /   7.0 /   6.4",
+        ".E6    : 1001 :   /   5.8 /   5.3"
+      ],
+      "forecast_header": ".ER AVLN7 0927 Z DC202409261910/DH00/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409261910-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-26T19:10:00+00:00",
+      "wmo_header": "FGUS54 KORN 261910"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-26T19:03:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0926 :                   /   8.9 /  14.2",
+        ".E2    : 0927 :   /  18.4 /  20.5 /  21.0 /  20.6",
+        ".E3    : 0928 :   /  19.4 /  17.6 /  16.1 /  14.6",
+        ".E4    : 0929 :   /  13.1 /  11.6 /  10.2 /   9.3",
+        ".E5    : 0930 :   /   8.4 /   7.7 /   7.0 /   6.4",
+        ".E6    : 1001 :   /   5.8 /   5.3"
+      ],
+      "forecast_header": ".ER AVLN7 0927 Z DC202409261903/DH00/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409261903-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-26T19:03:00+00:00",
+      "wmo_header": "FGUS54 KORN 261903"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-26T16:14:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0926 :           /  12.3 /  15.3 /  17.5",
+        ".E2    : 0927 :   /  19.4 /  20.6 /  21.0 /  20.6",
+        ".E3    : 0928 :   /  19.4 /  17.6 /  16.1 /  14.6",
+        ".E4    : 0929 :   /  13.1 /  11.6 /  10.2 /   9.3",
+        ".E5    : 0930 :   /   8.4 /   7.7 /   7.0 /   6.4",
+        ".E6    : 1001 :   /   5.8"
+      ],
+      "forecast_header": ".ER AVLN7 0926 Z DC202409261614/DH18/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409261614-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-26T16:14:00+00:00",
+      "wmo_header": "FGUS54 KORN 261614"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-26T14:14:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0926 :           /  12.3 /  15.3 /  17.5",
+        ".E2    : 0927 :   /  19.4 /  20.6 /  21.0 /  20.6",
+        ".E3    : 0928 :   /  19.4 /  17.6 /  16.1 /  14.6",
+        ".E4    : 0929 :   /  13.1 /  11.6 /  10.2 /   9.3",
+        ".E5    : 0930 :   /   8.4 /   7.7 /   7.1 /   6.5",
+        ".E6    : 1001 :   /   5.8"
+      ],
+      "forecast_header": ".ER AVLN7 0926 Z DC202409261414/DH18/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409261415-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-26T14:15:00+00:00",
+      "wmo_header": "FGUS54 KORN 261415"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-26T06:58:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0926 :   /   9.2 /  10.7 /  11.9 /  13.0",
+        ".E2    : 0927 :   /  14.1 /  15.5 /  16.5 /  15.5",
+        ".E3    : 0928 :   /  13.8 /  11.9 /  10.4 /   8.9",
+        ".E4    : 0929 :   /   7.9 /   6.9 /   6.3 /   5.9",
+        ".E5    : 0930 :   /   5.4 /   4.9 /   4.5 /   4.0"
+      ],
+      "forecast_header": ".ER AVLN7 0926 Z DC202409260658/DH12/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409260700-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-26T07:00:00+00:00",
+      "wmo_header": "FGUS54 KORN 260700"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-26T00:38:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0925 :                           /   6.5",
+        ".E2    : 0926 :   /   7.5 /   8.2 /   9.0 /  10.3",
+        ".E3    : 0927 :   /  12.9 /  15.1 /  16.5 /  15.4",
+        ".E4    : 0928 :   /  12.5 /  10.9 /   9.6 /   8.4",
+        ".E5    : 0929 :   /   7.4 /   6.6 /   5.9 /   5.5",
+        ".E6    : 0930 :   /   5.1 /   4.5 /   3.9"
+      ],
+      "forecast_header": ".ER AVLN7 0926 Z DC202409260038/DH06/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409260043-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-26T00:43:00+00:00",
+      "wmo_header": "FGUS54 KORN 260043"
+    },
+    {
+      "correction": null,
+      "dc": "2024-09-25T14:46:00+00:00",
+      "forecast_continuations": [
+        ".E1    : 0925 :           /   2.0 /   2.4 /   3.2",
+        ".E2    : 0926 :   /   4.5 /   6.0 /   7.3 /   8.1",
+        ".E3    : 0927 :   /  10.6 /  15.1 /  16.5 /  15.4",
+        ".E4    : 0928 :   /  12.5 /  10.9 /   9.6 /   8.4",
+        ".E5    : 0929 :   /   7.4 /   6.6 /   5.9 /   5.5",
+        ".E6    : 0930 :   /   5.1"
+      ],
+      "forecast_header": ".ER AVLN7 0925 Z DC202409251446/DH18/HGIFFZZ/DIH6",
+      "guidance_disclaimer": true,
+      "public_archive_link": "https://mesonet.agron.iastate.edu/p.php?pid=202409251450-KORN-FGUS54-RVFGSP",
+      "wmo": "2024-09-25T14:50:00+00:00",
+      "wmo_header": "FGUS54 KORN 251450"
+    }
+  ]
+}

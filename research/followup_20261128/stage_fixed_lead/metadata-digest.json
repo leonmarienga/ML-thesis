@@ -1,0 +1,143 @@
+{
+  "episodes": {
+    "HELENE2024": {
+      "forecast_replay_inputs_sha256": "0a80099e9373405788d2b93cd3a64afaaf653bb29927556b301ba843d46e4396",
+      "metadata_replay_inputs_sha256": "0688a4cf81a9348ef6a47de124e029b2423f994dc91a3f3b3c733aa98188053a",
+      "noaa_metadata_source": "https://api.water.noaa.gov/nwps/v1/gauges/AVLN7",
+      "noaa_site": {
+        "latitude": 35.608889,
+        "lid": "AVLN7",
+        "longitude": -82.578056,
+        "name": "French Broad River at Pearson Bridge Rd, 2 NW Asheville",
+        "pedts": {
+          "forecast": "HGIFF",
+          "observed": "HGIRG"
+        },
+        "reachId": "22162094",
+        "rfc": {
+          "abbreviation": "LMRFC",
+          "name": "Lower Mississippi River Forecast Center"
+        },
+        "usgsId": "03451500"
+      },
+      "source_requests": {
+        "hml_forecasts_only": {
+          "byte_count": 16773,
+          "sha256": "900e4aabb48e52d7d7d9abf13ec525b49c27a9d0dc4a86a4719c0f99a74f7d36",
+          "status": 200,
+          "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/hml.py?kind=forecasts&station=AVLN7&sts=2024-09-25T00%3A00Z&ets=2024-09-28T00%3A00Z&fmt=csv&tz=UTC"
+        },
+        "wmo": {
+          "byte_count": 159972,
+          "sha256": "07e10be6581133e46217c9c8f1c51d913d99a58d3595422fc9a30da004f38ba4",
+          "status": 200,
+          "url": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=RVFGSP&sdate=2024-09-25&edate=2024-09-28&limit=200&fmt=text"
+        }
+      },
+      "usgs_metadata_source": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?monitoring_location_id=USGS-03451500&parameter_code=00065&f=json&limit=100",
+      "usgs_series": {
+        "begin_utc": "2007-10-01T05:00:00+00:00",
+        "computation_identifier": "Instantaneous",
+        "end_utc": "2026-11-28T07:30:00+00:00",
+        "id": "ace6cac9d0464163b5acecbda4979855",
+        "monitoring_location_id": "USGS-03451500",
+        "parameter_code": "00065",
+        "statistic_id": "00011",
+        "unit_of_measure": "ft"
+      }
+    },
+    "KY2022": {
+      "forecast_replay_inputs_sha256": "56420c187a2d207dad1c8d624fe8e4b5add6b41f31a3043ad4e7c60f361dca84",
+      "metadata_replay_inputs_sha256": "b7ee75b9f3c7069a431dae5abffe49d481f5fab6b4476fd1371bfccb2f6ef541",
+      "noaa_metadata_source": "https://api.water.noaa.gov/nwps/v1/gauges/JKNK2",
+      "noaa_site": {
+        "latitude": 37.551383,
+        "lid": "JKNK2",
+        "longitude": -83.384725,
+        "name": "North Fork Kentucky River at Jackson",
+        "pedts": {
+          "forecast": "HGIFF",
+          "observed": "HGIRG"
+        },
+        "reachId": "454154",
+        "rfc": {
+          "abbreviation": "OHRFC",
+          "name": "Ohio River Forecast Center"
+        },
+        "usgsId": "03280000"
+      },
+      "source_requests": {
+        "hml_forecasts_only": {
+          "byte_count": 13808,
+          "sha256": "04b5a904b7032633ba7d1713f0a3438c2463b8b2c10bf24b6bae016da3a76c7e",
+          "status": 200,
+          "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/hml.py?kind=forecasts&station=JKNK2&sts=2022-07-26T00%3A00Z&ets=2022-07-29T00%3A00Z&fmt=csv&tz=UTC"
+        },
+        "wmo": {
+          "byte_count": 198564,
+          "sha256": "bd82ecc7e3d8d66edaa1201df5c5a4600ba8c833d08b0ca824fad658cda79280",
+          "status": 200,
+          "url": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=RVFKTY&sdate=2022-07-26&edate=2022-07-29&limit=200&fmt=text"
+        }
+      },
+      "usgs_metadata_source": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?monitoring_location_id=USGS-03280000&parameter_code=00065&f=json&limit=100",
+      "usgs_series": {
+        "begin_utc": "2007-10-01T05:00:00+00:00",
+        "computation_identifier": "Instantaneous",
+        "end_utc": "2026-11-28T08:00:00+00:00",
+        "id": "aeec7ccf0dfd418a8180011c8f127f97",
+        "monitoring_location_id": "USGS-03280000",
+        "parameter_code": "00065",
+        "statistic_id": "00011",
+        "unit_of_measure": "ft"
+      }
+    },
+    "OH2024": {
+      "forecast_replay_inputs_sha256": "6db8cf05062eac44e1c24ab3e1569670525bf89a1b646388f52743f037ea2ce4",
+      "metadata_replay_inputs_sha256": "2984709fba7b725b9e7e782239f3751095057f598460c7bcdc63f4bc954d6587",
+      "noaa_metadata_source": "https://api.water.noaa.gov/nwps/v1/gauges/WLGW2",
+      "noaa_site": {
+        "latitude": 40.057222222222,
+        "lid": "WLGW2",
+        "longitude": -80.728611111111,
+        "name": "Ohio River at Wheeling",
+        "pedts": {
+          "forecast": "HGIFF",
+          "observed": "HGIRG"
+        },
+        "reachId": "19453201",
+        "rfc": {
+          "abbreviation": "OHRFC",
+          "name": "Ohio River Forecast Center"
+        },
+        "usgsId": "03112500"
+      },
+      "source_requests": {
+        "hml_forecasts_only": {
+          "byte_count": 9904,
+          "sha256": "10f92a1e9e364c3007266b4919b5e21b130506a21f2a4c398e75492e1e3aa7dd",
+          "status": 200,
+          "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/hml.py?kind=forecasts&station=WLGW2&sts=2024-04-01T00%3A00Z&ets=2024-04-04T00%3A00Z&fmt=csv&tz=UTC"
+        },
+        "wmo": {
+          "byte_count": 180142,
+          "sha256": "4fb9883575ab6c14d5717b3545936c1b76325fdd219d4ad73c01b1fc4a57fe67",
+          "status": 200,
+          "url": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=RVFOHW&sdate=2024-04-01&edate=2024-04-04&limit=200&fmt=text"
+        }
+      },
+      "usgs_metadata_source": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items?monitoring_location_id=USGS-03112500&parameter_code=00065&f=json&limit=100",
+      "usgs_series": {
+        "begin_utc": "2010-10-01T05:00:00+00:00",
+        "computation_identifier": "Instantaneous",
+        "end_utc": "2026-11-28T05:30:00+00:00",
+        "id": "b25321fb288542249dce1b9826f2eb4a",
+        "monitoring_location_id": "USGS-03112500",
+        "parameter_code": "00065",
+        "statistic_id": "00011",
+        "unit_of_measure": "ft"
+      }
+    }
+  },
+  "protocol_sha256": "cee8ae6bd3075b99741341e20741f23d5b720573ae871a838249f1806ded2424"
+}

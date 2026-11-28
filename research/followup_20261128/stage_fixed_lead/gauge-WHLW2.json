@@ -1,0 +1,16 @@
+{
+  "url": "https://api.water.noaa.gov/nwps/v1/gauges/WHLW2",
+  "status": 200,
+  "metadata": {
+    "lid": "WHLW2",
+    "usgsId": "03111520",
+    "name": "Ohio River at Pike Island Lock and Dam",
+    "reachId": "19453177",
+    "rfc": {
+      "abbreviation": "OHRFC",
+      "name": "Ohio River Forecast Center"
+    },
+    "latitude": 40.149722222222,
+    "longitude": -80.701666666667
+  }
+}
