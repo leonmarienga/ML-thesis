@@ -1,0 +1,277 @@
+{
+  "gauge_stage": {
+    "archived_actual_crossing_utc": "2022-12-31T09:00:00+00:00",
+    "episodes": 1,
+    "issues": [
+      {
+        "forecast_delay_hours_if_pre_crossing": 14.0,
+        "forecast_peak_ft": 13.0,
+        "future_hours": 115,
+        "issue_preceded_observed_crossing": true,
+        "issue_utc": "2022-12-28T17:13:00+00:00",
+        "mae_ft": 1.2576521739130435,
+        "observed_peak_ft": 16.6
+      },
+      {
+        "forecast_delay_hours_if_pre_crossing": null,
+        "forecast_peak_ft": 17.5,
+        "future_hours": 115,
+        "issue_preceded_observed_crossing": false,
+        "issue_utc": "2022-12-31T17:00:00+00:00",
+        "mae_ft": 0.6390434782608695,
+        "observed_peak_ft": 16.6
+      }
+    ],
+    "scope": "two issues, one historical event; no independent skill or obligation inference"
+  },
+  "intervals": {
+    "results": {
+      "80% cqr": {
+        "50m_or_more": {
+          "above_upper": 4,
+          "below_lower": 0,
+          "coverage_pct": 55.56,
+          "covered": 5,
+          "median_width_usd": 377522857.43940514,
+          "n": 9
+        },
+        "all": {
+          "above_upper": 33,
+          "below_lower": 0,
+          "coverage_pct": 89.29,
+          "covered": 275,
+          "median_width_usd": 167164.91230843,
+          "n": 308
+        },
+        "under_50m": {
+          "above_upper": 29,
+          "below_lower": 0,
+          "coverage_pct": 90.3,
+          "covered": 270,
+          "median_width_usd": 161004.22552774,
+          "n": 299
+        }
+      },
+      "80% residual": {
+        "50m_or_more": {
+          "above_upper": 9,
+          "below_lower": 0,
+          "coverage_pct": 0.0,
+          "covered": 0,
+          "median_width_usd": 901032.39555518,
+          "n": 9
+        },
+        "all": {
+          "above_upper": 43,
+          "below_lower": 5,
+          "coverage_pct": 84.42,
+          "covered": 260,
+          "median_width_usd": 748587.3243918,
+          "n": 308
+        },
+        "under_50m": {
+          "above_upper": 34,
+          "below_lower": 5,
+          "coverage_pct": 86.96,
+          "covered": 260,
+          "median_width_usd": 748584.74673311,
+          "n": 299
+        }
+      },
+      "90% cqr": {
+        "50m_or_more": {
+          "above_upper": 2,
+          "below_lower": 0,
+          "coverage_pct": 77.78,
+          "covered": 7,
+          "median_width_usd": 2155333125.88151,
+          "n": 9
+        },
+        "all": {
+          "above_upper": 15,
+          "below_lower": 0,
+          "coverage_pct": 95.13,
+          "covered": 293,
+          "median_width_usd": 716892.08285781,
+          "n": 308
+        },
+        "under_50m": {
+          "above_upper": 13,
+          "below_lower": 0,
+          "coverage_pct": 95.65,
+          "covered": 286,
+          "median_width_usd": 649238.14233291,
+          "n": 299
+        }
+      },
+      "90% residual": {
+        "50m_or_more": {
+          "above_upper": 9,
+          "below_lower": 0,
+          "coverage_pct": 0.0,
+          "covered": 0,
+          "median_width_usd": 4435695.26340507,
+          "n": 9
+        },
+        "all": {
+          "above_upper": 25,
+          "below_lower": 2,
+          "coverage_pct": 91.23,
+          "covered": 281,
+          "median_width_usd": 4283240.89776092,
+          "n": 308
+        },
+        "under_50m": {
+          "above_upper": 16,
+          "below_lower": 2,
+          "coverage_pct": 93.98,
+          "covered": 281,
+          "median_width_usd": 4283240.42751471,
+          "n": 299
+        }
+      }
+    },
+    "scope": "archived matched aggregate; very small tail, no out-of-sample guarantee"
+  },
+  "matched_forward": {
+    "archived_mae_change_usd": 13131.12335969761,
+    "archived_mae_ci95_usd": [
+      -14818.404372731144,
+      45128.68431082751
+    ],
+    "band_support": [
+      266,
+      50,
+      47,
+      9,
+      1,
+      3
+    ],
+    "metrics": {
+      "retrospective_metadata": {
+        "accuracy_pct": 51.06,
+        "balanced_accuracy_pct": 42.52,
+        "correct": 192
+      },
+      "verified_link": {
+        "accuracy_pct": 59.57,
+        "balanced_accuracy_pct": 33.19,
+        "correct": 224
+      }
+    },
+    "n": 376,
+    "scope": "same retrospective held cases, not an independent prospective release"
+  },
+  "policy_veto": {
+    "metrics": {
+      "high_vulnerability": {
+        "archived_interval_pp": [
+          -40.066935377635204,
+          -31.334749174579578
+        ],
+        "change_pp": -35.70984438047425
+      },
+      "least_served": {
+        "archived_interval_pp": [
+          20.47570111874956,
+          29.54433405743394
+        ],
+        "change_pp": 25.034231782013176
+      },
+      "overall": {
+        "archived_interval_pp": [
+          -10.4962496835572,
+          -7.162490129329058
+        ],
+        "change_pp": -8.828170718953338
+      }
+    },
+    "n": 48,
+    "scope": "synthetic scripted governance, not participants or operational effect"
+  },
+  "tabletop": {
+    "balanced_exposures_per_scenario_condition": 2,
+    "closed_zone_retained": true,
+    "negative_tests": "invalid route, stock, quantity and acceptance rejected",
+    "participants": 0,
+    "scenario_ids": 6,
+    "schedule_slots": 4,
+    "scope": "archived schedule dry run, not research with people",
+    "status": "simulation_only"
+  },
+  "target_blind": {
+    "changed": 3,
+    "changed_groups": 2,
+    "net_correct": 1,
+    "origins": 6,
+    "promotion_gate_met": false,
+    "scope": "archived noninterference check records; examined cohort, not replication"
+  },
+  "track_a": {
+    "accuracy_pct": 91.01,
+    "archived_amount_mae_usd": {
+      "accepted_low_band_prediction": 5127644.080431649,
+      "challenger_stack_prediction": 5014819.011614494,
+      "frozen_stack_prediction": 5131359.538876612
+    },
+    "band_hits": [
+      666,
+      80,
+      62,
+      12,
+      5,
+      5
+    ],
+    "band_totals": [
+      699,
+      108,
+      82,
+      13,
+      5,
+      5
+    ],
+    "correct": 830,
+    "scope": "archived reconstruction; target-conditioned rules and non-forward LFYO",
+    "total": 912
+  },
+  "transport_floor": {
+    "metrics": {
+      "high_vulnerability": {
+        "archived_interval_pp": [
+          -22.76688330991594,
+          -16.220721191097205
+        ],
+        "change_pp": -19.37642621963842
+      },
+      "least_served": {
+        "archived_interval_pp": [
+          19.73250888462231,
+          28.14588659106507
+        ],
+        "change_pp": 23.825194996669318
+      },
+      "overall": {
+        "archived_interval_pp": [
+          -1.7108134403054,
+          -1.1570730151051902
+        ],
+        "change_pp": -1.418766247945435
+      }
+    },
+    "scope": "archived simulator contrasts, not observed service"
+  },
+  "weight_20x": {
+    "archived_ci95_usd": [
+      -143277390.59758067,
+      2502981.448137016
+    ],
+    "false_alerts_baseline_then_weighted": [
+      13,
+      39
+    ],
+    "n": 135,
+    "scope": "exploratory matched elapsed signed-action cohort; not independent",
+    "tail_mae_change_usd": -55856656.45864457,
+    "tail_n": 11
+  }
+}

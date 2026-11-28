@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="608" viewBox="0 0 940 608" role="img" aria-labelledby="title desc">
+<title id="title">Evidence and decisions are separate in the research framework</title>
+<desc id="desc">Historical obligations inform finance research; authentic or simulated physical evidence supports separately labeled hazard studies; needs and logistics constrain allocation simulation. These views are reviewed together, but finance predictions are not used as measures of need and the system is not authorized to dispatch.</desc>
+<defs>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" orient="auto-start-reverse" markerWidth="7" markerHeight="7"><path d="M0 0L10 5L0 10Z" fill="#44576a"/></marker>
+ <style>
+   text{font-family:DejaVu Sans,sans-serif;fill:#1d2e40;font-size:16px}
+   .lead{font-size:24px;font-weight:bold}.head{font-size:15px;font-weight:bold;letter-spacing:.45px}
+   .label{font-weight:bold;font-size:18px}.note{font-size:14px;fill:#46566a}.arrow{stroke:#44576a;fill:none;stroke-width:2;marker-end:url(#arrow)}
+   .note-strong{font-size:14px;fill:#832b27;font-weight:bold}
+ </style>
+</defs>
+<path fill="#fff" d="M0 0h940v608H0z"/>
+<text class="lead" x="26" y="36">From disaster evidence to reviewable policy choices</text>
+<text class="note" x="26" y="62">A research architecture. The three evidence types answer different questions.</text>
+<text class="head" x="29" y="99">EVIDENCE AND INPUTS</text>
+<text class="head" x="352" y="99">RESEARCH TASK</text>
+<text class="head" x="676" y="99">REVIEW OUTPUT</text>
+<!-- Finance lane -->
+<rect x="23" y="112" width="894" height="100" rx="11" fill="#edf3f9" stroke="#b4c5d8"/>
+<text class="label" x="38" y="143">Administrative records</text>
+<text x="38" y="168">Historical FEMA obligations</text><text x="38" y="191">and dated declaration evidence</text>
+<path d="M299 161h37" class="arrow"/>
+<text class="label" x="352" y="143">Obligation estimation</text>
+<text x="352" y="168">Frozen replay and separate</text><text x="352" y="191">forward and uncertainty tests</text>
+<path d="M622 161h39" class="arrow"/>
+<text class="label" x="676" y="143">Finance evidence</text>
+<text x="676" y="168">Band, amount or interval;</text><text x="676" y="191">validation caveats</text>
+<!-- Physical lane -->
+<rect x="23" y="225" width="894" height="100" rx="11" fill="#ebf5f0" stroke="#a9c7ba"/>
+<text class="label" x="38" y="256">Physical observations</text>
+<text x="38" y="281">Gauges, hazard archives and</text><text x="38" y="304">separately labeled simulations</text>
+<path d="M299 274h37" class="arrow"/>
+<text class="label" x="352" y="256">Hazard verification</text>
+<text x="352" y="281">Station, unit, issue time and</text><text x="352" y="304">episode comparability gates</text>
+<path d="M622 274h39" class="arrow"/>
+<text class="label" x="676" y="256">Hazard evidence</text>
+<text x="676" y="281">Observability and quality;</text><text x="676" y="304">not a funding label</text>
+<!-- Logistics lane -->
+<rect x="23" y="338" width="894" height="100" rx="11" fill="#faf2e4" stroke="#d5c29c"/>
+<text class="label" x="38" y="369">Needs and logistics</text>
+<text x="38" y="394">Stipulated demand, inventory,</text><text x="38" y="417">vulnerability and access</text>
+<path d="M299 387h37" class="arrow"/>
+<text class="label" x="352" y="369">Allocation simulation</text>
+<text x="352" y="394">Feasible policies under stock,</text><text x="352" y="417">route and service constraints</text>
+<path d="M622 387h39" class="arrow"/>
+<text class="label" x="676" y="369">Policy trade-offs</text>
+<text x="676" y="394">Total, vulnerability and</text><text x="676" y="417">least-served-zone coverage</text>
+<!-- Evidence firewall -->
+<rect x="23" y="456" width="894" height="38" rx="7" fill="#f9eeed" stroke="#d0aba7"/>
+<text class="note-strong" x="38" y="480">Boundary: predicted obligations are not measured need; simulated service is not confirmed receipt.</text>
+<rect x="23" y="511" width="894" height="76" rx="10" fill="#f2f4f6" stroke="#b5c1c9"/>
+<text class="label" x="38" y="541">Human review in the research viewer</text>
+<text x="38" y="565">Inspect evidence and assumptions, then compare feasible options. No automatic dispatch.</text>
+</svg>
