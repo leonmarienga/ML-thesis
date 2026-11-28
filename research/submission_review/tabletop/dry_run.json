@@ -1,0 +1,9 @@
+{
+  "balanced_exposures_per_scenario_condition": 2,
+  "closed_zone_retained": true,
+  "negative_tests": "invalid route, stock, quantity and acceptance rejected",
+  "participants": 0,
+  "scenario_ids": 6,
+  "schedule_slots": 4,
+  "status": "simulation_only"
+}

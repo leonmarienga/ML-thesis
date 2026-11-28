@@ -159,3 +159,8 @@ The inland pilot uses the Iowa Environmental Mesonet HML archive (https://mesone
 [FIGURE:transport]
 
 Figure B1. The empirical frontier of tested transport allocation rules. Higher percentages indicate more demand served for each objective. Results use 48 synthetic scenarios drawn from survey-informed demand and assumed transport constraints and are not estimates of real relief effects.
+
+
+## Appendix C Prospective tabletop evaluation
+
+The [tabletop protocol and synthetic dry-run](tabletop/PROTOCOL.md) specify an unaided condition, a fixed optimizer and assisted review with an initial commitment before advice. The planned comparison keeps participant behavior distinct from scripted simulation and requires written institutional determination before enrollment. No participant evidence is included in this thesis draft.
