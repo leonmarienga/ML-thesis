@@ -1,0 +1,5 @@
+# Integrated Word build check through the F10 source revision
+
+**This is a local render record, not a new published Word file.** The published downloadable Word document remains the earlier verified snapshot. The manuscript source for this check is [0bf5aa42ccce903a66e00dd57a8c605c1c4520f2](https://github.com/leonmarienga/ML-thesis/blob/0bf5aa42ccce903a66e00dd57a8c605c1c4520f2/research/submission_review/THESIS.md).
+
+The revised builder generated a 27-page A4 local draft and LibreOffice rendered every page. A page montage check located T1 on page 6, T2 on pages 8–9 (repeating column headers), and T9/F9 and F10 on pages 17 and 18 respectively. The builder verified 19 Office Math display nodes and 11 embedded figures (F1–F10 and B1), including matching image digests, image relationships, alternate text and adjacent captions. The original F10 capture is embedded without raster edits. The 27-page draft is interim: it still needs final pagination, references, table completion, institutional formatting and release review. The earlier published 15-page document is not synchronized with this interim build.

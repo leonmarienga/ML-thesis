@@ -23,12 +23,15 @@ assert title.startswith("# ") and all(f"## Chapter {i} " in body for i in range(
 heading=title[2:]
 body=re.sub(r"^Leon Marienga \|.*$","",body,count=1,flags=re.M)
 # Stage each actual source figure by identity before Pandoc; there is no fallback to a missing SVG.
-pattern=r"!\[(Figure (F\d+)\.[^\n\]]+)\]\(figures/([A-Za-z0-9_.-]+\.svg)\)"
+pattern=r"!\[([^\n\]]+)\]\((figures/(?:prototype/)?(F(?:10|[1-9]))-[A-Za-z0-9_.-]+\.(?:svg|png))\)"
 image_matches=list(re.finditer(pattern,body))
-figures={m[2]:a.source.resolve().parent/"figures"/m[3] for m in image_matches}
-assert len(figures)==len(image_matches) and set(figures)=={f"F{i}" for i in range(1,9)}
+figures={m[3]:a.source.resolve().parent/m[2] for m in image_matches}
+assert len(figures)==len(image_matches) and set(figures)=={f"F{i}" for i in range(1,11)}
 assert body.count("[FIGURE:transport]")==1
-body=re.sub(pattern,lambda m:f"![{m[1]}]({m[2]}.png){{width=6.1in}}",body)
+def stage_markup(m):
+    description=m[1] if m[1].startswith(f"Figure {m[3]}.") else f"Figure {m[3]}. {m[1]}"
+    return f"![{description}]({m[3]}.png){{width=6.1in}}"
+body=re.sub(pattern,stage_markup,body)
 body=body.replace("[FIGURE:transport]","![Figure B1. Tested transport allocation frontier](B1.png){width=6.1in}")
 body=re.sub(r"(?m)^(##) ",r"# ",body)
 body=re.sub(r"(?m)^(###) ",r"## ",body)
@@ -43,7 +46,10 @@ with tempfile.TemporaryDirectory() as td:
     tracked={}
     for tag,src in figures.items():
         png=w/f"{tag}.png"
-        subprocess.run(["inkscape",str(src),"--export-width=2000","--export-filename="+str(png)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
+        if src.suffix==".png":
+            shutil.copyfile(src,png)
+        else:
+            subprocess.run(["inkscape",str(src),"--export-width=2000","--export-filename="+str(png)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
         tracked[tag]={"source":src.name,"source_sha256":sha(src),"png_sha256":sha(png)}
     shutil.copyfile(a.transport_figure,w/"B1.png")
     tracked["B1"]={"source":a.transport_figure.name,"source_sha256":sha(a.transport_figure),"png_sha256":sha(w/"B1.png")}
@@ -87,7 +93,7 @@ with tempfile.TemporaryDirectory() as td:
         if pa._p.xpath(".//w:drawing"):
             pa.paragraph_format.keep_with_next=True
             pa.alignment=WD_ALIGN_PARAGRAPH.CENTER
-        elif re.match(r"^Figure (?:F[1-8]|B1)\.",pa.text):
+        elif re.match(r"^Figure (?:F(?:10|[1-9])|B1)\.",pa.text):
             pa.style=doc.styles["Caption"]
             pa.paragraph_format.keep_together=True
             pa.paragraph_format.widow_control=True
@@ -95,6 +101,13 @@ with tempfile.TemporaryDirectory() as td:
         hdr=table.rows[0]._tr.get_or_add_trPr()
         hdr.append(OxmlElement("w:tblHeader"))
         widths={4:(1.92,.62,1.92,1.82),7:(.62,1.48,.78,.83,.58,.94,1.05)}.get(len(table.columns))
+        first=table.rows[0].cells[0].text
+        if first=="Source or feature":
+            widths=(1.76,1.15,.73,2.64)
+        elif first=="Analysis":
+            widths=(1.20,.78,.45,1.30,2.55)
+        elif first.startswith("Marker and"):
+            widths=(1.27,.91,1.19,.61,1.04,1.26)
         if widths:
             table.autofit=False
             for col,width in zip(table.columns,widths):
@@ -146,7 +159,7 @@ with tempfile.TemporaryDirectory() as td:
             prop=par.find(".//wp:docPr",ns)
             assert prop is not None
             alt=prop.attrib.get("descr","") or prop.attrib.get("title","")
-            mat=re.match(r"Figure (F[1-8]|B1)\.",alt)
+            mat=re.match(r"Figure (F(?:10|[1-9])|B1)\.",alt)
             assert mat, ("Missing figure alt identity",prop.attrib)
             tag=mat[1]
             text_next="".join(t.text or "" for t in pars[j+1].findall(".//w:t",ns))
