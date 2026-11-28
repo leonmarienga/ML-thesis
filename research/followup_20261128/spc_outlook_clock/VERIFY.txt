@@ -1,0 +1,6 @@
+Independent SQLite ranking counts: [(2012, 167, 167, 3, 3), (2018, 167, 167, 2, 1), (2024, 167, 167, 5, 2)]
+Fresh response replay: identical summary.json
+Fresh response replay: identical issue-signatures.csv
+Fresh response replay: identical future-issue-cutoffs.csv
+Fresh response replay: identical first_day_text_clock_crosscheck.csv
+Fresh response replay: identical text_clock_summary.json

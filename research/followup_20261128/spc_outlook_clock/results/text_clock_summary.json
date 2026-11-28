@@ -1,0 +1,24 @@
+{
+  "input_text_samples": [
+    {
+      "text_bulletins": 7,
+      "text_sha256": "1794d277bf855972850aa6359d0e13f3b0663bcf28197e8041fd64076210edc2",
+      "year": 2012
+    },
+    {
+      "text_bulletins": 6,
+      "text_sha256": "a3cb08eabd9df4fb5ff60a55d55bf5930de81ca3c4f97c9b68161b41973a88e3",
+      "year": 2018
+    },
+    {
+      "text_bulletins": 5,
+      "text_sha256": "f55cab9f34c5e3e2c577eea274f7794db07df3bd4e9d2f0de6c151043a5c9b2a",
+      "year": 2024
+    }
+  ],
+  "match_counts": {
+    "exact": 16,
+    "single_same_window_one_minute_offset_not_exact": 1,
+    "unpaired": 1
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "year": 2012,
+    "zip_sha256": "5966c35aa71c2ab0f79a94665e067e76fbb4dcb2fa9f17f02255b28b0754a425",
+    "bytes": 690880
+  },
+  {
+    "year": 2018,
+    "zip_sha256": "17316be9ec4f5ff5ac22542fe5043f696b2b0c37e9d46a4f09ee6a9844243959",
+    "bytes": 350387
+  },
+  {
+    "year": 2024,
+    "zip_sha256": "0f4803ab09e5a700891a34da55a4fc036f9247b0491d2fa3e0a071174a3dc724",
+    "bytes": 65402
+  }
+]
