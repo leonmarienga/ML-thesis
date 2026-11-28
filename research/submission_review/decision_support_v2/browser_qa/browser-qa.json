@@ -1,0 +1,36 @@
+{
+  "engine": "158.0.8127.0",
+  "hash": "9ddf0fedf618e7e9e3df5a194890ecb1f88883d4a48a4917cba2d423f7e84203",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "dims": {
+        "viewport": 1440,
+        "body": 1440
+      },
+      "keyboardInterval": true,
+      "keyboardRoadFilter": true,
+      "keyboardComparator": true,
+      "pageErrors": [],
+      "httpRequests": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dims": {
+        "viewport": 390,
+        "body": 390
+      },
+      "keyboardInterval": true,
+      "keyboardRoadFilter": true,
+      "keyboardComparator": true,
+      "pageErrors": [],
+      "httpRequests": []
+    }
+  ]
+}

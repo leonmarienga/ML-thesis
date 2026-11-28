@@ -24,3 +24,6 @@ The report and paired interval provenance are in the separate fixture bundle (ar
 ## Verification scope
 
 A fresh deterministic build matched the packaged HTML byte-for-byte. The Node harness executes the embedded JavaScript and event handlers against a test DOM: 1,424 original frontier interactions, 24 new ordered arm/regime combinations, and both interval levels. Structural checks cover native dropdown labels, duplicate IDs, navigation links, ARIA targets, scoped table headers and captions. The local Chromium launcher lacks its browser binary (see browser-probe.txt), so this does not establish browser-specific screen layout, keyboard focus behavior, accessibility with assistive technology, or usability. There is no public deployment.
+
+
+A later [headless Chromium acceptance pass](browser_qa/REPORT.md) verified the exact same viewer at desktop and narrow mobile widths using a separately pinned browser binary; no screen-reader or participant testing was performed.
