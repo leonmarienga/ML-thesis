@@ -1,0 +1,4 @@
+30 allowlisted ZIP members, 265601 bytes, SHA-256 f86d5d0b1aae4d9865c134f08c853d9689a3f02f415224011616754786f61db0
+Verified 27 retrieved exact published members; wrote /workspace/scratch/d54d9e54d47e/thesis-completion/t11-offline-handoff/test-stage-ih6q4hsi/remote_fixture.zip
+PASS: isolated CLI rebuild from local extraction; exactly 27 raw-GitHub GET paths against recorded fixtures; corrupt response and corrupt manifest rejected; redirects rejected; identical archive bytes.
+Independent real CLI: 27 exact live raw GitHub GETs matched the fixed sources; resulting ZIP was identical and passed clean-extraction tests.

@@ -1,0 +1,267 @@
+{
+  "files": [
+    {
+      "commit": null,
+      "git_blob": "149d0878fea4a54db129db30cf5a6e13a2cf8f79",
+      "member": "QUICKSTART.md",
+      "origin": "local handoff helper",
+      "path": "QUICKSTART.md",
+      "sha256": "f5ea7a151fb61ee8d96d137ec6eaba860637000c67a532854da3a2a0e421c9f5",
+      "size": 2083
+    },
+    {
+      "commit": "fb314e0edb71faccf9b7cbb196b0a245459aa696",
+      "git_blob": "5a99f8c534143e29737bbf40af9362d247462bbf",
+      "member": "notebook/claims.json",
+      "origin": "published Git blob",
+      "path": "research/submission_review/reviewer_notebook/claims.json",
+      "sha256": "2004b613ef33e8c10ca67cfd24fa065bade2c0c0654702e5448ac5a5b554b9ee",
+      "size": 7080
+    },
+    {
+      "commit": "b0b6edb229d112dd6d11896a512bf1112414e4f6",
+      "git_blob": "1cc4228ddca097231b7e9e3b08cb8ec6271e17e3",
+      "member": "notebook/evidence/forward_bootstrap.csv",
+      "origin": "published Git blob",
+      "path": "research/results/forward/paired_event_bootstrap.csv",
+      "sha256": "127ae8cbc1a44823eaabb9ce0f25be00b783a4c595fe5c31c474f2281a4acc85",
+      "size": 2516
+    },
+    {
+      "commit": "b0b6edb229d112dd6d11896a512bf1112414e4f6",
+      "git_blob": "40b273b05b396eebfa4f9e2369263a6582d40012",
+      "member": "notebook/evidence/forward_matrices.csv",
+      "origin": "published Git blob",
+      "path": "research/results/forward/confusion_matrices.csv",
+      "sha256": "eef78bc63876eef6bf5127ac2862de9eb0cf651870463355131aaa8d61d44509",
+      "size": 23866
+    },
+    {
+      "commit": "fdba8ea4cff6dbd7c893076ef09391b2f96ae277",
+      "git_blob": "54c196e15cf4fe7f5b599ee6b9f4b0ce2294fd84",
+      "member": "notebook/evidence/forward_t5.csv",
+      "origin": "published Git blob",
+      "path": "research/submission_review/figures/T5-matched-forward.csv",
+      "sha256": "9e074ccf994bd3a0071fb77db5fe1cdc0ca0135df249d8ae9bcb5db853508613",
+      "size": 356
+    },
+    {
+      "commit": "2038178997ca47ef0ea5fb591c4519a1f288409c",
+      "git_blob": "8b72df6c198c0f9f9b34c4c8f2765aa49da4b736",
+      "member": "notebook/evidence/gauge_stage_pairs.csv",
+      "origin": "published Git blob",
+      "path": "research/followup_20261128/michigan_public_clock/stage_pairs.csv",
+      "sha256": "188c8dee74c31de9ce9cdd4807f7bef2870debf7fe5e3faf2c17591134e19435",
+      "size": 15348
+    },
+    {
+      "commit": "2038178997ca47ef0ea5fb591c4519a1f288409c",
+      "git_blob": "e2c410d1454e0eaddc931a24f2489545ed2b3bc4",
+      "member": "notebook/evidence/gauge_stage_summary.json",
+      "origin": "published Git blob",
+      "path": "research/followup_20261128/michigan_public_clock/stage_summary.json",
+      "sha256": "8477ce43863ea907f7953bb34202f1f42623a3d7d16b5559db3a80bfeeaac45c",
+      "size": 1708
+    },
+    {
+      "commit": "fdba8ea4cff6dbd7c893076ef09391b2f96ae277",
+      "git_blob": "f19599546c67d1b6fdc541f67d54221040e363da",
+      "member": "notebook/evidence/interval_t8.csv",
+      "origin": "published Git blob",
+      "path": "research/submission_review/figures/uncertainty/T8-matched-intervals.csv",
+      "sha256": "9f056421b1b0c717386df7db9f7d66ce9ceddf7d85c3df6a6337e5e953284356",
+      "size": 979
+    },
+    {
+      "commit": "fb314e0edb71faccf9b7cbb196b0a245459aa696",
+      "git_blob": "9a023855a3e20e5bc52691a97da80d60b22bd23e",
+      "member": "notebook/evidence/manifest.json",
+      "origin": "published Git blob",
+      "path": "research/submission_review/reviewer_notebook/manifest.json",
+      "sha256": "006773bfcb065f426fd79384c7d275fe102eda2c0b1450d286a4a82a9510cb32",
+      "size": 6468
+    },
+    {
+      "commit": "fdba8ea4cff6dbd7c893076ef09391b2f96ae277",
+      "git_blob": "28950bebaab9d656856b42cafc4a98a9c74349be",
+      "member": "notebook/evidence/replay_open_b11.md",
+      "origin": "published Git blob",
+      "path": "research/submission_review/replay/CONTINUOUS_BATCHES_11_14.md",
+      "sha256": "e8ccd96fed0b58c4a20f906a89e90525c572c8723c3ea3e4b60e1e52208e8db3",
+      "size": 1620
+    },
+    {
+      "commit": "fdba8ea4cff6dbd7c893076ef09391b2f96ae277",
+      "git_blob": "9b25eb4a8179b0b29e0fbe0188352053ec94b87f",
+      "member": "notebook/evidence/replay_open_b5.md",
+      "origin": "published Git blob",
+      "path": "research/submission_review/replay/CONTINUOUS_BATCHES_5_10.md",
+      "sha256": "1c48b414811181b865b42e9043214433f1b59e00b46fa17750c8109419b926b8",
+      "size": 1668
+    },
+    {
+      "commit": "fdba8ea4cff6dbd7c893076ef09391b2f96ae277",
+      "git_blob": "cb29bba04bb44c28a4392dcaf284abd425e87764",
+      "member": "notebook/evidence/tabletop_dry.json",
+      "origin": "published Git blob",
+      "path": "research/submission_review/tabletop/dry_run.json",
+      "sha256": "f2b26d9612da55a2634aa803353f5189a408ff8b9ad57afeaf82ea75ad68065b",
+      "size": 259
+    },
+    {
+      "commit": "2038178997ca47ef0ea5fb591c4519a1f288409c",
+      "git_blob": "d33980851ebda1748011b1a28241cff30401c78f",
+      "member": "notebook/evidence/target_blind_folds.csv",
+      "origin": "published Git blob",
+      "path": "research/followup_20261128/target_blind_router_v1/evidence/forward_fold_checks.csv",
+      "sha256": "ed7b2cfd826b77f187a28e8fb3640d402d98097c2d502917559348faeea5625d",
+      "size": 1208
+    },
+    {
+      "commit": "2038178997ca47ef0ea5fb591c4519a1f288409c",
+      "git_blob": "0b150bf56af4ac995f6863d246c8d37b0177c1f7",
+      "member": "notebook/evidence/target_blind_summary.json",
+      "origin": "published Git blob",
+      "path": "research/followup_20261128/target_blind_router_v1/evidence/summary.json",
+      "sha256": "e767068312df2475c20177a860dcb1824f70656c90c650bd5150fdf560537ee8",
+      "size": 2295
+    },
+    {
+      "commit": "fdba8ea4cff6dbd7c893076ef09391b2f96ae277",
+      "git_blob": "ac77d40bcba497fb39b680327710b74ba4f1d7bf",
+      "member": "notebook/evidence/track_a_amounts.csv",
+      "origin": "published Git blob",
+      "path": "research/submission_review/figures/T4-amount-versions.csv",
+      "sha256": "1e36232588f3058564c781b84de011fd7063edc8017c685703b76bd880afe5ed",
+      "size": 158
+    },
+    {
+      "commit": "fdba8ea4cff6dbd7c893076ef09391b2f96ae277",
+      "git_blob": "7cd414caefa422493d1fc5827e5bf3daa40d9856",
+      "member": "notebook/evidence/track_a_bands.csv",
+      "origin": "published Git blob",
+      "path": "research/submission_review/figures/F6-T4-band-evidence.csv",
+      "sha256": "7db43ba445f3349da356428b4799cbe1cc4cffc4d5d546fd0015c44b6d4ae7ec",
+      "size": 407
+    },
+    {
+      "commit": "b0b6edb229d112dd6d11896a512bf1112414e4f6",
+      "git_blob": "1119dbb891f5c9f1cd2670dac3efb0e64f97f836",
+      "member": "notebook/evidence/transport_floors.csv",
+      "origin": "published Git blob",
+      "path": "research/continuous/transport_pareto/results/paired_floors.csv",
+      "sha256": "2b7e72357c899b093eef3aadb4a5c41282e83d06119c6d3a7fe0bd49aa880ad4",
+      "size": 2075
+    },
+    {
+      "commit": "2038178997ca47ef0ea5fb591c4519a1f288409c",
+      "git_blob": "4bf1214a4b7635d48f4b7848f70e32e7b05441a1",
+      "member": "notebook/evidence/uncertainty_review.csv",
+      "origin": "published Git blob",
+      "path": "research/followup_20261128/uncertainty_audit/audit.csv",
+      "sha256": "186f2c712b29dd0183cf37893e2eec4193f90a38000f17d4a9e95717e6b97871",
+      "size": 608
+    },
+    {
+      "commit": "2038178997ca47ef0ea5fb591c4519a1f288409c",
+      "git_blob": "d0ccd61f5f9b49a4845c8713057646606463fc1b",
+      "member": "notebook/evidence/veto_contrasts.csv",
+      "origin": "published Git blob",
+      "path": "research/followup_20261128/policy_veto_fixture/results/paired_contrasts.csv",
+      "sha256": "9dcd9913c1ae62cd48390ed87409783d5afaedfe16f6209a26392d58937a8ce9",
+      "size": 1599
+    },
+    {
+      "commit": "b0b6edb229d112dd6d11896a512bf1112414e4f6",
+      "git_blob": "fcf7b00ef14368c0c9fa9d9dbb1f0e15601a2cf4",
+      "member": "notebook/evidence/weight_bootstrap.csv",
+      "origin": "published Git blob",
+      "path": "research/continuous/weight_influence/results/original_bootstrap.csv",
+      "sha256": "38aa7272ad20c5c79ce99eec2988da6c5af9358477a58cf1ab2d535e6a1203aa",
+      "size": 273
+    },
+    {
+      "commit": "b0b6edb229d112dd6d11896a512bf1112414e4f6",
+      "git_blob": "4d40bdcdd18ce9cf7220bfb11e7a338f61de6111",
+      "member": "notebook/evidence/weight_metrics.csv",
+      "origin": "published Git blob",
+      "path": "research/continuous/weight_influence/results/metrics.csv",
+      "sha256": "41bb0a58f77b3101bfdb808015bc6060fcfb841549efb46f6541314e3e302360",
+      "size": 1455
+    },
+    {
+      "commit": "fb314e0edb71faccf9b7cbb196b0a245459aa696",
+      "git_blob": "a46911c9744e90af67e1e245127286990285036c",
+      "member": "notebook/notebook_tool.py",
+      "origin": "published Git blob",
+      "path": "research/submission_review/reviewer_notebook/notebook_tool.py",
+      "sha256": "be5955e9ee91b54507807651b49bb991677180ec49d6bac99ab4760dedbb27b6",
+      "size": 6234
+    },
+    {
+      "commit": "fb314e0edb71faccf9b7cbb196b0a245459aa696",
+      "git_blob": "3873207df971498788036f387194349fff50299e",
+      "member": "notebook/thesis-review.executed.ipynb",
+      "origin": "published Git blob",
+      "path": "research/submission_review/reviewer_notebook/thesis-review.executed.ipynb",
+      "sha256": "ba1484449fc6d4c55e2d82bc682f2dc5aa6f8309cc1ac16d910bc4898ae4bcfe",
+      "size": 37404
+    },
+    {
+      "commit": "fb314e0edb71faccf9b7cbb196b0a245459aa696",
+      "git_blob": "45f8a6d8687a423857e4e54c57a835d95375c196",
+      "member": "notebook/thesis-review.ipynb",
+      "origin": "published Git blob",
+      "path": "research/submission_review/reviewer_notebook/thesis-review.ipynb",
+      "sha256": "bae2b4698d2c001ee201ea5603fadf268a4449130e5b0eb1be75daf2bb032caa",
+      "size": 25670
+    },
+    {
+      "commit": null,
+      "git_blob": "afd97089fd8d55d3f61e134449d7877db69ced9e",
+      "member": "verify_handoff.py",
+      "origin": "local handoff helper",
+      "path": "verify_handoff.py",
+      "sha256": "68c05f4940c22759167b866919feb3ab1f36ddcee0e2e97c134da3589da91e80",
+      "size": 6580
+    },
+    {
+      "commit": "b951c7a4883400c0d69a04d71ec91290351267e3",
+      "git_blob": "815513ee7cc50b9617212a7a60c9c05eb45667f2",
+      "member": "viewer/index.html",
+      "origin": "published Git blob",
+      "path": "research/submission_review/decision_support_v2/index.html",
+      "sha256": "9ddf0fedf618e7e9e3df5a194890ecb1f88883d4a48a4917cba2d423f7e84203",
+      "size": 89438
+    },
+    {
+      "commit": "b951c7a4883400c0d69a04d71ec91290351267e3",
+      "git_blob": "6a34c86bf7e05145de42dfc55e5a89be4ae93ca6",
+      "member": "viewer/test_structure.py",
+      "origin": "published Git blob",
+      "path": "research/submission_review/decision_support_v2/test_structure.py",
+      "sha256": "452e0fe1638f9c57d42e317330817004c14eed7b614638719bfac69845cca45f",
+      "size": 1672
+    },
+    {
+      "commit": "b951c7a4883400c0d69a04d71ec91290351267e3",
+      "git_blob": "fd4c9fac3b826ebd346536abadf433e2bb9b50b2",
+      "member": "viewer/test_v1.js",
+      "origin": "published Git blob",
+      "path": "research/submission_review/decision_support_v2/test_v1.js",
+      "sha256": "cb7388b84f95986539a3f7be94e0681f9b6d04bf220885438c172db13b440984",
+      "size": 3842
+    },
+    {
+      "commit": "b951c7a4883400c0d69a04d71ec91290351267e3",
+      "git_blob": "8e1850ccfcb8e51610632b4239c7b78b17b98fb3",
+      "member": "viewer/test_v2.js",
+      "origin": "published Git blob",
+      "path": "research/submission_review/decision_support_v2/test_v2.js",
+      "sha256": "f55541a4ee6b6187e168fc24cebec64c219fb9c221fe80f651fb3593ebe86bb7",
+      "size": 4834
+    }
+  ],
+  "repository": "leonmarienga/ML-thesis",
+  "schema_version": 1
+}

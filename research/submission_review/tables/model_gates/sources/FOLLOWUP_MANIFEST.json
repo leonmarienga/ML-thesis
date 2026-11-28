@@ -1,0 +1,20 @@
+[
+  {
+    "file": "target_blind_summary.json",
+    "ref": "2038178997ca47ef0ea5fb591c4519a1f288409c",
+    "path": "research/followup_20261128/target_blind_router_v1/evidence/summary.json",
+    "sha": "0b150bf56af4ac995f6863d246c8d37b0177c1f7"
+  },
+  {
+    "file": "adcirc_coordinates.json",
+    "ref": "7cc417b7febfb4f996162d0886df3dfc9cb0efbb",
+    "path": "research/followup_20261128/adcirc_collocation/coordinates.json",
+    "sha": "00695b10a8fce92f6639c20d785e6313f8d6b6cd"
+  },
+  {
+    "file": "adcirc_land_screen.json",
+    "ref": "7cc417b7febfb4f996162d0886df3dfc9cb0efbb",
+    "path": "research/followup_20261128/adcirc_collocation/enc_screen.json",
+    "sha": "742d2f95b9ca69062859add28e32767a7102184f"
+  }
+]

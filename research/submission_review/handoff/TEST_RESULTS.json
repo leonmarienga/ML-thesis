@@ -1,0 +1,38 @@
+{
+  "deterministic_rebuild_with_extra_input_ignored": "pass",
+  "fallback_without_node": "pass",
+  "fresh_extraction": {
+    "claims_content_equal": true,
+    "node_interactions": [
+      "PASS: 1,424 live JS preference/comparator/regime combinations; values, gaps, plot redraw, source and evidence labels.",
+      "PASS: two interval levels and all 24 distinct-arm/regime combinations; role labels, displayed values, interval reversal, warnings, aggregate-only fixture and sources."
+    ],
+    "notebook_cells": 8,
+    "scope": "Verification only. No models, full simulator, Word, restricted outcomes, participant work, or browser UI tested by this command.",
+    "scoped_claims": 9,
+    "verified_manifest_files": 29,
+    "viewer_structure": "PASS: unique IDs, all navigation and aria-labelledby targets valid, core select labels, main/navigation landmarks, captions and column scopes."
+  },
+  "supplemental_actual_chromium": {
+    "artifact": {
+      "chromium_executable_sha256": "1f698044a68e18c1ce0cce74be25413f176806f19f15a44de5bb02cd578996af",
+      "chromium_package": "158.0.0",
+      "chromium_version": "158.0.8127.0",
+      "html_sha256": "9ddf0fedf618e7e9e3df5a194890ecb1f88883d4a48a4917cba2d423f7e84203",
+      "playwright_version": "1.62.1"
+    },
+    "http_requests": [],
+    "page_errors": [],
+    "state_proof": {
+      "after": "Closure \u00b7 15 matched simulated worlds",
+      "before": "All road conditions \u00b7 48 matched simulated worlds"
+    }
+  },
+  "tamper_rejected": [
+    "viewer/index.html",
+    "notebook/evidence/forward_t5.csv"
+  ],
+  "zip_members": 30,
+  "zip_sha256": "f86d5d0b1aae4d9865c134f08c853d9689a3f02f415224011616754786f61db0",
+  "zip_size": 265601
+}

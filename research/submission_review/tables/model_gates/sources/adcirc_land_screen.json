@@ -1,0 +1,30 @@
+{
+  "8723970": {
+    "approach": {
+      "interpretation": "land intersection flagged",
+      "land_features_in_nearby_window": 5,
+      "land_features_intersecting_middle_90pct": 1,
+      "land_features_intersecting_straight_station_to_node_segment": 1
+    },
+    "harbour": {
+      "interpretation": "land intersection flagged",
+      "land_features_in_nearby_window": 11,
+      "land_features_intersecting_middle_90pct": 1,
+      "land_features_intersecting_straight_station_to_node_segment": 1
+    }
+  },
+  "8724580": {
+    "approach": {
+      "interpretation": "land intersection flagged",
+      "land_features_in_nearby_window": 2,
+      "land_features_intersecting_middle_90pct": 1,
+      "land_features_intersecting_straight_station_to_node_segment": 1
+    },
+    "harbour": {
+      "interpretation": "land intersection flagged",
+      "land_features_in_nearby_window": 7,
+      "land_features_intersecting_middle_90pct": 1,
+      "land_features_intersecting_straight_station_to_node_segment": 1
+    }
+  }
+}

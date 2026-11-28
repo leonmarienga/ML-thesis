@@ -1,0 +1,160 @@
+{
+  "node_count": 12536,
+  "range_bytes": 262144,
+  "range_starts": [
+    0,
+    65536,
+    131072,
+    3009937408
+  ],
+  "scope": "coordinate and metadata only; no hindcast response read",
+  "size_bytes": 4860934085,
+  "stations": {
+    "8723970": {
+      "latitude": 24.711,
+      "longitude": -81.1065,
+      "name": "Vaca Key, Florida Bay",
+      "nearest_8": [
+        {
+          "distance_m": 1639.25,
+          "index": 3087,
+          "latitude": 24.7036991,
+          "longitude": -81.1205978
+        },
+        {
+          "distance_m": 8042.27,
+          "index": 3335,
+          "latitude": 24.7094994,
+          "longitude": -81.0269012
+        },
+        {
+          "distance_m": 8941.03,
+          "index": 3337,
+          "latitude": 24.7912998,
+          "longitude": -81.1018982
+        },
+        {
+          "distance_m": 9619.53,
+          "index": 3336,
+          "latitude": 24.7600002,
+          "longitude": -81.1849976
+        },
+        {
+          "distance_m": 10063.31,
+          "index": 3088,
+          "latitude": 24.7008991,
+          "longitude": -81.2054977
+        },
+        {
+          "distance_m": 10297.13,
+          "index": 3086,
+          "latitude": 24.6238003,
+          "longitude": -81.072197
+        },
+        {
+          "distance_m": 12622.84,
+          "index": 2826,
+          "latitude": 24.6259995,
+          "longitude": -81.1893005
+        },
+        {
+          "distance_m": 14336.22,
+          "index": 3089,
+          "latitude": 24.7304993,
+          "longitude": -81.2468033
+        }
+      ],
+      "nearest_same_as_manhattan": true,
+      "publisher_manhattan_node": 3087,
+      "screen_radius_counts": {
+        "100": 0,
+        "1000": 0,
+        "200": 0,
+        "2000": 1,
+        "500": 0
+      }
+    },
+    "8724580": {
+      "latitude": 24.5557,
+      "longitude": -81.8079,
+      "name": "Key West",
+      "nearest_8": [
+        {
+          "distance_m": 4028.78,
+          "index": 1853,
+          "latitude": 24.5361004,
+          "longitude": -81.8414001
+        },
+        {
+          "distance_m": 6858.56,
+          "index": 1994,
+          "latitude": 24.5461998,
+          "longitude": -81.7408981
+        },
+        {
+          "distance_m": 8070.7,
+          "index": 1996,
+          "latitude": 24.6245995,
+          "longitude": -81.8330002
+        },
+        {
+          "distance_m": 11115.29,
+          "index": 1995,
+          "latitude": 24.5974007,
+          "longitude": -81.9077988
+        },
+        {
+          "distance_m": 11732.42,
+          "index": 1852,
+          "latitude": 24.4619007,
+          "longitude": -81.7547989
+        },
+        {
+          "distance_m": 12972.49,
+          "index": 1721,
+          "latitude": 24.4489002,
+          "longitude": -81.8594971
+        },
+        {
+          "distance_m": 13158.7,
+          "index": 2165,
+          "latitude": 24.6590004,
+          "longitude": -81.7444
+        },
+        {
+          "distance_m": 13979.83,
+          "index": 1854,
+          "latitude": 24.5533009,
+          "longitude": -81.9460983
+        }
+      ],
+      "nearest_same_as_manhattan": true,
+      "publisher_manhattan_node": 1853,
+      "screen_radius_counts": {
+        "100": 0,
+        "1000": 0,
+        "200": 0,
+        "2000": 0,
+        "500": 0
+      }
+    }
+  },
+  "unique_coordinate_count": 12238,
+  "zeta_metadata": {
+    "chunks": [
+      20,
+      100,
+      2000
+    ],
+    "compression": "gzip",
+    "dtype": "float32",
+    "fill_value": -999.0,
+    "shape": [
+      75,
+      426,
+      12536
+    ],
+    "standard_name": "sea_surface_height_above_geoid",
+    "units": "meters"
+  }
+}
