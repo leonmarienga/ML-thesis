@@ -75,7 +75,7 @@ with tempfile.TemporaryDirectory() as td:
         fs=doc.styles.add_style("Footer",WD_STYLE_TYPE.PARAGRAPH)
         fs.font.name="Cambria";fs.font.size=Pt(9)
     sub=doc.paragraphs[0]
-    for content,style in [(heading,"Title"),("Leon Marienga","Subtitle"),("Master’s Thesis Supervisor Review Draft","Subtitle")]:
+    for content,style in [(heading,"Title"),("Leon Marienga","Subtitle"),("MSc Computer Engineering","Subtitle"),("European University of Lefke","Subtitle"),("Supervisor Review Draft | 28 November 2026","Subtitle")]:
         par=sub.insert_paragraph_before(content,style)
         par.alignment=WD_ALIGN_PARAGRAPH.CENTER
         if style=="Title":
@@ -89,7 +89,7 @@ with tempfile.TemporaryDirectory() as td:
         if pa.style.name in {"Title","Subtitle"} or pa.style.name.startswith("Heading"):
             for run in pa.runs:
                 run.font.color.rgb=RGBColor(0,0,0)
-        if pa.style.name=="Heading 1" and pa.text.startswith("Chapter 1 "):
+        if pa.style.name=="Heading 1" and (pa.text.startswith("Chapter 1 ") or pa.text in {"List of figures"}):
             pa.paragraph_format.page_break_before=True
         if re.match(r"^Table T(?:1[01]|[1-9])\.",pa.text):
             pa.paragraph_format.keep_with_next=True
@@ -154,6 +154,7 @@ with tempfile.TemporaryDirectory() as td:
             "r":"http://schemas.openxmlformats.org/officeDocument/2006/relationships"}
         xml=z.read("word/document.xml").decode()
         assert "FIGURE:transport" not in xml and all(f"Chapter {i}" in xml for i in range(1,7))
+        assert all(s in xml for s in ("List of figures","List of tables","MSc Computer Engineering","Keywords:"))
         assert "$5,014,819.01" in xml and "Prospective tabletop evaluation" in xml and "$2.155B" in xml
         tree=ET.fromstring(xml)
         rels={v.attrib["Id"]:v.attrib for v in ET.fromstring(z.read("word/_rels/document.xml.rels"))}

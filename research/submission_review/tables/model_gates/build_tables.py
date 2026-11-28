@@ -142,7 +142,7 @@ assert all(x["state_hazard_strata_ctgan_gate"]==x["state_hazard_strata_copula_ga
 ga=A+"GENERATOR_AUDIT.md"
 assert all(s in get(ga).decode() for s in ("required eight independent episodes","required 100 independent compatible training episodes","98 of 359 draws"))
 gate("generator_support","Monetary generative support","Earlier training compartments; compatible state × hazard × band",
-     "blocked_no_generator_fit","At most 2 earlier compatible episodes; copula requires 8, CTGAN requires 100.",
+     "blocked_no_generator_fit","At most 2 earlier compatible episodes. This study prespecified minima of 8 for the copula and 100 for CTGAN.",
      "Protocol-specific gates; no trained copula or CTGAN result.",link(AR+"support.csv"),link(ga))
 for k,v in [("maximum_compatible",max_donors),("copula_minimum",8),("ctgan_minimum",100)]:
     metric("generator_support",k,v,"episodes","Within compatible strata",link(ga))

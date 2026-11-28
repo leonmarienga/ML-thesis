@@ -17,7 +17,7 @@
 
 | Study | Disposition | Evidence |
 | --- | --- | --- |
-| [Monetary generative support](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/support.csv) | blocked no generator fit | At most 2 earlier compatible episodes; copula requires 8, CTGAN requires 100. |
+| [Monetary generative support](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/support.csv) | blocked no generator fit | At most 2 earlier compatible episodes. This study prespecified minima of 8 for the copula and 100 for CTGAN. |
 | [SMOTE-family and downweighted hybrid](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/intervals.csv) | evaluated no material novel gain | 0/13 tail cases covered at nominal 80% and 90% in every configuration; no novel generator improved the joint endpoints. |
 | [Training weights and repeated examples (controls)](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/metrics.csv) | evaluated controls only | Tail MAE: real-only 553.27M USD, weights 500.60M, repeats 540.61M; weighting worsened overall MAE. |
 | [USACE synthetic flood property-loss pilot](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/physics_impact_pilot.csv) | feasibility only no funding bridge | All 21 modeled scenarios explicitly mark obligations unassigned; none is a training label. |

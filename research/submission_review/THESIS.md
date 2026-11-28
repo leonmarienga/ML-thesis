@@ -1,10 +1,55 @@
 # AI-Assisted Decision-Support Framework for Disaster Relief Resource Allocation Under Uncertainty
 
-Leon Marienga | Master's thesis working manuscript | Supervisor-review draft | Archived benchmark and retrospective validation
+Leon Marienga | MSc Computer Engineering | European University of Lefke | Supervisor-review draft, 28 November 2026
 
 ## Abstract
 
 Disaster relief decisions must often be made before the extent of damage, available resources or unmet needs is known. Historical government obligations provide a record of administrative action, but not a direct measure of need. This thesis develops a research framework that keeps those quantities separate. It reconstructs a historical FEMA Mission Assignment benchmark, evaluates whether physical and administrative evidence improves forward obligation prediction, and compares relief allocation policies in simulations informed by household survey evidence. The frozen six-band benchmark reproduced 830 correct classifications in 912 cases (91.01%); the reported amount overlay reproduced mean absolute error of $5.015 million. These are retrospective reconstruction results: the final historical routing includes rules whose eligibility used the held record's true obligation amount. In a matched forward comparison of 376 declarations, additional hazard linkages improved raw accuracy but reduced balanced accuracy, with no clear improvement in dollar error. An exploratory 20× weighting strategy reduced high-obligation error on an examined signed-action cohort, but its uncertainty and false alerts limit use. The coastal hybrid did not consistently outperform its real-data baselines. In 48 simulated transport scenarios, a geographic service floor reduced the worst geographic shortfall at the cost of coverage in the highest-vulnerability zones. The principal contribution is a reproducible process for testing these components and withholding claims when timing, measurement or independent validation is inadequate. The evidence supports use as a research and scenario-comparison framework, not as an operational allocation system.
+
+**Keywords:** disaster relief; FEMA Mission Assignments; chronological validation; prediction uncertainty; humanitarian logistics; decision support.
+
+## Contents
+
+- [Abstract](#abstract)
+- [Chapter 1 Introduction](#chapter-1-introduction)
+- [Chapter 2 Literature and conceptual framework](#chapter-2-literature-and-conceptual-framework)
+- [Chapter 3 Methodology](#chapter-3-methodology)
+- [Chapter 4 Results](#chapter-4-results)
+- [Chapter 5 Discussion and limitations](#chapter-5-discussion-and-limitations)
+- [Chapter 6 Conclusion](#chapter-6-conclusion)
+- [References](#references)
+- [Appendix A Reproduction and claim tracing](#appendix-a-reproduction-and-claim-tracing)
+- [Appendix B Allocation frontier](#appendix-b-allocation-frontier)
+- [Appendix C Prospective tabletop evaluation](#appendix-c-prospective-tabletop-evaluation)
+- [Appendix D Implemented formulations](#appendix-d-implemented-formulations)
+
+## List of figures
+
+- **F1.** Evidence and decision framework
+- **F2.** Historical routing and amount specialists
+- **F3.** Chronological split and episode-purge audit
+- **F4.** Hazard source and measurement gates
+- **F5.** Reviewer verification paths
+- **F6.** Historical routing and concentration of amount error
+- **F7.** Matched forward ablation
+- **F8.** Matched interval coverage and width
+- **F9.** Simulated transport policy frontier and service floor
+- **F10.** Offline prototype in the closure scenario view
+- **B1.** Empirical transport allocation frontier
+
+## List of tables
+
+- **T1.** Historical feature coverage
+- **T2.** Validation cohorts and endpoints
+- **T3.** Model lineage and evidence status
+- **T4.** Error of the three archived amount stacks
+- **T5.** Exact-band results in the forward comparison
+- **T6.** Physical measurement and timing checks
+- **T7.** Synthetic transfer and catastrophic-obligation gates
+- **T8.** Interval coverage and width
+- **T9.** Simulated allocation preference profiles
+- **T10.** Reviewer claim-to-evidence map ([companion guide](REVIEWER_START_HERE.md), not repeated in the manuscript)
+- **T11.** Portable reviewer verification scope
 
 ## Chapter 1 Introduction
 
@@ -202,7 +247,7 @@ Collapsing the archived bands to a $50M-or-more alert changes the question from 
 
 ### Target-blind routing replacement trial
 
-A pre-specified experimental replacement used only archived declaration metadata and past-only fitting in six fiscal-year origins, with episode separation and a gate based on the baseline **predicted** band, not the observed amount. Reassigning or permuting the held labels left both models' predictions and probabilities unchanged in every origin. Across 376 previously examined declarations (325 source-connected groups), the fresh baseline correctly routed 273; the candidate correctly routed 274. The paired macro-F1 difference was +0.0054 (95% episode bootstrap interval 0.0000 to +0.0169). Three decisions changed across two episode groups, so the candidate did not meet its predefined support and precision gate. Both models missed all four cases at or above $200M. This is evidence for an outcome-blind construction, not evidence of an improvement, a numerical alternative to frozen Track A, or a certified operational model. [Fixed protocol and result](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/target_blind_router_v1).
+A pre-specified experimental replacement used only archived declaration metadata and past-only fitting in six fiscal-year origins, with episode separation and a gate based on the baseline **predicted** band, not the observed amount. Reassigning or permuting the held labels left both models' predictions and probabilities unchanged in every origin. Across 376 previously examined declarations (325 source-connected groups), the fresh baseline correctly routed 273; the candidate correctly routed 274. The paired macro-F1 difference was +0.0054 (95% episode bootstrap interval 0.0000 to +0.0169). Three decisions changed across two episode groups, so the candidate did not meet its predefined support and precision gate. Both models missed all four cases at or above $200M. This is evidence for an outcome-blind construction, not evidence of an improvement, a numerical alternative to frozen Track A, or a certified operational model. [Fixed protocol and result](https://github.com/leonmarienga/ML-thesis/blob/6bd74e7dceaf339df2b9f911141a8a7281428d5f/research/followup_20261128/target_blind_router_v1/evidence/summary.json).
 
 ### Physical observations and synthetic experiments
 
@@ -229,7 +274,7 @@ The monetary augmentation study found at most two admissible earlier donor episo
 
 | Study | Disposition | Evidence |
 | --- | --- | --- |
-| [Monetary generative support](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/support.csv) | No fit: support gate closed | At most 2 earlier compatible episodes; copula requires 8, CTGAN requires 100. |
+| [Monetary generative support](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/support.csv) | No fit: support gate closed | At most 2 earlier compatible episodes. This study prespecified minima of 8 for the copula and 100 for CTGAN. |
 | [SMOTE-family and downweighted hybrid](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/intervals.csv) | Evaluated: no material novel gain | 0/13 tail cases covered at nominal 80% and 90% in every configuration; no novel generator improved the joint endpoints. |
 | [USACE synthetic flood property-loss pilot](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/augmentation/results/physics_impact_pilot.csv) | Feasibility only | All 21 modeled scenarios explicitly mark obligations unassigned; none is a training label. |
 | [Fixed 20× signed 36-month obligations (Batch 13)](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/research/continuous/weight_influence/results/metrics.csv) | Exploratory: not promoted | Tail MAE 347.66M → 291.80M USD, Δ −55.86M (95% CI −143.28M to +2.50M); 11/11 detections and 39 false alerts vs 8/11 and 13. |
@@ -256,7 +301,7 @@ The monetary augmentation study found at most two admissible earlier donor episo
 
 **Figure F8.** Coverage counts and interval width for the same historical cases; width uses a logarithmic scale to retain the upper group's wide intervals. The two CQR misses and all nine residual-method misses in the nominal-90% upper group exceeded the upper bound. The CQR count is 7/9 by its archived endpoint and by-band tables, rather than the 6/9 stated in an older narrative. This comparison does not isolate an algorithm effect: the pipelines used different models and calibration histories. Nine upper cases are insufficient for a reliable group guarantee. See the [matched uncertainty evidence](figures/uncertainty/REPORT.md).
 
-The nested metadata dollar-residual intervals at nominal 90% covered 281 of 308 cases, but none of the nine cases at or above $50M. An audit found that the existing review flag marked seven of those nine misses and 159 of the 308 cases overall. Review does not turn an interval miss into coverage; the two unflagged extreme failures matter. The audited cohort does not support another cutoff search without a genuinely independent evaluation sample. [Uncertainty audit](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/uncertainty_audit).
+The nested metadata dollar-residual intervals at nominal 90% covered 281 of 308 cases, but none of the nine cases at or above $50M. An audit found that the existing review flag marked seven of those nine misses and 159 of the 308 cases overall. Review does not turn an interval miss into coverage; the two unflagged extreme failures matter. The audited cohort does not support another cutoff search without a genuinely independent evaluation sample. [Uncertainty audit](https://github.com/leonmarienga/ML-thesis/blob/6bd74e7dceaf339df2b9f911141a8a7281428d5f/research/followup_20261128/uncertainty_audit/REPORT.md).
 
 ### Legacy sequential budget simulation
 
@@ -283,7 +328,7 @@ Increasing that rule's floor from zero to 100% of the feasible equal-fraction re
 
 ### Matched scripted policy experiment
 
-A separate three-arm governance fixture used 48 previously unused synthetic scenario seeds. It compared a scripted proportional rule, an optimizer, and that optimizer with a scripted review veto and fallback. Relative to optimizer-only, the veto raised least-served-zone coverage by 25.03 percentage points (scenario bootstrap interval +20.48 to +29.54), while reducing total coverage by 8.83 points and high-vulnerability coverage by 35.71 points. All 288 scored dispatches were feasible. This establishes a trade-off under fixed rules, not human decision behavior or real relief outcomes. The optimizer is not a demonstrated predictive AI system; the scripted rule and veto cannot stand in for participants. A real three-arm study would require prior institutional approvals and independent outcome measurement. [Protocol and result](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/policy_veto_fixture).
+A separate three-arm governance fixture used 48 previously unused synthetic scenario seeds. It compared a scripted proportional rule, an optimizer, and that optimizer with a scripted review veto and fallback. Relative to optimizer-only, the veto raised least-served-zone coverage by 25.03 percentage points (scenario bootstrap interval +20.48 to +29.54), while reducing total coverage by 8.83 points and high-vulnerability coverage by 35.71 points. All 288 scored dispatches were feasible. This establishes a trade-off under fixed rules, not human decision behavior or real relief outcomes. The optimizer is not a demonstrated predictive AI system; the scripted rule and veto cannot stand in for participants. A real three-arm study would require prior institutional approvals and independent outcome measurement. [Protocol and result](https://github.com/leonmarienga/ML-thesis/blob/6bd74e7dceaf339df2b9f911141a8a7281428d5f/research/followup_20261128/policy_veto_fixture/REPORT.md).
 
 ![Offline viewer under simulated road closure: a scripted veto gains 9.06 percentage points in the least-served zone but lowers overall and high-vulnerability service.](figures/prototype/F10-offline-decision-viewer.png)
 
