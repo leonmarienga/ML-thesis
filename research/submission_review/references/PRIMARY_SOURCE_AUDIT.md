@@ -1,0 +1,26 @@
+# Chapter 2 reference and claim audit
+
+The 18 works cited in Chapter 2 were matched to their publication or author manuscript. The claims adopted from the literature are conceptual or methodological. None substantiates a thesis-specific model score, operational result or participant outcome. Code and evidence checkpoints for those claims are separate. Formatting is a consistent author–year review style, pending institutional requirements. No claim of a systematic review of this literature is made.
+
+| Work | Primary evidence checked | Use and boundary |
+| --- | --- | --- |
+| Balcik & Beamon (2008) | [Journal article](https://www.tandfonline.com/doi/abs/10.1080/13675560701561789) | Depot siting and inventory decisions; these are not optimized by the fixed-depot thesis simulator. |
+| Barber et al. (2023) | [Annals of Statistics article](https://doi.org/10.1214/23-AOS2276) and [journal PDF](https://projecteuclid.org/journals/annals-of-statistics/volume-51/issue-2/Conformal-prediction-beyond-exchangeability/10.1214/23-AOS2276.pdf) | Coverage gaps and modified procedures under nonexchangeability; not a guarantee for the thesis model. |
+| Branco et al. (2017) | [PMLR proceedings](https://proceedings.mlr.press/v74/branco17a.html) | Rebalancing for regression; does not confer independent disaster support. |
+| Chawla et al. (2002) | [JAIR article](https://doi.org/10.1613/jair.953) | Oversampling in classification; not validation of generated dollar labels. |
+| Chen & Guestrin (2016) | [ACM record](https://doi.org/10.1145/2939672.2939785) and [conference paper](https://www.kdd.org/kdd2016/papers/files/rfp0697-chenAemb.pdf) | Boosted-tree method; application-specific hurdle stages are the thesis design. |
+| FEMA (2024) | [Mission Assignments policy](https://www.fema.gov/sites/default/files/documents/fema_policy-104-010-3_mission-assignments_2024.pdf) | Federal tasking and reimbursement process as described in that edition; not uniform vintage or complete signed records for every declaration. |
+| Geurts et al. (2006) | [Machine Learning article](https://doi.org/10.1007/s10994-006-6226-1) | Randomized feature and split candidates; no justification for a particular number of trees or transfer claim. |
+| Holguín-Veras et al. (2013) | [Journal article](https://onlinelibrary.wiley.com/doi/10.1016/j.jom.2013.06.002) | Deprivation and logistics costs; simulated coverage is not measured societal cost. |
+| Huang et al. (2012) | [Version of record in author university repository](https://gcris.khas.edu.tr/server/api/core/bitstreams/95b1f41e-7773-4adc-a181-264fb2ac50ab/content) | Published vehicle routing and conflicting service objectives; the thesis does not generate vehicle tours. |
+| Mnih et al. (2015) | [Nature reference](https://doi.org/10.1038/nature14236) and [author article copy](https://storage.googleapis.com/deepmind-data/assets/papers/DeepMindNature14236Paper.pdf) | Neural action-value approximation; no thesis-specific reward or funding claim. |
+| Peherstorfer et al. (2018) | [SIAM Review article](https://doi.org/10.1137/16M1082469) and [author copy](https://kiwi.oden.utexas.edu/papers/multi-fidelity-survey-peherstorfer-willcox-gunzburger.pdf) | Prior work synthesizing approximation and high-fidelity evidence. Cited as a review, not a claim that transfer worked here. |
+| Pekel et al. (2016) | [Nature article](https://doi.org/10.1038/nature20584) and [authors' JRC record](https://publications.jrc.ec.europa.eu/repository/handle/JRC101267) | Long-term satellite surface-water description; not event need or damage. |
+| Rawls & Turnquist (2012) | [Journal article](https://www.sciencedirect.com/science/article/pii/S0038012111000498) | Dynamic shelter supply under uncertainty; no inventory-siting result in the thesis. |
+| Rockafellar & Uryasev (2000) | [Journal article](https://doi.org/10.21314/JOR.2000.038) and [author bibliography](https://uryasev.github.io/publications/) | Scenario-tail optimization. Pages omitted from the draft because indexes disagree on the final page and the publisher landing page does not resolve it. |
+| Romano et al. (2019) | [NeurIPS proceedings paper](https://proceedings.neurips.cc/paper/2019/file/5103c3584b063c431bd1268e9b5e76fb-Paper.pdf) | Quantile interval calibration under stated assumptions; not a guarantee for an observed rare subgroup. |
+| Schnall et al. (2019) | [Author manuscript deposited with CDC](https://stacks.cdc.gov/view/cdc/114255/cdc_114255_DS1.pdf) | Independent household service evidence used as scenario anchors; not dispatch records. |
+| Tellman et al. (2021) | [Nature article](https://doi.org/10.1038/s41586-021-03695-w) and [author copy](https://csdms.colorado.edu/pub/users/kettner/paper/s41586-021-03695-w.pdf) | Event footprints and exposure estimation; no direct humanitarian demand or accounting label. |
+| Vaccaro et al. (2024) | [Nature Human Behaviour article](https://doi.org/10.1038/s41562-024-02024-1) | Separating assisted, unaided and AI-alone comparisons; not proof of synergy in disaster relief. |
+
+This audit covers the core narrative bibliography. The source and reference registries also contain provider documentation and workstream candidates. These are not automatically cited or marked verified by this audit; trace each retained reference to the text or artifact it actually supports.

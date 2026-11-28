@@ -28,19 +28,31 @@ The research concerns U.S. FEMA declarations in the historical benchmark. Auxili
 
 ### From hazard observation to assistance
 
-Remote sensing can document changes in surface water over long periods (Pekel et al., 2016), and event-focused mapping can estimate population exposed to observed flood extent (Tellman et al., 2021). For this thesis, those two designs answer different questions. A monthly classification can capture wet conditions that do not belong to the disaster, and clouds or sensor coverage can remove observations. An event footprint requires alignment in place and time plus a credible corroborating observation. Even a validated footprint over a populated area estimates exposure, not households reporting unmet needs. The thesis therefore tracks observations, inferred footprints, exposure proxies and humanitarian needs in separate data fields.
+Pekel et al. (2016) used Landsat imagery to reconstruct where surface water had occurred and how it persisted over decades. Tellman et al. (2021) developed a different product: event-specific flood extent estimates for 913 large floods, linked to gridded population. The first design informs the background distribution of surface water; the second connects a discrete event to potential exposure. Matching a flood to the correct place and date is therefore part of the estimand, not simply a data-cleaning step. Smoke, clouds, sensor gaps, unstable boundaries and mismatched time resolution can also change which events are observable. Even an event extent over a populated area does not identify households reporting unmet needs. Distinguishing physical observations, inferred footprints, exposure proxies and household evidence is necessary before using any of them as inputs to relief allocation.
 
-FEMA Mission Assignments document authorized federal assistance and related obligations (FEMA, 2024). Signed revisions and deobligations can change the net record after issuance. Economic damage, a recipient agency's expenses and payments are not substitutes for the signed declaration-level obligation endpoint. The reporting window, action scope and documentary chronology affect what a valid model label represents.
+The 2024 FEMA Mission Assignments policy describes a mechanism for directing federal assistance and arranging reimbursement (Federal Emergency Management Agency, 2024). The signed ledger used in this thesis concerns obligations and their revisions. Economic damage, expenses incurred or reimbursements paid are different financial measures. An elapsed analysis window and observable actions are needed to interpret a net amount, and a missing public action does not prove there was no obligation. Linking authentic physical evidence to an obligation model can provide an explanatory measurement, but it neither changes this endpoint nor automatically creates a valid decision-time feature.
 
-### Rare events and uncertainty
+### Hierarchical prediction, imbalance and physical transfer
 
-Oversampling can change the emphasis a model gives to rare outcomes (Chawla et al., 2002). Regression adaptations such as SMOGN interpolate nearby observations and add controlled noise (Branco et al., 2017). The issue here is not only class imbalance. A small number of independent disasters may supply the compatible observations from which a generator could learn. Repeating, reweighting or interpolating a few cases does not increase the number of independent episodes. A physically plausible simulator can instead be tested against the same physical quantity measured on independent events, without generating purported historical monetary labels.
+Tree ensembles address different modeling problems. The two-stage XGBoost design can fit a binary model for whether the historical amount is positive and a separate model for how large it is, using the boosted-tree method of Chen and Guestrin (2016). ExtraTrees introduces randomization in candidate variables and split points (Geurts et al., 2006), and supplies the archived mid-band amount model in this thesis. Those are methods for fitting nonlinear functions; neither removes the effect of label-dependent routing, cohort imbalance or delayed data availability. Routing into bands can make each subproblem easier to interpret, while sending a declaration to the wrong specialist can create a large downstream dollar error. Evaluation therefore needs both the routing confusion and the end-to-end amount error.
 
-Prediction intervals are useful when they reveal limits, not when their nominal coverage is mistaken for protection in the most consequential cases. Conformal methods rely on conditions that can be weakened under shifts between training and evaluation populations (Barber et al., 2023). The present design evaluates chronological empirical coverage, with separate results for the funding tail. When a pooled interval appears adequate but misses the cases of greatest concern, that finding limits the admissible use of the estimator.
+Chawla et al. (2002) studied oversampling for imbalanced classification, and Branco et al. (2017) adapted data-level rebalancing to continuous outcomes. The suitability of those methods here depends on the independent events from which synthetic analogues are drawn. Repeating, reweighting or interpolating a few declarations does not add independent disasters or validate the appropriateness of a new dollar label. This thesis separates the training-only effects of weighted or synthetic records from the number of independent held episodes, and compares simpler real-only controls before entertaining more complex generators.
 
-### Humanitarian logistics and equity
+A multifidelity design instead tries to pair inexpensive approximations with more credible evidence that can assess their discrepancy (Peherstorfer et al., 2018). The coastal study uses that logic at the level of a physical quantity: train with a simplified prior, compare persistence and real-only baselines, and test on held storms with measured water levels. Colocated measurements, comparable vertical references and compatible time windows are prerequisites. Even if this design improved water-level prediction, a separate evaluation would be necessary before claiming value for predicting signed obligations. It cannot justify synthetic historical funding labels.
 
-Humanitarian logistics has emphasized the cost that delays and deprivation impose on affected people, not merely the expense of moving supplies (Holguín-Veras et al., 2013). The USVI household assessments demonstrate that service-related survey evidence can be collected separately from financial accounts. The study uses such evidence to inform plausible demand scenarios, while keeping simulated dispatch and fulfillment separate from observed receipt. Distinct constraints for stock, cargo, route throughput and timing help make feasible service options comparable. The intended role of the prototype is to show the consequences of different objectives, without choosing a social priority on behalf of responders or communities.
+### Prediction intervals and time shift
+
+Conformalized quantile regression fits lower and upper conditional quantiles and calibrates their joint nonconformity on separate examples (Romano et al., 2019). Its finite-sample guarantee is marginal under the relevant exchangeability assumptions. An interval that covers roughly the nominal fraction overall need not cover the largest historical dollar outcomes at the same rate. Barber et al. (2023) study explicitly modified conformal procedures and coverage gaps under departures from exchangeability. The thesis does not assume those modifications were applied to its archived split. Instead, it measures coverage and width on chronological held populations, reports misses in the tail, and keeps the effect of a manual review flag distinct from formal interval coverage.
+
+### Humanitarian logistics, uncertainty and decision support
+
+Holguín-Veras et al. (2013) propose accounting for deprivation alongside logistics cost. The USVI assessments of Schnall et al. (2019) show how separate household surveys can inform unmet service needs. The simulator here uses survey-informed scenarios but does not estimate the surveys' actual households' deprivation costs or reconstruct dispatch and receipt. Rather than assign a single price to all shortfalls, the experiments show overall, high-vulnerability and least-served-zone service on the same cases. A geographic floor expresses one preference and operates only on feasible shipments; it cannot open a closed route.
+
+Related operations research treats warehouse location, inventory prepositioning and vehicle routing as separate decisions. Balcik and Beamon (2008) select distribution centres and quantities to stock before demand is realized. Rawls and Turnquist (2012) tie prepositioning to short-term shelter delivery with uncertain demand and explicit service-reliability constraints. Huang et al. (2012) evaluate routing under separate objectives for efficiency, timely service and equity. The transport simulation here holds the depot and route structure fixed and varies capacity, arrival yield, inventory and dispatch priorities. It cannot choose warehouse sites, produce a vehicle itinerary or certify a prepositioned inventory plan. Those capabilities would require a different model and network and fleet evidence.
+
+Risk measures such as conditional value-at-risk allow a policy to place more weight on the upper tail of a planning loss (Rockafellar & Uryasev, 2000). Here a scenario-tail penalty concerns unmet synthetic service, not historic funding intervals. It also differs from the legacy DQN experiment. The deep Q-network of Mnih et al. (2015) estimates action values from interaction to guide discrete choices under cumulative reward. In the archived budget environment, that policy adjusted a model recommendation by a multiplier against a reference amount and a hard budget cap. Reward, error against obligations and real service delivered are different endpoints; improvement in one does not establish improvement in the others.
+
+Vaccaro et al. (2024) distinguish performance relative to unaided humans from performance relative to the better of unaided humans and AI alone. That distinction motivates an unaided arm, a frozen optimizer and an assisted arm on comparable cases. A pre-advice and post-advice log can describe changes after advice, but without the unaided and optimizer comparisons it cannot establish complementarity. The thesis provides a prospective protocol and a scripted evaluation for inspecting trade-offs; it does not infer how human participants actually perform.
 
 ## Chapter 3 Methodology
 
@@ -249,21 +261,41 @@ This thesis establishes that an AI-assisted relief research framework can keep h
 
 ## References
 
-Barber, R. F., Candès, E. J., Ramdas, A., & Tibshirani, R. J. (2023). Conformal prediction beyond exchangeability. https://doi.org/10.1214/23-AOS2276
+Balcik, B., & Beamon, B. M. (2008). Facility location in humanitarian relief. *International Journal of Logistics Research and Applications, 11*(2), 101–121. https://doi.org/10.1080/13675560701561789
 
-Branco, P., Torgo, L., & Ribeiro, R. P. (2017). SMOGN: A pre-processing approach for imbalanced regression. https://proceedings.mlr.press/v74/branco17a.html
+Barber, R. F., Candès, E. J., Ramdas, A., & Tibshirani, R. J. (2023). Conformal prediction beyond exchangeability. *The Annals of Statistics, 51*(2), 816–845. https://doi.org/10.1214/23-AOS2276
 
-Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: Synthetic minority over-sampling technique. https://doi.org/10.1613/jair.953
+Branco, P., Torgo, L., & Ribeiro, R. P. (2017). SMOGN: A pre-processing approach for imbalanced regression. *Proceedings of Machine Learning Research, 74*, 36–50. https://proceedings.mlr.press/v74/branco17a.html
 
-Federal Emergency Management Agency. (2024). Mission Assignments Policy 104-010-3. https://www.fema.gov/sites/default/files/documents/fema_policy-104-010-3_mission-assignments_2024.pdf
+Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: Synthetic minority over-sampling technique. *Journal of Artificial Intelligence Research, 16*, 321–357. https://doi.org/10.1613/jair.953
 
-Holguín-Veras, J., et al. (2013). On the appropriate objective function for post-disaster humanitarian logistics models. https://doi.org/10.1016/j.jom.2013.06.002
+Chen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining* (pp. 785–794). https://doi.org/10.1145/2939672.2939785
 
-Pekel, J.-F., Cottam, A., Gorelick, N., & Belward, A. S. (2016). High-resolution mapping of global surface water and its long-term changes. https://doi.org/10.1038/nature20584
+Federal Emergency Management Agency. (2024). *Mission Assignments* (FEMA Policy 104-010-3). https://www.fema.gov/sites/default/files/documents/fema_policy-104-010-3_mission-assignments_2024.pdf
 
-Schnall, A. H., et al. (2019). Addressing community needs during the hurricane response and recovery efforts through community assessments for public health emergency response (CASPER), United States Virgin Islands, 2017–2018. https://doi.org/10.1017/dmp.2019.6
+Geurts, P., Ernst, D., & Wehenkel, L. (2006). Extremely randomized trees. *Machine Learning, 63*, 3–42. https://doi.org/10.1007/s10994-006-6226-1
 
-Tellman, B., et al. (2021). Satellite imaging reveals increased proportion of population exposed to floods. https://doi.org/10.1038/s41586-021-03695-w
+Holguín-Veras, J., Pérez, N., Jaller, M., Van Wassenhove, L. N., & Aros-Vera, F. (2013). On the appropriate objective function for post-disaster humanitarian logistics models. *Journal of Operations Management, 31*(5), 262–280. https://doi.org/10.1016/j.jom.2013.06.002
+
+Huang, M., Smilowitz, K., & Balcik, B. (2012). Models for relief routing: Equity, efficiency and efficacy. *Transportation Research Part E: Logistics and Transportation Review, 48*(1), 2–18. https://doi.org/10.1016/j.tre.2011.05.004
+
+Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., & Hassabis, D. (2015). Human-level control through deep reinforcement learning. *Nature, 518*, 529–533. https://doi.org/10.1038/nature14236
+
+Peherstorfer, B., Willcox, K., & Gunzburger, M. (2018). Survey of multifidelity methods in uncertainty propagation, inference, and optimization. *SIAM Review, 60*(3), 550–591. https://doi.org/10.1137/16M1082469
+
+Pekel, J.-F., Cottam, A., Gorelick, N., & Belward, A. S. (2016). High-resolution mapping of global surface water and its long-term changes. *Nature, 540*, 418–422. https://doi.org/10.1038/nature20584
+
+Rawls, C. G., & Turnquist, M. A. (2012). Pre-positioning and dynamic delivery planning for short-term response following a natural disaster. *Socio-Economic Planning Sciences, 46*(1), 46–54. https://doi.org/10.1016/j.seps.2011.10.002
+
+Rockafellar, R. T., & Uryasev, S. (2000). Optimization of conditional value-at-risk. *Journal of Risk, 2*(3). https://doi.org/10.21314/JOR.2000.038
+
+Romano, Y., Patterson, E., & Candès, E. J. (2019). Conformalized quantile regression. *Advances in Neural Information Processing Systems, 32*. https://proceedings.neurips.cc/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html
+
+Schnall, A. H., Roth, J., Ellis, B., Seger, K., Davis, M., & Ellis, E. M. (2019). Addressing community needs during the hurricane response and recovery efforts through Community Assessments for Public Health Emergency Response (CASPER): United States Virgin Islands, 2017–2018. *Disaster Medicine and Public Health Preparedness, 13*(1), 53–62. https://doi.org/10.1017/dmp.2019.6
+
+Tellman, B., Sullivan, J. A., Kuhn, C., Kettner, A. J., Doyle, C. S., Brakenridge, G. R., Erickson, T. A., & Slayback, D. A. (2021). Satellite imaging reveals increased proportion of population exposed to floods. *Nature, 596*, 80–86. https://doi.org/10.1038/s41586-021-03695-w
+
+Vaccaro, M., Almaatouq, A., & Malone, T. (2024). When combinations of humans and AI are useful: A systematic review and meta-analysis. *Nature Human Behaviour, 8*, 2293–2303. https://doi.org/10.1038/s41562-024-02024-1
 
 ## Appendix A Reproduction and claim tracing
 

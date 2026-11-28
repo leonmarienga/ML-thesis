@@ -1,8 +1,8 @@
 # Supervisor review: start here
 
-**Status: review draft, not a submission or an operational release.** The Markdown source includes F1–F5, F7/T5, Appendix D, and the Michigan Bar extension; the pinned Word snapshot predates those additions. This guide is a route through the evidence, not an assertion that every experiment or academic requirement has passed.
+**Status: review draft, not a submission or an operational release.** The six-chapter Markdown includes the current evidence figures, tables and Appendix D. The older downloadable Word snapshot is not synchronized with the latest Markdown. This guide is a route through the evidence, not an assertion that every experiment or academic requirement has passed.
 
-1. **Read:** Download the [editable Word draft](review_draft/Disaster%20Relief%20Thesis%20Supervisor%20Review%20Draft.docx) or open the [six-chapter source](THESIS.md). The [Word build notes](review_draft/BUILD.md) describe the rendering requirements. Use the [six-band methodology](SIX_BAND_METHODOLOGY.md) and [lineage diagram](figures/F2-frozen-router-lineage.svg) for the distinction between the original amount stack, the accepted low-band overlays and the exploratory mid-band overlay.
+1. **Read:** Download the [editable Word draft](review_draft/Disaster%20Relief%20Thesis%20Supervisor%20Review%20Draft.docx) or open the [six-chapter source](THESIS.md). The [integrated Word build notes](review_draft/BUILD_INTEGRATED.md) describe how to render the current source. Use the [six-band methodology](SIX_BAND_METHODOLOGY.md) and [lineage diagram](figures/F2-frozen-router-lineage.svg) for the distinction between the original amount stack, the accepted low-band overlays and the exploratory mid-band overlay.
 2. **Try:** Download [the offline viewer](decision_support_v2/index.html) as a file, then open it in Chromium. GitHub's source preview is not the app. Use the [walkthrough](decision_support_v2/README.md) and [browser acceptance report](decision_support_v2/browser_qa/REPORT.md). The viewer is a demonstration of archived estimates and simulated policies, not a live forecast, dispatch authority, or measurement of need.
 3. **Check:** Run the [offline reviewer notebook](reviewer_notebook/README.md) for selected evidence claims, then use the [claim-to-evidence map](#table-t10-claim-to-evidence-map) below and [completion checklist](../../THESIS_COMPLETION_CHECKLIST.md). Read the open items before relying on any result. In particular, notebook replay and external validation are different requirements.
 
@@ -31,7 +31,7 @@
 
 ## What to resolve before final submission
 
-- Reconcile sources and citations with the primary references, finish the figure and table register, and re-render the complete draft after revisions.
+- The [core Chapter 2 reference audit](references/PRIMARY_SOURCE_AUDIT.md) maps 18 citations to verified primary records. Confirm institutional citation style, finish any outstanding table or registry checks, and re-render after revisions.
 - Extend the scoped notebook to the final complete pipeline and assemble portable verification handoff. Keep both locally nonmatching experiment scopes visible rather than claiming all archive tables reproduce.
 - Apply the university's current template and author declaration requirements after institutional confirmation. Do not mark the work academically approved before it is reviewed.
 - Keep unavailable comparable FEMA obligations as a scientific limitation. Do not use the 143 reserved FY2025 outcomes to fill evidence gaps. If the real-participant tabletop is pursued, obtain separate approval before recruitment; the current thesis only has simulated comparisons and a protocol.
