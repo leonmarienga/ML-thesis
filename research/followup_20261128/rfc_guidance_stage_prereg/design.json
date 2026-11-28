@@ -1,0 +1,25 @@
+{
+  "design_id": "rfc-operational-guidance-stage-11-v1",
+  "subject": "Separate preliminary archived operational RFC guidance accuracy; no public forecast dissemination inference",
+  "source_commit": "e40aa61d005df96db353c99bcd297edf7d490425",
+  "source_repo_path": "research/followup_20261128/stage_fixed_lead",
+  "physical_endpoint": {"parameter_code":"00065","statistic_id":"00011","unit_of_measure":"ft","approval_status":"Approved","qualifier":null},
+  "stage_scope": "site-local stage, not elevation, discharge, inundation, humanitarian effectiveness, or history of funding",
+  "cohort": {"KY2022":["2022-07-28T12:00:00Z","2022-07-28T18:00:00Z","2022-07-29T06:00:00Z","2022-07-29T18:00:00Z"],"OH2024":["2024-04-04T12:00:00Z","2024-04-04T18:00:00Z"],"HELENE2024":["2024-09-27T06:00:00Z","2024-09-27T12:00:00Z","2024-09-28T00:00:00Z","2024-09-28T06:00:00Z","2024-09-28T18:00:00Z"]},
+  "site_lock": {
+    "KY2022":["JKNK2","USGS-03280000","aeec7ccf0dfd418a8180011c8f127f97","HGIFF"],
+    "OH2024":["WLGW2","USGS-03112500","b25321fb288542249dce1b9826f2eb4a","HGIFF"],
+    "HELENE2024":["AVLN7","USGS-03451500","ace6cac9d0464163b5acecbda4979855","HGIFFZZ"]
+  },
+  "cohort_inclusion": "Select only exact pairs coded ARCHIVE_COMPATIBLE_RFC_GUIDANCE_ONLY at the pinned outcome-blind commit. The 13 other planned windows remain unavailable, not scored. The original public stage gate remains blocked and is not reopened.",
+  "lead_band_minutes_half_open": [1440,1800],
+  "issue_clock": "max(RFC WMO, SHEF creation DC, unique time-corroborated HML issue); an archive vintage clock and not actual public release or exact operator receipt. Forecast issue and numeric stage must be the pinned selected pair.",
+  "no_outcomes_accessed": true,
+  "acquisition_status": "blocked_pending_root_freeze_verification_and_separate_authorization",
+  "future_request_base": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items",
+  "historical_site_before_scoring": "Record date-specific station identity, stable stage datum tie, and any relocation or datum issue from official metadata. Unresolved or conflicting tie: withhold that event's numerical score, preserve pending reason; no offset estimation from the held values.",
+  "truth_join_policy": "One exact UTC instant and held series per pair; no nearby timestamp, rate rating, alternative gauge, conversion, in-fill, rounding for matching or substitution. Scores require one exactly eligible feature, no more than one feature, no pagination, null qualifier, approved numeric finite value; record distinct missing/ambiguous/invalid/transport reasons and artifact hashes.",
+  "primary_summary": "Equal-event MAE in feet over all three events and all 11 target pairs, defined only if all pairs pass and all event-stage datum ties documented. For each event MAE_e = mean(abs(guidance_ft - approved_gage_height_ft)); macro MAE = (MAE_KY + MAE_OH + MAE_Helene)/3.",
+  "secondary_descriptive": "Report exact signed and absolute residual per eligible pair, MAE and signed bias per event with n_eligible/n_locked; report partial event results explicitly as observed subset, not primary complete-cohort result. For complete cohort, add equal-event mean signed residual and pooled MAE only as secondary. Retain lead minutes and status for all 11. Count 3 event clusters, not 11 independent floods.",
+  "no_inference": "No fitted model, tuned rules, thresholds/alerts, independent forecast baselines, hypothesis tests, confidence intervals, improvement/ranking claim, deployment inference, pooling as independent trials, or outcome-based methods change. No broad comparison or performance grading from this purposive three-event set."
+}

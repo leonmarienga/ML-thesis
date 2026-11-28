@@ -1,0 +1,70 @@
+{
+  "future_requests": [
+    {
+      "expected_time_series_id": "aeec7ccf0dfd418a8180011c8f127f97",
+      "pair_id": "KY2022-20220728T120000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03280000&parameter_code=00065&datetime=2022-07-28T12%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "aeec7ccf0dfd418a8180011c8f127f97",
+      "pair_id": "KY2022-20220728T180000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03280000&parameter_code=00065&datetime=2022-07-28T18%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "aeec7ccf0dfd418a8180011c8f127f97",
+      "pair_id": "KY2022-20220729T060000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03280000&parameter_code=00065&datetime=2022-07-29T06%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "aeec7ccf0dfd418a8180011c8f127f97",
+      "pair_id": "KY2022-20220729T180000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03280000&parameter_code=00065&datetime=2022-07-29T18%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "b25321fb288542249dce1b9826f2eb4a",
+      "pair_id": "OH2024-20240404T120000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03112500&parameter_code=00065&datetime=2024-04-04T12%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "b25321fb288542249dce1b9826f2eb4a",
+      "pair_id": "OH2024-20240404T180000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03112500&parameter_code=00065&datetime=2024-04-04T18%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "ace6cac9d0464163b5acecbda4979855",
+      "pair_id": "HELENE2024-20240927T060000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03451500&parameter_code=00065&datetime=2024-09-27T06%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "ace6cac9d0464163b5acecbda4979855",
+      "pair_id": "HELENE2024-20240927T120000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03451500&parameter_code=00065&datetime=2024-09-27T12%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "ace6cac9d0464163b5acecbda4979855",
+      "pair_id": "HELENE2024-20240928T000000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03451500&parameter_code=00065&datetime=2024-09-28T00%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "ace6cac9d0464163b5acecbda4979855",
+      "pair_id": "HELENE2024-20240928T060000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03451500&parameter_code=00065&datetime=2024-09-28T06%3A00%3A00Z&limit=10&f=json"
+    },
+    {
+      "expected_time_series_id": "ace6cac9d0464163b5acecbda4979855",
+      "pair_id": "HELENE2024-20240928T180000Z",
+      "would_get": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?monitoring_location_id=USGS-03451500&parameter_code=00065&datetime=2024-09-28T18%3A00%3A00Z&limit=10&f=json"
+    }
+  ],
+  "guidance_pair_count": 11,
+  "guidance_pairs_by_event": {
+    "HELENE2024": 5,
+    "KY2022": 4,
+    "OH2024": 2
+  },
+  "independent_event_units": 3,
+  "prospective_only": true,
+  "query_status": "not_executed_pending_root_review",
+  "strict_public_eligible": 0,
+  "truth_requests_executed": 0
+}
