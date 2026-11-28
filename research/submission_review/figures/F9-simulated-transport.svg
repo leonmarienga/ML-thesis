@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+<title id="title">Simulated transport policy trade-offs and geographic floor by road regime</title>
+<desc id="desc">Left: all 89 settings projected onto least-served and high-vulnerability coverage. Frontier status uses all three objectives, including total service. Right: the minimum-zone gains from a full floor vary by transport regime.</desc>
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#183049;font-size:15px}.h{font-size:19px;font-weight:bold}.t{font-size:13px}.v{font-weight:bold}.grid{stroke:#d8e0ea;stroke-width:1}.axis{stroke:#496581;stroke-width:1.4}</style>
+<rect width="960" height="430" fill="#fff"/>
+<text x="22" y="31" text-anchor="start" class="h">A. Policy trade-offs</text>
+<text x="530" y="31" text-anchor="start" class="h">B. Geographic floor under disruption</text>
+<text x="22" y="55" text-anchor="start" class="t">High-vulnerability service (%)</text>
+<text x="530" y="55" text-anchor="start" class="t">Mean least-served-zone coverage (%)</text>
+<path d="M62 86 L62 322" class="grid"/>
+<text x="62" y="342" text-anchor="middle" class="t">0</text>
+<path d="M149.5 86 L149.5 322" class="grid"/>
+<text x="149.5" y="342" text-anchor="middle" class="t">10</text>
+<path d="M237 86 L237 322" class="grid"/>
+<text x="237" y="342" text-anchor="middle" class="t">20</text>
+<path d="M324.5 86 L324.5 322" class="grid"/>
+<text x="324.5" y="342" text-anchor="middle" class="t">30</text>
+<path d="M412 86 L412 322" class="grid"/>
+<text x="412" y="342" text-anchor="middle" class="t">40</text>
+<path d="M62 322 L456 322" class="grid"/>
+<text x="53" y="327" text-anchor="end" class="t">30</text>
+<path d="M62 274.8 L456 274.8" class="grid"/>
+<text x="53" y="279.8" text-anchor="end" class="t">40</text>
+<path d="M62 227.6 L456 227.6" class="grid"/>
+<text x="53" y="232.6" text-anchor="end" class="t">50</text>
+<path d="M62 180.4 L456 180.4" class="grid"/>
+<text x="53" y="185.4" text-anchor="end" class="t">60</text>
+<path d="M62 133.2 L456 133.2" class="grid"/>
+<text x="53" y="138.2" text-anchor="end" class="t">70</text>
+<path d="M62 86 L456 86" class="grid"/>
+<text x="53" y="91" text-anchor="end" class="t">80</text>
+<path d="M62 86 L62 322" class="axis"/>
+<path d="M62 322 L456 322" class="axis"/>
+<circle cx="127.66" cy="107.47" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="146.66" cy="110.56" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="319.27" cy="178.24" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="341.10" cy="199.50" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="315.34" cy="237.40" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="324.94" cy="237.39" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="334.32" cy="237.67" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="344.78" cy="239.00" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="352.86" cy="242.84" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="341.26" cy="199.30" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="157.57" cy="206.34" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="173.51" cy="209.78" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="190.93" cy="213.92" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="208.47" cy="218.12" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="228.15" cy="222.91" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="247.74" cy="227.45" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="266.18" cy="231.37" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="285.95" cy="235.34" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="305.03" cy="238.29" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="324.91" cy="240.08" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="343.87" cy="243.17" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="413.94" cy="235.49" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="413.19" cy="235.90" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="412.37" cy="236.34" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="411.48" cy="236.82" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="410.53" cy="237.46" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="409.29" cy="238.22" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="407.89" cy="239.10" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="406.26" cy="240.13" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="403.85" cy="241.49" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="397.98" cy="244.38" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="333.32" cy="293.36" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="129.09" cy="108.18" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="148.47" cy="111.17" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="169.40" cy="114.79" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="191.53" cy="118.95" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="211.71" cy="124.38" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="230.93" cy="130.89" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="251.28" cy="139.77" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="274.03" cy="151.60" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="296.52" cy="164.44" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="319.14" cy="180.37" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="340.35" cy="200.59" r="4.1" fill="#aebdcb" stroke="#fff"/>
+<circle cx="168.71" cy="114.20" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="189.94" cy="118.24" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="211.77" cy="123.32" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="233.19" cy="129.73" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="255.60" cy="138.69" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="276.23" cy="149.57" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="296.91" cy="162.44" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="262.26" cy="230.60" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="268.52" cy="232.32" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="277.38" cy="233.36" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="285.09" cy="234.28" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="293.75" cy="235.93" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="305.36" cy="237.15" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="128.60" cy="107.22" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="147.43" cy="110.46" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="168.62" cy="114.26" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="190.80" cy="118.53" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="212.99" cy="123.67" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="234.99" cy="130.02" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="256.76" cy="138.91" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="278.66" cy="149.71" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="297.74" cy="162.64" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="319.66" cy="178.12" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="414.65" cy="235.12" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="143.24" cy="116.03" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="163.30" cy="118.81" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="183.41" cy="122.16" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="204.09" cy="126.25" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="224.21" cy="131.30" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="244.16" cy="137.40" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="263.00" cy="145.26" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="283.10" cy="155.70" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="303.64" cy="167.74" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="323.54" cy="182.19" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="343.68" cy="202.22" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="133.32" cy="107.70" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="151.85" cy="110.88" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="172.39" cy="114.61" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="193.85" cy="118.75" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="214.81" cy="123.88" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="236.20" cy="130.47" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="258.17" cy="138.98" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="279.60" cy="149.84" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="300.78" cy="162.76" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="321.55" cy="178.22" r="4.1" fill="#147d92" stroke="#fff"/>
+<circle cx="341.79" cy="199.16" r="4.1" fill="#147d92" stroke="#fff"/>
+<path d="M262.257 230.598 L296.257 213.598" class="axis"/>
+<circle cx="262.26" cy="230.60" r="5" fill="#8f3a21" stroke="#fff"/>
+<text x="296.257" y="218.598" text-anchor="middle" class="v">A</text>
+<path d="M133.316 107.703 L154.316 125.703" class="axis"/>
+<circle cx="133.32" cy="107.70" r="5" fill="#8f3a21" stroke="#fff"/>
+<text x="154.316" y="130.703" text-anchor="middle" class="v">B</text>
+<path d="M414.651 235.121 L384.651 204.121" class="axis"/>
+<circle cx="414.65" cy="235.12" r="5" fill="#8f3a21" stroke="#fff"/>
+<text x="384.651" y="209.121" text-anchor="middle" class="v">C</text>
+<path d="M258.173 138.982 L268.173 101.982" class="axis"/>
+<circle cx="258.17" cy="138.98" r="5" fill="#8f3a21" stroke="#fff"/>
+<text x="268.173" y="106.982" text-anchor="middle" class="v">D</text>
+<text x="253" y="365" text-anchor="middle" class="">Least-served-zone coverage (%)</text>
+<circle cx="72.00" cy="392.00" r="5" fill="#147d92" stroke="#fff"/>
+<text x="84" y="397" text-anchor="start" class="t">Nondominated (3 objectives)</text>
+<circle cx="306.00" cy="392.00" r="5" fill="#aebdcb" stroke="#fff"/>
+<text x="318" y="397" text-anchor="start" class="t">Dominated</text>
+<path d="M624 86 L624 322" class="grid"/>
+<text x="624" y="342" text-anchor="middle" class="t">0</text>
+<path d="M672 86 L672 322" class="grid"/>
+<text x="672" y="342" text-anchor="middle" class="t">10</text>
+<path d="M720 86 L720 322" class="grid"/>
+<text x="720" y="342" text-anchor="middle" class="t">20</text>
+<path d="M768 86 L768 322" class="grid"/>
+<text x="768" y="342" text-anchor="middle" class="t">30</text>
+<path d="M816 86 L816 322" class="grid"/>
+<text x="816" y="342" text-anchor="middle" class="t">40</text>
+<path d="M864 86 L864 322" class="grid"/>
+<text x="864" y="342" text-anchor="middle" class="t">50</text>
+<path d="M912 86 L912 322" class="grid"/>
+<text x="912" y="342" text-anchor="middle" class="t">60</text>
+<text x="608" y="128" text-anchor="end" class="t">Normal (15)</text>
+<path d="M701.477 124 L889.561 124" class="axis"/>
+<circle cx="701.48" cy="124.00" r="6" fill="#fff" stroke="#8f3a21"/>
+<circle cx="889.56" cy="124.00" r="6" fill="#8f3a21" stroke="#fff"/>
+<text x="701.477" y="111" text-anchor="middle" class="t">16.1</text>
+<text x="889.561" y="111" text-anchor="middle" class="t">55.3</text>
+<text x="795.519" y="146" text-anchor="middle" class="t">+39.2 pp</text>
+<text x="608" y="200" text-anchor="end" class="t">Delay (18)</text>
+<path d="M647.647 196 L759.567 196" class="axis"/>
+<circle cx="647.65" cy="196.00" r="6" fill="#fff" stroke="#8f3a21"/>
+<circle cx="759.57" cy="196.00" r="6" fill="#8f3a21" stroke="#fff"/>
+<text x="647.647" y="183" text-anchor="middle" class="t">4.9</text>
+<text x="759.567" y="183" text-anchor="middle" class="t">28.2</text>
+<text x="703.607" y="218" text-anchor="middle" class="t">+23.3 pp</text>
+<text x="608" y="272" text-anchor="end" class="t">Closure (15)</text>
+<path d="M643.337 268 L686.904 268" class="axis"/>
+<circle cx="643.34" cy="268.00" r="6" fill="#fff" stroke="#8f3a21"/>
+<circle cx="686.90" cy="268.00" r="6" fill="#8f3a21" stroke="#fff"/>
+<text x="643.337" y="255" text-anchor="middle" class="t">4.0</text>
+<text x="686.904" y="255" text-anchor="middle" class="t">13.1</text>
+<text x="665.12" y="290" text-anchor="middle" class="t">+9.1 pp</text>
+<path d="M624 322 L912 322" class="axis"/>
+<circle cx="662.00" cy="392.00" r="6" fill="#fff" stroke="#8f3a21"/>
+<text x="674" y="397" text-anchor="start" class="t">No floor</text>
+<circle cx="779.00" cy="392.00" r="6" fill="#8f3a21" stroke="#fff"/>
+<text x="791" y="397" text-anchor="start" class="t">Full feasible floor</text>
+</svg>

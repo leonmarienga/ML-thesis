@@ -179,7 +179,22 @@ The tuned clean DQN achieved mean reward −191.87 versus −319.58 for ML-only 
 
 ### Simulated allocation
 
-The replay evaluated 89 settings on 48 scenarios and returned 46 nondominated settings across total, high-vulnerability and minimum-zone service. The unconstrained efficiency option achieved 48.90% total service; the vulnerability-priority option reached 75.40% in high-vulnerability zones; and max-min reached 40.30% in the least-served zone. These figures refer to different policy choices. Increasing the vulnerability rule's geographic floor from zero to 100% of the feasible equal-fraction reference increased minimum-zone service by 23.83 percentage points, reduced service in high-vulnerability zones by 19.38 points and reduced total service by 1.42 points. The gain in minimum-zone coverage was 9.07 points under closures versus 39.19 under normal transport. Reserving service alone therefore offered much less protection when physical access was lost in the simulated network. The offline prototype reproduces the four archived preference choices and lets a reviewer compare all 89 settings across road regimes. Automated tests exercised the embedded interaction logic; this is not a usability study with decision-makers.
+The replay evaluated 89 settings on 48 common synthetic scenarios and returned 46 nondominated settings across total, high-vulnerability and minimum-zone service. The four fixed preference profiles selected different settings from that frontier (Table T9). Their objectives use the mean of the corresponding scenario service fractions, not dollars or a count of households. In particular, the option that served 75.40% of high-vulnerability demand averaged only 8.15% in the least-served zone; the max-min option lifted that minimum to 40.30% with lower high-vulnerability coverage. The balanced profile represents one stated weighting of priorities, not a universal recommendation.
+
+Table T9. Simulated preference choices. Weights are on total, high-vulnerability and least-served-zone coverage; all service values are means across the 48 scenarios. Letters identify marked settings in Figure F9.
+
+| Marker and illustrative preference | Weights | Policy and feasible floor | Total | High vulnerability | Least-served zone |
+| --- | --- | --- | ---: | ---: | ---: |
+| A · Total service | 1.00 / 0.00 / 0.00 | Efficiency · 0% | 48.90% | 49.36% | 22.89% |
+| B · Vulnerability priority | 0.25 / 0.65 / 0.10 | Vulnerability · 0% | 47.63% | 75.40% | 8.15% |
+| C · Minimum coverage priority | 0.20 / 0.20 / 0.60 | Max-min · 0% | 48.14% | 48.41% | 40.30% |
+| D · Balanced | 0.40 / 0.30 / 0.30 | Vulnerability · 60% | 47.17% | 68.77% | 22.42% |
+
+![Simulated transport trade-offs and the feasible floor under different road regimes](figures/F9-simulated-transport.svg)
+
+Figure F9. Policy settings projected onto two of the three coverage objectives, with frontier status based on all three. The right panel compares the simulated vulnerability rule's mean minimum-zone coverage at zero and full feasible floor by realized road regime; n counts cases, and pp denotes percentage points. See [source checks and build](figures/transport/REPORT.md).
+
+Increasing that rule's floor from zero to 100% of the feasible equal-fraction reference increased minimum-zone service by 23.83 percentage points (paired 95% interval 19.73 to 28.15), reduced service in high-vulnerability zones by 19.38 points and reduced total service by 1.42 points. The corresponding differences in mean minimum-zone coverage were about 9.1 points under closures, 23.3 under delay and 39.2 under normal transport. Reserving service alone offered much less protection when physical access was lost in this simulated network. The offline prototype reproduces the four archived preference choices and lets a reviewer compare all 89 settings across road regimes. Automated tests exercised the embedded interaction logic; this is not a usability study with decision-makers.
 
 ### Matched scripted policy experiment
 

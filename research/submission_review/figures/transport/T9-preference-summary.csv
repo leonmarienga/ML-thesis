@@ -1,0 +1,5 @@
+marker,preference,policy,floor_pct,total_pct,high_vulnerability_pct,least_served_pct
+A,total service,efficiency,0,48.90,49.36,22.89
+B,vulnerability priority,vulnerability,0,47.63,75.40,8.15
+C,minimum coverage priority,maxmin,0,48.14,48.41,40.30
+D,balanced,vulnerability,60,47.17,68.77,22.42
