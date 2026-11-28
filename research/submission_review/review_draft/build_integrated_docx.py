@@ -112,6 +112,8 @@ with tempfile.TemporaryDirectory() as td:
             widths=(1.15,.91,.58,1.28,2.36)
         elif first in ("Version and status","Evidence","Study","Component"):
             widths=(1.48,1.82,2.98) if first!="Study" else (1.64,1.32,3.32)
+        elif first=="Nominal":
+            widths=(.80,1.44,.77,.83,.59,.89,.96)
         elif first.startswith("Marker and"):
             widths=(1.27,.91,1.19,.61,1.04,1.26)
         if widths:
