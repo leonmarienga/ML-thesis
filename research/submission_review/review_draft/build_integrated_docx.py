@@ -91,6 +91,9 @@ with tempfile.TemporaryDirectory() as td:
                 run.font.color.rgb=RGBColor(0,0,0)
         if pa.style.name=="Heading 1" and pa.text.startswith("Chapter 1 "):
             pa.paragraph_format.page_break_before=True
+        if re.match(r"^Table T(?:1[01]|[1-9])\.",pa.text):
+            pa.paragraph_format.keep_with_next=True
+            pa.paragraph_format.keep_together=True
         if pa._p.xpath(".//w:drawing"):
             pa.paragraph_format.keep_with_next=True
             pa.alignment=WD_ALIGN_PARAGRAPH.CENTER
@@ -106,7 +109,9 @@ with tempfile.TemporaryDirectory() as td:
         if first=="Source or feature":
             widths=(1.76,1.15,.73,2.64)
         elif first=="Analysis":
-            widths=(1.20,.78,.45,1.30,2.55)
+            widths=(1.15,.91,.58,1.28,2.36)
+        elif first in ("Version and status","Evidence","Study","Component"):
+            widths=(1.48,1.82,2.98) if first!="Study" else (1.64,1.32,3.32)
         elif first.startswith("Marker and"):
             widths=(1.27,.91,1.19,.61,1.04,1.26)
         if widths:

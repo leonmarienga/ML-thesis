@@ -1,0 +1,73 @@
+{
+  "docx_sha256": "a27273d514eda3d1f5a90b3c85e8a6305a95672a2dc9e1cb13dc2d65f77bc341",
+  "figures": {
+    "B1": {
+      "office_media_part": "media/rId106.png",
+      "png_sha256": "fcd99867eed0b0541e1d140bd08ac55962e84a4ce51ef86b8a6c2df3a971b4fb",
+      "source": "pareto_frontiers.png",
+      "source_sha256": "fcd99867eed0b0541e1d140bd08ac55962e84a4ce51ef86b8a6c2df3a971b4fb"
+    },
+    "F1": {
+      "office_media_part": "media/rId21.png",
+      "png_sha256": "590b2b42d9304f26579186f5ae484fb494d7c9bf7cf9bd50303a0dce58018b4b",
+      "source": "F1-evidence-decision-framework.svg",
+      "source_sha256": "c437bfa19703e7ea33d520320a4b7431c31c7458aeff4604ecf945262d875685"
+    },
+    "F10": {
+      "office_media_part": "media/rId94.png",
+      "png_sha256": "944f38dfbad6ef27af164837e486e7b78d33880de88e46c516589ca84d3b1247",
+      "source": "F10-offline-decision-viewer.png",
+      "source_sha256": "944f38dfbad6ef27af164837e486e7b78d33880de88e46c516589ca84d3b1247"
+    },
+    "F2": {
+      "office_media_part": "media/rId32.png",
+      "png_sha256": "e138bc4bdf9b52b99b1ade400bbfe0a831d7e48911f7bb337addf9d81bdcd97e",
+      "source": "F2-frozen-router-lineage.svg",
+      "source_sha256": "c08691ae2f1293b059bfc6dce2827407ae948845234abe7c47be039755aeef52"
+    },
+    "F3": {
+      "office_media_part": "media/rId36.png",
+      "png_sha256": "222cd721d1eeed7f979b9fd121dee995314a5da98f38375553d2ebe0cee7fe5c",
+      "source": "F3-forward-split-audit.svg",
+      "source_sha256": "ca3d465d04da228afb4fb2c6661cb85d720d9c0164a292c286abe6205e553310"
+    },
+    "F4": {
+      "office_media_part": "media/rId48.png",
+      "png_sha256": "8e4e728bd6dc31dbfd6415a31507df7f55d4fd880da6784bb7981edfe855394e",
+      "source": "F4-hazard-source-gates.svg",
+      "source_sha256": "3a37386c708c745aef568dbf06224f265096d37cb05c98b9d0bda727cd1f0180"
+    },
+    "F5": {
+      "office_media_part": "media/rId55.png",
+      "png_sha256": "b3cb4ebf54008d49dffe98edbb44d465c6efb388d6d03590511ae02531f13a9b",
+      "source": "F5-reviewer-replay-paths.svg",
+      "source_sha256": "3084dbc38d2967c204d494b3883f29a19a25e1ffb00da6488d168de82db79347"
+    },
+    "F6": {
+      "office_media_part": "media/rId60.png",
+      "png_sha256": "29e41390540c8d25a40871448eef1c0c4e8ced1f5b42773e76b6f96c4009e1b2",
+      "source": "F6-track-a.svg",
+      "source_sha256": "65b1e8a6a4dde7c751bf7d6915db94a122ded2394b3a70039213e943c87b7cb9"
+    },
+    "F7": {
+      "office_media_part": "media/rId64.png",
+      "png_sha256": "ce7dc11334a19629d7816cd9bc99b340739da48c515625a9899c463f72088361",
+      "source": "F7-matched-forward.svg",
+      "source_sha256": "078600e0e4cc15670fb0fb6e6fac0025691701eb8cf771ee2995663ab421c57a"
+    },
+    "F8": {
+      "office_media_part": "media/rId81.png",
+      "png_sha256": "319c01ea27a87cade82953d443d8703aac147588eeead9aad8173386a8053d66",
+      "source": "F8-matched-intervals.svg",
+      "source_sha256": "ca092a783c3719ca054c710ea4b7d194c6ad8f0a36f0c0a41d726dd12b50f0cc"
+    },
+    "F9": {
+      "office_media_part": "media/rId88.png",
+      "png_sha256": "68128591ba73e13b6ff2d73bfe7b1e3c6ef0706b27c600f5781fa3d093dd1b8f",
+      "source": "F9-simulated-transport.svg",
+      "source_sha256": "d79a8cbb186028f61e53b707f307693e86b9f81e64a813e3c081dec9e751a6f5"
+    }
+  },
+  "manuscript_sha256": "5f6d04144142f55050b311430b2865e47c367f6af49bf764d176b6276b075e81",
+  "office_display_math": 19
+}
