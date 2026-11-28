@@ -1,0 +1,50 @@
+[
+  {
+    "asset": "cnrfc_2022123112.zip",
+    "url": "https://www.cnrfc.noaa.gov/csv/2022123112_N_SanJoaquin_csv_export.zip",
+    "attempt_utc": "2026-11-28T03:58:47.323087+00:00",
+    "status": 200,
+    "type": "application/zip",
+    "final_url": "https://www.cnrfc.noaa.gov/csv/2022123112_N_SanJoaquin_csv_export.zip",
+    "last_modified": "Sat, 31 Dec 2022 16:56:47 GMT",
+    "etag": null,
+    "bytes": 12313,
+    "sha256": "4e7233c3c097050d94dfff88fa6edfd1dd3d03cb4b68025d249a73b2f980cb85"
+  },
+  {
+    "asset": "cnrfc_2022123118.zip",
+    "url": "https://www.cnrfc.noaa.gov/csv/2022123118_N_SanJoaquin_csv_export.zip",
+    "attempt_utc": "2026-11-28T03:58:47.324076+00:00",
+    "status": 200,
+    "type": "application/zip",
+    "final_url": "https://www.cnrfc.noaa.gov/csv/2022123118_N_SanJoaquin_csv_export.zip",
+    "last_modified": "Sat, 31 Dec 2022 20:58:13 GMT",
+    "etag": null,
+    "bytes": 12222,
+    "sha256": "9d422310003ab2e34f73d2fd98fc697b75f943e3850b46a7f520d4743b821282"
+  },
+  {
+    "asset": "usgs_11335000.geojson",
+    "url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-11335000&parameter_code=00060&time=2022-12-27T00%3A00%3A00Z%2F2023-01-03T00%3A00%3A00Z&limit=1600",
+    "attempt_utc": "2026-11-28T03:58:47.324700+00:00",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "final_url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-11335000&parameter_code=00060&time=2022-12-27T00%3A00%3A00Z%2F2023-01-03T00%3A00%3A00Z&limit=1600",
+    "last_modified": null,
+    "etag": null,
+    "bytes": 336683,
+    "sha256": "a3af2e8343ea735c4695313be3215c52d97c47554d16b1390785f1b0087c23c2"
+  },
+  {
+    "asset": "cnrfc_group_definitions.pdf",
+    "url": "https://www.cnrfc.noaa.gov/documentation/North_SanJoaquin_definitions.pdf",
+    "attempt_utc": "2026-11-28T03:58:47.325387+00:00",
+    "status": 200,
+    "type": "application/pdf",
+    "final_url": "https://www.cnrfc.noaa.gov/documentation/North_SanJoaquin_definitions.pdf",
+    "last_modified": "Tue, 22 Oct 2024 13:50:41 GMT",
+    "etag": null,
+    "bytes": 37939,
+    "sha256": "447860d674653477bdd3515ad676f82edf66fba02209f199413393f9e7c5d20c"
+  }
+]
