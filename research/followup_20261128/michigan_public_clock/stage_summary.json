@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "actual_crossing_minutes_after_wmo_issue": 3827,
+      "bias_ft": -1.2439130434782608,
+      "bulletin_wmo_issue_utc": "2022-12-28T17:13:00+00:00",
+      "first_forecast_hour_at_or_above_12_ft_utc": "2022-12-31T23:00:00+00:00",
+      "first_observed_at_or_above_12_ft_in_forecast_grid_utc": "2022-12-31T09:00:00+00:00",
+      "first_valid_utc": "2022-12-28T18:00:00+00:00",
+      "forecast_crossing_minutes_after_actual_15m_crossing": 840,
+      "forecast_peak_ft": 13.0,
+      "graphic_posted_and_shef_created_utc": "2022-12-28T16:45:00+00:00",
+      "issue_preceded_observed_crossing": true,
+      "last_valid_utc": "2023-01-02T12:00:00+00:00",
+      "mae_ft": 1.2576521739130435,
+      "matched_future_hours": 115,
+      "observed_peak_at_forecast_hours_ft": 16.6
+    },
+    {
+      "actual_crossing_minutes_after_wmo_issue": -480,
+      "bias_ft": -0.2211304347826087,
+      "bulletin_wmo_issue_utc": "2022-12-31T17:00:00+00:00",
+      "first_forecast_hour_at_or_above_12_ft_utc": "2022-12-31T18:00:00+00:00",
+      "first_observed_at_or_above_12_ft_in_forecast_grid_utc": "2022-12-31T18:00:00+00:00",
+      "first_valid_utc": "2022-12-31T18:00:00+00:00",
+      "forecast_crossing_minutes_after_actual_15m_crossing": null,
+      "forecast_peak_ft": 17.5,
+      "graphic_posted_and_shef_created_utc": "2022-12-31T16:57:00+00:00",
+      "issue_preceded_observed_crossing": false,
+      "last_valid_utc": "2023-01-05T12:00:00+00:00",
+      "mae_ft": 0.6390434782608696,
+      "matched_future_hours": 115,
+      "observed_peak_at_forecast_hours_ft": 16.6
+    }
+  ],
+  "episodes": 1,
+  "first_actual_15m_crossing_12ft_utc": "2022-12-31T09:00:00+00:00",
+  "observation_count": 757
+}
