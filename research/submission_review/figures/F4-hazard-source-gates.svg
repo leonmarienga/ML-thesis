@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="562" viewBox="0 0 940 562" role="img" aria-labelledby="title desc">
+<title id="title">Source linkage and decision-time evidence</title><desc id="desc">Physical evidence must pass identity, measurement, timing and evaluation support checks. Example source outcomes preserve the distinct stage and discharge clocks and the unqualified coastal collocation.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" orient="auto" markerWidth="7" markerHeight="7"><path d="M0 0L10 5L0 10Z" fill="#52687e"/></marker></defs>
+<rect width="940" height="562" fill="#fff"/>
+<text x="26" y="34" font-size="24" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">A timestamp in an archive does not certify availability</text>
+<text x="26" y="60" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#4a5d70" text-anchor="start">Four checks determine which source comparisons can be interpreted.</text>
+<rect x="26" y="79" width="202" height="62" rx="8" fill="#edf4f9" stroke="#aec2d1"/>
+<text x="35" y="103" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">1   Identity</text>
+<text x="35" y="125" font-size="11.8" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Same site, event or footprint</text>
+<rect x="255" y="79" width="202" height="62" rx="8" fill="#edf4f9" stroke="#aec2d1"/>
+<text x="264" y="103" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">2   Quantity</text>
+<text x="264" y="125" font-size="11.8" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Unit, datum or valid area</text>
+<rect x="484" y="79" width="202" height="62" rx="8" fill="#edf4f9" stroke="#aec2d1"/>
+<text x="493" y="103" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">3   Clock</text>
+<text x="493" y="125" font-size="11.8" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Issue and valid time</text>
+<rect x="713" y="79" width="202" height="62" rx="8" fill="#edf4f9" stroke="#aec2d1"/>
+<text x="722" y="103" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">4   Support</text>
+<text x="722" y="125" font-size="11.8" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Independent episode checks</text>
+<path d="M232 110L249 110" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<path d="M461 110L478 110" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<path d="M690 110L707 110" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<text x="36" y="181" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">SOURCE</text>
+<text x="282" y="181" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">SUPPORTED COMPARISON</text>
+<text x="606" y="181" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">WHAT REMAINS UNVERIFIED</text>
+<rect x="26" y="195" width="889" height="67" rx="7" fill="#f7f9fb" stroke="#d2dce6"/>
+<text x="37" y="232" font-size="16" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Satellite flood windows</text>
+<text x="283" y="220" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Event and prior-year change</text>
+<text x="283" y="242" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Only commonly observed pixels</text>
+<text x="607" y="220" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Full-footprint coverage</text>
+<text x="607" y="242" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">and effects on obligations</text>
+<rect x="26" y="272" width="889" height="67" rx="7" fill="#fff" stroke="#d2dce6"/>
+<text x="37" y="309" font-size="16" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Montpelier stage</text>
+<text x="283" y="297" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Exact future gauge pairs</text>
+<text x="283" y="319" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">within one flood episode</text>
+<text x="607" y="297" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Public dissemination clock</text>
+<text x="607" y="319" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">and cross-event skill</text>
+<rect x="26" y="349" width="889" height="67" rx="7" fill="#f7f9fb" stroke="#d2dce6"/>
+<text x="37" y="386" font-size="16" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Michigan Bar stage</text>
+<text x="283" y="374" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Two archived RVFSJ clocks</text>
+<text x="283" y="396" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">and approved same-gauge stage</text>
+<text x="607" y="374" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Separate QINE discharge clock</text>
+<text x="607" y="396" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">and cross-event skill</text>
+<rect x="26" y="426" width="889" height="67" rx="7" fill="#fff" stroke="#d2dce6"/>
+<text x="37" y="463" font-size="16" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Coastal source screen</text>
+<text x="283" y="451" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Candidate locations and</text>
+<text x="283" y="473" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">local geometry checked</text>
+<text x="607" y="451" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Representative wet-mesh match</text>
+<text x="607" y="473" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">and transfer skill</text>
+<rect x="26" y="511" width="889" height="37" rx="6" fill="#faf0ed" stroke="#d2b9b3"/>
+<text x="38" y="535" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#752c2a" text-anchor="start">Failures stay visible. A physical match alone supplies neither a signed funding label nor evidence of need.</text>
+</svg>

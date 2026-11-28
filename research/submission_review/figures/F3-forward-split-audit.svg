@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="560" viewBox="0 0 940 560" role="img" aria-labelledby="title desc">
+<title id="title">Purged rolling-origin split and six held fiscal years</title><desc id="desc">The forward model uses earlier eligible years only. It excludes shared episode groups and records that end at or after the earliest held incident-start or declaration date. Six audited origins hold 376 declarations in total.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" orient="auto" markerWidth="7" markerHeight="7"><path d="M0 0L10 5L0 10Z" fill="#52687e"/></marker></defs>
+<rect width="940" height="560" fill="#fff"/>
+<text x="26" y="34" font-size="24" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Forward evaluation: what can enter each training origin?</text>
+<text x="26" y="60" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#4a5d70" text-anchor="start">The flow applies to the archived Track B ablations, not every thesis experiment.</text>
+<rect x="26" y="82" width="218" height="65" rx="8" fill="#eff4f9" stroke="#b9c9d6"/>
+<text x="36" y="108" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Earlier fiscal years</text>
+<text x="36" y="131" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Candidate training roster</text>
+<rect x="283" y="82" width="354" height="65" rx="8" fill="#ecf5ee" stroke="#b9c9d6"/>
+<text x="293" y="108" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Time and episode purge</text>
+<text x="293" y="131" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Strict cutoff; no shared episode groups</text>
+<rect x="677" y="82" width="237" height="65" rx="8" fill="#eff4f9" stroke="#b9c9d6"/>
+<text x="687" y="108" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Held fiscal year</text>
+<text x="687" y="131" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">No fitting on held outcomes</text>
+<path d="M248 115L274 115" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<path d="M640 115L667 115" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<text x="26" y="173" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Cutoff is the earlier of the first held incident start and the first held declaration date.</text>
+<text x="26" y="197" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#4a5d70" text-anchor="start">Nested selection repeats the split on earlier origins; chronology does not prove feature availability.</text>
+<text x="40" y="237" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">HELD FY</text>
+<text x="194" y="237" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">FIT CASES</text>
+<text x="322" y="237" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">EARLIER EXCLUDED</text>
+<text x="528" y="237" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">HELD CASES</text>
+<text x="671" y="237" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">END-to-START GAP</text>
+<rect x="26" y="249" width="888" height="34" rx="4" fill="#f7f9fa" stroke="#e0e6ec"/>
+<text x="40" y="272" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">2019</text>
+<text x="194" y="272" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">514</text>
+<text x="322" y="272" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">22</text>
+<text x="528" y="272" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">68</text>
+<text x="671" y="272" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">11 days</text>
+<rect x="26" y="288" width="888" height="34" rx="4" fill="#fff" stroke="#e0e6ec"/>
+<text x="40" y="311" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">2020</text>
+<text x="194" y="311" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">593</text>
+<text x="322" y="311" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">11</text>
+<text x="528" y="311" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">43</text>
+<text x="671" y="311" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">5 days</text>
+<rect x="26" y="327" width="888" height="34" rx="4" fill="#f7f9fa" stroke="#e0e6ec"/>
+<text x="40" y="350" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">2021</text>
+<text x="194" y="350" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">638</text>
+<text x="322" y="350" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">9</text>
+<text x="528" y="350" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">57</text>
+<text x="671" y="350" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">38 days</text>
+<rect x="26" y="366" width="888" height="34" rx="4" fill="#fff" stroke="#e0e6ec"/>
+<text x="40" y="389" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">2022</text>
+<text x="194" y="389" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">692</text>
+<text x="322" y="389" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">12</text>
+<text x="528" y="389" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">52</text>
+<text x="671" y="389" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">2 days</text>
+<rect x="26" y="405" width="888" height="34" rx="4" fill="#f7f9fa" stroke="#e0e6ec"/>
+<text x="40" y="428" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">2023</text>
+<text x="194" y="428" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">746</text>
+<text x="322" y="428" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">10</text>
+<text x="528" y="428" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">68</text>
+<text x="671" y="428" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">7 days</text>
+<rect x="26" y="444" width="888" height="34" rx="4" fill="#fff" stroke="#e0e6ec"/>
+<text x="40" y="467" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">2024</text>
+<text x="194" y="467" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">796</text>
+<text x="322" y="467" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">28</text>
+<text x="528" y="467" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">88</text>
+<text x="671" y="467" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">1 day</text>
+<text x="26" y="516" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Six historical test origins  ·  376 held declarations  ·  previously examined, not independent confirmation</text>
+<text x="26" y="540" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#4a5d70" text-anchor="start">End-to-start gap: earliest held incident start minus latest eligible training incident end.</text>
+</svg>

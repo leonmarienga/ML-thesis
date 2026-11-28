@@ -1,0 +1,93 @@
+{
+  "pin": "b0b6edb229d112dd6d11896a512bf1112414e4f6",
+  "synthetic_fixtures_only": true,
+  "historical_outcomes_loaded": false,
+  "model_training": false,
+  "numerical_checks": {
+    "E1": {
+      "exact_boundaries_and_negative_clipping": "passed",
+      "bands": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        5
+      ]
+    },
+    "E2": {
+      "signed_36m": -5,
+      "all_published_action_sum": 94,
+      "maturity_equality_snapshot_not_origin": true
+    },
+    "E3": {
+      "train_n": 42,
+      "held_n": 2,
+      "strict_date_shared_episode_and_future_fiscal_year_exclusion": "passed"
+    },
+    "E4": {
+      "capped_back_transform": [
+        0.0,
+        18.0,
+        20.0
+      ],
+      "paired_mae_delta": 2.0,
+      "toy_interval": [
+        1.5,
+        3.0
+      ]
+    },
+    "E5": {
+      "conformal_rank_finite_and_infinite": "passed",
+      "CQR_negative_score": -2.0,
+      "residual_same_group_excluded_calibration_n": 31,
+      "toy_inclusive_coverage": 0.6666666666666666
+    },
+    "E6": {
+      "stock_budget_and_proportional_floor": "passed",
+      "first_wave_allocations_by_risk": {
+        "False": 12.0,
+        "True": 12.0
+      },
+      "simulated_overall_high_and_minimum_coverage": {
+        "served_fraction": 0.35,
+        "high_vulnerability_served_fraction": 0.6,
+        "lowest_zone_fraction": 0.0
+      }
+    },
+    "E7_transport": {
+      "all_8_objectives_toy_feasibility": "passed",
+      "closed_route_served": 0.0,
+      "closed_route_requested": 20.0,
+      "first_wave_shipment_totals": {
+        "efficiency": 63.62007168458781,
+        "vulnerability": 63.620071684587806,
+        "geography": 63.62007168458781,
+        "mixed": 63.620071684587806,
+        "maxmin": 63.62007168458781,
+        "expected": 36.669110459433035,
+        "cvar": 36.51433691756272,
+        "worst_branch": 36.51433691756272
+      }
+    },
+    "E7_RL": {
+      "stale_observation_at_release_boundary": true,
+      "post_release_overdraft_impossible": true,
+      "toy_steps_usd": [
+        10.0,
+        20.0
+      ],
+      "terminal_unused_budget_penalty_checked": true,
+      "toy_rewards": [
+        -6.405609984809967,
+        -5.758982819884915
+      ]
+    }
+  }
+}

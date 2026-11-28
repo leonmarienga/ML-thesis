@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="554" viewBox="0 0 940 554" role="img" aria-labelledby="title desc">
+<title id="title">Offline application and reviewer replay are separate</title><desc id="desc">The offline decision support viewer and reviewer notebook are separate outputs from pinned research evidence. Neither requires live inference, FY2025 outcomes or measurement of real dispatch.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" orient="auto" markerWidth="7" markerHeight="7"><path d="M0 0L10 5L0 10Z" fill="#52687e"/></marker></defs>
+<rect width="940" height="554" fill="#fff"/>
+<text x="26" y="34" font-size="24" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Two reviewer paths from pinned evidence</text>
+<text x="26" y="60" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#4a5d70" text-anchor="start">The application visualizes scenarios. The notebook verifies selected reported claims.</text>
+<rect x="27" y="78" width="886" height="68" rx="8" fill="#edf4f9" stroke="#bacbd9"/>
+<text x="42" y="106" font-size="18" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Versioned source artifacts</text>
+<text x="42" y="130" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Historical predictions and checks, declared physical studies, and explicitly labeled simulated outputs</text>
+<path d="M252 148L252 178" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<path d="M687 148L687 178" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<rect x="28" y="181" width="421" height="76" rx="8" fill="#edf5ef" stroke="#aac4b2"/>
+<text x="42" y="213" font-size="18" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Offline decision-support viewer</text>
+<text x="42" y="238" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Deterministic HTML built from archived fixtures</text>
+<rect x="492" y="181" width="421" height="76" rx="8" fill="#f5f1e9" stroke="#cdbca2"/>
+<text x="506" y="213" font-size="18" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Scoped reviewer notebook</text>
+<text x="506" y="238" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Manifest pins 18 public review inputs</text>
+<path d="M238 261L238 290" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<path d="M702 261L702 290" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<rect x="28" y="294" width="421" height="117" rx="8" fill="#f7f9fa" stroke="#c3ced5"/>
+<text x="42" y="325" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Historical obligation and uncertainty views</text>
+<text x="42" y="356" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Transport and scripted review comparators</text>
+<text x="42" y="387" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Inspect assumptions and compare road regimes</text>
+<rect x="492" y="294" width="421" height="117" rx="8" fill="#f7f9fa" stroke="#c3ced5"/>
+<text x="506" y="325" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Reject altered or missing evidence</text>
+<text x="506" y="356" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Recompute supported aggregate summaries</text>
+<text x="506" y="387" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Export executed cells and scoped claim ledger</text>
+<rect x="27" y="441" width="886" height="83" rx="8" fill="#faf0ed" stroke="#d2b9b3"/>
+<text x="42" y="470" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#862d29" text-anchor="start">Boundary for both paths</text>
+<text x="42" y="499" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#752c2a" text-anchor="start">No live funding forecast, automatic dispatch, measured relief delivery or complete model retraining.</text>
+</svg>

@@ -44,6 +44,8 @@ Humanitarian logistics has emphasized the cost that delays and deprivation impos
 
 ## Chapter 3 Methodology
 
+[Appendix D](#appendix-d-implemented-formulations) gives the versioned equations for the distinct financial, verification and simulated-service tasks implemented here.
+
 ### 3.1 Historical estimand and covered cohort
 
 The frozen FY2010–2024 workbook contains 971 declarations, of which 59 Biological records are outside the 912-case router population. The archived benchmark uses bands with lower bounds of $0, $100,000, $1 million, $50 million, $200 million and $500 million. The original workbook's negative totals are clipped to zero under the original convention. Four retained prediction-component archives are combined with the fixed overlay; files, keys, target values and amounts are checked against the archived outputs. Leave-fiscal-year-out folds can include years subsequent to the held fiscal year. This benchmark is consequently a reproducibility target and cannot be used to establish decision-time forecast accuracy.
@@ -56,9 +58,17 @@ Two accepted low-band overlays hold the router fixed. The first combines a posit
 
 Four late rule audits for Severe Ice, Fire and two Hurricane adjustments filtered the candidate hazard subset using actual cleaned obligations below $50 million before making the held-year split. That outcome-dependent filter governs test-row eligibility, even if each rule's thresholds are selected on training rows. The preserved 830/912 result is therefore an exact reconstruction of historical artifacts, not a target-blind evaluation. Removing a few historical adjustments does not identify a new unbiased score. The source and archived version chain are documented in the [six-band methodology crosswalk](SIX_BAND_METHODOLOGY.md).
 
+![Figure F2. Frozen historical six-band router and amount version lineage.](figures/F2-frozen-router-lineage.svg)
+
+**Figure F2.** The three archived dollar stacks use the same router. The first two amount replacements were retained; the middle-band hybrid remained research-only. These changes do not repair the outcome-conditioned eligibility of the historical router. The high-band specialists are not generic medians.
+
 ### 3.3 Forward alternatives and decision-time validation
 
 The forward research uses earlier fiscal years only and purges shared episodes and overlapping incident periods where specified. Matched feature comparisons evaluate the same held declarations, and nested model selection and uncertainty calibration are confined to eligible earlier observations. Comparisons include regularized linear models, Extra Trees, Random Forest, histogram gradient boosting, hazard-specific experts, hard and soft specialists, hybrid medians and model averaging. Inner validation selects band models by macro F1 and amount models by dollar MAE. A paired bootstrap resamples connected event groups, rather than treating related declarations as independent. The estimates are described as retrospective when feature versions could not be verified as available at the prediction time. Later final reports and revised hazard records are excluded from claims about issuance time. The prospective evaluation remains locked: 143 FY2025 records are reserved without outcomes; the major-declaration subset supplies the primary prospective comparability scope, subject to documented release, timing and maturity requirements.
+
+![Figure F3. Archived Track B purged rolling-origin folds.](figures/F3-forward-split-audit.svg)
+
+**Figure F3.** In this Track B split, training uses only earlier fiscal years and cases that end strictly before the earliest held incident start or declaration date, whichever is earlier. A missing training end is replaced by its incident start. Connected events that appear in the held fold are excluded from training. The six held cohorts total 376 declarations; training sets overlap across origins. The displayed end-to-start gap is an audit summary, not a certified feature-release window.
 
 For the separate elapsed signed-action endpoint, declaration keys, action identity, sign, scope and reporting horizon are checked before summing actions. Eligibility requires a 36-calendar-month interval and another 90 days for reporting. A public archive retrieved later is not itself proof of what could be observed at each earlier forecast origin. Precoverage workbook zeros remain unchanged for the historical reconstruction, but 223 such records are marked unavailable under the separately versioned forward eligibility policy. An unverified absence of public records is not a verified zero.
 
@@ -70,6 +80,10 @@ The inland provenance pilot pairs one deterministic NWS river-stage forecast ser
 
 The rare-obligation study compares real-only, training-weighted, repeated and eligible generated-data alternatives using the same held cases. Where generation is feasible, donors are restricted to eligible earlier episodes, and training phases retain lineage. Copula and deep-generative fitting are withheld when the minimum independent support is absent. Separately, measured earthquake shaking and gauge-based coastal levels are physical endpoints for simulation-informed transfer. The coastal comparison uses verified hourly level minus predicted astronomical tide at the same station and in the same local mean-sea-level datum. Persistence, a real-data ridge model, a pressure-relaxation reference, a synthetic prior and a hybrid correction are compared at one and six hours. The storm, not the hourly row, is the unit of generalization.
 
+![Figure F4. Provenance checks and limits for four physical evidence paths.](figures/F4-hazard-source-gates.svg)
+
+**Figure F4.** A source match requires the same target quantity and appropriate spatial and temporal support. Archived stage bulletin times at Michigan Bar resolve a clock for those bulletins, not for the different QINE discharge product. Unresolved timing or collocation remains a limit rather than a negative measurement.
+
 ### 3.5 Allocation, legacy reinforcement learning and research interface
 
 The transport experiment varies demand and uncertainty in eight hypothetical zones with five service classes. The optimized decisions share stock, storage and route constraints across two stages. A closed route remains in the outcome denominator even when it cannot be served. The stage-one recourse policy receives independent planning draws, not the realized second-stage scenario. Fixed policies prioritize total service, vulnerability, geographic coverage or a combination; the geographic floor reserves a share of the equal-fraction allocation feasible at that stage. Policies are evaluated on common held scenarios, with the least-served zone computed across all eight zones. The reported frontier contains policies not dominated among the tested settings; it is not a proof of optimality over all possible networks or policy classes.
@@ -77,6 +91,10 @@ The transport experiment varies demand and uncertainty in eight hypothetical zon
 The earlier reinforcement-learning notebook uses a different task: it applies one of six fixed multipliers to a base dollar recommendation and caps spending at the currently released balance. The state encodes the log-scaled recommendation and budget context. The reward penalizes log-dollar error relative to historical obligations, undersupply relative to that accounting reference, budget pressure and unused terminal funds. This is an archival comparison of sequential decision rules under a simulated budget, not an optimization of measured relief need. DQN, A2C, PPO, random, a fixed heuristic and the ML-only option are distinct comparators. The later transport simulation uses independently stipulated service demand instead.
 
 The [offline decision-support viewer](decision_support_v2/README.md) presents the archived transportation policies and allows selection by preference and road regime. It also provides separate historical obligation and interval-coverage views and a matched synthetic comparison of the scripted rule, optimizer and veto policy. Reviewers can change the comparison direction and road regime; scenario-bootstrap intervals are shown only for the full 48-world matched comparison. The deterministic build and scripted interactions were verified. A headless Chromium walkthrough of the pinned offline file passed keyboard operation of the interval, road and comparator controls at desktop and narrow mobile widths, without page errors, horizontal overflow or HTTP requests. This does not establish screen-reader performance or user-study usability. See the [browser acceptance report](decision_support_v2/browser_qa/REPORT.md). The broader interface design keeps historical evidence and source status, uncertainty on the relevant obligation estimate, and simulated alternatives in distinct views. Human preferences select among feasible alternatives; the system is not authorized to act on an operational decision. Reproduction bundles preserve procedure, sample definitions, metrics, and unpromoted alternatives as part of the evidence.
+
+![Figure F5. Separate paths for prototype review and selected-claim reproduction.](figures/F5-reviewer-replay-paths.svg)
+
+**Figure F5.** Reviewers can inspect archived decisions in the application and verify selected results in a separate notebook. The notebook checks each pinned input before parsing and does not retrain or validate deployment. The prototype outputs simulated service, not observed delivery.
 
 ## Chapter 4 Results
 
@@ -217,3 +235,168 @@ Figure B1. The empirical frontier of tested transport allocation rules. Higher p
 ## Appendix C Prospective tabletop evaluation
 
 The [tabletop protocol and synthetic dry-run](tabletop/PROTOCOL.md) specify an unaided condition, a fixed optimizer and assisted review with an initial commitment before advice. The planned comparison keeps participant behavior distinct from scripted simulation and requires written institutional determination before enrollment. No participant evidence is included in this thesis draft.
+
+## Appendix D Implemented formulations
+
+The symbols below describe distinct analyses, not a single optimization over dollars and service. In E1–E5 the observational unit is a FEMA declaration unless otherwise specified. Dollar quantities refer to recorded Mission Assignment obligations, not economic damage or humanitarian need. E6–E7 distinguish simulated service logistics from an earlier dollar-budget study. Equations are traced to the pinned research implementation rather than used to imply prospective validity.
+
+### E1 Historical funding bands
+
+For the historical workbook's recorded total \(W_i\), the label pipeline uses \(Y_i=\max(0,W_i)\). In USD, let
+\[
+(b_0,\ldots,b_6) =
+(0,100{,}000,1{,}000{,}000,50{,}000{,}000,
+200{,}000{,}000,500{,}000{,}000,+\infty).
+\]
+\[
+B(Y_i)=j\quad\text{when}\quad b_j\le Y_i<b_{j+1},
+\qquad j=0,\ldots,5.
+\]
+For finite totals a threshold belongs to the higher class, including exactly 500 million USD. The six-band router passes its **predicted** class to the amount stack; diagnostics using the actual class are oracle diagnostics. This definition does not repair the frozen router's outcome-conditioned rule filters.
+
+Source: [workbook population and right-sided band indexing](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_hazard_features.py#L31-L62).
+
+### E2 Signed obligation through a fixed horizon
+
+For declaration date \(d_i\), an action \(a\) with signed obligation delta \(v_a\) and recorded obligation timestamp \(t_a\), and the set \(\mathcal A_i\) of structurally auditable published actions for declaration \(i\), the separate roll-up is
+\[
+h_i=d_i+36\ \text{calendar months},\qquad
+Y_i^{36}=\sum_{a\in\mathcal A_i}v_a\,\mathbf 1(t_a\le h_i),
+\qquad m_i=h_i+90\ \text{days}.
+\]
+The implementation uses the inclusive **upper** obligation-date cutoff; no lower-date cutoff is imposed. Negative actions are retained, unlike the workbook's clipping in E1. Missing or ambiguous action structure, missing obligation dates or no published rows do not establish valid zero labels. The horizon audit calls a structurally eligible archive row elapsed at snapshot \(s\) when \(m_i\le s\); its at-origin support count requires \(m_i<c_y\), with the strict cutoff in E3. The 90 days delay eligibility, not the sum's action cutoff. These elapsed checks do not certify first publication, archive completeness or a point-in-time data vintage.
+
+Sources: [signed sums, keys and snapshot status](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_historical_coverage.py#L96-L121); [strict at-origin support](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_obligation_horizon_audit.py#L16-L36) and [snapshot maturity](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_obligation_horizon_audit.py#L73-L84).
+
+### E3 Forward time and episode separation
+
+With fiscal year \(f_i\), incident start \(s_i\), declaration date \(d_i\), and incident end \(e_i^*\) (start substituted if end is missing), let \(g_i\) be the connected event group. In the purged forward pipeline,
+\[
+H_y=\{i:f_i=y\},\qquad
+c_y=\min_{i\in H_y}\min(s_i,d_i),
+\]
+\[
+T_y=\{i:f_i<y,\ e_i^*<c_y,\ g_i\notin\{g_j:j\in H_y\}\}.
+\]
+Inner validation uses the two preceding eligible fiscal-year origins \(y-2,y-1\), applying the same split to the already purged \(T_y\). Available hazard-source IDs and overlapping same-state, same-hazard incidents connect cases into groups; this cannot rule out unobserved links. The historical leave-fiscal-year-out reconstruction is different and can train on later fiscal years. The fixed-split CQR experiment in E5 also has its own fiscal-year-only fit/calibration/test design and should not be described as episode-purged. A separate forward sensitivity applied \(d_i+36\) calendar months \(<c_y\) to workbook outcomes as a **label-age proxy**, not as certified availability and not as the signed-plus-90-day endpoint in E2.
+
+Sources: [forward split](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_forward_models.py#L43-L58), [inner splits](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_forward_models.py#L149-L169), [source-connected groups](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_hazard_features.py#L239-L264) and [label-age proxy](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_decision_time_followup.py#L73-L89).
+
+### E4 Log-dollar fitting, scoring and paired uncertainty
+
+For the ordinary forward regressor, the target transformation and back-transform are
+\[
+z_i=\log(1+Y_i),\qquad
+\widehat Y_i=\min\{\max_{j\in T_y}Y_j,\ \max(0,\exp(\widehat z_i)-1)\}.
+\]
+Model selection for amounts scores dollar mean absolute error. Log-dollar is a fitting **scale**, not a universal training loss: Ridge uses squared residuals with an \(L_2\) penalty, histogram boosting is configured for absolute error, and the tree regressors use their unchanged defaults. On a scored set of \(n\) matched declarations,
+\[
+\operatorname{MAE}=\frac1n\sum_i|Y_i-\widehat Y_i|,\qquad
+\operatorname{logMAE}=\frac1n\sum_i|\log(1+Y_i)-\log(1+\widehat Y_i)|.
+\]
+For a paired comparison let \(a_i=|Y_i-\widehat Y_{i,A}|-|Y_i-\widehat Y_{i,B}|\); for routing substitute the difference of two correctness indicators. For each of 3,000 draws, resample the observed \(G\) event-group IDs with replacement. If \(m_g\) is the multiplicity of group \(g\) in a draw, the resampled difference is
+\[
+\Delta^* =
+\frac{\sum_g m_g\sum_{i:g_i=g} a_i}
+     {\sum_g m_g n_g},\qquad n_g=\#\{i:g_i=g\}.
+\]
+The interval is the 2.5th and 97.5th percentiles. This pairs models on declarations and weights by declarations within the resampled groups, rather than averaging group means with equal weight. The primary forward-code comparator here is the fixed retrospective-metadata ablation. This is not the distinct target-blind replacement trial's macro-F1 bootstrap.
+
+Sources: [estimators, target and scores](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_forward_models.py#L61-L103), [inner selection](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_forward_models.py#L169-L190) and [paired bootstrap](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_forward_models.py#L237-L253).
+
+### E5 Interval construction and empirical coverage
+
+For nominal level \(\gamma\) and \(n_c\) calibration scores sorted \(r_{(1)}\le\cdots\le r_{(n_c)}\), both archived pipelines use
+\[
+k=\lceil(n_c+1)\gamma\rceil,\qquad
+q_\gamma=
+\begin{cases}
+r_{(k)}, & k\le n_c,\\
++\infty, & k>n_c.
+\end{cases}
+\]
+The forward residual procedure calibrates on earlier forward predictions, excludes groups present in the held year, and skips calibration sets with fewer than 30 rows. With \(g(u)=u\) or \(\log(1+u)\), it uses \(r_i=|g(Y_i)-g(\widehat Y_i)|\) and
+\[
+[L_i,U_i] =
+\left[g^{-1}\!\left(\max(0,g(\widehat Y_i)-q_\gamma)\right),
+       g^{-1}\!\left(g(\widehat Y_i)+q_\gamma\right)\right].
+\]
+The separate fixed-split CQR trial fits log-dollar quantile models through FY2018, calibrates in FY2019, and tests on FY2020–24. At each row, sort the two model outputs \(\ell_i\le u_i\) from nominal quantiles \((1-\gamma)/2\) and \((1+\gamma)/2\). Its score is
+\[
+r_i=\max(\ell_i-z_i,\ z_i-u_i).
+\]
+The score is not truncated at zero. On test cases it returns \(\exp(\operatorname{clip}(\ell_i-q_\gamma,0,700))-1\) and \(\exp(\operatorname{clip}(u_i+q_\gamma,0,700))-1\); the code does not sort the endpoints again after applying \(q_\gamma\). Where scored, interval width and empirical coverage are
+\[
+w_i=U_i-L_i,\qquad
+\widehat C=\frac1n\sum_i\mathbf 1(L_i\le Y_i\le U_i).
+\]
+Comparing nominal and empirical coverage is not a guarantee under chronological drift or within a sparse funding band. Table T8 compares an archived dollar-residual interval and a distinct CQR pipeline on matched cases; it does not isolate the effect of the interval algorithm alone.
+
+Sources: [forward residual calibration and metrics](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_uncertainty.py#L14-L65); [CQR rank, splits, scores and intervals](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/cqr_track_b_fixed_split.py#L15-L77).
+
+### E6 Simulated service, stock and equity
+
+In the two-wave service experiment **without transport constraints**, consider one service. With opening stock \(I_0\), branch replenishment \(I_j\), and requests \(D_{t,z}\), the stage-1 decision \(x_z\) is shared across planning branches; the planned stage-2 delivery \(y_{j,z}\) may vary:
+\[
+0\le x_z\le D_{0,z},\quad 0\le y_{j,z}\le D_{j,z},\qquad
+\sum_z x_z\le I_0,\quad \sum_z(x_z+y_{j,z})\le I_0+I_j.
+\]
+A configured proportional floor multiplies the equal-fraction reference \(P_z(D,I)=D_z\min(1,I/\max(1,\sum_zD_z))\) using stage stock and the branch replenishment separately, not the combined stock. The risk-neutral first-stage LP maximizes vulnerability-weighted stage-1 delivery plus 0.92 times the equally averaged planning-branch stage-2 delivery. For the risk-sensitive form, let \(w_z=1+2v_z\) and \(\mathcal U_j=\sum_z w_z(D_{0,z}+D_{j,z}-x_z-y_{j,z})\). The code subtracts the penalty \(0.60(\eta+\sum_{j=1}^8 \xi_j/(0.25\cdot8))\) from the delivery objective, with \(\xi_j\ge\mathcal U_j-\eta\) and \(\eta,\xi_j\ge0\). It evaluates eight equally weighted planning branches. The simulated second wave instead uses its realized replenishment plus nonnegative stock carryover, then dispatches without seeing or using the previously planned branch allocation.
+
+For both this service study and the transport evaluation in E7, let \(S_z\) and \(D_z\) sum delivered units and requests over services and both realized waves for zone \(z\). With the assigned high-vulnerability set \(\mathcal V=\{z:v_z\ge0.69\}\),
+\[
+C_{\mathrm{total}}=\frac{\sum_zS_z}{\sum_zD_z},\qquad
+C_{\mathrm{high}}=\frac{\sum_{z\in\mathcal V}S_z}{\sum_{z\in\mathcal V}D_z},\qquad
+C_{\mathrm{min}}=\min_{z:D_z>0}\frac{S_z}{D_z}.
+\]
+Total unserved units in the transport study are \(\sum_z(D_z-S_z)\). A closed route with positive demand remains in the denominator. These quantities weight requests rather than counties or historical dollars, and the least-served zone need not be high-vulnerability. In the older, single-unit allocation simulation (not the transport result), wave capacity adds to carried unspent budget, capped dispatch serves arrived cases, final credited service is \(\min(D_i,\sum_t x_{i,t})\), and final vulnerability-weighted coverage weights numerator and denominator by \(1+v_i\). That earlier simulation's weighted wait sums \((1+v_i)\max(0,D_i-\sum_{\tau\le t}x_{i,\tau})\) over arrived cases after each wave.
+
+Sources: [service vulnerability and branches](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_service_scenarios.py#L14-L21), [stock LP, proportional floor and recourse](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_service_scenarios.py#L59-L101), [realized dispatch and service metrics](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_service_scenarios.py#L127-L157) and [older single-unit simulation](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_allocation.py#L86-L125).
+
+### E7 Transport constraints and the separate legacy RL budget
+
+**Transport formulation.** For a stage, shipment \(x_{s,z}\) of service \(s\) to zone \(z\) yields delivered service \(a_{s,z}x_{s,z}\), where \(a\) is the simulated on-time arrival yield. Let \(D_{s,z}\) be requests, \(I_s\) available stock, \(R_z\) route cargo capacity, \(K\) total handling/storage capacity, and \(c_s,v_s\) normalized cargo and volume coefficients. The stage LP uses
+\[
+\begin{aligned}
+\rho P_{s,z}&\le x_{s,z}\le D_{s,z}/a_{s,z},\\
+\sum_z x_{s,z}&\le I_s,\\
+\sum_s c_s x_{s,z}&\le R_z,\\
+\sum_{s,z}v_s x_{s,z}&\le K.
+\end{aligned}
+\]
+Here \(P\) is the feasible equal-fraction **shipment** reference. It starts from \(D_{s,z}/a_{s,z}\) on positive-route, positive-stock entries and zero otherwise, and scales all entries by a common factor: the minimum of 1, each feasible route capacity/load ratio, each feasible service stock/load ratio, and \(K/\max(1,\text{total volume load})\). Zero route or stock load generates no limiting ratio. Thus \(\rho\in\{0,0.1,\ldots,1\}\) reserves a fraction of feasible reference shipments, not a universal minimum service fraction. The static LP maximizes weighted delivered units; weights are 1, \(1+2v_z^{\mathrm{vuln}}\), \(1/\max(1,\sum_s D_{s,z})\), or \(1+v_z^{\mathrm{vuln}}\) for efficiency, vulnerability, geography or mixed. Max-min first maximizes common coverage of eligible demand and then maximizes total delivery while preserving that coverage up to numerical tolerance. The optimization's eligible demand excludes zero-stock services and closed routes; evaluation still counts their unmet demand. The code does not model road-link travel times, route paths, vehicle routing, depot siting or fleet schedules. Delays are represented by reduced arrival yield and capacities.
+
+For four planning branches, stage-1 flow \(x^{(0)}\) is shared; stage-2 stock constraints are \(\sum_z (x^{(0)}_{s,z}+x^{(j)}_{s,z}) \le I_s^{(0)}+I_s^{(j)}\). Route and handling limits remain per stage and branch. With \(A_t=\sum_{s,z}(1+2v_z^{\mathrm{vuln}})a_{s,z}^{(t)}x_{s,z}^{(t)}\) and \(\mathcal L_j=\sum_{s,z}(1+2v_z^{\mathrm{vuln}})(D_{s,z}^{(0)}+D_{s,z}^{(j)})-A_0-A_j\), the expected objective maximizes \(A_0+0.95\overline A\) over the four branches. The worst-branch objective minimizes \(\max_j\mathcal L_j-0.05(A_0+0.95\overline A)\). The CVaR variant minimizes
+\[
+-(A_0+0.95\overline A)+0.60\left(\eta+\frac1{0.25\cdot4}\sum_{j=1}^4 \xi_j\right),
+\quad \xi_j\ge\mathcal L_j-\eta,\quad \eta,\xi_j\ge0.
+\]
+Only the first-stage allocation is retained. The actual second stage adds unused stock to realized incoming supply and, for those recourse options, re-solves the vulnerability-priority LP. Pareto comparisons maximize E6 service metrics across evaluated settings, not across all possible networks.
+
+Sources: [transport constants, proportional shipments and static LP](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_transport_pareto.py#L16-L114), [planning and hard feasibility](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_transport_pareto.py#L117-L169) and [realized service and frontier](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/analysis/thesis_transport_pareto.py#L196-L230).
+
+**Legacy dollar-budget task.** Let \(M_t\) be the base recommendation, \(L=\max(\text{released},1)\) and \(R=\max(\text{remaining},0)\) at the time the observation is generated. The notebook state is
+\[
+\left(\frac{\log(1+M_t)}{25},\frac R L,
+      \frac{L}{8{\times}10^9},\frac{L-R}{L},
+      \min\!\left(10,\frac{M_t}{\max(R,1)}\right),
+      \min\!\left(10,\frac{M_t}{L}\right)\right).
+\]
+The code sanitizes nonfinite state entries. At the beginning of a step a due page release is applied once, capped by total budget minus prior releases (page 1 is funded at reset). Thus at a release boundary the state used to select the action may precede the release update, while the spending cap and reward use the post-release balance. Given multiplier \(m_t\in\{0.40,0.55,0.70,0.85,1.00,1.10\}\), the amount actually allocated and remaining balance are
+\[
+X_t=\min\{\max(M_t m_t,0),\max(R_t^+,0)\},\qquad
+R_t'=R_t^+-X_t,
+\]
+where \(R_t^+\) is balance after the due release. For \(Y_t^+=\max(0,\text{recorded funding})\), \(L_t^+=\max(1,\text{released after update})\), the implemented reward is
+\[
+\begin{aligned}
+r_t={}&-|\log(1+X_t)-\log(1+Y_t^+)|\\
+ &-\mathbf 1(R_t'<0)(10+20|R_t'|/L_t^+)\\
+ &-1.5\,\mathbf 1(Y_t^+>0,\ X_t<0.25Y_t^+)\\
+ &-0.5\,\mathbf 1(1-R_t'/L_t^+>0.95)\\
+ &-0.25\,\mathbf 1(\text{terminal},\ R_t'>0)\,R_t'/L_t^+ .
+\end{aligned}
+\]
+The hard cap makes the negative-balance penalty inactive in valid steps, so no overspend is not evidence of a learned DQN property. This reward measures performance against a historical dollar reference, not measured unmet service. Resampled episodes do not provide independent-disaster validation.
+
+Source: [legacy notebook](https://github.com/leonmarienga/ML-thesis/blob/b0b6edb229d112dd6d11896a512bf1112414e4f6/reinforcement_learning.ipynb), zero-based cells 6 (constants), 9 (reward), 11 (state and transition) and 33 (tuned evaluation wrapper).

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="610" viewBox="0 0 940 610" role="img" aria-labelledby="title desc">
+<title id="title">Frozen six-band routing and amount-stack lineage</title><desc id="desc">Archived outputs pass from a shared historical six-band router to band-specific dollar estimators. Accepted low-band overlays and the research-only mid-band overlay do not change routing.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" orient="auto" markerWidth="7" markerHeight="7"><path d="M0 0L10 5L0 10Z" fill="#52687e"/></marker></defs>
+<rect width="940" height="610" fill="#fff"/>
+<text x="26" y="34" font-size="24" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Track A: one frozen router, three amount-stack versions</text>
+<text x="26" y="61" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#4a5d70" text-anchor="start">912 FY2010–24 non-Biological declarations. Historical reconstruction, not a prospective test.</text>
+<rect x="26" y="79" width="224" height="63" rx="8" fill="#f0f4f8" stroke="#bac8d5"/>
+<text x="38" y="103" font-size="18" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Historical inputs</text>
+<text x="38" y="125" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Declaration evidence</text>
+<rect x="306" y="79" width="288" height="63" rx="8" fill="#f0f4f8" stroke="#bac8d5"/>
+<text x="318" y="103" font-size="18" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Six-band router</text>
+<text x="318" y="125" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Archived predicted band</text>
+<rect x="650" y="79" width="264" height="63" rx="8" fill="#f0f4f8" stroke="#bac8d5"/>
+<text x="662" y="103" font-size="18" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">Dollar stack</text>
+<text x="662" y="125" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Estimator for predicted band</text>
+<path d="M253 111L296 111" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<path d="M597 111L640 111" stroke="#52687e" stroke-width="1.7" fill="none" marker-end="url(#arrow)"/>
+<text x="32" y="177" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">PREDICTED BAND</text>
+<text x="243" y="177" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">ORIGINAL AMOUNT ESTIMATOR</text>
+<text x="613" y="177" font-size="14" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">LATER AMOUNT OVERLAY</text>
+<rect x="26" y="190" width="888" height="42" rx="5" fill="#edf3f9" stroke="#d6dfe8"/>
+<text x="32" y="216" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">$0–&lt;$100K</text>
+<text x="243" y="216" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Outer-training median</text>
+<text x="613" y="216" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Accepted: two-stage zero / positive</text>
+<rect x="26" y="239" width="888" height="42" rx="5" fill="#edf3f9" stroke="#d6dfe8"/>
+<text x="32" y="265" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">$100K–&lt;$1M</text>
+<text x="243" y="265" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Outer-training median</text>
+<text x="613" y="265" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Accepted: dedicated regressor</text>
+<rect x="26" y="288" width="888" height="42" rx="5" fill="#f6f8fa" stroke="#d6dfe8"/>
+<text x="32" y="314" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">$1M–&lt;$50M</text>
+<text x="243" y="314" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">900-tree log-dollar ExtraTrees</text>
+<text x="613" y="314" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Unchanged</text>
+<rect x="26" y="337" width="888" height="42" rx="5" fill="#fbf0e7" stroke="#d6dfe8"/>
+<text x="32" y="363" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">$50M–&lt;$200M</text>
+<text x="243" y="363" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Outer-training median</text>
+<text x="613" y="363" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Research only: hybrid / shrinkage</text>
+<rect x="26" y="386" width="888" height="42" rx="5" fill="#f6f8fa" stroke="#d6dfe8"/>
+<text x="32" y="412" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">$200M–&lt;$500M</text>
+<text x="243" y="412" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Two sub-band specialists</text>
+<text x="613" y="412" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Unchanged; donor caveat</text>
+<rect x="26" y="435" width="888" height="42" rx="5" fill="#f6f8fa" stroke="#d6dfe8"/>
+<text x="32" y="461" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#182a3d" text-anchor="start">$500M+</text>
+<text x="243" y="461" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Analogue selection via inner LFYO</text>
+<text x="613" y="461" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#182a3d" text-anchor="start">Unchanged</text>
+<rect x="26" y="495" width="888" height="91" rx="8" fill="#faf0ed" stroke="#d2b9b3"/>
+<text x="41" y="521" font-size="17" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#862d29" text-anchor="start">Historical boundary</text>
+<text x="41" y="546" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#752c2a" text-anchor="start">LFYO can train on later years; four late rules used the true held amount to decide eligibility.</text>
+<text x="41" y="569" font-size="15" font-family="DejaVu Sans, sans-serif" font-weight="400" fill="#752c2a" text-anchor="start">Amount overlays leave the router unchanged. 830/912 is archive agreement, not forecast skill.</text>
+</svg>

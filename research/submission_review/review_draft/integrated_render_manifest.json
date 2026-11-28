@@ -1,0 +1,61 @@
+{
+  "docx_sha256": "580c2bad8bcd76f0664286e3135a316a70721a0224ad4fdd128db1d515c648c6",
+  "figures": {
+    "B1": {
+      "office_media_part": "media/rId78.png",
+      "png_sha256": "fcd99867eed0b0541e1d140bd08ac55962e84a4ce51ef86b8a6c2df3a971b4fb",
+      "source": "pareto_frontiers.png",
+      "source_sha256": "fcd99867eed0b0541e1d140bd08ac55962e84a4ce51ef86b8a6c2df3a971b4fb"
+    },
+    "F1": {
+      "office_media_part": "media/rId21.png",
+      "png_sha256": "590b2b42d9304f26579186f5ae484fb494d7c9bf7cf9bd50303a0dce58018b4b",
+      "source": "F1-evidence-decision-framework.svg",
+      "source_sha256": "c437bfa19703e7ea33d520320a4b7431c31c7458aeff4604ecf945262d875685"
+    },
+    "F2": {
+      "office_media_part": "media/rId31.png",
+      "png_sha256": "e138bc4bdf9b52b99b1ade400bbfe0a831d7e48911f7bb337addf9d81bdcd97e",
+      "source": "F2-frozen-router-lineage.svg",
+      "source_sha256": "c08691ae2f1293b059bfc6dce2827407ae948845234abe7c47be039755aeef52"
+    },
+    "F3": {
+      "office_media_part": "media/rId35.png",
+      "png_sha256": "222cd721d1eeed7f979b9fd121dee995314a5da98f38375553d2ebe0cee7fe5c",
+      "source": "F3-forward-split-audit.svg",
+      "source_sha256": "ca3d465d04da228afb4fb2c6661cb85d720d9c0164a292c286abe6205e553310"
+    },
+    "F4": {
+      "office_media_part": "media/rId40.png",
+      "png_sha256": "8e4e728bd6dc31dbfd6415a31507df7f55d4fd880da6784bb7981edfe855394e",
+      "source": "F4-hazard-source-gates.svg",
+      "source_sha256": "3a37386c708c745aef568dbf06224f265096d37cb05c98b9d0bda727cd1f0180"
+    },
+    "F5": {
+      "office_media_part": "media/rId46.png",
+      "png_sha256": "b3cb4ebf54008d49dffe98edbb44d465c6efb388d6d03590511ae02531f13a9b",
+      "source": "F5-reviewer-replay-paths.svg",
+      "source_sha256": "3084dbc38d2967c204d494b3883f29a19a25e1ffb00da6488d168de82db79347"
+    },
+    "F6": {
+      "office_media_part": "media/rId51.png",
+      "png_sha256": "29e41390540c8d25a40871448eef1c0c4e8ced1f5b42773e76b6f96c4009e1b2",
+      "source": "F6-track-a.svg",
+      "source_sha256": "65b1e8a6a4dde7c751bf7d6915db94a122ded2394b3a70039213e943c87b7cb9"
+    },
+    "F7": {
+      "office_media_part": "media/rId55.png",
+      "png_sha256": "ce7dc11334a19629d7816cd9bc99b340739da48c515625a9899c463f72088361",
+      "source": "F7-matched-forward.svg",
+      "source_sha256": "078600e0e4cc15670fb0fb6e6fac0025691701eb8cf771ee2995663ab421c57a"
+    },
+    "F8": {
+      "office_media_part": "media/rId62.png",
+      "png_sha256": "319c01ea27a87cade82953d443d8703aac147588eeead9aad8173386a8053d66",
+      "source": "F8-matched-intervals.svg",
+      "source_sha256": "ca092a783c3719ca054c710ea4b7d194c6ad8f0a36f0c0a41d726dd12b50f0cc"
+    }
+  },
+  "manuscript_sha256": "ac4114dcf612f5417e8263e88253304a526111ba46a4327e1943714aad7217fd",
+  "office_display_math": 19
+}

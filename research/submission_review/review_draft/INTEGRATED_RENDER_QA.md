@@ -1,0 +1,5 @@
+# Integrated local Word build check
+
+A local build of the current six-chapter source and Appendix D produced a 25-page A4 review rendering. The builder read Figures F1–F8 from SVG adjacent to the manuscript and the pinned transport PNG (B1). All nine source figure identities resolved to a distinct embedded PNG, and the verified alternate text and next caption named the same figure. The package contains 19 native Office Math display blocks. Plain dollar amounts remained currency text. LibreOffice render and page montage review were completed; spacing was reduced slightly to remove a nearly empty final page. The 25-page result is a local build, not a new published Word snapshot or an institutionally formatted submission.
+
+The [local build fingerprint](integrated_render_manifest.json) binds the current source and local output hashes to the nine embedded image parts. It does not authenticate the older, already published Word draft, whose recorded smoke test remains scoped to its own immutable checkpoint. See [rebuild instructions](BUILD_INTEGRATED.md).
