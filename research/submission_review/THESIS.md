@@ -72,7 +72,7 @@ The [offline decision-support viewer](decision_support_v2/README.md) presents th
 
 ### Predictive performance and provenance
 
-Track A reproduced 91.01% classification accuracy and a $5.015 million amount MAE for the reported overlay, with RMSE of $64.654 million and R² of 0.8868. This reconstruction preserves the separate $5.131 million original-stack and $5.128 million accepted two-low-specialist MAEs. The $5.015 million result is the later historical research overlay. The archived router correctly classified 666/699, 80/108, 62/82, 12/13, 5/5 and 5/5 actual cases from lowest to highest band (Figure F6). The two five-case counts do not establish tail reliability and are subject to the outcome-dependent gate. On the 376 matched forward cases, the verified-link ablation raised raw accuracy from 51.06% to 59.57% and reduced balanced accuracy from 42.52% to 33.19%. Dollar MAE rose by $13,131, with a paired episode-bootstrap interval from a $14,818 reduction to a $45,129 increase. The two accuracy measures answer different questions: the model classified more declarations correctly overall but performed worse on average across the bands. The result does not establish a reliable monetary gain from adding verified link features.
+Track A reproduced 91.01% classification accuracy and a $5.015 million amount MAE for the reported overlay, with RMSE of $64.654 million and R² of 0.8868. This reconstruction preserves the separate $5.131 million original-stack and $5.128 million accepted two-low-specialist MAEs. The $5.015 million result is the later historical research overlay. The archived router correctly classified 666/699, 80/108, 62/82, 12/13, 5/5 and 5/5 actual cases from lowest to highest band (Figure F6). The two five-case counts do not establish tail reliability and are subject to the outcome-dependent gate.
 
 ![Figure F6. Frozen Track A routes and absolute-error concentration.](figures/F6-track-a.svg)
 
@@ -89,6 +89,30 @@ Track A reproduced 91.01% classification accuracy and a $5.015 million amount MA
 The last overlay acted on 13 predicted-band rows: absolute error improved in eight and worsened in five. Its $112,825.07 reduction in overall MAE reflects this fixed historical evaluation, not an independent prospective test. The amount overlay uses the archived predicted bands; the use of observed funding in its join checks is distinct from the upstream routing eligibility issue.
 
 In the later 308-case interval comparison, dollar-residual intervals reached 91.23% overall coverage at nominal 90%, but missed all nine cases at or above $50 million. The fixed 20× signed-amount comparison is a distinct experiment: on 135 examined declarations its tail MAE was $291.80 million versus $347.66 million for real-only, and its overall MAE was $27.95 million versus $29.84 million. The paired interval for the tail change included zero. Omitting the largest eligible training episode reversed the overall advantage. A separate fixed alert threshold raised false alerts from 13 to 39. These data justify keeping the amount comparison for future independent evaluation, not promoting the threshold or the model.
+
+### Matched forward comparison
+
+The archived retrospective-metadata and verified-link ablations were scored on the same 376 FY2019–24 declarations. The first retained retrospective metadata; it is not the stricter metadata-only comparator or the fresh baseline from the target-blind trial below. The rolling-origin design separates earlier training from held events, but does not by itself certify every input at decision time.
+
+**Table T5.** Exact funding-band hits on the matched forward cohort. The denominator is the number of declarations whose observed obligation falls in that band.
+
+| Observed obligation band | Cases | Retrospective metadata hits | Verified-link hits |
+| --- | ---: | ---: | ---: |
+| $0 to <$100K | 266 | 160 | 185 |
+| $100K to <$1M | 50 | 17 | 20 |
+| $1M to <$50M | 47 | 13 | 16 |
+| $50M to <$200M | 9 | 0 | 2 |
+| $200M to <$500M | 1 | 1 | 0 |
+| $500M or more | 3 | 1 | 1 |
+| **All** | **376** | **192** | **224** |
+
+Raw accuracy rose from 51.06% to 59.57%, with 25 of the 32 extra hits in the lowest band. Balanced accuracy averages the six band recalls without weighting them by sample size. It fell from 42.52% to 33.19%: losing the only correct classification in the $200M to <$500M band contributes −16.67 percentage points, while the other five bands together contribute +7.33 points before rounding. An always-low label would attain 70.74% raw accuracy but only 16.67% balanced accuracy, with no high-funding alerts. It is an illustration of class imbalance, not a deployable comparator.
+
+![Figure F7. Matched forward band recalls and paired dollar MAE change.](figures/F7-matched-forward.svg)
+
+**Figure F7.** Panel A shows exact-band recall and observed band sizes; the shaded band has one declaration. Panel B shows verified-link minus retrospective-metadata mean absolute error: +$13,131, with a 95% episode-bootstrap interval from −$14,818 to +$45,129 (325 event groups; 3,000 draws). The interval spans zero. The higher raw accuracy does not establish a reliable monetary gain.
+
+Collapsing the archived bands to a $50M-or-more alert changes the question from exact-band classification to identifying high obligations. Retrospective metadata detected 8 of 13 and falsely flagged 36 of 363 lower-obligation declarations. Verified links detected 6 of 13 and falsely flagged 32 of 363. These are descriptive counts at the existing boundary, not an independent evaluation of an alerting threshold. Do not compare them as if they were the fresh target-blind trial or the frozen Track A score.
 
 ### Target-blind routing replacement trial
 

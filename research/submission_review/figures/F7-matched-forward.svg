@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="546" viewBox="0 0 940 546" role="img" aria-labelledby="title description">
+<title id="title">Matched forward ablations: recall by band and dollar MAE</title>
+<desc id="description">Exact-band recall is paired within six observed bands. The only 200 to 500 million case changes from a hit to a miss. The dollar MAE interval crosses zero.</desc>
+<rect width="940" height="546" fill="white"/>
+<text x="29" y="33" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="700">Matched forward ablations: 376 declarations, 325 event groups</text>
+<text x="29" y="60" fill="#46566A" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="15">FY2019–24 historical rolling-origin results. Separate from frozen Track A.</text>
+<circle cx="32" cy="87" r="5" fill="#31567F"/>
+<text x="45" y="92" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="14">Retrospective metadata</text>
+<rect x="243" y="82" width="10" height="10" fill="#B14D24"/>
+<text x="260" y="92" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="14">Verified-link ablation</text>
+<text x="29" y="129" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700">A   Exact-band recall</text>
+<text x="891" y="129" fill="#46566A" text-anchor="end" font-family="DejaVu Sans, sans-serif" font-size="14">Actual n</text>
+<rect x="20" y="269" width="891" height="30" fill="#FFF3EB"/>
+<path d="M 286.0 143 L 286.0 335" fill="none" stroke="#DBE2E9" stroke-width="1"/>
+<text x="286.0" y="355" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">0%</text>
+<path d="M 407.5 143 L 407.5 335" fill="none" stroke="#DBE2E9" stroke-width="1"/>
+<text x="407.5" y="355" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">25%</text>
+<path d="M 529.0 143 L 529.0 335" fill="none" stroke="#DBE2E9" stroke-width="1"/>
+<text x="529.0" y="355" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">50%</text>
+<path d="M 650.5 143 L 650.5 335" fill="none" stroke="#DBE2E9" stroke-width="1"/>
+<text x="650.5" y="355" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">75%</text>
+<path d="M 772.0 143 L 772.0 335" fill="none" stroke="#DBE2E9" stroke-width="1"/>
+<text x="772.0" y="355" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">100%</text>
+<text x="29" y="163" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="15">$0–&lt;$100K</text>
+<text x="891" y="163" fill="#142438" text-anchor="end" font-family="DejaVu Sans, sans-serif" font-size="15">266</text>
+<path d="M 578.3308270676691 154 L 624.0075187969925 162" fill="none" stroke="#A0AEBB" stroke-width="2"/>
+<circle cx="578.3308270676691" cy="154" r="5" fill="#31567F"/>
+<rect x="619.0075187969925" y="157" width="10" height="10" fill="#B14D24"/>
+<text x="29" y="194" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="15">$100K–&lt;$1M</text>
+<text x="891" y="194" fill="#142438" text-anchor="end" font-family="DejaVu Sans, sans-serif" font-size="15">50</text>
+<path d="M 451.24 185 L 480.4 193" fill="none" stroke="#A0AEBB" stroke-width="2"/>
+<circle cx="451.24" cy="185" r="5" fill="#31567F"/>
+<rect x="475.4" y="188" width="10" height="10" fill="#B14D24"/>
+<text x="29" y="225" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="15">$1M–&lt;$50M</text>
+<text x="891" y="225" fill="#142438" text-anchor="end" font-family="DejaVu Sans, sans-serif" font-size="15">47</text>
+<path d="M 420.4255319148936 216 L 451.44680851063833 224" fill="none" stroke="#A0AEBB" stroke-width="2"/>
+<circle cx="420.4255319148936" cy="216" r="5" fill="#31567F"/>
+<rect x="446.44680851063833" y="219" width="10" height="10" fill="#B14D24"/>
+<text x="29" y="256" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="15">$50M–&lt;$200M</text>
+<text x="891" y="256" fill="#142438" text-anchor="end" font-family="DejaVu Sans, sans-serif" font-size="15">9</text>
+<path d="M 286.0 247 L 394.0 255" fill="none" stroke="#A0AEBB" stroke-width="2"/>
+<circle cx="286.0" cy="247" r="5" fill="#31567F"/>
+<rect x="389.0" y="250" width="10" height="10" fill="#B14D24"/>
+<text x="29" y="287" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="700">$200M–&lt;$500M</text>
+<text x="891" y="287" fill="#142438" text-anchor="end" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="700">1</text>
+<path d="M 772.0 278 L 286.0 286" fill="none" stroke="#A0AEBB" stroke-width="2"/>
+<circle cx="772.0" cy="278" r="5" fill="#31567F"/>
+<rect x="281.0" y="281" width="10" height="10" fill="#B14D24"/>
+<text x="29" y="318" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="15">$500M+</text>
+<text x="891" y="318" fill="#142438" text-anchor="end" font-family="DejaVu Sans, sans-serif" font-size="15">3</text>
+<path d="M 448.0 309 L 448.0 317" fill="none" stroke="#A0AEBB" stroke-width="2"/>
+<circle cx="448.0" cy="309" r="5" fill="#31567F"/>
+<rect x="443.0" y="312" width="10" height="10" fill="#B14D24"/>
+<path d="M 29 377 L 911 377" fill="none" stroke="#D4DCE4" stroke-width="1"/>
+<text x="29" y="411" fill="#142438" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700">B   Change in mean absolute dollar error</text>
+<text x="29" y="436" fill="#46566A" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="15">Verified-link minus retrospective metadata. Positive means higher error.</text>
+<path d="M 286 490 L 772 490" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<path d="M 424.8571428571429 448 L 424.8571428571429 490" fill="none" stroke="#73869A" stroke-width="1.5"/>
+<path d="M 321.9750782121809 466 L 738.1791510723167 466" fill="none" stroke="#B14D24" stroke-width="3"/>
+<path d="M 321.9750782121809 459 L 321.9750782121809 473" fill="none" stroke="#B14D24" stroke-width="2"/>
+<path d="M 738.1791510723167 459 L 738.1791510723167 473" fill="none" stroke="#B14D24" stroke-width="2"/>
+<rect x="511.0246564687577" y="461" width="10" height="10" fill="#B14D24"/>
+<path d="M 286.0 490 L 286.0 495" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<text x="286.0" y="512" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">-20</text>
+<path d="M 355.42857142857144 490 L 355.42857142857144 495" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<text x="355.42857142857144" y="512" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">-10</text>
+<path d="M 424.8571428571429 490 L 424.8571428571429 495" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<text x="424.8571428571429" y="512" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">0</text>
+<path d="M 494.2857142857143 490 L 494.2857142857143 495" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<text x="494.2857142857143" y="512" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">10</text>
+<path d="M 563.7142857142858 490 L 563.7142857142858 495" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<text x="563.7142857142858" y="512" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">20</text>
+<path d="M 633.1428571428571 490 L 633.1428571428571 495" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<text x="633.1428571428571" y="512" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">30</text>
+<path d="M 702.5714285714286 490 L 702.5714285714286 495" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<text x="702.5714285714286" y="512" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">40</text>
+<path d="M 772.0 490 L 772.0 495" fill="none" stroke="#BECAD3" stroke-width="1"/>
+<text x="772.0" y="512" fill="#46566A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="13">50</text>
+<text x="29" y="513" fill="#46566A" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="14">USD thousands</text>
+<text x="29" y="535" fill="#46566A" text-anchor="start" font-family="DejaVu Sans, sans-serif" font-size="14">Point estimate +$13,131; 95% episode-bootstrap interval: −$14,818 to +$45,129.</text>
+</svg>
