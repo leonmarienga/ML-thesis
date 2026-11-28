@@ -1,0 +1,119 @@
+[
+  {
+    "bytes": 20121,
+    "date": "Sat, 28 Nov 2026 12:16:48 GMT",
+    "event": "KY2022",
+    "last_modified": "Fri, 27 Nov 2026 12:30:11 GMT",
+    "metadata_rows": [
+      "JKNK2|03280000       |CE6CBC20|JKL|37 33 08   |083 23 09   |NORTH FORK KENTUCKY RIVER AT JACKSON KY"
+    ],
+    "sha256": "f42ad38362d589bada3562aacc0afe8a4bdd4146937efcf075cd308e3de130bb",
+    "source": "hads",
+    "status": 200,
+    "url": "https://hads.ncep.noaa.gov/USGS/KY_USGS-HADS_SITES.txt"
+  },
+  {
+    "bytes": 2881,
+    "coordinates_lon_lat": [
+      -83.3857358036437,
+      37.552312282227
+    ],
+    "date": "Sat, 28 Nov 2026 12:16:54 GMT",
+    "event": "KY2022",
+    "last_modified": null,
+    "metadata": {
+      "altitude": 697.7,
+      "altitude_accuracy": 0.02,
+      "altitude_method_name": "Level or other surveyed method.",
+      "horizontal_positional_accuracy_code": "F",
+      "id": "USGS-03280000",
+      "monitoring_location_name": "NORTH FORK KENTUCKY RIVER AT JACKSON, KY",
+      "revision_created": "2017-11-13T06:00:00+00:00",
+      "revision_modified": "2022-11-29T16:44:44.247000+00:00",
+      "revision_note": "&lt;p&gt;WSP 853: 1929(M). WSP 1335: 1928(M), 1929, 1931(M). WSP 1435: 1954-55. WSP 1505:\n1948. WSP 1555: Drainage area. WDR KY-06-1, peaks.&lt;/p&gt;\n&lt;p&gt;Datum of gage was previously reported as 697.67 ft above NGVD of 1929.&nbsp; This datum was revised on Nov 29, 2022.&lt;/p&gt;",
+      "vertical_datum": "NAVD88"
+    },
+    "sha256": "589354913d97f9851d68ab32e27b47f0f5b9c77afc066908c0e54b03c279de3b",
+    "source": "usgs-location",
+    "status": 200,
+    "url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/monitoring-locations/items/USGS-03280000?f=json"
+  },
+  {
+    "bytes": 14797,
+    "date": "Sat, 28 Nov 2026 12:16:48 GMT",
+    "event": "OH2024",
+    "last_modified": "Mon, 23 Nov 2026 12:30:13 GMT",
+    "metadata_rows": [
+      "WLGW2|03112500       |CE3054DE|PBZ|40 03 26   |080 43 43   |OHIO RIVER AT WHEELING WV"
+    ],
+    "sha256": "47d6cb11d335936957a64af6974f2e9b13e15db8c6f549c83efbf147d2e10f1b",
+    "source": "hads",
+    "status": 200,
+    "url": "https://hads.ncep.noaa.gov/USGS/WV_USGS-HADS_SITES.txt"
+  },
+  {
+    "bytes": 2575,
+    "coordinates_lon_lat": [
+      -80.7284154255515,
+      40.0572949390362
+    ],
+    "date": "Sat, 28 Nov 2026 12:16:54 GMT",
+    "event": "OH2024",
+    "last_modified": null,
+    "metadata": {
+      "altitude": 607.3,
+      "altitude_accuracy": 0.11,
+      "altitude_method_name": "GNSS2 - Level 2 Quality Survey Grade Global Navigation Satellite System",
+      "horizontal_positional_accuracy_code": "S",
+      "id": "USGS-03112500",
+      "monitoring_location_name": "OHIO RIVER AT WHEELING, WV",
+      "revision_created": null,
+      "revision_modified": null,
+      "revision_note": null,
+      "vertical_datum": "NAVD88"
+    },
+    "sha256": "94081f93740fb67bafaf956a473b2150464074accc4a59cd4d3e286f3667bebe",
+    "source": "usgs-location",
+    "status": 200,
+    "url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/monitoring-locations/items/USGS-03112500?f=json"
+  },
+  {
+    "bytes": 24914,
+    "date": "Sat, 28 Nov 2026 12:16:54 GMT",
+    "event": "HELENE2024",
+    "last_modified": "Fri, 27 Nov 2026 12:30:11 GMT",
+    "metadata_rows": [
+      "AVLN7|03451500       |DF11B21E|GSP|35 36 32   |082 34 41   |FRENCH BROAD RIVER AT ASHEVILLE NC"
+    ],
+    "sha256": "ef017596e442ad9416655b00b1be6daee7933cc8c87e9a1b241869379a6bc699",
+    "source": "hads",
+    "status": 200,
+    "url": "https://hads.ncep.noaa.gov/USGS/NC_USGS-HADS_SITES.txt"
+  },
+  {
+    "bytes": 2825,
+    "coordinates_lon_lat": [
+      -82.5780555555556,
+      35.6088888888889
+    ],
+    "date": "Sat, 28 Nov 2026 12:17:03 GMT",
+    "event": "HELENE2024",
+    "last_modified": null,
+    "metadata": {
+      "altitude": 1949.93,
+      "altitude_accuracy": 0.09,
+      "altitude_method_name": "GNSS2 - Level 2 Quality Survey Grade Global Navigation Satellite System",
+      "horizontal_positional_accuracy_code": "S",
+      "id": "USGS-03451500",
+      "monitoring_location_name": "FRENCH BROAD RIVER AT ASHEVILLE, NC",
+      "revision_created": "2017-11-13T06:00:00+00:00",
+      "revision_modified": "2026-03-16T15:40:38.180000+00:00",
+      "revision_note": "&lt;p&gt;WSP 823: Drainage area. WSP 1306: 1901, 1914-15, 1917, 1920-22, 1927, maximum discharge.&lt;/p&gt;",
+      "vertical_datum": "NAVD88"
+    },
+    "sha256": "e2bc186c208e32e4de5fdc5327e872959d54cdb53a452f1ffdc15e393aad5666",
+    "source": "usgs-location",
+    "status": 200,
+    "url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/monitoring-locations/items/USGS-03451500?f=json"
+  }
+]

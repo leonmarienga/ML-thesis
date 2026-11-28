@@ -1,0 +1,133 @@
+[
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202207270913-KTIR-FGUS51-RVFKTY",
+    "bytes": 21684,
+    "event": "KY2022",
+    "first_target": "2022-07-28T12:00:00Z",
+    "issue": "2022-07-27T09:13:00Z",
+    "lid": "JKNK2",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202207270913-KTIR-FGUS51-RVFKTY",
+    "sha256": "dec362c542d719ac0c6f08a8ef0347dae2bf8099600d8782fddac6d6827917a9",
+    "site_metadata_only": [
+      ": Jackson - North Fork Kentucky River - JKL",
+      ": Zero Datum 697.674 ft (NGVD 1929)"
+    ],
+    "status": 200
+  },
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202207271403-KTIR-FGUS51-RVFKTY",
+    "bytes": 22120,
+    "event": "KY2022",
+    "first_target": "2022-07-28T12:00:00Z",
+    "issue": "2022-07-27T14:03:00Z",
+    "lid": "JKNK2",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202207271403-KTIR-FGUS51-RVFKTY",
+    "sha256": "adc85d5d6c7ddcc5c8eec314529c7f4453ef0cf590242b81e0e3ab71461ace40",
+    "site_metadata_only": [
+      ": Jackson - North Fork Kentucky River - JKL",
+      ": Zero Datum 697.674 ft (NGVD 1929)"
+    ],
+    "status": 200
+  },
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202207280516-KTIR-FGUS51-RVFKTY",
+    "bytes": 23975,
+    "event": "KY2022",
+    "first_target": "2022-07-28T12:00:00Z",
+    "issue": "2022-07-28T05:16:00Z",
+    "lid": "JKNK2",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202207280516-KTIR-FGUS51-RVFKTY",
+    "sha256": "e39e39edf91128cde31a70886ce29be9595e8a40eeab400d35cfa80ff4e5ec0c",
+    "site_metadata_only": [
+      ": Jackson - North Fork Kentucky River - JKL",
+      ": Zero Datum 697.674 ft (NGVD 1929)"
+    ],
+    "status": 200
+  },
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202404031054-KTIR-FGUS51-RVFOHW",
+    "bytes": 29194,
+    "event": "OH2024",
+    "first_target": "2024-04-04T12:00:00Z",
+    "issue": "2024-04-03T10:54:00Z",
+    "lid": "WLGW2",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202404031054-KTIR-FGUS51-RVFOHW",
+    "sha256": "e3ed554aff85d9e7318cd251269fdaf9b1ac030cbf181e0fccf47a17023823ed",
+    "site_metadata_only": [
+      ": Wheeling - Ohio River - PBZ",
+      ": Zero Datum 608.1 ft (NGVD 1929)"
+    ],
+    "status": 200
+  },
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202404031507-KTIR-FGUS51-RVFOHW",
+    "bytes": 29443,
+    "event": "OH2024",
+    "first_target": "2024-04-04T12:00:00Z",
+    "issue": "2024-04-03T15:07:00Z",
+    "lid": "WLGW2",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202404031507-KTIR-FGUS51-RVFOHW",
+    "sha256": "407f4fdc0521253bce216f48309b3a02e67f8ca962091606ef2bd8ecc3cf6d3b",
+    "site_metadata_only": [
+      ": Wheeling - Ohio River - PBZ",
+      ": Zero Datum 608.1 ft (NGVD 1929)"
+    ],
+    "status": 200
+  },
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202409260043-KORN-FGUS54-RVFGSP",
+    "bytes": 8632,
+    "event": "HELENE2024",
+    "first_target": "2024-09-27T06:00:00Z",
+    "issue": "2024-09-26T00:43:00Z",
+    "lid": "AVLN7",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202409260043-KORN-FGUS54-RVFGSP",
+    "sha256": "1c1da19955ee33079689fa75d38925e0ba935d4b88bf0b568b170115fca4e0fc",
+    "site_metadata_only": [
+      ":ASHEVILLE, NC - FRENCH BROAD RIVER"
+    ],
+    "status": 200
+  },
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202409260700-KORN-FGUS54-RVFGSP",
+    "bytes": 6811,
+    "event": "HELENE2024",
+    "first_target": "2024-09-27T06:00:00Z",
+    "issue": "2024-09-26T07:00:00Z",
+    "lid": "AVLN7",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202409260700-KORN-FGUS54-RVFGSP",
+    "sha256": "bd7d0fdea41b54cbc262473fd3c8847d8e2fbf8923b823f1cb4dd7912e1da7dc",
+    "site_metadata_only": [
+      ":ASHEVILLE, NC - FRENCH BROAD RIVER"
+    ],
+    "status": 200
+  },
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202409261910-KORN-FGUS54-RVFGSP",
+    "bytes": 2791,
+    "event": "HELENE2024",
+    "first_target": "2024-09-27T06:00:00Z",
+    "issue": "2024-09-26T19:10:00Z",
+    "lid": "AVLN7",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202409261910-KORN-FGUS54-RVFGSP",
+    "sha256": "857551d7f0143d557cf5c5b41dedccdbd7952757ef83fc096eb27d440cbfaa50",
+    "site_metadata_only": [
+      ":ASHEVILLE, NC - FRENCH BROAD RIVER"
+    ],
+    "status": 200
+  },
+  {
+    "archived_product": "https://mesonet.agron.iastate.edu/p.php?pid=202409270044-KORN-FGUS54-RVFGSP",
+    "bytes": 8266,
+    "event": "HELENE2024",
+    "first_target": "2024-09-27T06:00:00Z",
+    "issue": "2024-09-27T00:44:00Z",
+    "lid": "AVLN7",
+    "retrieval": "https://mesonet.agron.iastate.edu/api/1/nwstext/202409270044-KORN-FGUS54-RVFGSP",
+    "sha256": "cd8ce5d3582be898e00b09555e133eed331351a406906e6c8e5212ec9b0373ad",
+    "site_metadata_only": [
+      ":ASHEVILLE, NC - FRENCH BROAD RIVER"
+    ],
+    "status": 200
+  }
+]
