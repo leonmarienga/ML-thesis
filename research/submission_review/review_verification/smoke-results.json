@@ -1,0 +1,81 @@
+{
+  "commit": "b951c7a4883400c0d69a04d71ec91290351267e3",
+  "html_structure": "PASS: unique IDs, all navigation and aria-labelledby targets valid, core select labels, main/navigation landmarks, captions and column scopes.",
+  "node": {
+    "test_v1.js": "PASS: 1,424 live JS preference/comparator/regime combinations; values, gaps, plot redraw, source and evidence labels.",
+    "test_v2.js": "PASS: two interval levels and all 24 distinct-arm/regime combinations; role labels, displayed values, interval reversal, warnings, aggregate-only fixture and sources.",
+    "version": "v24.22.3"
+  },
+  "published_manifest_members_verified": {
+    "app": 14,
+    "word": 1
+  },
+  "real_browser": {
+    "checks": [
+      {
+        "dims": {
+          "body": 1440,
+          "viewport": 1440
+        },
+        "httpRequests": [],
+        "keyboardComparator": true,
+        "keyboardInterval": true,
+        "keyboardRoadFilter": true,
+        "pageErrors": [],
+        "viewport": {
+          "height": 1000,
+          "width": 1440
+        }
+      },
+      {
+        "dims": {
+          "body": 390,
+          "viewport": 390
+        },
+        "httpRequests": [],
+        "keyboardComparator": true,
+        "keyboardInterval": true,
+        "keyboardRoadFilter": true,
+        "pageErrors": [],
+        "viewport": {
+          "height": 844,
+          "width": 390
+        }
+      }
+    ],
+    "engine": "158.0.8127.0",
+    "hash": "9ddf0fedf618e7e9e3df5a194890ecb1f88883d4a48a4917cba2d423f7e84203"
+  },
+  "sha256": {
+    "Disaster Relief Thesis Supervisor Review Draft.docx": "d86bf71f933ebf694a9d830ee90dd9007af251668aad8f7b49ee9444c4e7767d",
+    "decision_support_v2/index.html": "9ddf0fedf618e7e9e3df5a194890ecb1f88883d4a48a4917cba2d423f7e84203"
+  },
+  "tabletop": {
+    "balanced_exposures_per_scenario_condition": 2,
+    "closed_zone_retained": true,
+    "fresh_matches_archive_bytes": true,
+    "negative_tests": "invalid route, stock, quantity and acceptance rejected",
+    "participants": 0,
+    "scenario_ids": 6,
+    "schedule_slots": 4,
+    "status": "simulation_only"
+  },
+  "word": {
+    "embedded_png_pixels": {
+      "word/media/rId35.png": [
+        2640,
+        1254
+      ],
+      "word/media/rId42.png": [
+        2520,
+        1320
+      ],
+      "word/media/rId57.png": [
+        1750,
+        752
+      ]
+    },
+    "parsed_xml_parts": 17,
+    "zip_entries": 20
+  }
+}
