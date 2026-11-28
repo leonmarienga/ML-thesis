@@ -1,5 +1,5 @@
 """Build a styled supervisor-review draft from the integrated Markdown, not a final EUL template."""
-import argparse, hashlib, json, re, shutil, subprocess, tempfile
+import argparse, hashlib, json, os, re, shutil, subprocess, tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from zipfile import ZipFile
@@ -16,6 +16,7 @@ for arg in ("source","transport_figure","output"):
 p.add_argument("--review-ref",required=True)
 p.add_argument("--figure-manifest",type=Path, required=True)
 a=p.parse_args()
+assert len({x.resolve() for x in (a.source,a.transport_figure,a.output,a.figure_manifest)})==4, "Input and output paths must differ"
 branchurl="https://github.com/leonmarienga/ML-thesis/blob/"+a.review_ref+"/research/submission_review/"
 source=a.source.read_text(encoding="utf-8")
 title,body=source.split("\n",1)
@@ -137,8 +138,9 @@ with tempfile.TemporaryDirectory() as td:
     doc.core_properties.subject="Supervisor-review draft"
     doc.core_properties.comments="Derived from the integrated Markdown and existing research figures."
     a.output.parent.mkdir(parents=True,exist_ok=True)
-    doc.save(a.output)
-    with ZipFile(a.output) as z:
+    candidate=w/"verified-candidate.docx"
+    doc.save(candidate)
+    with ZipFile(candidate) as z:
         assert z.testzip() is None
         ns={"w":"http://schemas.openxmlformats.org/wordprocessingml/2006/main",
             "a":"http://schemas.openxmlformats.org/drawingml/2006/main",
@@ -179,5 +181,20 @@ with tempfile.TemporaryDirectory() as td:
         for tag,media in mapped.items():tracked[tag]["office_media_part"]=media
         math_count=len(tree.findall(".//m:oMathPara",ns))
         assert math_count>=19, f"Expected Appendix D display math, got {math_count}"
-    a.figure_manifest.write_text(json.dumps({"manuscript_sha256":sha(a.source),"docx_sha256":sha(a.output),
-                                             "office_display_math":math_count,"figures":tracked},indent=2,sort_keys=True)+"\n")
+    manifest=w/"verified-manifest.json"
+    manifest.write_text(json.dumps({"manuscript_sha256":sha(a.source),"docx_sha256":sha(candidate),
+                                    "office_display_math":math_count,"figures":tracked},indent=2,sort_keys=True)+"\n")
+    def promote(src,dest):
+        # Use a sibling temp file so replacement is atomic per file on the destination filesystem.
+        dest.parent.mkdir(parents=True,exist_ok=True)
+        fd, temp_name=tempfile.mkstemp(prefix=".thesis-build-",dir=dest.parent)
+        os.close(fd)
+        part=Path(temp_name)
+        try:
+            shutil.copyfile(src,part)
+            assert sha(src)==sha(part)
+            os.replace(part,dest)
+        finally:
+            part.unlink(missing_ok=True)
+    promote(candidate,a.output)
+    promote(manifest,a.figure_manifest)
