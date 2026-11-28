@@ -1,6 +1,6 @@
 # AI-Assisted Decision-Support Framework for Disaster Relief Resource Allocation Under Uncertainty
 
-Leon Marienga | Master's thesis working manuscript | Verified baseline through Batch 14 with an inland flood feasibility pilot
+Leon Marienga | Master's thesis working manuscript | Supervisor-review draft | Archived benchmark and retrospective validation
 
 ## Abstract
 
@@ -72,7 +72,21 @@ The implemented offline prototype presents the archived transportation policies 
 
 ### Predictive performance and provenance
 
-Track A reproduced 91.01% classification accuracy and a $5.015 million amount MAE for the reported overlay, with RMSE of $64.654 million and R² of 0.8868. This reconstruction preserves the separate $5.131 million original-stack and $5.128 million accepted two-low-specialist MAEs. The $5.015 million result is the later historical research overlay. Report per-band counts instead of relying on accuracy alone: the archived router correctly classified 666/699, 80/108, 62/82, 12/13, 5/5 and 5/5 actual cases from lowest to highest band. The two five-case counts do not establish tail reliability and are subject to the outcome-dependent gate. On the 376 matched forward cases, the verified-link ablation raised raw accuracy from 51.06% to 59.57% and reduced balanced accuracy from 42.52% to 33.19%. Dollar MAE rose by $13,131, with a paired episode-bootstrap interval from a $14,818 reduction to a $45,129 increase. The two accuracy measures answer different questions: the model classified more declarations correctly overall but performed worse on average across the bands. The result does not establish a reliable monetary gain from adding verified link features.
+Track A reproduced 91.01% classification accuracy and a $5.015 million amount MAE for the reported overlay, with RMSE of $64.654 million and R² of 0.8868. This reconstruction preserves the separate $5.131 million original-stack and $5.128 million accepted two-low-specialist MAEs. The $5.015 million result is the later historical research overlay. The archived router correctly classified 666/699, 80/108, 62/82, 12/13, 5/5 and 5/5 actual cases from lowest to highest band (Figure F6). The two five-case counts do not establish tail reliability and are subject to the outcome-dependent gate. On the 376 matched forward cases, the verified-link ablation raised raw accuracy from 51.06% to 59.57% and reduced balanced accuracy from 42.52% to 33.19%. Dollar MAE rose by $13,131, with a paired episode-bootstrap interval from a $14,818 reduction to a $45,129 increase. The two accuracy measures answer different questions: the model classified more declarations correctly overall but performed worse on average across the bands. The result does not establish a reliable monetary gain from adding verified link features.
+
+![Figure F6. Frozen Track A routes and absolute-error concentration.](figures/F6-track-a.svg)
+
+**Figure F6.** The matrix shows observed versus archived predicted funding bands for all 912 historical cases. The printed values are counts; shading is the fraction within each observed band. The right panel shows each band's contribution to absolute dollar error under the research-only overlay. Only five cases accounted for 73.88% of total absolute error, and all 23 cases at or above $50M accounted for 91.81%. Neither the high route agreement nor the dollar comparison is target-blind validation: four historical routing rules used observed amounts to decide eligibility.
+
+**Table T4.** Overall absolute dollar error for the three archived amount stacks, each using the same frozen router.
+
+| Archived amount stack | MAE (USD) | Interpretation |
+| --- | ---: | --- |
+| Original frozen stack | $5,131,359.54 | Historical reference |
+| Two accepted low-band overlays | $5,127,644.08 | Historical specialist replacement |
+| Research-only mid-band overlay | $5,014,819.01 | Exploratory historical comparison |
+
+The last overlay acted on 13 predicted-band rows: absolute error improved in eight and worsened in five. Its $112,825.07 reduction in overall MAE reflects this fixed historical evaluation, not an independent prospective test. The amount overlay uses the archived predicted bands; the use of observed funding in its join checks is distinct from the upstream routing eligibility issue.
 
 In the later 308-case interval comparison, dollar-residual intervals reached 91.23% overall coverage at nominal 90%, but missed all nine cases at or above $50 million. The fixed 20× signed-amount comparison is a distinct experiment: on 135 examined declarations its tail MAE was $291.80 million versus $347.66 million for real-only, and its overall MAE was $27.95 million versus $29.84 million. The paired interval for the tail change included zero. Omitting the largest eligible training episode reversed the overall advantage. A separate fixed alert threshold raised false alerts from 13 to 39. These data justify keeping the amount comparison for future independent evaluation, not promoting the threshold or the model.
 
