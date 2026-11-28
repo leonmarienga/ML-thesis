@@ -1,0 +1,57 @@
+{
+  "artifact": {
+    "html_sha256": "9ddf0fedf618e7e9e3df5a194890ecb1f88883d4a48a4917cba2d423f7e84203",
+    "chromium_executable_sha256": "1f698044a68e18c1ce0cce74be25413f176806f19f15a44de5bb02cd578996af",
+    "chromium_version": "158.0.8127.0",
+    "playwright_version": "1.62.1",
+    "chromium_package": "158.0.0"
+  },
+  "capture": {
+    "selector": "section[aria-labelledby=\"veto\"]",
+    "viewport_css_px": {
+      "width": 1000,
+      "height": 900
+    },
+    "device_scale_factor": 2,
+    "box_css_px": {
+      "width": 910.21875,
+      "height": 642.78125
+    },
+    "png_px": {
+      "width": 1824,
+      "height": 1286
+    },
+    "png_sha256": "944f38dfbad6ef27af164837e486e7b78d33880de88e46c516589ca84d3b1247",
+    "state_change": "Open file://; select Linear optimization in Comparison policy; focus Road conditions, press End",
+    "proof_of_change": {
+      "before": "All road conditions · 48 matched simulated worlds",
+      "after": "Closure · 15 matched simulated worlds"
+    },
+    "table": [
+      [
+        "Overall served",
+        "38.54%",
+        "43.79%",
+        "-5.24",
+        "Not estimated"
+      ],
+      [
+        "High-vulnerability served",
+        "41.35%",
+        "63.06%",
+        "-21.71",
+        "Not estimated"
+      ],
+      [
+        "Least-served zone",
+        "13.11%",
+        "4.05%",
+        "+9.06",
+        "Not estimated"
+      ]
+    ],
+    "page_errors": [],
+    "http_requests": []
+  },
+  "scope": "Single actual screenshot of offline synthetic comparison; no modeled real-world policy effect, participants, accessibility or usability claim."
+}
