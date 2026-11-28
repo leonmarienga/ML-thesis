@@ -1,6 +1,6 @@
 # Supervisor review guide
 
-Start with the editable supervisor-review draft. It brings together six chapters and three appendices, embeds the historical error-concentration and transport-frontier figures, and records which claims are historical, simulated, or still unverified. This is not a graduate-school-format certification or a signed submission.
+Start with the editable supervisor-review draft. It brings together six chapters and three appendices, embeds the historical error-concentration, matched interval and transport-frontier figures, and records which claims are historical, simulated, or still unverified. This is not a graduate-school-format certification or a signed submission.
 
 1. Review Chapters 1–3 for the problem definition and the distinction between archived route agreement, chronological forecasts, and uncertainty. The 91.01% historical metric is not a target-blind test.
 2. In Chapter 4, inspect the clearly labeled research-only amount overlay, unpromoted target-blind candidate, failed extreme interval coverage, and the coverage–equity trade-off on synthetic scenarios. Do not infer aid delivered, actual participants, or deployment validity.

@@ -94,7 +94,22 @@ In the later 308-case interval comparison, dollar-residual intervals reached 91.
 
 A pre-specified experimental replacement used only archived declaration metadata and past-only fitting in six fiscal-year origins, with episode separation and a gate based on the baseline **predicted** band, not the observed amount. Reassigning or permuting the held labels left both models' predictions and probabilities unchanged in every origin. Across 376 previously examined declarations (325 source-connected groups), the fresh baseline correctly routed 273; the candidate correctly routed 274. The paired macro-F1 difference was +0.0054 (95% episode bootstrap interval 0.0000 to +0.0169). Three decisions changed across two episode groups, so the candidate did not meet its predefined support and precision gate. Both models missed all four cases at or above $200M. This is evidence for an outcome-blind construction, not evidence of an improvement, a numerical alternative to frozen Track A, or a certified operational model. [Fixed protocol and result](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/target_blind_router_v1).
 
-The archived 90% nominal intervals covered 281 of 308 cases, but none of the nine cases at or above $50M. An audit found that the existing review flag marked seven of those nine misses and 159 of the 308 cases overall. Review does not turn an interval miss into coverage; the two unflagged extreme failures matter. The audited cohort does not support another cutoff search without a genuinely independent evaluation sample. [Uncertainty audit](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/uncertainty_audit).
+The nested metadata dollar-residual intervals at nominal 90% covered 281 of 308 cases, but none of the nine cases at or above $50M. An audit found that the existing review flag marked seven of those nine misses and 159 of the 308 cases overall. Review does not turn an interval miss into coverage; the two unflagged extreme failures matter. The audited cohort does not support another cutoff search without a genuinely independent evaluation sample. [Uncertainty audit](https://github.com/leonmarienga/ML-thesis/tree/thesis/research-followup-20261128/research/followup_20261128/uncertainty_audit).
+
+### Retrospective interval coverage and width
+
+**Table T8.** Inclusive coverage and median interval width on the same 308 FY2020–24 declarations. Observed amounts define the $50M+ group after evaluation.
+
+| Nominal | Archived pipeline | All covered | Below $50M | $50M+ | All width, median | $50M+ width, median |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| 80% | Nested metadata, dollar residual | 260/308 | 260/299 | 0/9 | $0.749M | $0.901M |
+| 80% | Fixed-split CQR | 275/308 | 270/299 | 5/9 | $0.167M | $377.523M |
+| 90% | Nested metadata, dollar residual | 281/308 | 281/299 | 0/9 | $4.283M | $4.436M |
+| 90% | Fixed-split CQR | 293/308 | 286/299 | 7/9 | $0.717M | $2.155B |
+
+![Figure F8. Coverage and width of archived uncertainty intervals.](figures/F8-matched-intervals.svg)
+
+**Figure F8.** Coverage counts and interval width for the same historical cases; width uses a logarithmic scale to retain the upper group's wide intervals. The two CQR misses and all nine residual-method misses in the nominal-90% upper group exceeded the upper bound. The CQR count is 7/9 by its archived endpoint and by-band tables, rather than the 6/9 stated in an older narrative. This comparison does not isolate an algorithm effect: the pipelines used different models and calibration histories. Nine upper cases are insufficient for a reliable group guarantee. See the [matched uncertainty evidence](figures/uncertainty/REPORT.md).
 
 ### Physical observations and synthetic experiments
 

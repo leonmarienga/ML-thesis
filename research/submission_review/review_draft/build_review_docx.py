@@ -13,6 +13,7 @@ p=argparse.ArgumentParser()
 for arg in ("source","historical_figure","transport_figure","output"):
     p.add_argument(arg,type=Path)
 p.add_argument("--review-ref",required=True)
+p.add_argument("--uncertainty-figure",type=Path)
 a=p.parse_args()
 branchurl="https://github.com/leonmarienga/ML-thesis/blob/"+a.review_ref+"/research/submission_review/"
 source=a.source.read_text(encoding="utf-8")
@@ -28,10 +29,16 @@ body=re.sub(r"(?m)^(##) ",r"# ",body)
 body=re.sub(r"(?m)^(###) ",r"## ",body)
 body=re.sub(r"(?<!\!)\[([^\n\]]+)\]\(([^\s):]+(?:/[^\s)]+|\.md))\)",
             lambda m:f"[{m[1]}]({branchurl}{m[2]})" if not m[2].startswith(("#","/")) else m[0],body)
+has_f8="(figures/F8-matched-intervals.svg)" in body
+if has_f8:
+    assert a.uncertainty_figure is not None
+    body=body.replace("(figures/F8-matched-intervals.svg)","(f8.png){width=6.1in}")
 with tempfile.TemporaryDirectory() as td:
     w=Path(td)
     shutil.copyfile(a.historical_figure,w/"f6.png")
     shutil.copyfile(a.transport_figure,w/"allocation.png")
+    if has_f8:
+        shutil.copyfile(a.uncertainty_figure,w/"f8.png")
     (w/"manuscript.md").write_text(body,encoding="utf-8")
     out=w/"raw.docx"
     subprocess.run(["pandoc","-f","markdown+pipe_tables-implicit_figures-tex_math_dollars","-t","docx","-o",str(out),"manuscript.md"],cwd=w,check=True)
@@ -72,7 +79,7 @@ with tempfile.TemporaryDirectory() as td:
         if pa._p.xpath(".//w:drawing"):
             pa.paragraph_format.keep_with_next=True
             pa.alignment=WD_ALIGN_PARAGRAPH.CENTER
-        elif pa.text.startswith(("Figure F6.","Figure B1.")):
+        elif pa.text.startswith(("Figure F6.","Figure F8.","Figure B1.")):
             pa.style=doc.styles["Caption"]
             pa.paragraph_format.keep_together=True
             pa.paragraph_format.widow_control=True
@@ -93,12 +100,14 @@ with tempfile.TemporaryDirectory() as td:
     doc.core_properties.author="Leon Marienga"
     doc.core_properties.title=heading
     doc.core_properties.subject="Supervisor-review draft"
-    doc.core_properties.comments="Derived from the integrated Markdown and two existing research figures."
+    doc.core_properties.comments="Derived from the integrated Markdown and existing research figures."
     a.output.parent.mkdir(parents=True,exist_ok=True)
     doc.save(a.output)
     with ZipFile(a.output) as z:
         assert z.testzip() is None
-        assert len([n for n in z.namelist() if n.startswith("word/media/")])==2
+        assert len([n for n in z.namelist() if n.startswith("word/media/")])==2+int(has_f8)
         xml=z.read("word/document.xml").decode()
         assert "FIGURE:transport" not in xml and all(f"Chapter {i}" in xml for i in range(1,7))
         assert "$5,014,819.01" in xml and "Prospective tabletop evaluation" in xml
+        if has_f8:
+            assert "$2.155B" in xml and "7/9" in xml
