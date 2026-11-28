@@ -1,0 +1,29 @@
+{
+  "bulletins": [
+    {
+      "bias_ft": "-1.637",
+      "issue_utc": "2022-12-28T17:13:00+00:00",
+      "mae_ft": "1.637",
+      "minutes_lead_at_first_common_hour": 4367,
+      "stage_at_first_common_hour_ft": "10.1",
+      "threshold_false_positives": 0,
+      "threshold_hits": 11
+    },
+    {
+      "bias_ft": "0.261",
+      "issue_utc": "2022-12-31T17:00:00+00:00",
+      "mae_ft": "0.646",
+      "minutes_lead_at_first_common_hour": 60,
+      "stage_at_first_common_hour_ft": "16.2",
+      "threshold_false_positives": 0,
+      "threshold_hits": 21
+    }
+  ],
+  "common_hours": 43,
+  "episode_count": 1,
+  "first_common_hour_observed_ft": "16.47",
+  "first_common_utc": "2022-12-31T18:00:00+00:00",
+  "last_common_utc": "2023-01-02T12:00:00+00:00",
+  "observed_hours_at_or_above_threshold": 21,
+  "threshold_ft": "12.0"
+}
